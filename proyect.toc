@@ -2,7 +2,6 @@
 \contentsline {chapter}{\'Indice general}{II}%
 \contentsline {chapter}{{\'I}ndice de cuadros}{III}%
 \contentsline {chapter}{\'{I}ndice de figuras}{IV}%
-\contentsline {chapter}{{\'I}ndice de c{\'o}digo}{V}%
 \contentsline {chapter}{\numberline {1}Partes y plantillas}{1}%
 \contentsline {section}{\numberline {1.1}Partes}{1}%
 \contentsline {section}{\numberline {1.2}Impresión}{2}%
