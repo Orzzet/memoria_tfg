@@ -1,29 +1,15 @@
 \cdpchapter{Resumen}
 
-El resumen del Trabajo fin de Grado consiste, como su propio nombre indica, es un resumen de la memoria en formato apropiado 
-para ser indexado en las bases de datos bibliotecarias. No debe ocupar m\'as de una carilla de texto
-y en ella hay que exponer en pocas palabras la finalidad y objetivos del trabajo, 
-as{\'\i} como las aportaciones realizadas. En general,
-no incluir\'a figuras, cuadros ni referencias bibliogr\'aficas.
+En la actualidad existen microscopios que emplean técnicas ópticas para reconstruir imágenes 3D con una alta precisión. Gracias a esto los investigadores tienen a su alcance imágenes microscópicas de alta calidad para poder sacar conclusiones de ellas. Estas imágenes suelen requerir un procesado digital con el objetivo de discernir los elementos importantes del resto.
 
-El resumen es obligatorio en espa{\~n}ol para todos los TfG. Es opcional incluir un \emph{Abstract} (resumen en ingl\'es)
-en una hoja separada. Debe ser traducci\'on dle correspodiente resumen en español. En los TfG presentados en ingl\'es,
-la inclusi\'on del \emph{abstract} es tmabi\'en obligatoria, as{\'\i} como en los TfG correspondientes a la titulaci\'on
-de Ingenier{\'\i}a de la Salud.
+En este proyecto se abordara el problema de la segmentación de células en imágenes 3D. Para ello se usarán imágenes  cedidas por el Departamento de Biología Celular de la Facultad de Biología de la Universidad de Sevilla. En cada imágen hay decenas de células, todas en contacto con otras células sin espacio entre ellas.
 
-El resumen de este documento es el siguiente:
+El procesado digital de estas imágenes actualmente se hace de forma manual, teniendo una duración de una a dos semanas, por lo que la automatización de este proceso conllevará un gran ahorro de tiempo.
 
-Este trabajo pretende ser una gu{\'\i}a para uniformar los formatos de las memorias de los Trabajos fin de Grado de las titulaciones: 
-\begin{itemize}
-\item Grado en Ingenier{\'\i}a Inform\'atica --- Ingenier{\'\i}a de Computadores
-\item Grado en Ingenier{\'\i}a Inform\'atica --- Ingenier{\'\i}a del Software
-\item Grado en Ingenier{\'\i}a Inform\'atica --- Tecnolog{\'\i}as Inform\'aticas
-\end{itemize}
+Respecto a las técnicas usadas, este proyecto se centrará en el uso de redes neuronales para la segmentación de las células. Se validará la efectividad del uso de redes neuronales y se estudiará qué tipo de red neuronal y arquitectura será mejor para esta tarea, teniendo en cuenta la exactitud de la segmentación y el coste computacional.
 
-de la Escuela T\'ecnica Superior de Ingenier{\'\i}a Inform\'atica de la Universidad de Sevilla.
+En el análisis de antecedenes se comprobará que la CNN (Convolutional Neural Network o Red Neuronal Convolucional) será con la que se obtienen mejores resultados en el reconocimiento de patrones en imágenes. También se verá que al diseñar una CNN con la arquitectura U-Net se obtienen buenos resultados.
 
-Al mismo tiempo, se pretende que el documento sea un ejemplo de la realizaci\'on de un memoria de Trabajo fin de Grado. 
-Debido a ello, hemos estructurado el documento en cap{\'\i}tulos e incluido diversos {\'\i}ndices y bibliograf{\'\i}a,
-aunque obviamente no hubiera sido necesario.
+Se probarán varios modelos de CNNs para la segmentación de células, esperándose el mejor resultado de la arquitectura U-Net.
 
-
+Esta herramienta estará disponible para el usuario final por medio de una imágen docker, para facilitar su distribución y que perdure el paso del tiempo.
