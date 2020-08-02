@@ -1,2 +1,47 @@
 \chapter{An\'alisis de antecedentes y aportaci\'on realizada}\label{analanteced}
- 
+
+%En este capítulo se hará una breve twintroducción a las redes neuronales, se justificará el uso del tipo de red neuronal CNN para tratamiento de imágenes así como el de la arquitectura CNN U-Net para la segmentación de células.
+
+\section{Red Neuronal}\label{sec:redneuronal}
+\subsection{Perceptrón}\label{subsec:perceptron}
+
+El perceptrón es el elemento computacional básico de una red neuronal.
+
+Fue propuesto inicialmente por Frank Rosenblatt en 1958 y perfeccionado por Minsky y Papert en la década de de 1960 \cite[p.~55-56]{Rojas1996}.
+Su diseño está inspirado en las neuronas como bloque elemental en el funcionamiento del cerebro. En la figura \ref{fig:generic_computing_unit} se puede ver una unidad de computación genérica con la que puede ser descrita un perceptrón.
+
+\figura{1}{img/Rojas1996_p31_computing_unit}{Unidad de computación genérica}{fig:generic_computing_unit}{}
+
+Siendo:
+\begin{itemize}
+\item $ (x_1, x_2, ...,x_n) $ el vector de entrada.
+\item $ (w_1, w_2, ...,w_n) $ el vector de pesos.
+\item $ g $ la función de integración, encargada de reducir el vector de entrada a un único valor.
+\item $ f $ la función de activación, encargada de producir la salida de este elemento.
+\end{itemize}
+
+El perceptrón simple es una unidad de computación con un umbral $ \theta $ el cual, al recibir un vector de entrada de tamaño $ n $ y dado un vector de pesos de tamaño $ n $, devuelve 1 si $ \sum_{i=1}^{n} w_i x_i \geq \theta $ y 0 en otro caso.\cite[p.~60]{Rojas1996}.
+
+Para entender de forma intuitiva esta definición podemos tomar un ejemplo en el que $ n = 2, w_1 = 0.5, w_2 = 2, \theta = 1 $. En la figura \ref{fig:percep_graf_repr} se puede ver la línea $ 0.5x_1 + 2x_2 = 1 $ y los puntos $ p_1=(1;1), p_2=(-2;1.4) $ y $ p_3=(-0.4;-1) $. Se puede ver cómo $ p_1 $ y $ p_2 $ están por encima de la línea, por lo que devuelven 1 y $ p_3 $ por debajo, por lo que devuelve 0.
+
+\figura{0.5}{img/percep_repr_graf}{Representación de todos los valores del vector de entrada}{fig:percep_graf_repr}{}
+
+Se puede intuir cómo al modificar el valor de $ \theta $ la línea se mueve de forma vertical, así cómo $ x_1 $ afecta a la pendiente y $ x_2 $ afecta a ambos aspectos. Como se verá más adelante entrenar una red neuronal consiste en ir actualizando los pesos de los perceptrones, por lo que será importante representar un perceptrón de forma que se pueda modificar $ \theta $ al modificar un peso.\\
+
+Para representar el perceptrón simple serán necesarios los siguientes cambios respecto a la unidad de computación genérica:
+\begin{itemize}
+\item Al vector de entradas se le añade un elemento de valor 1, siendo ahora de tamaño $ n+1 $.
+\item Al vector de pesos se le añade un elemento de valor inicial $ -\theta $, siendo ahora de tamaño $ n+1 $. A este valor se le llamará \textit{bias}.
+\item Se usará como función de integración el sumatorio.
+\item Se usara como función de activación la función escalón unitario.
+\end{itemize}
+
+$ 1 w_{n+1} \sum H(x_1w_1+x_2w_2+...+x_nw_n+1(-\theta)) f(g(x_1w_1,x_2w_2,...,x_nw_n))$
+
+%%
+
+\subsection{Partes de una Red Neuronal}\label{subsec:nn_partes}
+\subsection{Algoritmos de aprendizaje}\label{subsec:learning_algos}
+\section{Red Neuronal Convolucional}\label{sec:cnn}
+\section{Reto ImageNet}\label{sec:imagenet}
+\section{Arquitectura U-Net}\label{sec:unet}
