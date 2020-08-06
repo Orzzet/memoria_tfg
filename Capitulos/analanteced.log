@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  2 AUG 2020 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  2 AUG 2020 18:27
 entering extended mode
 **./analanteced.tex
 (analanteced.tex
@@ -2428,36 +2428,88 @@ Overfull \hbox (5.00002pt too wide) in paragraph at lines 36--37
 \/cmr/m/n/10 o 
  []
 
+! Undefined control sequence.
+l.39 \figura
+            {1}{img/Perceptron}{Perceptrón}{fig:perceptron}{}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Overfull \hbox (101.10205pt too wide) in paragraph at lines 39--40
-[]$\/cmr/m/n/10 1\OML/cmm/m/it/10 w[] [] f\/cmr/m/n/10 (\OML/cmm/m/it/10 x[]w[]
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no P in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no : in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+
+Overfull \hbox (25.00002pt too wide) in paragraph at lines 39--40
+[]\/cmr/m/n/10 o 
+ []
+
+
+Overfull \hbox (104.25476pt too wide) in paragraph at lines 41--42
+[]$\/cmr/m/n/10 1\OML/cmm/m/it/10 w[] [] H\/cmr/m/n/10 (\OML/cmm/m/it/10 x[]w[]
  \/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (29.6245pt too wide) in paragraph at lines 39--40
+Overfull \hbox (29.6245pt too wide) in paragraph at lines 41--42
 \OML/cmm/m/it/10 x[]w[] \/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (16.11116pt too wide) in paragraph at lines 39--40
+Overfull \hbox (16.11116pt too wide) in paragraph at lines 41--42
 \OML/cmm/m/it/10 ::: \/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (31.5389pt too wide) in paragraph at lines 39--40
+Overfull \hbox (31.5389pt too wide) in paragraph at lines 41--42
 \OML/cmm/m/it/10 x[]w[] \/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (145.19415pt too wide) in paragraph at lines 39--40
+Overfull \hbox (145.19415pt too wide) in paragraph at lines 41--42
 \/cmr/m/n/10 1(\OMS/cmsy/m/n/10  \OML/cmm/m/it/10 \/cmr/m/n/10 ))\OML/cmm/m/it
 /10 f\/cmr/m/n/10 (\OML/cmm/m/it/10 g\/cmr/m/n/10 (\OML/cmm/m/it/10 x[]w[]; x[]
 w[]; :::; x[]w[]\/cmr/m/n/10 ))$ 
  []
 
 ! Undefined control sequence.
-l.43 \subsection
+l.45 \subsection
                 {Partes de una Red Neuronal}\label{subsec:nn_partes}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2488,7 +2540,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 ! Undefined control sequence.
-l.44 \subsection
+l.46 \subsection
                 {Algoritmos de aprendizaje}\label{subsec:learning_algos}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2520,7 +2572,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no j in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.45 \section
+l.47 \section
              {Red Neuronal Convolucional}\label{sec:cnn}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2553,7 +2605,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 ! Undefined control sequence.
-l.46 \section
+l.48 \section
              {Reto ImageNet}\label{sec:imagenet}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2574,7 +2626,7 @@ Missing character: There is no N in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.47 \section
+l.49 \section
              {Arquitectura U-Net}\label{sec:unet}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have

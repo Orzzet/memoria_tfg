@@ -15,10 +15,10 @@
 \contentsline {chapter}{\numberline {4}An\'alisis de antecedentes y aportaci\'on realizada}{6}%
 \contentsline {section}{\numberline {4.1}Red Neuronal}{6}%
 \contentsline {subsection}{\numberline {4.1.1}Perceptrón}{6}%
-\contentsline {subsection}{\numberline {4.1.2}Partes de una Red Neuronal}{7}%
-\contentsline {subsection}{\numberline {4.1.3}Algoritmos de aprendizaje}{7}%
-\contentsline {section}{\numberline {4.2}Red Neuronal Convolucional}{7}%
-\contentsline {section}{\numberline {4.3}Reto ImageNet}{7}%
-\contentsline {section}{\numberline {4.4}Arquitectura U-Net}{7}%
-\contentsline {chapter}{Referencias}{8}%
+\contentsline {subsection}{\numberline {4.1.2}Partes de una Red Neuronal}{8}%
+\contentsline {subsection}{\numberline {4.1.3}Algoritmos de aprendizaje}{8}%
+\contentsline {section}{\numberline {4.2}Red Neuronal Convolucional}{8}%
+\contentsline {section}{\numberline {4.3}Reto ImageNet}{8}%
+\contentsline {section}{\numberline {4.4}Arquitectura U-Net}{8}%
+\contentsline {chapter}{Referencias}{9}%
 \contentsfinish 
