@@ -75,6 +75,66 @@ de Sousa, J\BPBI M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Nair%
+\ \BBA {} Hinton%
+}{%
+Nair%
+\ \BBA {} Hinton%
+}{%
+{\protect \APACyear {2010}}%
+}]{%
+Nair2010}
+\APACinsertmetastar {%
+Nair2010}%
+\begin{APACrefauthors}%
+Nair, V.%
+\BCBT {}\ \BBA {} Hinton, G\BPBI E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Rectified Linear Units Improve Restricted Boltzmann
+  Machines} {Rectified linear units improve restricted boltzmann
+  machines}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 27th International Conference on
+  International Conference on Machine Learning} {Proceedings of the 27th
+  international conference on international conference on machine learning}\
+  (\BPG~807–814).
+\newblock
+\APACaddressPublisher{Madison, WI, USA}{Omnipress}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Nwankpa%
+, Ijomah%
+, Gachagan%
+\BCBL {}\ \BBA {} Marshall%
+}{%
+Nwankpa%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+nwankpa2018activation}
+\APACinsertmetastar {%
+nwankpa2018activation}%
+\begin{APACrefauthors}%
+Nwankpa, C.%
+, Ijomah, W.%
+, Gachagan, A.%
+\BCBL {}\ \BBA {} Marshall, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+\APACrefbtitle {Activation Functions: Comparison of trends in Practice and
+  Research for Deep Learning.} {Activation functions: Comparison of trends in
+  practice and research for deep learning.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Rojas%
 }{%
 Rojas%

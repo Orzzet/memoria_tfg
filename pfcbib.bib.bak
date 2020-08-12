@@ -132,4 +132,28 @@
   timestamp   = {2008-05-16T13:57:02.000+0200},
 }
 
+@Misc{nwankpa2018activation,
+  author        = {Chigozie Nwankpa and Winifred Ijomah and Anthony Gachagan and Stephen Marshall},
+  title         = {Activation Functions: Comparison of trends in Practice and Research for Deep Learning},
+  year          = {2018},
+  archiveprefix = {arXiv},
+  eprint        = {1811.03378},
+  file          = {:nwankpa2018activation - Activation Functions_ Comparison of Trends in Practice and Research for Deep Learning.PDF:PDF},
+  primaryclass  = {cs.LG},
+}
+
+@InProceedings{Nair2010,
+  author    = {Nair, Vinod and Hinton, Geoffrey E.},
+  booktitle = {Proceedings of the 27th International Conference on International Conference on Machine Learning},
+  title     = {Rectified Linear Units Improve Restricted Boltzmann Machines},
+  year      = {2010},
+  address   = {Madison, WI, USA},
+  pages     = {807–814},
+  publisher = {Omnipress},
+  series    = {ICML’10},
+  isbn      = {9781605589077},
+  location  = {Haifa, Israel},
+  numpages  = {8},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

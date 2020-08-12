@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  5 AUG 2020 22:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  12 AUG 2020 23:00
 entering extended mode
 **./proyect.tex
 (proyect.tex
@@ -544,58 +544,72 @@ Cap\'{\i }tulo 3.
 ]
 Cap\'{\i }tulo 4.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
 <img/Rojas1996_p31_computing_unit.png, id=42, 441.90094pt x 123.46124pt>
 File: img/Rojas1996_p31_computing_unit.png Graphic file (type png)
 <use img/Rojas1996_p31_computing_unit.png>
 Package pdftex.def Info: img/Rojas1996_p31_computing_unit.png  used on input li
-ne 13.
+ne 15.
 (pdftex.def)             Requested size: 426.79135pt x 119.24483pt.
-<img/percep_repr_graf.png, id=44, 354.57469pt x 238.64156pt>
-File: img/percep_repr_graf.png Graphic file (type png)
-<use img/percep_repr_graf.png>
-Package pdftex.def Info: img/percep_repr_graf.png  used on input line 27.
-(pdftex.def)             Requested size: 213.39568pt x 143.62663pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-
- []
-
 [6
 
  <./img/Rojas1996_p31_computing_unit.png>]
-<img/Perceptron.png, id=54, 523.20468pt x 125.71968pt>
+<img/neurona_artificial_no_bias.png, id=52, 360.74776pt x 91.542pt>
+File: img/neurona_artificial_no_bias.png Graphic file (type png)
+<use img/neurona_artificial_no_bias.png>
+Package pdftex.def Info: img/neurona_artificial_no_bias.png  used on input line
+ 27.
+(pdftex.def)             Requested size: 426.79135pt x 108.30916pt.
+<img/percep_repr_graf.png, id=53, 354.57469pt x 238.64156pt>
+File: img/percep_repr_graf.png Graphic file (type png)
+<use img/percep_repr_graf.png>
+Package pdftex.def Info: img/percep_repr_graf.png  used on input line 38.
+(pdftex.def)             Requested size: 213.39568pt x 143.62663pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+
+ []
+
+[7 <./img/neurona_artificial_no_bias.png> <./img/percep_repr_graf.png>]
+<img/Perceptron.png, id=61, 523.20468pt x 125.71968pt>
 File: img/Perceptron.png Graphic file (type png)
 <use img/Perceptron.png>
-Package pdftex.def Info: img/Perceptron.png  used on input line 39.
+Package pdftex.def Info: img/Perceptron.png  used on input line 50.
 (pdftex.def)             Requested size: 426.79135pt x 102.55557pt.
-) [7 <./img/percep_repr_graf.png> <./img/Perceptron.png>] [8] (proyect.bbl) [9
+)
+[8 <./img/Perceptron.png>] (proyect.bbl) [9
 
 
 ] (proyect.aux) ) 
 Here is how much of TeX's memory you used:
- 8325 strings out of 492483
- 107941 string characters out of 3131035
- 283856 words of memory out of 3000000
- 12473 multiletter control sequences out of 15000+200000
+ 8348 strings out of 492483
+ 108514 string characters out of 3131035
+ 284142 words of memory out of 3000000
+ 12495 multiletter control sequences out of 15000+200000
  32807 words of font info for 77 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,12n,77p,617b,2316s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,12n,77p,485b,2316s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr
-8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a
-.pfb>
-Output written on proyect.pdf (14 pages, 241040 bytes).
+1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
+w/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on proyect.pdf (14 pages, 274136 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
+ 116 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

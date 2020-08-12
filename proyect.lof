@@ -4,7 +4,8 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Ada Lovelace}}{4}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Unidad de computación genérica}}{6}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Representación de todos los valores del vector de entrada}}{7}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Perceptrón}}{7}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Neurona artificial genérica}}{6}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Representación simplificada de una neurona artificial}}{7}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Representación de todos los valores del vector de entrada}}{7}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Perceptrón. Mostrando el bias como entrada.}}{8}%
 \contentsfinish 

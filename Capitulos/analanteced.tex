@@ -3,14 +3,16 @@
 %En este capítulo se hará una breve twintroducción a las redes neuronales, se justificará el uso del tipo de red neuronal CNN para tratamiento de imágenes así como el de la arquitectura CNN U-Net para la segmentación de células.
 
 \section{Red Neuronal}\label{sec:redneuronal}
-\subsection{Perceptrón}\label{subsec:perceptron}
+En esta sección se hará una breve introducción a las redes neuronales artificiales, compuesta por neuronas artificiales. Primero se describirá qué es una neurona artificial y se definirán 3 tipos: perceptrón, sigmoide y unidad lineal rectificada (ReLU). Después se hablará sobre el entrenamiento. Por último se hablará sobre los componentes de una red neuronal y a qué llamaremos modelo.
+\subsection{Partes de una Red Neuronal}\label{subsec:nn_partes}
 
-El perceptrón es el elemento computacional básico de una red neuronal.
+\subsection{Neurona artifical}\label{subsec:neurona_artificial}
 
-Fue propuesto inicialmente por Frank Rosenblatt en 1958 y perfeccionado por Minsky y Papert en la década de de 1960 \cite[p.~55-56]{Rojas1996}.
-Su diseño está inspirado en las neuronas como bloque elemental en el funcionamiento del cerebro. En la figura \ref{fig:generic_computing_unit} se puede ver una unidad de computación genérica con la que puede ser descrita un perceptrón.
+Una neurona artificial es un componente básico en una red neuronal artifical. Un primer modelo fue introducido por Warren McCulloch y Walter Pitts en 1943, a partir del cual se han hecho mejoras a lo largo de los años. \cite[Chapter~1]{Rojas1996}
 
-\figura{1}{img/Rojas1996_p31_computing_unit}{Unidad de computación genérica}{fig:generic_computing_unit}{}
+En la figura \ref{fig:generic_computing_unit} se puede ver una neurona artifical genérica con la que pueden ser descritas los distintos tipos que se verán en esta sección.
+
+\figura{1}{img/Rojas1996_p31_computing_unit}{Neurona artificial genérica}{fig:generic_computing_unit}{}
 
 Siendo:
 \begin{itemize}
@@ -20,29 +22,52 @@ Siendo:
 \item $ f $ la función de activación, encargada de producir la salida de este elemento.
 \end{itemize}
 
+Se puede simplificar la representación al asumir que siempre se usará $ \sum $ como función de integración. Será común ver una representación como \ref{fig:neurona_artificial_no_bias} en la que $ f $ indicará la función de activación.
+
+\figura{1}{img/neurona_artificial_no_bias}{Representación simplificada de una neurona artificial}{fig:neurona_artificial_no_bias}{}
+
+\subsubsection{Perceptrón}\label{subsubsec:perceptron}
+
+Fue propuesto inicialmente por Frank Rosenblatt en 1958 y perfeccionado por Minsky y Papert en la década de de 1960 \cite[p.~55-56]{Rojas1996}.
+Su diseño está inspirado en las neuronas como bloque elemental en el funcionamiento del cerebro. 
+
 El perceptrón es una unidad de computación con un umbral $ \theta $ el cual, al recibir un vector de entrada de tamaño $ n $ y dado un vector de pesos de tamaño $ n $, devuelve 1 si $ \sum_{i=1}^{n} w_i x_i \geq \theta $ y 0 en otro caso.\cite[p.~60]{Rojas1996}.
 
 Para entender de forma intuitiva esta definición podemos tomar un ejemplo en el que $ n = 2, w_1 = 0.5, w_2 = 2, \theta = 1 $. En la figura \ref{fig:percep_graf_repr} se puede ver la línea $ 0.5x_1 + 2x_2 = 1 $ y los puntos $ p_1=(1;1), p_2=(-2;1.4) $ y $ p_3=(-0.4;-1) $. Se puede ver cómo $ p_1 $ y $ p_2 $ están por encima de la línea, por lo que devuelven 1 y $ p_3 $ por debajo, por lo que devuelve 0.
 
 \figura{0.5}{img/percep_repr_graf}{Representación de todos los valores del vector de entrada}{fig:percep_graf_repr}{}
 
-Se puede intuir cómo al modificar el valor de $ \theta $ la línea se mueve de forma vertical, así cómo $ x_1 $ afecta a la pendiente y $ x_2 $ afecta a ambos aspectos. Como se verá más adelante entrenar una red neuronal consiste en ir actualizando los pesos de los perceptrones, por lo que será importante representar un perceptrón de forma que se pueda modificar $ \theta $ al modificar un peso.\\
+Si se despeja $x_2$ en la fórmula $ w_1 x_1 + w_2 x_2 = \theta $, se obtiene la ecuación de la recta $ x_2 = \frac{\theta}{w_2} - \frac{w_1}{w_2}x_1 $. Se puede intuir cómo al modificar el valor de $ \theta $ la línea se mueve de forma vertical, así cómo $ w_1 $ afecta a la pendiente y $ w_2 $ afecta a ambos aspectos.\\
 
-Para representar el perceptrón serán necesarios los siguientes cambios respecto a la unidad de computación genérica:
+Como se verá más adelante, entrenar una red neuronal implica actualizar los pesos, por lo que será importante representar las neuronas artificiales de forma que se pueda modificar $ \theta $ al modificar un peso. Tomando como base la representación de una neurona artificial vista en \ref{fig:neurona_artificial_no_bias}, se toman las siguientes consideraciones:\\
+
 \begin{itemize}
-\item Al vector de entradas se le añade un elemento de valor 1, siendo ahora de tamaño $ n+1 $.
+\item Al vector de entradas se le añade un elemento de valor constante 1, siendo ahora de tamaño $ n+1 $.
 \item Al vector de pesos se le añade un elemento de valor inicial $ -\theta $, siendo ahora de tamaño $ n+1 $. A este valor se le llamará \textit{bias}.
-\item Se usará como función de integración el sumatorio.
 \item Se usara como función de activación la función escalón unitario.
 \end{itemize}
 
-\figura{1}{img/Perceptron}{Perceptrón}{fig:perceptron}{}
+\figura{1}{img/Perceptron}{Perceptrón. Mostrando el bias como entrada.}{fig:perceptron}{}
 
-En la figura \ref{fig:perceptron} se puede ver una representación de un perceptrón. Un perceptrón es un tipo de neurona artifical, usadas en redes neuronales artificales. Se distingirán los distintos tipos de neuronas artificiales en base a su función de activación. En el caso del perceptrón, su función de activación es la función escalón unitario, lo que lo hace especialmente útil para clasificadores binarios. Más adelante veremos el uso de otras funciones de activación y cómo es esto beneficioso para el tratamiento de imágenes.
+\subsubsection{Sigmoide}\label{subsubsec:sigmoide}
 
-%%
+La función sigmoide como función de activación es una función no lineal usada principalmente en redes neuronales prealimentadas (feedforward neurals networks), que son las que usaremos en este proyecto. Es una función real, acotada y diferenciable (a diferencia de la usada en el perceptrón). Su definición es la siguiente relación \cite{nwankpa2018activation}:
 
-\subsection{Partes de una Red Neuronal}\label{subsec:nn_partes}
+\begin{equation}
+ f(x) = \frac{1}{1+e^{-x}}
+\end{equation}
+
+\subsubsection{Unidad Lineal Rectificada (ReLU)}\label{subsubsec:relu}
+
+La unidad lineal rectificada (ReLU) fue propuesta como función de activación en 2010 por Nair y Hinton \cite{Nair2010} y desde entonces ha sido la más usada en aplicaciones de aprendizaje profundo (deep learning, DL). Si se compara con la función de activación Sigmoide, ofrece un mejor rendimiento y es más generalista \cite{nwankpa2018activation}.
+
+\begin{equation}
+ f(x) = max(0, x)=\left\{\begin{matrix}
+ x_i & $si $ x_i \geq 0 \\ 
+ 0 & $si $ x_i < 0
+\end{matrix}\right.
+\end{equation}
+
 \subsection{Algoritmos de aprendizaje}\label{subsec:learning_algos}
 \section{Red Neuronal Convolucional}\label{sec:cnn}
 \section{Reto ImageNet}\label{sec:imagenet}
