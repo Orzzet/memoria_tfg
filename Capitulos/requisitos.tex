@@ -1,6 +1,47 @@
 \chapter{An\'alisis de requisitos, dise\~no e implementaci\'on}\label{requisitos}
 
+\section{Datos de entrada}\label{sub:datos_entrada}
 
+Los datos de entrada son 20 ficheros .mat, cada uno contiene la siguiente :
 
+\begin{itemize}
+\item \textbf{imageSequence}: Imagen inicial con la forma $ (57, 1024, 1024) $
+\item \textbf{imageSequenceInterpolated}: Imagen incial interpolada, ahora con la forma $ (244, 1024, 1024) $.
+\item \textbf{labelledImage3D}: Resultado de etiquetar correctamente la imagen inicial interpolada $ (244, 1024, 1024) $.
+\item \textbf{centroidOfRois}: Coordenadas del centroide de cada célula.
+\item \textbf{usedZScale}: Valor usado en la interpolación.
+\end{itemize}
+
+A continuación se analizarán las imágenes \textbf{imageSequenceInterpolated} y \textbf{labelledImage3D}.
+
+\subsubsection{imageSequenceInterpolated}
+
+El tipo usado para almacenar el valor de cada vóxel es \textit{f8} que, según la documentación de numpy es el equivalente a un número de 64-bit float.
+
+Se han comprobado los valores máximo y mínimo de las 20 imágenes y estos son los resultados:
+
+\cuadro{|r|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}{Valores mínimo y máximo de los píxeles de las imágenes de entrada.}{tab:prueba}{
+35.0 & 32.0 & 33.0 & 0.0 & 31.0 & 24.0 & 19.0 & 0.0 & 0.0 & 24.0 \\ 
+4095.0 & 4095.0 & 4095.0 & 65535.0 & 4069.0 & 4095.0 & 4095.0 & 65535.0 & 65535.0 & 4095.0 \\
+\hline
+22.0 & 22.0 & 23.0 & 30.0 & 31.0 & 30.0 & 25.0 & 30.0 & 23.0 & 19.0 \\
+4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 \\
+}
+
+Se ha analizado el histograma de una imagen para entender mejor la distribución de valores. Podría ser que se pudiera simplificar el nº de valores distintos que tiene la imagen para aumentar el rendimiento. La imagen analizada tiene $ 32 $ de valor mínimo y $ 4095 $ de valor máximo.
+
+En la figura \ref{fig:histogram1} se puede ver un histograma en el que en el eje $ x $ representa el valor de un píxel y el eje $ y $ representa el nº de píxeles con ese valor. En esta figura se puede comprobar que los valores están concentrados en el rango $ [0,500] $, pero da la impresión de que no hay ningún elemento en el resto de valores. Para obtener una mejor visualización del resto en la figura \ref{fig:histogram2} se puede ver otro histograma con el eje $ y $ limitado a 4000, donde se aprecia los distintos valores que un píxel puede tomar. 
+
+\figura{0.8}{img/histograma1}{Histograma de todos los valores}{fig:histogram1}{}
+\figura{0.8}{img/histograma2}{Histograma de todos los valores con el eje y limitado a 4000}{fig:histogram2}{}
+
+\subsubsection{}
 
 \section{Dise\~no e implementaci\'on}
+
+
+Se tienen 20 imágenes de células
+
+Cada imagen es una matriz .
+
+De una imagen se ha obtenido un valor mínimo de 33 y máximo de 4095.

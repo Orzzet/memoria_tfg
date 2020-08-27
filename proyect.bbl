@@ -1,77 +1,145 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
-Autores%
+Goodfellow%
+, Bengio%
+\BCBL {}\ \BBA {} Courville%
 }{%
-Autores%
-}{%
-{\protect \APACyear {2014}}%
+Goodfellow%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
 }]{%
-informatica}
+Goodfellow2016}
 \APACinsertmetastar {%
-informatica}%
+Goodfellow2016}%
 \begin{APACrefauthors}%
-Autores, V.%
+Goodfellow, I.%
+, Bengio, Y.%
+\BCBL {}\ \BBA {} Courville, A.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2014}{}{}.
+\APACrefYear{2016}.
 \newblock
-\APACrefbtitle {Escuela {T}\'ecnica {S}uperior de {I}ngenier{\'\i}a
-  {I}nform\'atica.} {Escuela {T}\'ecnica {S}uperior de {I}ngenier{\'\i}a
-  {I}nform\'atica.}
+\APACrefbtitle {Deep Learning} {Deep learning}.
 \newblock
-\APACaddressPublisher{}{ETSII}.
+\APACaddressPublisher{}{MIT Press}.
 \newblock
-\begin{APACrefURL} \url{http://www.informatica.us.es} \end{APACrefURL}
+\begin{APACrefURL} \url{https://www.deeplearningbook.org/} \end{APACrefURL}
 \newblock
-\APACrefnote{fecha de consulta: 24 de Noviembre de 2014}
+\APACrefnote{\url{http://www.deeplearningbook.org}}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Bezos%
+G.~Hinton%
+, Osindero%
+\BCBL {}\ \BBA {} Teh%
 }{%
-Bezos%
-}{%
-{\protect \APACyear {2007}}%
+G.~Hinton%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2006}}%
 }]{%
-guiatitlesec}
+Hinton2006}
 \APACinsertmetastar {%
-guiatitlesec}%
+Hinton2006}%
 \begin{APACrefauthors}%
-Bezos, J.%
+Hinton, G.%
+, Osindero, S.%
+\BCBL {}\ \BBA {} Teh, Y\BHBI W.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2007}{}{}.
+\APACrefYearMonthDay{2006}{08}{}.
 \newblock
-{\BBOQ}\APACrefatitle {The titlesec and titletoc Packages} {The titlesec and
-  titletoc packages}.{\BBCQ}
+{\BBOQ}\APACrefatitle {A Fast Learning Algorithm for Deep Belief Nets} {A fast
+  learning algorithm for deep belief nets}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{TexEmplares}{8}{}{283--298}.
+\APACjournalVolNumPages{Neural computation}{18}{}{1527-54}.
+\newblock
+\begin{APACrefDOI} \doi{10.1162/neco.2006.18.7.1527} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-de Sousa%
+G\BPBI E.~Hinton%
 }{%
-de Sousa%
+G\BPBI E.~Hinton%
 }{%
-{\protect \APACyear {2004}}%
+{\protect \APACyear {1986}}%
 }]{%
-desousa}
+Hinton1986}
 \APACinsertmetastar {%
-desousa}%
+Hinton1986}%
 \begin{APACrefauthors}%
-de Sousa, J\BPBI M.%
+Hinton, G\BPBI E.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYear{2004}.
+\APACrefYearMonthDay{1986}{}{}.
 \newblock
-\APACrefbtitle {Ortografía y ortotipografía del español actual} {Ortografía
-  y ortotipografía del español actual}.
+{\BBOQ}\APACrefatitle {Learning Distributed Representations of Concepts}
+  {Learning distributed representations of concepts}.{\BBCQ}
 \newblock
-\APACaddressPublisher{}{Trea}.
+\BIn{} \APACrefbtitle {Proceedings of the Eighth Annual Conference of the
+  Cognitive Science Society.} {Proceedings of the eighth annual conference of
+  the cognitive science society.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+McCulloch%
+\ \BBA {} Pitts%
+}{%
+McCulloch%
+\ \BBA {} Pitts%
+}{%
+{\protect \APACyear {1943}}%
+}]{%
+McCulloch1943}
+\APACinsertmetastar {%
+McCulloch1943}%
+\begin{APACrefauthors}%
+McCulloch, W\BPBI S.%
+\BCBT {}\ \BBA {} Pitts, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1943}{Dec}{01}.
+\newblock
+{\BBOQ}\APACrefatitle {A logical calculus of the ideas immanent in nervous
+  activity} {A logical calculus of the ideas immanent in nervous
+  activity}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The bulletin of mathematical
+  biophysics}{5}{4}{115-133}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1007/BF02478259} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1007/BF02478259} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Minsky%
+\ \BBA {} Papert%
+}{%
+Minsky%
+\ \BBA {} Papert%
+}{%
+{\protect \APACyear {1969}}%
+}]{%
+Minsky1969}
+\APACinsertmetastar {%
+Minsky1969}%
+\begin{APACrefauthors}%
+Minsky, M.%
+\BCBT {}\ \BBA {} Papert, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{1969}.
+\newblock
+\APACrefbtitle {Perceptrons: An Introduction to Computational Geometry}
+  {Perceptrons: An introduction to computational geometry}.
+\newblock
+\APACaddressPublisher{Cambridge, MA, USA}{MIT Press}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -135,29 +203,82 @@ Nwankpa, C.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Rojas%
+Rosenblatt%
 }{%
-Rojas%
+Rosenblatt%
 }{%
-{\protect \APACyear {1996}}%
+{\protect \APACyear {1958}}%
 }]{%
-Rojas1996}
+Rosenblatt1958}
 \APACinsertmetastar {%
-Rojas1996}%
+Rosenblatt1958}%
 \begin{APACrefauthors}%
-Rojas, R.%
+Rosenblatt, F.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYear{1996}.
+\APACrefYearMonthDay{1958}{}{}.
 \newblock
-\APACrefbtitle {Neural Networks: A Systematic Introduction} {Neural networks: A
-  systematic introduction}\ (Springer, \BED{}).
+{\BBOQ}\APACrefatitle {The Perceptron: A Probabilistic Model for Information
+  Storage and Organization in The Brain} {The perceptron: A probabilistic model
+  for information storage and organization in the brain}.{\BBCQ}
 \newblock
-\APACaddressPublisher{}{Springer-Verlag}.
+\APACjournalVolNumPages{Psychological Review}{}{}{65--386}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rumelhart%
+, Hinton%
+\BCBL {}\ \BBA {} Williams%
+}{%
+Rumelhart%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1986}}%
+}]{%
+Rumelhart1986}
+\APACinsertmetastar {%
+Rumelhart1986}%
+\begin{APACrefauthors}%
+Rumelhart, D\BPBI E.%
+, Hinton, G\BPBI E.%
+\BCBL {}\ \BBA {} Williams, R\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
 \newblock
-\begin{APACrefURL} \url{https://page.mi.fu-berlin.de/rojas/neural/}
-  \end{APACrefURL}
+\APACrefYearMonthDay{1986}{Oct}{01}.
+\newblock
+{\BBOQ}\APACrefatitle {Learning representations by back-propagating errors}
+  {Learning representations by back-propagating errors}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Nature}{323}{6088}{533-536}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1038/323533a0} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1038/323533a0} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Widrow%
+\ \BBA {} Hoff%
+}{%
+Widrow%
+\ \BBA {} Hoff%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+Widrow2015}
+\APACinsertmetastar {%
+Widrow2015}%
+\begin{APACrefauthors}%
+Widrow, B.%
+\BCBT {}\ \BBA {} Hoff, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Adaptive Linear Neuron} {Adaptive linear
+  neuron}.{\BBCQ}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

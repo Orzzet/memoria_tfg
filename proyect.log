@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  12 AUG 2020 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  27 AUG 2020 15:54
 entering extended mode
 **./proyect.tex
 (proyect.tex
@@ -338,23 +338,48 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 )
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\times.sty"
 Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/caption\subcaption.sty"
+Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/caption\caption.sty"
+Package: caption 2020/05/30 v3.4k Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/caption\caption3.sty"
+Package: caption3 2020/07/20 v1.12b caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen138
+\captionmargin@=\dimen139
+\captionwidth=\dimen140
+\caption@tempdima=\dimen141
+\caption@indent=\dimen142
+\caption@parindent=\dimen143
+\caption@hangindent=\dimen144
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count126
+\c@continuedfloat=\count127
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count128
+\c@subtable=\count129
 ) (proyect.aux)
 \openout1 = `proyect.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-1.
+2.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -395,46 +420,48 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
-\scratchdimen=\dimen138
+\scratchcounter=\count130
+\scratchdimen=\dimen145
 \scratchbox=\box35
-\nofMPsegments=\count127
-\nofMParguments=\count128
+\nofMPsegments=\count131
+\nofMParguments=\count132
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count129
-\MPscratchDim=\dimen139
-\MPnumerator=\count130
-\makeMPintoPDFobject=\count131
+\MPscratchCnt=\count133
+\MPscratchDim=\dimen146
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
 \everyMPtoPDFconversion=\toks33
 ) ("C:\Program Files\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2019-12-09 v2.10 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-\c@lstlisting=\count132
-\c@maskedRefs=\count133
+\c@lstlisting=\count136
+\c@maskedRefs=\count137
 
 (spanish.apc
 File: spanish.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 138.
 LaTeX Info: Redefining \BHBI on input line 139.
 )
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 <img/us.jpg, id=1, 36.135pt x 36.135pt>
 File: img/us.jpg Graphic file (type jpg)
 <use img/us.jpg>
-Package pdftex.def Info: img/us.jpg  used on input line 21.
+Package pdftex.def Info: img/us.jpg  used on input line 22.
 (pdftex.def)             Requested size: 90.33722pt x 90.33722pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 21.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 22.
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 2
-1.
+2.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1phv.fd"
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 21.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 22.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 21.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 22.
 
 [1
 
@@ -447,17 +474,17 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 
 
 ] (proyect.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 6.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 7.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\ulasy.fd"
@@ -481,135 +508,137 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
  [4
 
-] (Capitulos/capitulo2.tex
+] (Capitulos/defobjetivos.tex
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
-[1
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
+) (Capitulos/analanteced.tex [1
 
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 7
-2.
- ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/sl' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/sl' tried instead on input line 77.
+Cap\'{\i }tulo 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
 
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+[2
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+
+ []
+
+<img/Rojas1996_p31_computing_unit.png, id=32, 441.90094pt x 123.46124pt>
+File: img/Rojas1996_p31_computing_unit.png Graphic file (type png)
+<use img/Rojas1996_p31_computing_unit.png>
+Package pdftex.def Info: img/Rojas1996_p31_computing_unit.png  used on input li
+ne 29.
+(pdftex.def)             Requested size: 426.79135pt x 119.24483pt.
+<img/NeuronaArtificial.png, id=34, 437.83575pt x 101.78024pt>
+File: img/NeuronaArtificial.png Graphic file (type png)
+<use img/NeuronaArtificial.png>
+Package pdftex.def Info: img/NeuronaArtificial.png  used on input line 41.
+(pdftex.def)             Requested size: 426.79135pt x 99.21745pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/sl' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/sl' tried instead on input line 45.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2]
-Cap\'{\i }tulo 2.
-(lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-) (lstlang2.sty
-File: lstlang2.sty 2004/09/05 1.3 listings language file
-) (lstlang3.sty
-File: lstlang3.sty 2004/09/05 1.3 listings language file
-) (lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-) (lstlang2.sty
-File: lstlang2.sty 2004/09/05 1.3 listings language file
-)
-(lstlang3.sty
-File: lstlang3.sty 2004/09/05 1.3 listings language file
-) (lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-) (lstlang2.sty
-File: lstlang2.sty 2004/09/05 1.3 listings language file
-) (lstlang3.sty
-File: lstlang3.sty 2004/09/05 1.3 listings language file
-) (lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-)
-(codigo/macrotabla.tex)
-<img/AdaLovelace.jpg, id=32, 281.05pt x 387.4475pt>
-File: img/AdaLovelace.jpg Graphic file (type jpg)
-<use img/AdaLovelace.jpg>
-Package pdftex.def Info: img/AdaLovelace.jpg  used on input line 105.
-(pdftex.def)             Requested size: 213.39568pt x 294.17938pt.
- [3
-
-]) (Capitulos/defobjetivos.tex [4 <./img/AdaLovelace.jpg>]
+[3 <./img/Rojas1996_p31_computing_unit.png>]) (Capitulos/requisitos.tex
+[4 <./img/NeuronaArtificial.png>]
 Cap\'{\i }tulo 3.
-) (Capitulos/analanteced.tex [5
 
-]
-Cap\'{\i }tulo 4.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
-<img/Rojas1996_p31_computing_unit.png, id=42, 441.90094pt x 123.46124pt>
-File: img/Rojas1996_p31_computing_unit.png Graphic file (type png)
-<use img/Rojas1996_p31_computing_unit.png>
-Package pdftex.def Info: img/Rojas1996_p31_computing_unit.png  used on input li
-ne 15.
-(pdftex.def)             Requested size: 426.79135pt x 119.24483pt.
-[6
-
- <./img/Rojas1996_p31_computing_unit.png>]
-<img/neurona_artificial_no_bias.png, id=52, 360.74776pt x 91.542pt>
-File: img/neurona_artificial_no_bias.png Graphic file (type png)
-<use img/neurona_artificial_no_bias.png>
-Package pdftex.def Info: img/neurona_artificial_no_bias.png  used on input line
- 27.
-(pdftex.def)             Requested size: 426.79135pt x 108.30916pt.
-<img/percep_repr_graf.png, id=53, 354.57469pt x 238.64156pt>
-File: img/percep_repr_graf.png Graphic file (type png)
-<use img/percep_repr_graf.png>
-Package pdftex.def Info: img/percep_repr_graf.png  used on input line 38.
-(pdftex.def)             Requested size: 213.39568pt x 143.62663pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
-
+Overfull \hbox (14.90483pt too wide) in paragraph at lines 9--10
+[]\OT1/ptm/b/n/10.95 imageSequenceInterpolated\OT1/ptm/m/n/10.95 : Ima-gen in-c
+ial in-ter-po-la-da, aho-ra con la for-ma $\OT1/cmr/m/n/10.95 (244\OML/cmm/m/it
+/10.95 ; \OT1/cmr/m/n/10.95 1024\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1024)$
+\OT1/ptm/m/n/10.95 . 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--43
-
+Overfull \hbox (53.89409pt too wide) in paragraph at lines 10--11
+[]\OT1/ptm/b/n/10.95 labelledImage3D\OT1/ptm/m/n/10.95 : Re-sul-ta-do de eti-qu
+e-tar co-rrec-ta-men-te la ima-gen ini-cial in-ter-po-la-da $\OT1/cmr/m/n/10.95
+ (244\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1024\OML/cmm/m/it/10.95 ; \OT1/cm
+r/m/n/10.95 1024)$\OT1/ptm/m/n/10.95 . 
  []
 
-[7 <./img/neurona_artificial_no_bias.png> <./img/percep_repr_graf.png>]
-<img/Perceptron.png, id=61, 523.20468pt x 125.71968pt>
-File: img/Perceptron.png Graphic file (type png)
-<use img/Perceptron.png>
-Package pdftex.def Info: img/Perceptron.png  used on input line 50.
-(pdftex.def)             Requested size: 426.79135pt x 102.55557pt.
+
+Overfull \hbox (10.7582pt too wide) in paragraph at lines 29--29
+ [][] 
+ []
+
+<img/histograma1.png, id=48, 285.31593pt x 195.73125pt>
+File: img/histograma1.png Graphic file (type png)
+<use img/histograma1.png>
+Package pdftex.def Info: img/histograma1.png  used on input line 35.
+(pdftex.def)             Requested size: 341.43437pt x 234.2312pt.
+<img/histograma2.png, id=49, 284.56313pt x 193.47281pt>
+File: img/histograma2.png Graphic file (type png)
+<use img/histograma2.png>
+Package pdftex.def Info: img/histograma2.png  used on input line 36.
+(pdftex.def)             Requested size: 341.43437pt x 232.16325pt.
+[5
+
+] [6 <./img/histograma1.png> <./img/histograma2.png>]) [7] (proyect.bbl
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
+8.
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-[8 <./img/Perceptron.png>] (proyect.bbl) [9
+Underfull \hbox (badness 2318) in paragraph at lines 16--32
+[]\OT1/ptm/m/n/10.95 Goodfellow, I., Ben-gio, Y., y Cour-vi-lle, A.  (2016).  \
+OT1/ptm/m/it/10.95 Deep lear-ning\OT1/ptm/m/n/10.95 .  MIT Press.
+ []
+
+
+Underfull \hbox (badness 5756) in paragraph at lines 16--32
+\OT1/ptm/m/n/10.95 Des-car-ga-do de $\OT1/pcr/m/n/10.95 https :// www [] .deepl
+earningbook [] .org /$   \OT1/ptm/m/n/10.95 ($\OT1/pcr/m/n/10.95 http :// www [
+]
+ []
+
+) [8
 
 
 ] (proyect.aux) ) 
 Here is how much of TeX's memory you used:
- 8348 strings out of 492483
- 108514 string characters out of 3131035
- 284142 words of memory out of 3000000
- 12495 multiletter control sequences out of 15000+200000
- 32807 words of font info for 77 fonts, out of 3000000 for 9000
+ 8058 strings out of 492483
+ 111143 string characters out of 3131035
+ 207528 words of memory out of 3000000
+ 12232 multiletter control sequences out of 15000+200000
+ 28183 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,12n,77p,485b,2316s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,13n,49p,891b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
-w/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on proyect.pdf (14 pages, 274136 bytes).
+1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
+/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on proyect.pdf (13 pages, 237431 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
+ 108 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

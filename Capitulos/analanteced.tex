@@ -1,16 +1,30 @@
 \chapter{An\'alisis de antecedentes y aportaci\'on realizada}\label{analanteced}
 
-%En este capítulo se hará una breve twintroducción a las redes neuronales, se justificará el uso del tipo de red neuronal CNN para tratamiento de imágenes así como el de la arquitectura CNN U-Net para la segmentación de células.
+En este capítulo se hará una breve introducción a las redes neuronales, se justificará el uso del tipo de red neuronal CNN para tratamiento de imágenes así como el de la arquitectura CNN U-Net para la segmentación de células.
 
-\section{Red Neuronal}\label{sec:redneuronal}
-En esta sección se hará una breve introducción a las redes neuronales artificiales, compuesta por neuronas artificiales. Primero se describirá qué es una neurona artificial y se definirán 3 tipos: perceptrón, sigmoide y unidad lineal rectificada (ReLU). Después se hablará sobre el entrenamiento. Por último se hablará sobre los componentes de una red neuronal y a qué llamaremos modelo.
-\subsection{Partes de una Red Neuronal}\label{subsec:nn_partes}
+\section{Red Neuronal Artificial}\label{sec:redneuronal}
+
+En esta sección se hará una breve introducción a las redes neuronales artificiales, compuesta por neuronas artificiales. Después se describirá qué es una neurona artificial y se definirán 3 tipos: perceptrón, sigmoide y unidad lineal rectificada (ReLU). Por último se hablará sobre el entrenamiento.
+
+\subsection{Introducción a Redes Neuronales Artificiales}\label{subsec:nn_intro}
+
+Desde la antigüedad la humanidad ha sentido interés en la posibilidad de emular la inteligencia de forma artificial. Con los avances en neurociencia hemos sido capaces de entender cómo funcionan las neuronas, la unidad básica en el funcionamiento de los cerebros. Siendo el cerebro un ejemplo funcional de un sistema inteligente, es natural  que haya interés en replicar su funcionamiento.\\
+
+Un hito importante se produjo gracias al desarrollo de la teoría del aprendizaje biológico, introducida por Warren McCulloch y Walter Pitts en 1943 \cite{McCulloch1943}, popularizando lo que fue llamado como \emph{cibernética} \cite[p13]{Goodfellow2016}. Gracias a esto surgió el ADALINE (elemento lineal adaptativo) \cite{Widrow2015}, que es un caso concreto del algoritmo descenso por gradiente estocástico (\textbf{SGD}), algoritmo que con pequeñas modificaciones es usado en la actualidad en el proceso de aprendizaje\cite[p14]{Goodfellow2016}. Fue también gracias al estudio de McCulloch y Pitts que en 1958 Frank Rosenblatt introdujo por primera vez el \textbf{perceptrón}, un modelo general de neurona artificial \cite{Rosenblatt1958}, que fue perfeccionado por Minsky Y Papert en 1969 \cite{Minsky1969}.
+
+El perceptrón es un modelo lineal que, dado un conjunto de elementos con dos categorías distintas como entrada, puede clasificar cada elemento en una de esas dos categorías. Un ejemplo sencillo son las puertas lógicas, siendo la entrada un conjunto de dos elementos con las categorías 0 o 1 y la salida sería un 0 o un 1.
+
+Minsky y Papert encontraron un problema en los modelos lineales y lo demostraron con la función XOR, siendo imposible para un modelo lineal compuesto de una neurona artificial aprender esta función. Esto causó un declive en el interés sobre este campo.\\
+
+En la década de 1980 resurgió el interés gracias en parte al conexionismo, cuya idea central es que un gran número de unidades de computación simples pueden tener un comportamiento inteligente al estar conectadas entre sí \cite[p16]{Goodfellow2016}. Durante esta etapa se hicieron importantes contribuciones como la representación distribuida \cite{Hinton1986}, donde se habla sobre representar las entradas de un sistema en base a sus características, reconocidas por patrones de actividad en redes neuronales. Otra gran contribución fue la populariación del algoritmo de propagación hacia atrás, \textbf{ backpropagation} \cite{Rumelhart1986} para entrenar redes neuronales artificales y actualizar sus pesos, siendo este algoritmo el más usado en la actualidad. 
+
+En este punto de la historia los algoritmos más importantes involucrados en las redes neuronales artificiales usadas en la actualidad habían sido descubiertos, pero no se estaban obteniendo resultados tan buenos como los esperados. Desde un principio lo que se había estado buscando era replicar de forma artificial el funcionamiento del cerebro, siendo el cerebro un sistema de computación genérico, capaz de aprender todo tipo de conocimiento distinto sin la necesidad de cambiar su arquitectura o su método para aprender. Era imposible conocer el algoritmo de aprendizaje usado en el cerebro ya que para ello haría falta monitorizar una gran cantidad de neuronas con gran precisión, lo cual es imposible incluso en la actualidad.\\
+
+En 2006 se produjo un hito importante que comenzó la etapa del \textbf{aprendizaje profundo}, cuando Geoﬀrey Hinton demostró que era posible entrenar de forma eficiente una red neuronal profunda con un gran número de capas ocultas \cite{Hinton2006}.
 
 \subsection{Neurona artifical}\label{subsec:neurona_artificial}
 
-Una neurona artificial es un componente básico en una red neuronal artifical. Un primer modelo fue introducido por Warren McCulloch y Walter Pitts en 1943, a partir del cual se han hecho mejoras a lo largo de los años. \cite[Chapter~1]{Rojas1996}
-
-En la figura \ref{fig:generic_computing_unit} se puede ver una neurona artifical genérica con la que pueden ser descritas los distintos tipos que se verán en esta sección.
+En la figura \ref{fig:generic_computing_unit} se puede ver una neurona artifical genérica con la que pueden ser descritos los distintos tipos que se verán en esta sección.
 
 \figura{1}{img/Rojas1996_p31_computing_unit}{Neurona artificial genérica}{fig:generic_computing_unit}{}
 
@@ -22,39 +36,22 @@ Siendo:
 \item $ f $ la función de activación, encargada de producir la salida de este elemento.
 \end{itemize}
 
-Se puede simplificar la representación al asumir que siempre se usará $ \sum $ como función de integración. Será común ver una representación como \ref{fig:neurona_artificial_no_bias} en la que $ f $ indicará la función de activación.
+Se puede simplificar la representación al asumir que siempre se usará $ \sum x_i w_i $ como función de integración. Además toda neurona artificial tendrá una entrada y un peso por defecto, independientemente del vector de entrada, esto hará referencia al \textit{bias}. Será común ver una representación como \ref{fig:neurona_artificial} en la que $ f $ indicará la función de activación.
 
-\figura{1}{img/neurona_artificial_no_bias}{Representación simplificada de una neurona artificial}{fig:neurona_artificial_no_bias}{}
-
-\subsubsection{Perceptrón}\label{subsubsec:perceptron}
-
-Fue propuesto inicialmente por Frank Rosenblatt en 1958 y perfeccionado por Minsky y Papert en la década de de 1960 \cite[p.~55-56]{Rojas1996}.
-Su diseño está inspirado en las neuronas como bloque elemental en el funcionamiento del cerebro. 
-
-El perceptrón es una unidad de computación con un umbral $ \theta $ el cual, al recibir un vector de entrada de tamaño $ n $ y dado un vector de pesos de tamaño $ n $, devuelve 1 si $ \sum_{i=1}^{n} w_i x_i \geq \theta $ y 0 en otro caso.\cite[p.~60]{Rojas1996}.
-
-Para entender de forma intuitiva esta definición podemos tomar un ejemplo en el que $ n = 2, w_1 = 0.5, w_2 = 2, \theta = 1 $. En la figura \ref{fig:percep_graf_repr} se puede ver la línea $ 0.5x_1 + 2x_2 = 1 $ y los puntos $ p_1=(1;1), p_2=(-2;1.4) $ y $ p_3=(-0.4;-1) $. Se puede ver cómo $ p_1 $ y $ p_2 $ están por encima de la línea, por lo que devuelven 1 y $ p_3 $ por debajo, por lo que devuelve 0.
-
-\figura{0.5}{img/percep_repr_graf}{Representación de todos los valores del vector de entrada}{fig:percep_graf_repr}{}
-
-Si se despeja $x_2$ en la fórmula $ w_1 x_1 + w_2 x_2 = \theta $, se obtiene la ecuación de la recta $ x_2 = \frac{\theta}{w_2} - \frac{w_1}{w_2}x_1 $. Se puede intuir cómo al modificar el valor de $ \theta $ la línea se mueve de forma vertical, así cómo $ w_1 $ afecta a la pendiente y $ w_2 $ afecta a ambos aspectos.\\
-
-Como se verá más adelante, entrenar una red neuronal implica actualizar los pesos, por lo que será importante representar las neuronas artificiales de forma que se pueda modificar $ \theta $ al modificar un peso. Tomando como base la representación de una neurona artificial vista en \ref{fig:neurona_artificial_no_bias}, se toman las siguientes consideraciones:\\
+\figura{1}{img/NeuronaArtificial}{Representación de una Neurona Artificial con $ \sum x_i w_i $ como función de integración}{fig:neurona_artificial}{}
 
 \begin{itemize}
 \item Al vector de entradas se le añade un elemento de valor constante 1, siendo ahora de tamaño $ n+1 $.
 \item Al vector de pesos se le añade un elemento de valor inicial $ -\theta $, siendo ahora de tamaño $ n+1 $. A este valor se le llamará \textit{bias}.
-\item Se usara como función de activación la función escalón unitario.
+\item $ f $ indicará la función de activación de la neurona artificial.
 \end{itemize}
-
-\figura{1}{img/Perceptron}{Perceptrón. Mostrando el bias como entrada.}{fig:perceptron}{}
 
 \subsubsection{Sigmoide}\label{subsubsec:sigmoide}
 
 La función sigmoide como función de activación es una función no lineal usada principalmente en redes neuronales prealimentadas (feedforward neurals networks), que son las que usaremos en este proyecto. Es una función real, acotada y diferenciable (a diferencia de la usada en el perceptrón). Su definición es la siguiente relación \cite{nwankpa2018activation}:
 
 \begin{equation}
- f(x) = \frac{1}{1+e^{-x}}
+ f(x) = \sigma (x) = \frac{1}{1+e^{-x}}
 \end{equation}
 
 \subsubsection{Unidad Lineal Rectificada (ReLU)}\label{subsubsec:relu}
@@ -67,8 +64,8 @@ La unidad lineal rectificada (ReLU) fue propuesta como función de activación e
  0 & $si $ x_i < 0
 \end{matrix}\right.
 \end{equation}
-
-\subsection{Algoritmos de aprendizaje}\label{subsec:learning_algos}
 \section{Red Neuronal Convolucional}\label{sec:cnn}
-\section{Reto ImageNet}\label{sec:imagenet}
-\section{Arquitectura U-Net}\label{sec:unet}
+
+\section{Arquitecturas usadas en segmentación}\label{sec:archs}
+\section{Software desarrollado}\label{sec:software}
+\section{Aportación Realizada}\label{sec:aportacion}

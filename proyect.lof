@@ -1,11 +1,10 @@
 \babel@toc {spanish}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Ada Lovelace}}{4}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Neurona artificial genérica\relax }}{3}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Representación de una Neurona Artificial con $ \DOTSB \sum@ \slimits@ x_i w_i $ como función de integración\relax }}{4}%
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Neurona artificial genérica}}{6}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Representación simplificada de una neurona artificial}}{7}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Representación de todos los valores del vector de entrada}}{7}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Perceptrón. Mostrando el bias como entrada.}}{8}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Histograma de todos los valores\relax }}{6}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Histograma de todos los valores con el eje y limitado a 4000\relax }}{6}%
+\contentsfinish 
 \contentsfinish 
