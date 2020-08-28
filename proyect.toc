@@ -14,9 +14,15 @@
 \contentsline {section}{\numberline {2.4}Software desarrollado}{4}%
 \contentsline {section}{\numberline {2.5}Aportación Realizada}{4}%
 \contentsline {chapter}{\numberline {3}An\'alisis de requisitos, dise\~no e implementaci\'on}{5}%
-\contentsline {section}{\numberline {3.1}Datos de entrada}{5}%
+\contentsline {section}{\numberline {3.1}Datos iniciales}{5}%
 \contentsline {subsubsection}{imageSequenceInterpolated}{5}%
-\contentsline {subsubsection}{}{7}%
-\contentsline {section}{\numberline {3.2}Dise\~no e implementaci\'on}{7}%
-\contentsline {chapter}{Referencias}{8}%
+\contentsline {chapter}{\numberline {4}Diseño}{7}%
+\contentsline {section}{\numberline {4.1}Esquema general}{7}%
+\contentsline {section}{\numberline {4.2}Preprocesado local}{9}%
+\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{9}%
+\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{9}%
+\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{10}%
+\contentsline {subsubsection}{Modificar el orden de las dimensiones}{10}%
+\contentsline {chapter}{\numberline {5}Implementación}{11}%
+\contentsline {chapter}{Referencias}{12}%
 \contentsfinish 

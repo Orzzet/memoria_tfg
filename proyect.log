@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  27 AUG 2020 15:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  28 AUG 2020 23:56
 entering extended mode
 **./proyect.tex
 (proyect.tex
@@ -363,7 +363,11 @@ Package caption Info: listings package is loaded.
 )
 \c@subfigure=\count128
 \c@subtable=\count129
-) (proyect.aux)
+) (proyect.aux
+
+LaTeX Warning: Label `requisitos' multiply defined.
+
+)
 \openout1 = `proyect.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -380,8 +384,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
 2.
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1ptm.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 *geometry* driver: auto-detecting
@@ -561,19 +564,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [4 <./img/NeuronaArtificial.png>]
 Cap\'{\i }tulo 3.
 
-Overfull \hbox (14.90483pt too wide) in paragraph at lines 9--10
+Overfull \hbox (12.21294pt too wide) in paragraph at lines 9--10
 []\OT1/ptm/b/n/10.95 imageSequenceInterpolated\OT1/ptm/m/n/10.95 : Ima-gen in-c
-ial in-ter-po-la-da, aho-ra con la for-ma $\OT1/cmr/m/n/10.95 (244\OML/cmm/m/it
-/10.95 ; \OT1/cmr/m/n/10.95 1024\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1024)$
-\OT1/ptm/m/n/10.95 . 
+ial in-ter-po-la-da, aho-ra con la for-ma $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10
+.95 Z\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1024\OML/cmm/
+m/it/10.95 ; \OT1/cmr/m/n/10.95 1024)$\OT1/ptm/m/n/10.95 .
  []
 
 
-Overfull \hbox (53.89409pt too wide) in paragraph at lines 10--11
+Overfull \hbox (51.2022pt too wide) in paragraph at lines 10--11
 []\OT1/ptm/b/n/10.95 labelledImage3D\OT1/ptm/m/n/10.95 : Re-sul-ta-do de eti-qu
 e-tar co-rrec-ta-men-te la ima-gen ini-cial in-ter-po-la-da $\OT1/cmr/m/n/10.95
- (244\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1024\OML/cmm/m/it/10.95 ; \OT1/cm
-r/m/n/10.95 1024)$\OT1/ptm/m/n/10.95 . 
+ (\OML/cmm/m/it/10.95 Z\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/1
+0.95 1024\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1024)$\OT1/ptm/m/n/10.95 . 
  []
 
 
@@ -591,13 +594,36 @@ File: img/histograma2.png Graphic file (type png)
 <use img/histograma2.png>
 Package pdftex.def Info: img/histograma2.png  used on input line 36.
 (pdftex.def)             Requested size: 341.43437pt x 232.16325pt.
-[5
+) (Capitulos/diseno.tex [5
 
-] [6 <./img/histograma1.png> <./img/histograma2.png>]) [7] (proyect.bbl
+] [6 <./img/histograma1.png> <./img/histograma2.png>]
+Cap\'{\i }tulo 4.
+
+LaTeX Warning: Reference `Wolny2020' on page 7 undefined on input line 11.
+
+[7
+
+]
+<img/Diseno-General.png, id=61, 750.805pt x 356.33125pt>
+File: img/Diseno-General.png Graphic file (type png)
+<use img/Diseno-General.png>
+Package pdftex.def Info: img/Diseno-General.png  used on input line 17.
+(pdftex.def)             Requested size: 426.79135pt x 202.55632pt.
+ [8 <./img/Diseno-General.png>]
+<img/Diseno-Preprocesado.png, id=67, 763.85374pt x 503.8825pt>
+File: img/Diseno-Preprocesado.png Graphic file (type png)
+<use img/Diseno-Preprocesado.png>
+Package pdftex.def Info: img/Diseno-Preprocesado.png  used on input line 35.
+(pdftex.def)             Requested size: 426.79135pt x 281.53412pt.
+ [9 <./img/Diseno-Preprocesado.png>])
+(Capitulos/implementacion.tex [10]
+Cap\'{\i }tulo 5.
+) [11
+
+] (proyect.bbl
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
 8.
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Underfull \hbox (badness 2318) in paragraph at lines 16--32
@@ -612,33 +638,40 @@ earningbook [] .org /$   \OT1/ptm/m/n/10.95 ($\OT1/pcr/m/n/10.95 http :// www [
 ]
  []
 
-) [8
+) [12
 
 
-] (proyect.aux) ) 
+] (proyect.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8058 strings out of 492483
- 111143 string characters out of 3131035
- 207528 words of memory out of 3000000
- 12232 multiletter control sequences out of 15000+200000
+ 8096 strings out of 492483
+ 112005 string characters out of 3131035
+ 207616 words of memory out of 3000000
+ 12262 multiletter control sequences out of 15000+200000
  28183 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,13n,49p,891b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
-/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on proyect.pdf (13 pages, 237431 bytes).
+ 45i,13n,49p,913b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
+es/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on proyect.pdf (17 pages, 302365 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
+ 124 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

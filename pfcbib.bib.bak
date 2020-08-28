@@ -222,7 +222,7 @@
   urldate    = {2020-03-11},
 }
 
-@Misc{iek20163d,
+@Misc{Cicek2016,
   author        = {Özgün Çiçek and Ahmed Abdulkadir and Soeren S. Lienkamp and Thomas Brox and Olaf Ronneberger},
   title         = {3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation},
   year          = {2016},
@@ -232,7 +232,7 @@
   primaryclass  = {cs.CV},
 }
 
-@Article{Wolny2020.01.17.910562,
+@Article{Wolny2020,
   author       = {Wolny, Adrian and Cerrone, Lorenzo and Vijayan, Athul and Tofanelli, Rachele and Barro, Amaya Vilches and Louveaux, Marion and Wenzl, Christian and Steigleder, Susanne and Pape, Constantin and Bailoni, Alberto and Duran-Nebreda, Salva and Bassel, George and Lohmann, Jan U. and Hamprecht, Fred A. and Schneitz, Kay and Maizel, Alexis and Kreshuk, Anna},
   journal      = {bioRxiv},
   title        = {Accurate And Versatile 3D Segmentation Of Plant Tissues At Cellular Resolution},
@@ -253,6 +253,14 @@
   commit       = {f7cf51547ade9e4c9f5d40423261be627653e499},
   journal      = {GitHub repository},
   publisher    = {GitHub},
+}
+
+@Misc{freecloudgpus_2020,
+  author  = {Paperspace},
+  title   = {Paperspace},
+  year    = {2020},
+  journal = {Gradient.paperspace.com},
+  url     = {https://gradient.paperspace.com/free-gpu},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

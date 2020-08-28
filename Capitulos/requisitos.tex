@@ -1,13 +1,13 @@
 \chapter{An\'alisis de requisitos, dise\~no e implementaci\'on}\label{requisitos}
 
-\section{Datos de entrada}\label{sub:datos_entrada}
+\section{Datos iniciales}\label{sub:datos_entrada}
 
-Los datos de entrada son 20 ficheros .mat, cada uno contiene la siguiente :
+Los datos iniciales son 20 ficheros con formato hdf5, cada uno contiene la siguiente:
 
 \begin{itemize}
-\item \textbf{imageSequence}: Imagen inicial con la forma $ (57, 1024, 1024) $
-\item \textbf{imageSequenceInterpolated}: Imagen incial interpolada, ahora con la forma $ (244, 1024, 1024) $.
-\item \textbf{labelledImage3D}: Resultado de etiquetar correctamente la imagen inicial interpolada $ (244, 1024, 1024) $.
+\item \textbf{imageSequence}: Imagen inicial con la forma $ (Z1, 1024, 1024) $
+\item \textbf{imageSequenceInterpolated}: Imagen incial interpolada, ahora con la forma $ (Z2, 1024, 1024) $. Siendo $ Z2 > Z1 $. 
+\item \textbf{labelledImage3D}: Resultado de etiquetar correctamente la imagen inicial interpolada $ (Z2, 1024, 1024) $.
 \item \textbf{centroidOfRois}: Coordenadas del centroide de cada célula.
 \item \textbf{usedZScale}: Valor usado en la interpolación.
 \end{itemize}
@@ -34,14 +34,3 @@ En la figura \ref{fig:histogram1} se puede ver un histograma en el que en el eje
 
 \figura{0.8}{img/histograma1}{Histograma de todos los valores}{fig:histogram1}{}
 \figura{0.8}{img/histograma2}{Histograma de todos los valores con el eje y limitado a 4000}{fig:histogram2}{}
-
-\subsubsection{}
-
-\section{Dise\~no e implementaci\'on}
-
-
-Se tienen 20 imágenes de células
-
-Cada imagen es una matriz .
-
-De una imagen se ha obtenido un valor mínimo de 33 y máximo de 4095.

@@ -1,0 +1,66 @@
+\chapter{Diseño}\label{requisitos}
+
+En este capítulo se describirá el flujo por el que pasan los datos suministrados hasta dar lugar a la segmentación objetivo, sin entrar en detalles sobre la las herramientas usadas en la implementación.
+
+\section{Esquema general}\label{sec:diseno-general}
+
+El principal cuello de botella al usar técnicas de deep learning es el hardware requerido para ello. 
+
+Sería ideal ser capaz de entrenar una CNN usando las imágenes provistas directamente, pero a causa de su gran resolución no es viable. Una imagen de resolución $ (200, 1024, 1024)vx $ con una precisión de 8 bytes ocupa en memoria (siempre hablaremos de memoria de GPU) $size(imagen)=\frac{1024*1024*200*8}{1024*1024}=1600MB $. Si bien podríamos almacenar esta imagen en memoria, las CNN se caracterizan por aplicar un gran número de filtros distintos en paralelo a una imagen de entrada, utilizando los resultados de la aplicación de estos filtros en el siguiente paso de la CNN. Tal y cómo se verá en más detalle en la sección sobre las arquitecturas seleccionadas, es completamente inviable para nosotros usar la resolución original. Es por ello que como parte del preprocesado se han simplificado los datos de entrada.
+
+Por otro lado, también sería ideal contar con la última tecnología en GPU o TPU. En un artículo sobre segmentación de tejido celular 3D usando U-Net se explica cómo han usado 8 NVIDIA GeForce RTX 2080 Ti GPUs para realizar 100K iteraciones \ref{Wolny2020}. El acceso a un hardware superior permite el uso de arquitecturas más complejas, datos más precisos o mayor nº de iteraciones, lo que va a influir en el resultado obtenido. 
+
+Para tener acceso a mejor hardware se usarán tecnologías cloud, donde puedes alquilar el uso de GPUs por hora siendo común pruebas gratuitas especialmente para estudiantes.
+
+Para la parte del entrenamiento y la inferencia se usará Jupyter Notebook, esto hará que sea fácil trasladar el código entre distintas máquinas, locales o en internet.
+
+\pagebreak \figura{1}{img/Diseno-General}{Diseño general}{fig:diseno-general}{}
+
+En la figura \ref{fig:diseno-general} se muestra el diseño general sobre el proceso en el que los datos pasan de los archivos hdf5 inicialmente provistos hasta completar la segmentación requerida.
+
+La etapa de preprocesado no requerirá un uso intensivo de GPU, por lo que podrá realizarse en cualquier máquina. En este caso se usará la máquina local ya que la máquina en la nube es más costosa de utilizar.
+
+En esta etapa se preparán los datos con 4 objetivos:
+\begin{enumerate}
+\item Reducir la resolución de la imagen de entrada, reduciendo así la memoria necesaria para almacenarla en GPU.
+\item Generar las imágenes etiquetadas correctamente para tenerlas como objetivo.
+\item Reducir el tamaño de los archivos resultantes, ya que estos serán usados en servicios cloud y tendrán que ser subidos y descargados con frecuencia.
+\item Modificar el orden de las dimensiones y añadir una \textit{singleton dimension} para el canal. Este formato es necesario para su uso en la CNN.
+\end{enumerate}
+
+Tras esto, se generarán nuevos archivos hdf5 y se subirán a un disco duro virtual, al cual se accederá por un Notebook. El dataset será leído por un DataLoader, el cual realizará todo el preprocesado que faltase a las imágenes de entrada, como puede ser la normalización. Las imágenes de entrada podrán entonces ser usadas como entrada en el modelo  seleccionado, cuya salida, dependiendo del modelo, podrá requerir un postprocesado o no. El resultado final será un etiquetado multiclase, que visualmente se traducirá a un coloreado de células.
+
+\pagebreak\section{Preprocesado local}\label{sec:preprocesado-local}
+
+\figura{1}{img/Diseno-Preprocesado}{Preprocesado llevado a cabo en la máquina local. Los valores redimensionados son }{fig:preprocesado}{}
+
+En la figura \ref{fig:preprocesado} se puede ver con más detalle el resultado que se obtendría en esta etapa. 
+
+\subsubsection{Reducir la resolución de la imagen de entrada}
+
+El formato de las imágenes inicialmente es $ (Z,X,Y) $, siendo para todas las imágenes $ X = Y = 1024 $ y $ Z\epsilon[216,368] $. Además de reducir la resolución de las imágenes, es importante que todas tengan la misma, de lo contrario no podrán ser usadas en operaciones batch. También es esencial que la imagen de entrada y la imagen etiquetada no se deformen demasiado.
+
+\subsubsection{Generar las imágenes etiquetadas correctamente}
+
+El problema principal que nos encontramos en las imágenes con el etiquetado perfecto es que las células, siendo instancias de una misma clase (la clase "célula"), tienen etiquetas distintas. En una segmentación semántica cada vóxel es etiquetado con la clase a la que se cree que pertenece. Si usáramos el etiquetado actual necesitaríamos una clase por cada célula, pero eso no tiene mucho sentido ya que el nº de células en una imagen puede variar, además todas las células tienen características similares. Probaremos dos soluciones a este problema:
+
+\begin{enumerate}
+\item Añadir espacio entre células para que ninguna esté en contacto y hacer que todas tengan $ 1 $ como etiqueta.
+\item Cambiar las etiquetas a $ 1 $ sin añadir espaciado y entrenar un modelo A para su predicción. Encontrar los bordes exteriores de las células y entrenar un modelo B para su predicción. La predicción final será la predicción del modelo A menos la predicción del modelo B.
+\end{enumerate}
+
+Los 3 etiquetados distintos son preprocesados en este paso.
+
+\subsubsection{Reducir el tamaño de los archivos resultantes}
+
+Al estar trabajando con herramientas en la nube, será recomendable reducir el tamaño de los archivos lo mayor posible.
+
+Todas las imágenes tienen una precisión de 8 bytes, cuando en un estudio previo se concluyó que no era necesaria tanta precisión para los valores de esas imágenes, especialmente para el etiquetado que usa valores enteros entre $0$ y $100$. Es importante tener en cuenta que al almacenar tensores en la memoria de la GPU, la imagen no tendrá ningún tipo de compresión, cada elemento ocupará espacio en memoria. Si hacemos que la imagen de entrada pase de 8 bytes a 4 bytes, estaremos reduciendo su tamaño a la mitad. De forma similar si hacemos que la imagen del etiquetado pase de 8 bytes a 1 bytes, estaremos reduciendo su tamaño a una octava parte. Con 1 byte de precisión podremos almacenar hasta 256 valores distintos, suficiente ya que sólo tendremos 2 valores distintos: 0 para el fondo y 1 para la célula o los bordes.
+
+Además se comprimirán las imágenes, aunque esto sólo reducirá el tamaño del archivo, el tamaño de los tensores almacenados en memoria será el mismo. Esta compresión será muy efectiva en las imágenes etiquetadas, ya que los elementos sólo tendrán 2 valores distintos.
+
+\subsubsection{Modificar el orden de las dimensiones}
+
+El cambio de las dimensiones se debe principalmente a las herramientas usadas en etapas posteriores, que requieren los ejes ordenados como $(x,y,z)$.
+
+Añadir una \textit{singleton dimension} es necesario para tener en cuenta el canal de la imagen, ya que esto es usado en los componentes de la CNN con arquitectura U-Net.
