@@ -245,22 +245,107 @@
   url          = {https://www.biorxiv.org/content/early/2020/01/18/2020.01.17.910562},
 }
 
-@Misc{pytorch_modelsize,
-  author       = {Jacob Kimmel and Philipp},
-  howpublished = {\url{https://github.com/jacobkimmel/pytorch_modelsize}},
-  title        = {PyTorch Model Size Estimator},
-  year         = {2020},
-  commit       = {f7cf51547ade9e4c9f5d40423261be627653e499},
-  journal      = {GitHub repository},
-  publisher    = {GitHub},
-}
-
 @Misc{Paperspace2020,
   author  = {Paperspace},
   title   = {Paperspace},
   year    = {2020},
   journal = {Gradient.paperspace.com},
   url     = {https://gradient.paperspace.com/free-gpu},
+}
+
+@Misc{pytorch_modelsize,
+  author       = {Achilleas},
+  howpublished = {\url{https://github.com/Achilleas/pytorch-mri-segmentation-3D}},
+  title        = {pytorch-mri-segmentation-3D},
+  year         = {2017},
+  commit       = {b2d004da772078d29e0e0e764982fe54ec59d28b},
+  journal      = {GitHub repository},
+  publisher    = {GitHub},
+}
+
+@InProceedings{eriba2019kornia,
+  author    = {E. Riba, D. Mishkin, D. Ponsa, E. Rublee and G. Bradski},
+  booktitle = {Winter Conference on Applications of Computer Vision},
+  title     = {Kornia: an Open Source Differentiable Computer Vision Library for PyTorch},
+  year      = {2020},
+  url       = {https://arxiv.org/pdf/1910.02190.pdf},
+}
+
+@Online{PyTorchDocs2020,
+  author  = {PyTorchDocs},
+  title   = {{PyTorch Docs}},
+  url     = {https://pytorch.org/docs/stable/index.html},
+  urldate = {2020-08},
+  year    = {2020},
+}
+
+@Online{PyTorchForums,
+  author  = {PyTorch Forums},
+  title   = {{PyTorch Forums}},
+  url     = {https://discuss.pytorch.org/},
+  urldate = {2020-08},
+  year    = {2020},
+}
+
+@Article{scikit-learn,
+  author  = {Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V. and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P. and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E.},
+  journal = {Journal of Machine Learning Research},
+  title   = {Scikit-learn: Machine Learning in {P}ython},
+  year    = {2011},
+  pages   = {2825--2830},
+  volume  = {12},
+}
+
+@Article{scikit-image,
+  author   = {van der Walt, {S}t\'efan and {S}ch\"onberger, {J}ohannes {L}. and {Nunez-Iglesias}, {J}uan and {B}oulogne, {F}ran\c{c}ois and {W}arner, {J}oshua {D}. and {Y}ager, {N}eil and {G}ouillart, {E}mmanuelle and {Y}u, {T}ony and the scikit-image contributors},
+  journal  = {PeerJ},
+  title    = {scikit-image: image processing in {P}ython},
+  year     = {2014},
+  issn     = {2167-8359},
+  month    = {6},
+  pages    = {e453},
+  volume   = {2},
+  doi      = {10.7717/peerj.453},
+  keywords = {Image processing, Reproducible research, Education, Visualization, Open source, Python, Scientific programming},
+  url      = {https://doi.org/10.7717/peerj.453},
+}
+
+@Book{oliphant2006guide,
+  author    = {Oliphant, Travis E},
+  publisher = {Trelgol Publishing USA},
+  title     = {A guide to NumPy},
+  year      = {2006},
+  volume    = {1},
+}
+
+@Article{van2011numpy,
+  author    = {Van Der Walt, Stefan and Colbert, S Chris and Varoquaux, Gael},
+  journal   = {Computing in Science \& Engineering},
+  title     = {The NumPy array: a structure for efficient numerical computation},
+  year      = {2011},
+  number    = {2},
+  pages     = {22},
+  volume    = {13},
+  publisher = {IEEE Computer Society},
+}
+
+@InCollection{NEURIPS2019_9015,
+  author    = {Paszke, Adam and Gross, Sam and Massa, Francisco and Lerer, Adam and Bradbury, James and Chanan, Gregory and Killeen, Trevor and Lin, Zeming and Gimelshein, Natalia and Antiga, Luca and Desmaison, Alban and Kopf, Andreas and Yang, Edward and DeVito, Zachary and Raison, Martin and Tejani, Alykhan and Chilamkurthy, Sasank and Steiner, Benoit and Fang, Lu and Bai, Junjie and Chintala, Soumith},
+  booktitle = {Advances in Neural Information Processing Systems 32},
+  publisher = {Curran Associates, Inc.},
+  title     = {PyTorch: An Imperative Style, High-Performance Deep Learning Library},
+  year      = {2019},
+  editor    = {H. Wallach and H. Larochelle and A. Beygelzimer and F. d\textquotesingle Alch\'{e}-Buc and E. Fox and R. Garnett},
+  pages     = {8024--8035},
+  url       = {http://papers.neurips.cc/paper/9015-pytorch-an-imperative-style-high-performance-deep-learning-library.pdf},
+}
+
+@Online{NumpyDocs,
+  author  = {nVidia Apex},
+  title   = {{A PyTorch Extension: Tools for easy mixed precision and distributed training in Pytorch}},
+  url     = {https://github.com/NVIDIA/apex},
+  urldate = {2020-08},
+  year    = {2020},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

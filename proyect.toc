@@ -23,6 +23,13 @@
 \contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{9}%
 \contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{10}%
 \contentsline {subsubsection}{Modificar el orden de las dimensiones}{10}%
-\contentsline {chapter}{\numberline {5}Implementación}{11}%
-\contentsline {chapter}{Referencias}{12}%
+\contentsline {section}{\numberline {4.3}Entrenamiento}{11}%
+\contentsline {section}{\numberline {4.4}Inferencia}{12}%
+\contentsline {section}{\numberline {4.5}Arquitectura de las Redes Neuronales Convolucionales}{13}%
+\contentsline {subsection}{\numberline {4.5.1}Tipo 1}{13}%
+\contentsline {subsection}{\numberline {4.5.2}Tipo 2}{13}%
+\contentsline {subsection}{\numberline {4.5.3}Tipo 3}{13}%
+\contentsline {chapter}{\numberline {5}Implementación}{14}%
+\contentsline {section}{\numberline {5.1}Inferencia}{14}%
+\contentsline {chapter}{Referencias}{15}%
 \contentsfinish 

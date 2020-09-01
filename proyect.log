@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  28 AUG 2020 23:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  1 SEP 2020 17:19
 entering extended mode
 **./proyect.tex
 (proyect.tex
@@ -367,6 +367,9 @@ Package caption Info: listings package is loaded.
 
 LaTeX Warning: Label `requisitos' multiply defined.
 
+
+LaTeX Warning: Label `sec:inferencia' multiply defined.
+
 )
 \openout1 = `proyect.aux'.
 
@@ -615,10 +618,23 @@ File: img/Diseno-Preprocesado.png Graphic file (type png)
 <use img/Diseno-Preprocesado.png>
 Package pdftex.def Info: img/Diseno-Preprocesado.png  used on input line 35.
 (pdftex.def)             Requested size: 426.79135pt x 281.53412pt.
- [9 <./img/Diseno-Preprocesado.png>])
-(Capitulos/implementacion.tex [10]
+ [9 <./img/Diseno-Preprocesado.png>] [10]
+<img/Diseno-Entrenamiento.png, id=75, 954.56625pt x 292.09125pt>
+File: img/Diseno-Entrenamiento.png Graphic file (type png)
+<use img/Diseno-Entrenamiento.png>
+Package pdftex.def Info: img/Diseno-Entrenamiento.png  used on input line 70.
+(pdftex.def)             Requested size: 426.79135pt x 130.59302pt.
+
+[11 <./img/Diseno-Entrenamiento.png>]
+<img/Diseno-Inferencia.png, id=80, 818.05624pt x 544.0325pt>
+File: img/Diseno-Inferencia.png Graphic file (type png)
+<use img/Diseno-Inferencia.png>
+Package pdftex.def Info: img/Diseno-Inferencia.png  used on input line 84.
+(pdftex.def)             Requested size: 426.79135pt x 283.83656pt.
+ [12 <./img/Diseno-Inferencia.png>])
+(Capitulos/implementacion.tex [13]
 Cap\'{\i }tulo 5.
-) [11
+) [14
 
 ] (proyect.bbl
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
@@ -638,7 +654,7 @@ earningbook [] .org /$   \OT1/ptm/m/n/10.95 ($\OT1/pcr/m/n/10.95 http :// www [
 ]
  []
 
-) [12
+) [15
 
 
 ] (proyect.aux)
@@ -650,13 +666,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8096 strings out of 492483
- 112005 string characters out of 3131035
- 207616 words of memory out of 3000000
- 12262 multiletter control sequences out of 15000+200000
+ 8117 strings out of 492483
+ 112535 string characters out of 3131035
+ 207671 words of memory out of 3000000
+ 12281 multiletter control sequences out of 15000+200000
  28183 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,13n,49p,913b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 45i,13n,49p,1007b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
@@ -669,9 +685,9 @@ ts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
 nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
 es/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on proyect.pdf (17 pages, 302365 bytes).
+Output written on proyect.pdf (20 pages, 399362 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
+ 138 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
