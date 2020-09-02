@@ -1,6 +1,43 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Falk%
+\ \protect \BOthers {.}}{%
+Falk%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+Falk2019}
+\APACinsertmetastar {%
+Falk2019}%
+\begin{APACrefauthors}%
+Falk, T.%
+, Mai, D.%
+, Bensch, R.%
+, {\c{C}}i{\c{c}}ek, {\"O}.%
+, Abdulkadir, A.%
+, Marrakchi, Y.%
+\BDBL {}Ronneberger, O.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{{\APACmonth{01}}}{01}.
+\newblock
+{\BBOQ}\APACrefatitle {U-Net: deep learning for cell counting, detection, and
+  morphometry} {U-net: deep learning for cell counting, detection, and
+  morphometry}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Nature Methods}{16}{1}{67-70}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1038/s41592-018-0261-2}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{https://github.com/lmb-freiburg/Unet-Segmentation}
+\newblock
+\begin{APACrefDOI} \doi{10.1038/s41592-018-0261-2} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Goodfellow%
 , Bengio%
 \BCBL {}\ \BBA {} Courville%
@@ -203,6 +240,69 @@ Nwankpa, C.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Paszke%
+\ \protect \BOthers {.}}{%
+Paszke%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+Paszke2019}
+\APACinsertmetastar {%
+Paszke2019}%
+\begin{APACrefauthors}%
+Paszke, A.%
+, Gross, S.%
+, Massa, F.%
+, Lerer, A.%
+, Bradbury, J.%
+, Chanan, G.%
+\BDBL {}Chintala, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {PyTorch: An Imperative Style, High-Performance Deep
+  Learning Library} {Pytorch: An imperative style, high-performance deep
+  learning library}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Advances in Neural Information Processing Systems 32}
+  {Advances in neural information processing systems 32}\ (\BPGS\ 8024--8035).
+\newblock
+\APACaddressPublisher{}{Curran Associates, Inc.}
+\newblock
+\begin{APACrefURL}
+  \url{http://papers.neurips.cc/paper/9015-pytorch-an-imperative-style-high-performance-deep-learning-library.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ronneberger%
+, Fischer%
+\BCBL {}\ \BBA {} Brox%
+}{%
+Ronneberger%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Ronneberger2015}
+\APACinsertmetastar {%
+Ronneberger2015}%
+\begin{APACrefauthors}%
+Ronneberger, O.%
+, Fischer, P.%
+\BCBL {}\ \BBA {} Brox, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+\APACrefbtitle {U-Net: Convolutional Networks for Biomedical Image
+  Segmentation.} {U-net: Convolutional networks for biomedical image
+  segmentation.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Rosenblatt%
 }{%
 Rosenblatt%
@@ -258,6 +358,122 @@ Rumelhart, D\BPBI E.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Tiobe%
+}{%
+Tiobe%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+Tiobe2020}
+\APACinsertmetastar {%
+Tiobe2020}%
+\begin{APACrefauthors}%
+Tiobe.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {TIOBE Index.} {Tiobe index.}
+\newblock
+\begin{APACrefURL} \url{https://www.tiobe.com/tiobe-index/} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Van Der~Walt%
+, Colbert%
+\BCBL {}\ \BBA {} Varoquaux%
+}{%
+Van Der~Walt%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+VanDerWalt2011}
+\APACinsertmetastar {%
+VanDerWalt2011}%
+\begin{APACrefauthors}%
+Van Der~Walt, S.%
+, Colbert, S\BPBI C.%
+\BCBL {}\ \BBA {} Varoquaux, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The NumPy array: a structure for efficient numerical
+  computation} {The numpy array: a structure for efficient numerical
+  computation}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Computing in Science and Engineering}{13}{2}{22}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+van~der Walt%
+\ \protect \BOthers {.}}{%
+van~der Walt%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+Walt2014}
+\APACinsertmetastar {%
+Walt2014}%
+\begin{APACrefauthors}%
+van~der Walt, S.%
+, {S}ch\"onberger, J\BPBI L.%
+, {Nunez-Iglesias}, J.%
+, {B}oulogne, F.%
+, {W}arner, J\BPBI D.%
+, {Y}ager, N.%
+\BDBL {}the scikit-image contributors%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{6}{}.
+\newblock
+{\BBOQ}\APACrefatitle {scikit-image: image processing in {P}ython}
+  {scikit-image: image processing in {P}ython}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{PeerJ}{2}{}{e453}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.7717/peerj.453} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.7717/peerj.453} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Virtanen}%
+\ \protect \BOthers {.}}{%
+{Virtanen}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Virtanen2020}
+\APACinsertmetastar {%
+Virtanen2020}%
+\begin{APACrefauthors}%
+{Virtanen}, P.%
+, {Gommers}, R.%
+, {Oliphant}, T\BPBI E.%
+, {Haberland}, M.%
+, {Reddy}, T.%
+, {Cournapeau}, D.%
+\BDBL {}{Contributors}, S\BPBI \BPBI .%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{SciPy 1.0: Fundamental Algorithms for Scientific
+  Computing in Python}} {{SciPy 1.0: Fundamental Algorithms for Scientific
+  Computing in Python}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Nature Methods}{17}{}{261--272}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1038/s41592-019-0686-2}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Widrow%
 \ \BBA {} Hoff%
 }{%
@@ -279,6 +495,42 @@ Widrow, B.%
 \newblock
 {\BBOQ}\APACrefatitle {Adaptive Linear Neuron} {Adaptive linear
   neuron}.{\BBCQ}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wolny%
+\ \protect \BOthers {.}}{%
+Wolny%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Wolny2020}
+\APACinsertmetastar {%
+Wolny2020}%
+\begin{APACrefauthors}%
+Wolny, A.%
+, Cerrone, L.%
+, Vijayan, A.%
+, Tofanelli, R.%
+, Barro, A\BPBI V.%
+, Louveaux, M.%
+\BDBL {}Kreshuk, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Accurate And Versatile 3D Segmentation Of Plant Tissues
+  At Cellular Resolution} {Accurate and versatile 3d segmentation of plant
+  tissues at cellular resolution}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{bioRxiv}{}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.biorxiv.org/content/early/2020/01/18/2020.01.17.910562}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1101/2020.01.17.910562} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

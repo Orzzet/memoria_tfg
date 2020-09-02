@@ -1,6 +1,38 @@
 \chapter{Implementación}\label{implementacion}
 
-En este capítulo se 
+En este capítulo se mostrarán las tecnologías utilizadas para llevar a cabo el diseño deseado.
 
-\section{Inferencia}\label{sec:inferencia}
+\section{Lenguaje y framework}\label{sec:language_framework}
 
+El proyecto se ha desarrollado completamente en lenguaje de programación Python 3.7 y el framework PyTorch 1.6 \cite{Paszke2019}.
+
+La elección del lenguaje Python es sencilla: los frameworks más utilizados en deep learning pueden ser usados en Python. Con una búsqueda rápida en GitHub bajo los términos "deep learning", "machine learning" y "neural network" se puede ver que los frameworks más populares pueden ser usados en Python.
+\begin{itemize}
+\item TensorFlow con 148k estrellas.
+\item Keras con 49.4k estrellas.
+\item PyTorch con 41.5k estrellas.
+\item Caffe con 30.8k estrellas
+\end{itemize}
+
+Además, tal y como se muestra en el índice TIOBE \cite{Tiobe2020}, Python es el tercer lenguaje de programación con mejor puntuación teniendo en cuenta su presencia en los buscadores web.
+
+Aún así Python tiene se su velocidad. Es lento cuando se compara con lenguajes como C y esto se debe principalmente a 2 motivos:
+\begin{enumerate}
+\item Es interpretado, no compilado. Al compilar un programa escrito en un lenguaje compilado el compilador optimiza el programa con una multitud de técnicas, como el desenrollado de bucles, que elimina o reduce las instrucciones de control de un bucle. En Python el intérprete sólo accede a la instrucción a realizar, no realiza ninguna tarea de optimización.
+\item Es de tipado dinámico. Esto quiere decir que el intérprete no sabe de qué tipo es una variable hasta que intenta acceder a ella, por lo que antes de acceder a su valor debe comprobar el tipo de variable. Esto hace que las variables en Python sean fáciles de declarar y asignar, pero reduce el rendimiento.
+\end{enumerate}
+
+Estas desventajas se pueden reducir gracias a que Python tiene la capacidad de llamar a subrutinas en C o C++. Prácticamente todos los frameworks en los que se realizan operaciones con un alto coste computacional tienen la parte crítica de su código escrita en C o C++.
+
+En el ecosistema de Python, la base matemática para cualquier framework que haga operaciones matriciales es NumPy \cite{VanDerWalt2011}, ya que añade soporte para arrays de n dimensiones y una gran multitud de operaciones de forma eficiente.
+
+Todos los frameworks populares de Python son una buena elección, ya que todos tienen \textit{bindings} a lenguajes de bajo nivel compilados, pero con la facilidad de uso de Python. Aunque Tensorflow puede ser difícil de utilizar, cuenta con Keras, que es un framework desarrollado por encima que abstrae muchas operaciones. Pytorch, basado en Torch, también ofrece un fácil uso y buen rendimiento.
+
+\section{Preprocesado local}\label{sec:local_preprocessing}
+
+El primer paso a realizar es preparar los datos, para ello se han usado las siguientes librerías:
+
+\begin{itemize}
+\item scikit-image \cite{Walt2014}. Es una librería de procesamiento de imágenes. Se ha usado para encontrar los bordes de la imagen con etiquetado multiclase sin espaciado entre células. Esta imagen no podía ser usada directamente en el entrenamiento de la CNN, por lo que se ha seguido la estrategia de encontrar los bordes de cada célula con la función \textit{(segmentation.searchboundaries)} \cite{Wolny2020}, después de encontrar los contornos se substraen de la imagen original y se cambian todas las etiquetas a 1, consiguiendo así un espaciado entre células, tal y como se indica en \cite{Falk2019}. También se ha usado esta librería \textit{(measure label)} para asegurarnos de que el nº de células no varía al realizar las operaciones de preprocesado (por ejemplo, podría ser que dos células con etiqueta 1 eliminaran el espacio entre sí, convirtiendose en la misma instancia de célula).
+\item SciPy \cite{Virtanen2020}. Contiene diversos módulos con algoritmos útiles en el ámbito científico. En el submódulo \textit{ndimage} se pueden encontrar los algoritmos relativos al procesamiento de imagen. Se ha utilizado la función \textit{ndimage.zoom()} para reescalar las imágenes de entrada, haciendo que ocupen menos memoria y sea viable usarlas para el entrenamiento.
+\end{itemize}

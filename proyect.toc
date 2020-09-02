@@ -26,10 +26,8 @@
 \contentsline {section}{\numberline {4.3}Entrenamiento}{11}%
 \contentsline {section}{\numberline {4.4}Inferencia}{12}%
 \contentsline {section}{\numberline {4.5}Arquitectura de las Redes Neuronales Convolucionales}{13}%
-\contentsline {subsection}{\numberline {4.5.1}Tipo 1}{13}%
-\contentsline {subsection}{\numberline {4.5.2}Tipo 2}{13}%
-\contentsline {subsection}{\numberline {4.5.3}Tipo 3}{13}%
-\contentsline {chapter}{\numberline {5}Implementación}{14}%
-\contentsline {section}{\numberline {5.1}Inferencia}{14}%
-\contentsline {chapter}{Referencias}{15}%
+\contentsline {chapter}{\numberline {5}Implementación}{15}%
+\contentsline {section}{\numberline {5.1}Lenguaje y framework}{15}%
+\contentsline {section}{\numberline {5.2}Preprocesado local}{16}%
+\contentsline {chapter}{Referencias}{17}%
 \contentsfinish 

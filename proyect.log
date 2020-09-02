@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  1 SEP 2020 17:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  2 SEP 2020 07:47
 entering extended mode
 **./proyect.tex
 (proyect.tex
@@ -367,9 +367,6 @@ Package caption Info: listings package is loaded.
 
 LaTeX Warning: Label `requisitos' multiply defined.
 
-
-LaTeX Warning: Label `sec:inferencia' multiply defined.
-
 )
 \openout1 = `proyect.aux'.
 
@@ -601,9 +598,6 @@ Package pdftex.def Info: img/histograma2.png  used on input line 36.
 
 ] [6 <./img/histograma1.png> <./img/histograma2.png>]
 Cap\'{\i }tulo 4.
-
-LaTeX Warning: Reference `Wolny2020' on page 7 undefined on input line 11.
-
 [7
 
 ]
@@ -631,45 +625,60 @@ File: img/Diseno-Inferencia.png Graphic file (type png)
 <use img/Diseno-Inferencia.png>
 Package pdftex.def Info: img/Diseno-Inferencia.png  used on input line 84.
 (pdftex.def)             Requested size: 426.79135pt x 283.83656pt.
- [12 <./img/Diseno-Inferencia.png>])
-(Capitulos/implementacion.tex [13]
-Cap\'{\i }tulo 5.
-) [14
+ [12 <./img/Diseno-Inferencia.png>]
+<img/Diseno-unetarch-full.png, id=85, 718.18312pt x 414.04688pt>
+File: img/Diseno-unetarch-full.png Graphic file (type png)
+<use img/Diseno-unetarch-full.png>
+Package pdftex.def Info: img/Diseno-unetarch-full.png  used on input line 100.
+(pdftex.def)             Requested size: 426.79135pt x 246.06084pt.
 
-] (proyect.bbl
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
-8.
+[13 <./img/Diseno-unetarch-full.png>]
+<img/Diseno-unetarch-half.png, id=89, 692.5875pt x 666.99188pt>
+File: img/Diseno-unetarch-half.png Graphic file (type png)
+<use img/Diseno-unetarch-half.png>
+Package pdftex.def Info: img/Diseno-unetarch-half.png  used on input line 104.
+(pdftex.def)             Requested size: 426.79135pt x 411.02704pt.
+) (Capitulos/implementacion.tex [14 <./img/Diseno-unetarch-half.png>]
+Cap\'{\i }tulo 5.
+[15
+
+]) [16] (proyect.bbl
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 3
+2.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 2318) in paragraph at lines 16--32
+Underfull \hbox (badness 2318) in paragraph at lines 53--69
 []\OT1/ptm/m/n/10.95 Goodfellow, I., Ben-gio, Y., y Cour-vi-lle, A.  (2016).  \
 OT1/ptm/m/it/10.95 Deep lear-ning\OT1/ptm/m/n/10.95 .  MIT Press.
  []
 
 
-Underfull \hbox (badness 5756) in paragraph at lines 16--32
+Underfull \hbox (badness 5756) in paragraph at lines 53--69
 \OT1/ptm/m/n/10.95 Des-car-ga-do de $\OT1/pcr/m/n/10.95 https :// www [] .deepl
 earningbook [] .org /$   \OT1/ptm/m/n/10.95 ($\OT1/pcr/m/n/10.95 http :// www [
 ]
  []
 
-) [15
+
+Underfull \hbox (badness 1072) in paragraph at lines 253--278
+\OT1/ptm/m/it/10.95 in neu-ral in-for-ma-tion pro-ces-sing sys-tems 32 \OT1/ptm
+/m/n/10.95 (pp.[] 8024--8035).  Cu-rran As-so-cia-tes,
+ []
+
+[17
 
 
-] (proyect.aux)
-
-LaTeX Warning: There were undefined references.
-
+]) [18] (proyect.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8117 strings out of 492483
- 112535 string characters out of 3131035
- 207671 words of memory out of 3000000
- 12281 multiletter control sequences out of 15000+200000
+ 8174 strings out of 492483
+ 113616 string characters out of 3131035
+ 208509 words of memory out of 3000000
+ 12336 multiletter control sequences out of 15000+200000
  28183 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,13n,49p,1007b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -685,9 +694,9 @@ ts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
 nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
 es/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on proyect.pdf (20 pages, 399362 bytes).
+Output written on proyect.pdf (23 pages, 462910 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
+ 150 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

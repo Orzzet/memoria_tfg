@@ -8,7 +8,7 @@ El principal cuello de botella al usar técnicas de deep learning es el hardware
 
 Sería ideal ser capaz de entrenar una CNN usando las imágenes provistas directamente, pero a causa de su gran resolución no es viable. Una imagen de resolución $ (200, 1024, 1024)vx $ con una precisión de 8 bytes ocupa en memoria (siempre hablaremos de memoria de GPU) $size(imagen)=\frac{1024*1024*200*8}{1024*1024}=1600MB $. Si bien podríamos almacenar esta imagen en memoria, las CNN se caracterizan por aplicar un gran número de filtros distintos en paralelo a una imagen de entrada, utilizando los resultados de la aplicación de estos filtros en el siguiente paso de la CNN. Tal y cómo se verá en más detalle en la sección sobre las arquitecturas seleccionadas, es completamente inviable para nosotros usar la resolución original. Es por ello que como parte del preprocesado se han simplificado los datos de entrada.
 
-Por otro lado, también sería ideal contar con la última tecnología en GPU o TPU. En un artículo sobre segmentación de tejido celular 3D usando U-Net se explica cómo han usado 8 NVIDIA GeForce RTX 2080 Ti GPUs para realizar 100K iteraciones \ref{Wolny2020}. El acceso a un hardware superior permite el uso de arquitecturas más complejas, datos más precisos o mayor nº de iteraciones, lo que va a influir en el resultado obtenido. 
+Por otro lado, también sería ideal contar con la última tecnología en GPU o TPU. En un artículo sobre segmentación de tejido celular 3D usando U-Net se explica cómo han usado 8 NVIDIA GeForce RTX 2080 Ti GPUs para realizar 100K iteraciones \cite{Wolny2020}. El acceso a un hardware superior permite el uso de arquitecturas más complejas, datos más precisos o mayor nº de iteraciones, lo que va a influir en el resultado obtenido. 
 
 Para tener acceso a mejor hardware se usarán tecnologías cloud, donde puedes alquilar el uso de GPUs por hora siendo común pruebas gratuitas especialmente para estudiantes.
 
@@ -71,13 +71,13 @@ Añadir una \textit{singleton dimension} es necesario para tener en cuenta el ca
 
 En la figura \ref{fig:entrenamiento} se muestra el proceso que se lleva a cabo durante el entrenamiento de un modelo. Como ya se mencionó antes, este proceso deberá realizarse con una GPU de alto rendimiento, en este proyecto se realizará en una máquina en la nube. Antes de comenzar este proceso, los datos ya habrán sido cargados en un disco duro virtual.
 
-Se utilizará un DataLoader, encargad de leer el dataset y realizar el preprocesado conveniente. Será importante normalizar los datos de entrada para que tengan un valor en rango $ [0, 1] $, esto se hará siempre. Adicionalmente, se probarán distintas técnicas como estandarizar el histograma, o \textit{data augmentation}. Al etiquetado objetivo no se le aplicará normalización ni estandarización, sólo se le aplicará \textit{data augmentation}. Al ser importante que la segmentación de la imagen etiquetada siga siendo correcta, al aplicar \textit{data augmentation} no se intentará deformar la imagen.
+Se utilizará un DataLoader, encargado de leer el dataset y realizar el preprocesado conveniente. Será importante normalizar los datos de entrada para que tengan un valor en rango $ [0, 1] $, esto se hará siempre. Adicionalmente, se probarán distintas técnicas como estandarizar el histograma, o \textit{data augmentation}. Al etiquetado objetivo no se le aplicará normalización ni estandarización, sólo se le aplicará \textit{data augmentation}. Al ser importante que la segmentación de la imagen etiquetada siga siendo correcta, al aplicar \textit{data augmentation} no se intentará deformar la imagen.
 
 Se dividirá el dataset en $ 70\% $ entrenamiento, $ 15\% $ validación y $ 15\% $ test. Se han escogido estos porcentajes ya que se cuenta con pocos datos de entrada y son similares entre sí.
 
 En el entrenamiento se usará un \textit{batch} de datos, se harán pruebas con valores en el rango $N\epsilon[1,4]$. Durante cada \textit{epoch}, tanto la predicción obtenida como la imagen con el etiquetado perfecto se transformarán con el \textit{one-hot encoding}, lo que les dará el formato $(N, C)$, donde $N$ es el tamaño del \textit{batch} y $C$ el nº de clases, que siempre será $C=2$. Esta disposición de datos transforma cada imagen en 2 vectores, uno por cada clase, lo cual hará que sea muy eficiente calcular diferencias entre la predicción y la imagen con etiquetado perfecto. Para calcular estas diferencias está la función de pérdida, que tendrá un valor bajo si hay poca diferencia y alto si hay mucha diferencia. El objetivo de cualquier algoritmo de optimización será disminuir esta función de perdida. Para la función de pérdida se probarán \textit{Dice Loss} y \textit{Cross Entropy Loss} con pesos.
 
-El valor dado por la función de pérdida con los datos de entrenamiento se usará en la \textit{backpropagation} para calcular los gradientes los cuales se usarán para optimizar los pesos con el optimizador Adam. El valor dado por la función de pérdida con los datos de validación será el que determine si se está mejorando el modelo de forma programática. Tras realizar el entrenamiento completo  se usarán los datos de test para obtener predicciones y se analizarán por diversos métodos, entre ellos el uso de la función de pérdida.
+El valor dado por la función de pérdida con los datos de entrenamiento se usará en la \textit{backpropagation} para calcular los gradientes los cuales se usarán para optimizar los pesos con el optimizador Adam. El valor dado por la función de pérdida con los datos de validación será el que determine si se está mejorando el modelo de forma programática. Tras realizar el entrenamiento completo  se usarán los datos de test para obtener predicciones y se analizarán con la matriz de confusión y el índice de Jaccard (\textit{intersection over union} o \textit{IoU}, apoyándonos con representación visual del resultado.
 
 \pagebreak \section{Inferencia}\label{sec:inferencia}
 
@@ -93,6 +93,12 @@ Para conseguir una imagen con el etiquetado correcto se han seguido dos enfoques
 
 \pagebreak \section{Arquitectura de las Redes Neuronales Convolucionales}\label{sec:cnn_arch}
 
-\subsection{Tipo 1}
-\subsection{Tipo 2}
-\subsection{Tipo 3}
+Se probará principalmente una arquitectura de tipo U-Net. Se usará un modelo con una arquitectura reducida para facilitar las pruebas que decidirán el uso de técnicas como \textit{data augmentation}, qué reescalado se hará a las imágenes, el tamaño del batch, la función de pérdida o el optimizador a utilizar. Una vez la mayor parte de estos aspectos haya sido decidido, se pasará a probar la arquitectura completa.
+
+En la figura \ref{fig:unetarch-full} se puede ver la arquitectura completa de la red U-Net utilizada, arquitectura usada con éxito para segmentación volumétrica densa cite{Cicek2016}, basada en la arquitectura U-Net propuesta por Ronneberger et al \cite{Ronneberger2015}. Se ha omitido el tamaño de las imágenes ya que la red acepta imágenes de cualquier tamaño, Lo único a tener en cuenta es el nº de canales que tiene la imagen. Los nº mostrados en las capas determinan la profundidad de cada capa o, lo que es lo mismo, el nº de filtros distintos usados en cada capa. En la capa inicial, que simboliza la imagen de entrada, el número 1 indica que la imagen debe tener tan sólo 1 canal de entrada (escala de grises). Este tipo de arquitectura también es válida para imágenes 2D o 3D, la diferencia estaría en que las convoluciones y el pooling sean sobre 2 dimensiones o sobre 3 dimensiones.
+
+\figura{1}{img/Diseno-unetarch-full}{Arquitectura U-Net completa.}{fig:unetarch-full}{}
+
+\pagebreak En la figura \ref{fig:unetarch-half} se muestra la arquitectura anterior eliminando varias capas de convolución y una de pooling. Los modelos generados por esta arquitectura serán menos fiables, pero el entrenamiento será más rápido, por lo que es útil para realizar comparaciones al cambiar técnicas de preprocesado o de entrenamiento.
+
+\figura{1}{img/Diseno-unetarch-half}{Arquitectura U-Net completa.}{fig:unetarch-half}{}
