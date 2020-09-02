@@ -14,5 +14,17 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{13}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Arquitectura U-Net completa.\relax }}{14}%
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Arquitectura U-Net media. Batch=1. Znorm. Hay sobreajuste.\relax }}{17}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Arquitectura U-Net media. Batch=1. Adam con mejores parámetros. Hay sobreajuste.\relax }}{18}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Arquitectura U-Net media. Con data augmentation. Data augmentation elimia el sobreajuste.\relax }}{19}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex. El autoescalado del factor de pérdida de Apex aumenta la velocidad de entrenamiento.\relax }}{20}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{20}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{21}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{21}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{22}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{22}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{23}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{23}%
 \contentsfinish 
 \contentsfinish 

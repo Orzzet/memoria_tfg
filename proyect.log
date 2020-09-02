@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  2 SEP 2020 07:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  2 SEP 2020 08:10
 entering extended mode
 **./proyect.tex
 (proyect.tex
@@ -367,6 +367,39 @@ Package caption Info: listings package is loaded.
 
 LaTeX Warning: Label `requisitos' multiply defined.
 
+
+LaTeX Warning: Label `fig:unetarch-half' multiply defined.
+
+
+LaTeX Warning: Label `fig:unetarch-half' multiply defined.
+
+
+LaTeX Warning: Label `fig:unetarch-half' multiply defined.
+
+
+LaTeX Warning: Label `fig:unetarch-half' multiply defined.
+
+
+LaTeX Warning: Label `fig:unetarch-half' multiply defined.
+
+
+LaTeX Warning: Label `fig:unetarch-half' multiply defined.
+
+
+LaTeX Warning: Label `fig:unetarch-half' multiply defined.
+
+
+LaTeX Warning: Label `fig:unetarch-half' multiply defined.
+
+
+LaTeX Warning: Label `fig:unetarch-half' multiply defined.
+
+
+LaTeX Warning: Label `fig:unetarch-half' multiply defined.
+
+
+LaTeX Warning: Label `fig:unetarch-half' multiply defined.
+
 )
 \openout1 = `proyect.aux'.
 
@@ -642,10 +675,95 @@ Package pdftex.def Info: img/Diseno-unetarch-half.png  used on input line 104.
 Cap\'{\i }tulo 5.
 [15
 
-]) [16] (proyect.bbl
+]) (Capitulos/resultados.tex [16]
+Cap\'{\i }tulo 6.
+<img/unet4.12-200e-LQNOB-norm-Znorm.png, id=101, 386.94562pt x 278.03876pt>
+File: img/unet4.12-200e-LQNOB-norm-Znorm.png Graphic file (type png)
+<use img/unet4.12-200e-LQNOB-norm-Znorm.png>
+Package pdftex.def Info: img/unet4.12-200e-LQNOB-norm-Znorm.png  used on input 
+line 5.
+(pdftex.def)             Requested size: 426.79135pt x 306.6751pt.
+<img/unet4.2-200e-LQNOB-norm-Znorm-AdamConParametrosCorrectos.png, id=102, 386.
+94562pt x 278.03876pt>
+File: img/unet4.2-200e-LQNOB-norm-Znorm-AdamConParametrosCorrectos.png Graphic 
+file (type png)
+<use img/unet4.2-200e-LQNOB-norm-Znorm-AdamConParametrosCorrectos.png>
+Package pdftex.def Info: img/unet4.2-200e-LQNOB-norm-Znorm-AdamConParametrosCor
+rectos.png  used on input line 6.
+(pdftex.def)             Requested size: 426.79135pt x 306.6751pt.
+<img/unet4.8-200e-aug.png, id=103, 386.94562pt x 278.03876pt>
+File: img/unet4.8-200e-aug.png Graphic file (type png)
+<use img/unet4.8-200e-aug.png>
+Package pdftex.def Info: img/unet4.8-200e-aug.png  used on input line 7.
+(pdftex.def)             Requested size: 426.79135pt x 306.6751pt.
+<img/unet5.2-losses-400e-boundaries-apex.png, id=104, 386.94562pt x 278.03876pt
+>
+File: img/unet5.2-losses-400e-boundaries-apex.png Graphic file (type png)
+<use img/unet5.2-losses-400e-boundaries-apex.png>
+Package pdftex.def Info: img/unet5.2-losses-400e-boundaries-apex.png  used on i
+nput line 8.
+(pdftex.def)             Requested size: 426.79135pt x 306.6751pt.
+<img/unet5.2-metrics-400e-boundaries-apex.png, id=105, 181.42781pt x 70.76437pt
+>
+File: img/unet5.2-metrics-400e-boundaries-apex.png Graphic file (type png)
+<use img/unet5.2-metrics-400e-boundaries-apex.png>
+Package pdftex.def Info: img/unet5.2-metrics-400e-boundaries-apex.png  used on 
+input line 9.
+(pdftex.def)             Requested size: 426.79135pt x 166.48523pt.
+<img/unet5.2-sample-400e-boundaries-apex.png, id=106, 934.49126pt x 689.07437pt
+>
+File: img/unet5.2-sample-400e-boundaries-apex.png Graphic file (type png)
+<use img/unet5.2-sample-400e-boundaries-apex.png>
+Package pdftex.def Info: img/unet5.2-sample-400e-boundaries-apex.png  used on i
+nput line 10.
+(pdftex.def)             Requested size: 426.79135pt x 314.70694pt.
+<img/unet5.3-losses-200e-target-apex.png, id=107, 386.94562pt x 278.03876pt>
+File: img/unet5.3-losses-200e-target-apex.png Graphic file (type png)
+<use img/unet5.3-losses-200e-target-apex.png>
+Package pdftex.def Info: img/unet5.3-losses-200e-target-apex.png  used on input
+ line 11.
+(pdftex.def)             Requested size: 426.79135pt x 306.6751pt.
+<img/unet5.3-sample-200e-target-apex.png, id=108, 934.49126pt x 689.07437pt>
+File: img/unet5.3-sample-200e-target-apex.png Graphic file (type png)
+<use img/unet5.3-sample-200e-target-apex.png>
+Package pdftex.def Info: img/unet5.3-sample-200e-target-apex.png  used on input
+ line 13.
+(pdftex.def)             Requested size: 426.79135pt x 314.70694pt.
+<img/unet5.4-losses-200e-not_segmented-apex.png, id=109, 386.94562pt x 278.0387
+6pt>
+File: img/unet5.4-losses-200e-not_segmented-apex.png Graphic file (type png)
+<use img/unet5.4-losses-200e-not_segmented-apex.png>
+Package pdftex.def Info: img/unet5.4-losses-200e-not_segmented-apex.png  used o
+n input line 15.
+(pdftex.def)             Requested size: 426.79135pt x 306.6751pt.
+<img/unet5.4-metrics-200e-not_segmented-apex.png, id=110, 331.99031pt x 87.3262
+5pt>
+File: img/unet5.4-metrics-200e-not_segmented-apex.png Graphic file (type png)
+<use img/unet5.4-metrics-200e-not_segmented-apex.png>
+Package pdftex.def Info: img/unet5.4-metrics-200e-not_segmented-apex.png  used 
+on input line 17.
+(pdftex.def)             Requested size: 426.79135pt x 112.2689pt.
+<img/unet5.4-sample-200e-not_segmented-apex.png, id=111, 934.49126pt x 689.0743
+7pt>
+File: img/unet5.4-sample-200e-not_segmented-apex.png Graphic file (type png)
+<use img/unet5.4-sample-200e-not_segmented-apex.png>
+Package pdftex.def Info: img/unet5.4-sample-200e-not_segmented-apex.png  used o
+n input line 19.
+(pdftex.def)             Requested size: 426.79135pt x 314.70694pt.
+) [17
+
+ <./img/unet4.12-200e-LQNOB-norm-Znorm.png>] [18 <./img/unet4.2-200e-LQNOB-norm
+-Znorm-AdamConParametrosCorrectos.png>] [19 <./img/unet4.8-200e-aug.png>]
+[20 <./img/unet5.2-losses-400e-boundaries-apex.png> <./img/unet5.2-metrics-400e
+-boundaries-apex.png>] [21 <./img/unet5.2-sample-400e-boundaries-apex.png> <./i
+mg/unet5.3-losses-200e-target-apex.png>] [22 <./img/unet5.3-sample-200e-target-
+apex.png> <./img/unet5.4-losses-200e-not_segmented-apex.png>] [23 <./img/unet5.
+4-metrics-200e-not_segmented-apex.png> <./img/unet5.4-sample-200e-not_segmented
+-apex.png>] (proyect.bbl
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 3
 2.
- ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Underfull \hbox (badness 2318) in paragraph at lines 53--69
@@ -666,19 +784,19 @@ Underfull \hbox (badness 1072) in paragraph at lines 253--278
 /m/n/10.95 (pp.[] 8024--8035).  Cu-rran As-so-cia-tes,
  []
 
-[17
+[24
 
 
-]) [18] (proyect.aux)
+]) [25] (proyect.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8174 strings out of 492483
- 113616 string characters out of 3131035
- 208509 words of memory out of 3000000
- 12336 multiletter control sequences out of 15000+200000
+ 8280 strings out of 492483
+ 117994 string characters out of 3131035
+ 208519 words of memory out of 3000000
+ 12415 multiletter control sequences out of 15000+200000
  28183 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,13n,49p,1007b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -694,9 +812,9 @@ ts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
 nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
 es/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on proyect.pdf (23 pages, 462910 bytes).
+Output written on proyect.pdf (30 pages, 1045219 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
+ 194 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

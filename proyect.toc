@@ -29,5 +29,6 @@
 \contentsline {chapter}{\numberline {5}Implementación}{15}%
 \contentsline {section}{\numberline {5.1}Lenguaje y framework}{15}%
 \contentsline {section}{\numberline {5.2}Preprocesado local}{16}%
-\contentsline {chapter}{Referencias}{17}%
+\contentsline {chapter}{\numberline {6}Pruebas}{17}%
+\contentsline {chapter}{Referencias}{24}%
 \contentsfinish 
