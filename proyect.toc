@@ -3,32 +3,43 @@
 \contentsline {chapter}{{\'I}ndice de cuadros}{3}%
 \contentsline {chapter}{\'{I}ndice de figuras}{4}%
 \contentsline {chapter}{\numberline {1}Definici\'on de objetivos}{1}%
-\contentsline {chapter}{\numberline {2}An\'alisis de antecedentes y aportaci\'on realizada}{2}%
+\contentsline {chapter}{\numberline {2}An\'alisis de antecedentes}{2}%
 \contentsline {section}{\numberline {2.1}Red Neuronal Artificial}{2}%
 \contentsline {subsection}{\numberline {2.1.1}Introducción a Redes Neuronales Artificiales}{2}%
 \contentsline {subsection}{\numberline {2.1.2}Neurona artifical}{3}%
 \contentsline {subsubsection}{Sigmoide}{4}%
 \contentsline {subsubsection}{Unidad Lineal Rectificada (ReLU)}{4}%
-\contentsline {section}{\numberline {2.2}Red Neuronal Convolucional}{4}%
-\contentsline {section}{\numberline {2.3}Arquitecturas usadas en segmentación}{4}%
-\contentsline {section}{\numberline {2.4}Software desarrollado}{4}%
-\contentsline {section}{\numberline {2.5}Aportación Realizada}{4}%
-\contentsline {chapter}{\numberline {3}An\'alisis de requisitos, dise\~no e implementaci\'on}{5}%
-\contentsline {section}{\numberline {3.1}Datos iniciales}{5}%
-\contentsline {subsubsection}{imageSequenceInterpolated}{5}%
-\contentsline {chapter}{\numberline {4}Diseño}{7}%
-\contentsline {section}{\numberline {4.1}Esquema general}{7}%
-\contentsline {section}{\numberline {4.2}Preprocesado local}{9}%
-\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{9}%
-\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{9}%
-\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{10}%
-\contentsline {subsubsection}{Modificar el orden de las dimensiones}{10}%
-\contentsline {section}{\numberline {4.3}Entrenamiento}{11}%
-\contentsline {section}{\numberline {4.4}Inferencia}{12}%
-\contentsline {section}{\numberline {4.5}Arquitectura de las Redes Neuronales Convolucionales}{13}%
-\contentsline {chapter}{\numberline {5}Implementación}{15}%
-\contentsline {section}{\numberline {5.1}Lenguaje y framework}{15}%
-\contentsline {section}{\numberline {5.2}Preprocesado local}{16}%
-\contentsline {chapter}{\numberline {6}Pruebas}{17}%
-\contentsline {chapter}{Referencias}{24}%
+\contentsline {subsection}{\numberline {2.1.3}Red Neuronal Artifical}{4}%
+\contentsline {subsection}{\numberline {2.1.4}Descenso por Gradiente }{5}%
+\contentsline {section}{\numberline {2.2}Red Neuronal Convolucional}{6}%
+\contentsline {subsection}{\numberline {2.2.1}Tipos de capas}{7}%
+\contentsline {subsubsection}{Capa convolucional}{7}%
+\contentsline {subsubsection}{Capa Pooling}{8}%
+\contentsline {subsubsection}{Capa ReLU}{10}%
+\contentsline {subsubsection}{Capa FC}{10}%
+\contentsline {subsection}{\numberline {2.2.2}Funciones de Pérdida}{10}%
+\contentsline {subsubsection}{Binary Cross-Entropy}{11}%
+\contentsline {subsubsection}{Weighted Binary Cross-Entropy}{11}%
+\contentsline {subsubsection}{Dice Loss}{11}%
+\contentsline {section}{\numberline {2.3}Arquitecturas usadas en segmentación}{11}%
+\contentsline {section}{\numberline {2.4}Software desarrollado}{11}%
+\contentsline {section}{\numberline {2.5}Aportación Realizada}{11}%
+\contentsline {chapter}{\numberline {3}An\'alisis de requisitos, dise\~no e implementaci\'on}{12}%
+\contentsline {section}{\numberline {3.1}Datos iniciales}{12}%
+\contentsline {subsubsection}{imageSequenceInterpolated}{12}%
+\contentsline {chapter}{\numberline {4}Diseño}{14}%
+\contentsline {section}{\numberline {4.1}Esquema general}{14}%
+\contentsline {section}{\numberline {4.2}Preprocesado local}{16}%
+\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{16}%
+\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{16}%
+\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{17}%
+\contentsline {subsubsection}{Modificar el orden de las dimensiones}{17}%
+\contentsline {section}{\numberline {4.3}Entrenamiento}{18}%
+\contentsline {section}{\numberline {4.4}Inferencia}{19}%
+\contentsline {section}{\numberline {4.5}Arquitectura de las Redes Neuronales Convolucionales}{20}%
+\contentsline {chapter}{\numberline {5}Implementación}{22}%
+\contentsline {section}{\numberline {5.1}Lenguaje y framework}{22}%
+\contentsline {section}{\numberline {5.2}Preprocesado local}{23}%
+\contentsline {chapter}{\numberline {6}Pruebas}{24}%
+\contentsline {chapter}{Referencias}{31}%
 \contentsfinish 

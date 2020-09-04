@@ -3,28 +3,35 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Neurona artificial genérica\relax }}{3}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Representación de una Neurona Artificial con $ \DOTSB \sum@ \slimits@ x_i w_i $ como función de integración\relax }}{4}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Red Neuronal Artificial completamente conectada.\relax }}{5}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Ilustración del algoritmo de descenso por gradiente. $\theta _0$ y $\theta _1$ son los pesos de la ANN y $J$ la función de pérdida. Se puede observar cómo se produce un "descenso" hacia un mínimo de la función.\relax }}{6}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Imagen de 4x4 px aplanada y usada como entrada en una FCNN con 4 neuronas en su única capa oculta. No se muestra su capa de salida. Imagen del curso Intro to Deep Learning with PyTorch de Udacity.\relax }}{6}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imágenes del curso Intro to Deep Learning with PyTorch de Udacity.\relax }}{7}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Red Neuronal Convolucional simple en la que la imagen de un barco es clasificada.\relax }}{7}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imagen tomada del curso CS231n de Standford University.\relax }}{9}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Imagen $4\times 4$ a la que se ha aplicado un pooling de $F=2, S=2$. Cada color de la imagen de la izquierda indica las entradas del para la operación MAX, cada color de la imagen de la derecha indica la salida de dicha operación. Figura tomada del curso CS231n de Standford University.\relax }}{10}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Histograma de todos los valores\relax }}{6}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Histograma de todos los valores con el eje y limitado a 4000\relax }}{6}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Histograma de todos los valores\relax }}{13}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Histograma de todos los valores con el eje y limitado a 4000\relax }}{13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Diseño general\relax }}{8}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{9}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \relax }}{11}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{12}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{13}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Arquitectura U-Net completa.\relax }}{14}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diseño general\relax }}{15}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{16}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \relax }}{18}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{19}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{20}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Arquitectura U-Net completa.\relax }}{21}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Arquitectura U-Net media. Batch=1. Znorm. Hay sobreajuste.\relax }}{17}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Arquitectura U-Net media. Batch=1. Adam con mejores parámetros. Hay sobreajuste.\relax }}{18}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Arquitectura U-Net media. Con data augmentation. Data augmentation elimia el sobreajuste.\relax }}{19}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex. El autoescalado del factor de pérdida de Apex aumenta la velocidad de entrenamiento.\relax }}{20}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{20}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{21}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{21}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{22}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{22}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{23}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{23}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Arquitectura U-Net media. Batch=1. Znorm. Hay sobreajuste.\relax }}{24}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Arquitectura U-Net media. Batch=1. Adam con mejores parámetros. Hay sobreajuste.\relax }}{25}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Arquitectura U-Net media. Con data augmentation. Data augmentation elimia el sobreajuste.\relax }}{26}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex. El autoescalado del factor de pérdida de Apex aumenta la velocidad de entrenamiento.\relax }}{27}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{27}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{28}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{28}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{29}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{29}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{30}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{30}%
 \contentsfinish 
 \contentsfinish 

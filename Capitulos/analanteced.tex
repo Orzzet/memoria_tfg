@@ -1,4 +1,4 @@
-\chapter{An\'alisis de antecedentes y aportaci\'on realizada}\label{analanteced}
+\chapter{An\'alisis de antecedentes}\label{analanteced}
 
 En este capítulo se hará una breve introducción a las redes neuronales, se justificará el uso del tipo de red neuronal CNN para tratamiento de imágenes así como el de la arquitectura CNN U-Net para la segmentación de células.
 
@@ -64,7 +64,140 @@ La unidad lineal rectificada (ReLU) fue propuesta como función de activación e
  0 & $si $ x_i < 0
 \end{matrix}\right.
 \end{equation}
-\section{Red Neuronal Convolucional}\label{sec:cnn}
+
+\subsection{Red Neuronal Artifical}\label{subsec:neural_network}
+
+Considerando la neurona artificial como una unidad de computación básica, según el conexionismo (que más tarde evolucionó en lo que hoy conocemos como \textit{deep learning}, se podría emular un comportamiento inteligente al conectar neuronas artificiales entre sí. La conexión entre las neuronas artificales se consigue concatenando las salidas de unas con la entradas de otras y obteniendo así una red neuronal artifical (ANN).
+
+\figura{1}{img/neural_network}{Red Neuronal Artificial completamente conectada.}{fig:neurona_artificial}{}
+
+En la figura \ref{fig:neurona_artificial} se ve una Red Neuronal Artifical completamente conectada (\textit{fully connected neural network} o FCNN) en la que todos los nodos de una capa están conectados con todos los nodos de la capa siguiente. Contaría con los siguientes elementos:
+\begin{itemize}
+\item Capa de entrada $i$ (\textit{Input layer}) con $ n $ nodos. Cada nodo representa un valor del vector de entrada $ x $. En esta capa no se altera el valor de $x$, está para representar los pesos de cada elemento del vector de entrada con los nodos de la primera capa oculta.
+\item Capas ocultas $(h1, h_2, ..., h_m)$ (\textit{hidden layers}). Cada capa oculta podrá tener un nº de nodos distintos. Es en estas capas donde se reconocen los patrones del conjunto de datos y tiene el mayor coste computacional. La última capa oculta está conectada con las entradas de la capa de salida.
+\item Capa de salida $o$ (\textit{output layer}) con $c$ nodos. La última capa de la red neuronal, la salida de esta capa nos dará un vector de tamaño $c$ como salida.
+\end{itemize}
+
+\subsection{Descenso por Gradiente }\label{sec:gradient_descent}
+
+En cálculo de varias variables calcular el gradiente de una función ($\nabla f$) dará como resultado un vector indicando la dirección en la que esa función tiene un mayor incremento, siendo el módulo el ritmo de variación. Para el descenso del gradiente será interesante usar $-\nabla f$ ya que nos dará el vector en el que la función decrece más. Como es habitual en problemas de optimización, si suponemos que tenemos una función que nos da el error cometido, nuestro objetivo será minimizar dicha función.
+
+La función a optimizar se llamará \textbf{función de pérdida} (\textit{loss function}) en la que se comparará la salida obtenida por la red con la salida deseada. Hay que tener que este es un algoritmo de aprendizaje y sólo tendrá sentido usarlo cuando se conozca el resultado correcto para una entrada determinada.
+
+La salida obtenida por una red para una entrada determinada y, por lo tanto, el valor obtenido en la función de pérdida, dependerá únicamente de los pesos de dicha red. Esto significa que lo ideal será encontrar el mínimo global de la función de pérdida al cambiar el valor de los pesos de la red. Para actualizar los pesos se usará la fórmula $w_{ij} = w_{ij} - \eta \nabla J(W)$ donde $w_ij$ es el peso desde el nodo $i$ al nodo $j$, $\eta$ es el factor de aprendizaje o \textbf{learning rate} y $\nabla J(W)$ es la función de coste dados unos pesos determinados.
+
+No es extraño en deep learning encontrar una red con millones de pesos pero, para facilitar la visualización, se ha usado como ejemplo una ANN con 2 pesos ($\theta_0$ y $\theta_1$). En la figura \ref{fig:gradient_descent} se puede ver una ilustración de cómo en cada punto (marcado por una X negra) se calcula el gradiente de $J(\theta_0, \theta_1)$ y se actualizan los pesos, cambiando el valor de $J(\theta_0, \theta_1)$ hasta alcanzar un mínimo.
+
+\figura{1}{img/gradient_descent}{Ilustración del algoritmo de descenso por gradiente. $\theta_0$ y $\theta_1$ son los pesos de la ANN y $J$ la función de pérdida. Se puede observar cómo se produce un "descenso" hacia un mínimo de la función.}{fig:gradient_descent}{}
+
+\section{Red Neuronal Convolucional}\label{sec:archs}
+
+Hasta ahora hemos supuesto que la entrada a una ANN es un vector, algo válido para un gran número de aplicaciones en deep learning. El problema está cuando la entrada de la red neuronal es una imagen. En este caso antes de utilizar la imagen como entrada hay que aplanarla para contener la imagen en un vector, de esta forma cada píxel (o vóxel) será un elemento del vector de entrada y estará conectado a cada neurona de la capa siguiente. Para el caso de imágenes pequeñas (como la de la figura \ref{fig:image_to_ANN}) puede ser viable, pero teniendo tan sólo una imagen de $4$x$4px$ y 4 neuronas en la única capa oculta, se tendrían $16*4=64$ pesos. Si aplicáramos este sistema a una imagen 3D en escala de grises con $124*124*70=1076320vx$, se necesitarían más de un millón de pesos por cada neurona que haya en la primera capa oculta. Esto hace que sea completamente inviable usar este tipo de redes para imágenes a partir de cierto tamaño. En esta sección se presentan las redes neuronales convolucionales (CNN) que reducirán en gran medida el nº de pesos necesarios en la red neuronal y aprovecharán técnicas del procesamiento de imágenes para encontrar patrones.
+
+\figura{0.8}{img/image_to_ANN}{Imagen de 4x4 px aplanada y usada como entrada en una FCNN con 4 neuronas en su única capa oculta. No se muestra su capa de salida. Imagen del curso Intro to Deep Learning with PyTorch de Udacity.}{fig:image_to_ANN}{}
+
+Cambiando la arquitectura de la red vista en la figura \ref{fig:image_to_ANN} por una CNN, obtendríamos una arquitectura similar a la vista en la figura \ref{fig:image_to_CNN}. En esta CNN se ha reducido el nº de conexiones de la capa de entrada a la capa oculta de $64$ a $16$, además, como veremos más adelante, los pesos de las 4 neuronas son compartidos, esto significará que sólo necesitamos $4$ pesos distintos.
+
+\figura{1}{img/image_to_CNN_}{Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imágenes del curso Intro to Deep Learning with PyTorch de Udacity.}{fig:image_to_CNN}{}
+
+\subsection{Tipos de capas}
+
+Antes de describir cada tipo de capa con la que puede construirse una CNN es importante mencionar la \textbf{profundidad}. Cada capa tendrá una profundidad asociada que no hay que confundir con la profundidad de una ANN. En una CNN si una capa tiene profundidad $k$, querrá decir que en esa capa hay un stack de $k$ imágenes en escala de grises. Lo normal es que cada imagen del stack represente características distintas de la imagen de entrada.
+
+Las capas más comunes usadas en una CNN son: Capa Convolucional, Capa de Pooling, Capa ReLU y Capa Completamente Conectada (FC). En la figura \ref{fig:simple-convnet} \cite{missinglink2020} se puede ver un ejemplo en el que la imagen de un barco pasa por varias capas de convolución + ReLU, Pooling y por último FC, dando la predicción de la clase de la imagen.
+
+\figura{1}{img/simple-convnet}{Red Neuronal Convolucional simple en la que la imagen de un barco es clasificada.}{fig:simple-convnet}{}
+
+\subsubsection{Capa convolucional}
+
+Es la capa principal de este tipo de redes. Es descrita por 4 hiperparámetros:
+
+\begin{itemize}
+\item Número de filtros, \textbf{K}.
+\item Tamaño del kernel, \textbf{F}.
+\item Paso, \textbf{S}.
+\item Padding, \textbf{P}.
+\end{itemize}
+
+Esta capa va a tener como entrada una imagen con una profundidad $K_0$, le aplicará un padding de \textbf{P} píxeles/vóxeles alrededor de la imagen y realiza la operación de convolución del stack de imágenes y de $K$ filtros de tamaño $F$ en todas sus dimensiones excepto en la dimensión de la profundidad, que será de tamaño $K_0$. El paso con el que desplazamos los filtros sobre las imágenes será $S$. Suponiendo que la imagen inicial tiene 2D, esta operación se hará frente a una entrada de tamaño $W_1 \times H_1 \times D_1$ y dará como resultado una imagen de tamaño:
+
+\begin{itemize}
+\item $W_2 = \frac{W_1 - F}{S} + 1$
+\item $H_2 = \frac{H_1 - F}{S} + 1$
+\item $D_2 = K$
+\end{itemize}
+
+De la misma forma que se han calculado $W$ y $H$ se puede calcular cualquier nº de dimensiones. También es importante notar que aunque se puede elegir cualquier valor para $S$, $F$ y $P$, es habitual en las arquitectura modernas que las convoluciones se realicen con $S=1$, $F=3$ y $P=1$, de esta forma quedaría: $W_2 = \frac{W_1-F+2P}{S} + 1 = \frac{W_1 - 3 + 2}{1} + 1 = W_1$. Haciendo esto no varía el tamaño de la imagen.
+
+En la figura \ref{fig:conv-example}\cite{Li2020} se muestra un ejemplo de una capa de convolución de profundidad $2$ con imagen de entrada $7 \times 7$ con $1 px$ de padding y profundidad $3$, siendo los filtros de tamaño $3$ y aplicándose con un paso de $3$. Se obtendrá una imagen $3\times 3$ con profundidad $2$.
+
+Para que salida tenga profundidad $2$ será necesario usar $2$ filtros, cada uno de estos filtros será de tamaño $3\times 3 \times 3$, por lo que cada uno tendrá 27 valores, uno por cada píxel. Estos valores son los pesos de las neuronas de la red neuronal y no están definidos por el usuario como los hiperparámetros, en cambio se incializarán de forma aleatoria y se irán modificando acorde al algoritmo de optimización utilizado. Entrenar una CNN significa encontrar unos valores para los filtros que minimicen el error (dado por la función de pérdida). Adicionalmente, también habrá que entrenar la capa FC, que no es más que una red neuronal como ya se ha visto previamente.
+
+\figura{1}{img/conv-example}{Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imagen tomada del curso CS231n de Standford University.}{fig:conv-example}{}
+
+\subsubsection{Capa Pooling}
+
+El objetivo de esta capa es reducir el tamaño de las imágenes para reducir la memoria necesaria y el coste computacional.
+
+De forma similar a la capa de convolución, en la capa de pooling o reducción se usa un filtro que se aplica a toda la imagen. Se diferencian en que esta capa usa un sólo filtro de profundidad $1$ que es aplicado a todas las imágenes del stack de entrada, por lo que esta capa mantiene la misma profundidad de la capa anterior. Otra diferencia está en la operación a realizar, en la capa de convolución se aplica un kernel con determinados valores a toda la imagen, en la capa de pooling se aplica es la función MAX.
+
+Los parámetros necesarios para definir una capa de pooling son:
+\begin{itemize}
+\item Tamaño del kernel, $F$.
+\item Paso, $S$.
+\end{itemize} 
+
+Y si se tiene una entrada de tamaño $W_1 \times H_1 \times D_1$, la salida será:
+\begin{itemize}
+\item $W_2 = \frac{W_1 - F}{S} + 1$
+\item $H_2 = \frac{H_1 - F}{S} + 1$
+\item $D_2 = D_1$
+\end{itemize}
+
+Los parámetros $F$ y $S$ determinan cómo se reducirá la imagen, siendo común usar $F=2$ y $S=2$ para reducir el tamaño a la mitad. Reducir demasiado la imagen al hacer pooling puede provocar un efecto muy destructivo.
+
+\figura{1}{img/maxpool}{Imagen $4\times 4$ a la que se ha aplicado un pooling de $F=2, S=2$. Cada color de la imagen de la izquierda indica las entradas del para la operación MAX, cada color de la imagen de la derecha indica la salida de dicha operación. Figura tomada del curso CS231n de Standford University.}{fig:maxpool}{}
+
+\subsubsection{Capa ReLU}
+
+Esta capa aplica la función de activación no lineal \textit{ReLU} ($max(0,x)$) a cada elemento (píxel o vóxel) de la entrada. Se introduce después de la capa de convolución y es a veces llamada la etapa de detección \cite[335]{Goodfellow2016}.
+
+\subsubsection{Capa FC}
+
+Se usa para obtener la puntuación de clase de cada píxel/vóxel de la capa anterior, a la que está completamente conectada (cada nodo de la capa anterior está conectado a todos los de esta capa). Es la salida de la red ya que es la última capa. En problemas de clasificación esta capa tendrá $C$ nodos, siendo $C$ el nº de clases. En problemas de segmentación esta capa tendrá tantos nodos como clases haya multiplicado por el nº píxeles/vóxeles que haya en la capa anterior, entendiéndose la segmentación como etiquetar cada píxel/vóxel con la probabilidad que tiene de pertenecer a cada clase.
+
+Esta capa funciona como una ANN normal, incluyendo los pesos y su actualización.
+
+\subsection{Funciones de Pérdida}
+
+En las CNNs, al igual que en la inmensa mayoría de algoritmos de Deep Learning, se usa el descenso por gradiente estocástico o alguna variación como método para optimizar y aprender hacia un objetivo ($y$). Para ello necesitamos una representación matemática de dicho objetivo, que será la función de pérdida. Esta función de pérdida deberá evaluar correctamente cómo de buena es la predicción ($\hat{y}$). A continuación se describirán varias funciones de pérdida en relación con el problema de segmentación.
+
+\subsubsection{Binary Cross-Entropy}
+
+La entropía cruzada es una medida utilizada para calcular la diferencia entre dos distribuciones de probabilidad. \ref{Jadon2020}. Resultará útil si comparamos el objetivo $y$ con la predicción $\hat{y}$. La fórmula de la entropía cruzada binaria (BCE) es la siguiente:
+\begin{equation}
+L_{BCE}(y,\hat{y})=-(y log(\hat{y}) + (1-y)log(1-\hat{y}))
+\end{equation}
+
+\subsubsection{Weighted Binary Cross-Entropy}
+
+Cross entropía binaria con pesos (WCE) es una variante de BCE. En esta variante se aplica un coeficiente a cada ejemplo positivo. Es muy útil cuando los datos están sesgados, como por ejemplo una segmentación de un elemento muy pequeño en comparación con el fondo. La formula es la siguiente:
+\begin{equation}
+L_{WBCE}(y,\hat{y})=-(\beta y log(\hat{y}) + (1-y)log(1-\hat{y}))
+\end{equation}
+
+Para reducir el número de falsos negativos usar $\beta > 1$, para reducir el número de falsos positivos usar $\beta < 1$ \cite{Jadon2020}.
+
+\subsubsection{Dice Loss}
+
+El coeficiente Dice se usa como métrica para calcular la similitud entre dos imágenes. En 2016 se adaptó para usarlo como función de pérdida \cite{Cardoso2017}. La fórmula es la siguiente:
+\begin{equation}
+DL(y,\hat{p})= 1 - \frac{2y\hat{p}+1}{y+\hat{p}+1}
+\end{equation}
+
+Siendo $p\epsilon[0,1]$ la probabilidad de que un píxel/vóxel pertenezca a una clase, siendo la suma de todas todas las probabilidades (para un determinado píxel/vóxel) igual a $1$.
+
+Se le añade $1$ en el numerador y denominador para evitar que haya $0$ en el numerador o denominador.
 
 \section{Arquitecturas usadas en segmentación}\label{sec:archs}
 \section{Software desarrollado}\label{sec:software}

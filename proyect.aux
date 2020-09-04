@@ -22,7 +22,7 @@
 \citation{Goodfellow2016}
 \citation{Hinton1986}
 \citation{Rumelhart1986}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}An\'alisis de antecedentes y aportaci\'on realizada}{2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}An\'alisis de antecedentes}{2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{analanteced}{{2}{2}}
@@ -45,100 +45,132 @@
 \newlabel{subsubsec:sigmoide}{{2.1.2}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{Unidad Lineal Rectificada (ReLU)}{4}\protected@file@percent }
 \newlabel{subsubsec:relu}{{2.1.2}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Red Neuronal Convolucional}{4}\protected@file@percent }
-\newlabel{sec:cnn}{{2.2}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Arquitecturas usadas en segmentación}{4}\protected@file@percent }
-\newlabel{sec:archs}{{2.3}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Software desarrollado}{4}\protected@file@percent }
-\newlabel{sec:software}{{2.4}{4}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Aportación Realizada}{4}\protected@file@percent }
-\newlabel{sec:aportacion}{{2.5}{4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}An\'alisis de requisitos, dise\~no e implementaci\'on}{5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Red Neuronal Artifical}{4}\protected@file@percent }
+\newlabel{subsec:neural_network}{{2.1.3}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Red Neuronal Artificial completamente conectada.\relax }}{5}\protected@file@percent }
+\newlabel{fig:neurona_artificial}{{2.3}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4}Descenso por Gradiente }{5}\protected@file@percent }
+\newlabel{sec:gradient_descent}{{2.1.4}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Ilustración del algoritmo de descenso por gradiente. $\theta _0$ y $\theta _1$ son los pesos de la ANN y $J$ la función de pérdida. Se puede observar cómo se produce un "descenso" hacia un mínimo de la función.\relax }}{6}\protected@file@percent }
+\newlabel{fig:gradient_descent}{{2.4}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Red Neuronal Convolucional}{6}\protected@file@percent }
+\newlabel{sec:archs}{{2.2}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Imagen de 4x4 px aplanada y usada como entrada en una FCNN con 4 neuronas en su única capa oculta. No se muestra su capa de salida. Imagen del curso Intro to Deep Learning with PyTorch de Udacity.\relax }}{6}\protected@file@percent }
+\newlabel{fig:image_to_ANN}{{2.5}{6}}
+\citation{missinglink2020}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imágenes del curso Intro to Deep Learning with PyTorch de Udacity.\relax }}{7}\protected@file@percent }
+\newlabel{fig:image_to_CNN}{{2.6}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Tipos de capas}{7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Red Neuronal Convolucional simple en la que la imagen de un barco es clasificada.\relax }}{7}\protected@file@percent }
+\newlabel{fig:simple-convnet}{{2.7}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{Capa convolucional}{7}\protected@file@percent }
+\citation{Li2020}
+\@writefile{toc}{\contentsline {subsubsection}{Capa Pooling}{8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imagen tomada del curso CS231n de Standford University.\relax }}{9}\protected@file@percent }
+\newlabel{fig:conv-example}{{2.8}{9}}
+\citation{Goodfellow2016}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Imagen $4\times 4$ a la que se ha aplicado un pooling de $F=2, S=2$. Cada color de la imagen de la izquierda indica las entradas del para la operación MAX, cada color de la imagen de la derecha indica la salida de dicha operación. Figura tomada del curso CS231n de Standford University.\relax }}{10}\protected@file@percent }
+\newlabel{fig:maxpool}{{2.9}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{Capa ReLU}{10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Capa FC}{10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Funciones de Pérdida}{10}\protected@file@percent }
+\citation{Jadon2020}
+\citation{Cardoso2017}
+\@writefile{toc}{\contentsline {subsubsection}{Binary Cross-Entropy}{11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Weighted Binary Cross-Entropy}{11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Dice Loss}{11}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Arquitecturas usadas en segmentación}{11}\protected@file@percent }
+\newlabel{sec:archs}{{2.3}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Software desarrollado}{11}\protected@file@percent }
+\newlabel{sec:software}{{2.4}{11}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Aportación Realizada}{11}\protected@file@percent }
+\newlabel{sec:aportacion}{{2.5}{11}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}An\'alisis de requisitos, dise\~no e implementaci\'on}{12}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{requisitos}{{3}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Datos iniciales}{5}\protected@file@percent }
-\newlabel{sub:datos_entrada}{{3.1}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{imageSequenceInterpolated}{5}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Valores mínimo y máximo de los píxeles de las imágenes de entrada.\relax }}{5}\protected@file@percent }
-\newlabel{tab:prueba}{{3.1}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Histograma de todos los valores\relax }}{6}\protected@file@percent }
-\newlabel{fig:histogram1}{{3.1}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Histograma de todos los valores con el eje y limitado a 4000\relax }}{6}\protected@file@percent }
-\newlabel{fig:histogram2}{{3.2}{6}}
+\newlabel{requisitos}{{3}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Datos iniciales}{12}\protected@file@percent }
+\newlabel{sub:datos_entrada}{{3.1}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{imageSequenceInterpolated}{12}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Valores mínimo y máximo de los píxeles de las imágenes de entrada.\relax }}{12}\protected@file@percent }
+\newlabel{tab:prueba}{{3.1}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Histograma de todos los valores\relax }}{13}\protected@file@percent }
+\newlabel{fig:histogram1}{{3.1}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Histograma de todos los valores con el eje y limitado a 4000\relax }}{13}\protected@file@percent }
+\newlabel{fig:histogram2}{{3.2}{13}}
 \citation{Wolny2020}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Diseño}{7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Diseño}{14}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{requisitos}{{4}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Esquema general}{7}\protected@file@percent }
-\newlabel{sec:diseno-general}{{4.1}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Diseño general\relax }}{8}\protected@file@percent }
-\newlabel{fig:diseno-general}{{4.1}{8}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Preprocesado local}{9}\protected@file@percent }
-\newlabel{sec:preprocesado-local}{{4.2}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{9}\protected@file@percent }
-\newlabel{fig:preprocesado}{{4.2}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Modificar el orden de las dimensiones}{10}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Entrenamiento}{11}\protected@file@percent }
-\newlabel{sec:entrenamiento}{{4.3}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces \relax }}{11}\protected@file@percent }
-\newlabel{fig:entrenamiento}{{4.3}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Inferencia}{12}\protected@file@percent }
-\newlabel{sec:inferencia}{{4.4}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{12}\protected@file@percent }
-\newlabel{fig:inferencia}{{4.4}{12}}
+\newlabel{requisitos}{{4}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Esquema general}{14}\protected@file@percent }
+\newlabel{sec:diseno-general}{{4.1}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Diseño general\relax }}{15}\protected@file@percent }
+\newlabel{fig:diseno-general}{{4.1}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Preprocesado local}{16}\protected@file@percent }
+\newlabel{sec:preprocesado-local}{{4.2}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{16}\protected@file@percent }
+\newlabel{fig:preprocesado}{{4.2}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Modificar el orden de las dimensiones}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Entrenamiento}{18}\protected@file@percent }
+\newlabel{sec:entrenamiento}{{4.3}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces \relax }}{18}\protected@file@percent }
+\newlabel{fig:entrenamiento}{{4.3}{18}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Inferencia}{19}\protected@file@percent }
+\newlabel{sec:inferencia}{{4.4}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{19}\protected@file@percent }
+\newlabel{fig:inferencia}{{4.4}{19}}
 \citation{Ronneberger2015}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Arquitectura de las Redes Neuronales Convolucionales}{13}\protected@file@percent }
-\newlabel{sec:cnn_arch}{{4.5}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{13}\protected@file@percent }
-\newlabel{fig:unetarch-full}{{4.5}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Arquitectura U-Net completa.\relax }}{14}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{4.6}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Arquitectura de las Redes Neuronales Convolucionales}{20}\protected@file@percent }
+\newlabel{sec:cnn_arch}{{4.5}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{20}\protected@file@percent }
+\newlabel{fig:unetarch-full}{{4.5}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Arquitectura U-Net completa.\relax }}{21}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{4.6}{21}}
 \citation{Paszke2019}
 \citation{Tiobe2020}
 \citation{VanDerWalt2011}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Implementación}{15}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Implementación}{22}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{implementacion}{{5}{15}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Lenguaje y framework}{15}\protected@file@percent }
-\newlabel{sec:language_framework}{{5.1}{15}}
+\newlabel{implementacion}{{5}{22}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Lenguaje y framework}{22}\protected@file@percent }
+\newlabel{sec:language_framework}{{5.1}{22}}
 \citation{Walt2014}
 \citation{Wolny2020}
 \citation{Falk2019}
 \citation{Virtanen2020}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Preprocesado local}{16}\protected@file@percent }
-\newlabel{sec:local_preprocessing}{{5.2}{16}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Pruebas}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Preprocesado local}{23}\protected@file@percent }
+\newlabel{sec:local_preprocessing}{{5.2}{23}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Pruebas}{24}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{pruebas}{{6}{17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Arquitectura U-Net media. Batch=1. Znorm. Hay sobreajuste.\relax }}{17}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.1}{17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Arquitectura U-Net media. Batch=1. Adam con mejores parámetros. Hay sobreajuste.\relax }}{18}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.2}{18}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Arquitectura U-Net media. Con data augmentation. Data augmentation elimia el sobreajuste.\relax }}{19}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.3}{19}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex. El autoescalado del factor de pérdida de Apex aumenta la velocidad de entrenamiento.\relax }}{20}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.4}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{20}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.5}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{21}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.6}{21}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{21}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.7}{21}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{22}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.8}{22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{22}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.9}{22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{23}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.10}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{23}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.11}{23}}
+\newlabel{pruebas}{{6}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Arquitectura U-Net media. Batch=1. Znorm. Hay sobreajuste.\relax }}{24}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.1}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Arquitectura U-Net media. Batch=1. Adam con mejores parámetros. Hay sobreajuste.\relax }}{25}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.2}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Arquitectura U-Net media. Con data augmentation. Data augmentation elimia el sobreajuste.\relax }}{26}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.3}{26}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex. El autoescalado del factor de pérdida de Apex aumenta la velocidad de entrenamiento.\relax }}{27}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.4}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{27}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.5}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{28}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.6}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{28}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.7}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{29}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.8}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{29}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.9}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{30}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.10}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{30}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.11}{30}}
 \bibstyle{apacite}
 \bibdata{pfcbib}
 \bibcite{Falk2019}{\citeauthoryear {Falk\ \BOthers {.}}{Falk\ \BOthers {.}}{{\APACyear {2019}}}}
@@ -171,7 +203,7 @@
 \APACbibcite{VanDerWalt2011}{\citeauthoryear {Van Der\unhbox \voidb@x \nobreak  \ Walt, Colbert,{}\ \BBA{} Varoquaux}{Van Der\unhbox \voidb@x \nobreak  \ Walt\ \BOthers {.}}{{\APACyear {2011}}}}
 \bibcite{Walt2014}{\citeauthoryear {van\unhbox \voidb@x \nobreak  \ der Walt\ \BOthers {.}}{van\unhbox \voidb@x \nobreak  \ der Walt\ \BOthers {.}}{{\APACyear {2014}}}}
 \APACbibcite{Walt2014}{\citeauthoryear {van\unhbox \voidb@x \nobreak  \ der Walt\ \BOthers {.}}{van\unhbox \voidb@x \nobreak  \ der Walt\ \BOthers {.}}{{\APACyear {2014}}}}
-\@writefile{toc}{\contentsline {chapter}{Referencias}{24}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Referencias}{31}\protected@file@percent }
 \bibcite{Virtanen2020}{\citeauthoryear {{Virtanen}\ \BOthers {.}}{{Virtanen}\ \BOthers {.}}{{\APACyear {2020}}}}
 \APACbibcite{Virtanen2020}{\citeauthoryear {{Virtanen}\ \BOthers {.}}{{Virtanen}\ \BOthers {.}}{{\APACyear {2020}}}}
 \bibcite{Widrow2015}{\citeauthoryear {Widrow\ \BBA{} Hoff}{Widrow\ \BBA{} Hoff}{{\APACyear {2015}}}}

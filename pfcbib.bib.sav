@@ -376,12 +376,46 @@
   doi     = {10.1016/j.enbuild.2017.11.045},
 }
 
-@Online{cs231n,
-  author  = {Stanford University Computer Science Department},
+@Online{Li2020,
+  author  = {Fei-Fei Li and Ranjay Krishna and Danfei Xu},
   title   = {{CS231n} Convolutional Neural Networks for Visual Recognition},
   url     = {https://cs231n.github.io/convolutional-networks/},
   urldate = {2020-09-03},
   year    = {2020},
+}
+
+@Online{Serrano2020,
+  author  = {Luis Serrano},
+  title   = {{Deep Learning with PyTorch}},
+  url     = {https://classroom.udacity.com/courses/ud188},
+  urldate = {2020-09-03},
+  year    = {2020},
+}
+
+@Online{missinglink2020,
+  author  = {missinglink},
+  title   = {{missinglink.ai}},
+  url     = {https://missinglink.ai/guides/convolutional-neural-networks/convolutional-neural-network-tutorial-basic-advanced/},
+  urldate = {2020-09-03},
+  year    = {2020},
+}
+
+@Misc{Jadon2020,
+  author        = {Shruti Jadon},
+  title         = {A survey of loss functions for semantic segmentation},
+  year          = {2020},
+  archiveprefix = {arXiv},
+  eprint        = {2006.14822},
+  primaryclass  = {eess.IV},
+}
+
+@Book{Cardoso2017,
+  author = {Cardoso, Manuel Jorge and Arbel, Tal and Carneiro, Gustavo and Syeda-Mahmood, Tanveer and Tavares, Joao and Moradi, Mehdi and Bradley, Andrew and Greenspan, Hayit and Papa, João and Madabhushi, Anant and Nascimento, Jacinto and Cardoso, Jaime and Belagiannis, Vasileios and Lu, Zhi},
+  title  = {Deep Learning in Medical Image Analysis and Multimodal Learning for Clinical Decision Support: Third International Workshop, DLMIA 2017, and 7th International Workshop, ML-CDS 2017, Held in Conjunction with MICCAI 2017, Québec City, QC, Canada, September 14, Proceedings},
+  year   = {2017},
+  isbn   = {978-3-319-67557-2},
+  month  = {01},
+  doi    = {10.1007/978-3-319-67558-9},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
