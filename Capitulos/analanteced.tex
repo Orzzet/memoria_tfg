@@ -92,7 +92,7 @@ No es extraño en deep learning encontrar una red con millones de pesos pero, pa
 
 \section{Red Neuronal Convolucional}\label{sec:archs}
 
-Hasta ahora hemos supuesto que la entrada a una ANN es un vector, algo válido para un gran número de aplicaciones en deep learning. El problema está cuando la entrada de la red neuronal es una imagen. En este caso antes de utilizar la imagen como entrada hay que aplanarla para contener la imagen en un vector, de esta forma cada píxel (o vóxel) será un elemento del vector de entrada y estará conectado a cada neurona de la capa siguiente. Para el caso de imágenes pequeñas (como la de la figura \ref{fig:image_to_ANN}) puede ser viable, pero teniendo tan sólo una imagen de $4$x$4px$ y 4 neuronas en la única capa oculta, se tendrían $16*4=64$ pesos. Si aplicáramos este sistema a una imagen 3D en escala de grises con $124*124*70=1076320vx$, se necesitarían más de un millón de pesos por cada neurona que haya en la primera capa oculta. Esto hace que sea completamente inviable usar este tipo de redes para imágenes a partir de cierto tamaño. En esta sección se presentan las redes neuronales convolucionales (CNN) que reducirán en gran medida el nº de pesos necesarios en la red neuronal y aprovecharán técnicas del procesamiento de imágenes para encontrar patrones.
+Hasta ahora hemos supuesto que la entrada a una ANN es un vector, algo válido para un gran número de aplicaciones en deep learning. El problema está cuando la entrada de la red neuronal es una imagen. En este caso antes de utilizar la imagen como entrada hay que aplanarla para contener la imagen en un vector, de esta forma cada píxel (o vóxel) será un elemento del vector de entrada y estará conectado a cada neurona de la capa siguiente. Para el caso de imágenes pequeñas (como la de la figura \ref{fig:image_to_ANN}) puede ser viable, pero teniendo tan sólo una imagen de $4$x$4px$ y 4 neuronas en la única capa oculta, se tendrían $16*4=64$ pesos. Si aplicáramos este sistema a una imagen 3D en escala de grises con $124*124*70=1076320vx$, se necesitarían más de un millón de pesos por cada neurona que haya en la primera capa oculta. Esto hace que sea completamente inviable usar este tipo de redes para imágenes a partir de cierto tamaño. En esta sección se presentan las redes neuronales convolucionales (CNN), que reducirán en gran medida el nº de pesos necesarios en la red neuronal y aprovecharán técnicas del procesamiento de imágenes para encontrar patrones.
 
 \figura{0.8}{img/image_to_ANN}{Imagen de 4x4 px aplanada y usada como entrada en una FCNN con 4 neuronas en su única capa oculta. No se muestra su capa de salida. Imagen del curso Intro to Deep Learning with PyTorch de Udacity.}{fig:image_to_ANN}{}
 
@@ -129,11 +129,11 @@ Esta capa va a tener como entrada una imagen con una profundidad $K_0$, le aplic
 
 De la misma forma que se han calculado $W$ y $H$ se puede calcular cualquier nº de dimensiones. También es importante notar que aunque se puede elegir cualquier valor para $S$, $F$ y $P$, es habitual en las arquitectura modernas que las convoluciones se realicen con $S=1$, $F=3$ y $P=1$, de esta forma quedaría: $W_2 = \frac{W_1-F+2P}{S} + 1 = \frac{W_1 - 3 + 2}{1} + 1 = W_1$. Haciendo esto no varía el tamaño de la imagen.
 
-En la figura \ref{fig:conv-example}\cite{Li2020} se muestra un ejemplo de una capa de convolución de profundidad $2$ con imagen de entrada $7 \times 7$ con $1 px$ de padding y profundidad $3$, siendo los filtros de tamaño $3$ y aplicándose con un paso de $3$. Se obtendrá una imagen $3\times 3$ con profundidad $2$.
+En la figura \ref{fig:conv-example}\cite{Li2020} se muestra un ejemplo de una capa de convolución de profundidad $2$ con imagen de entrada $5 \times 5$ con $1 px$ de padding y profundidad $3$, siendo los filtros de tamaño $3$ y aplicándose con un paso de $3$. Se obtendrá una imagen $3\times 3$ con profundidad $2$.
 
 Para que salida tenga profundidad $2$ será necesario usar $2$ filtros, cada uno de estos filtros será de tamaño $3\times 3 \times 3$, por lo que cada uno tendrá 27 valores, uno por cada píxel. Estos valores son los pesos de las neuronas de la red neuronal y no están definidos por el usuario como los hiperparámetros, en cambio se incializarán de forma aleatoria y se irán modificando acorde al algoritmo de optimización utilizado. Entrenar una CNN significa encontrar unos valores para los filtros que minimicen el error (dado por la función de pérdida). Adicionalmente, también habrá que entrenar la capa FC, que no es más que una red neuronal como ya se ha visto previamente.
 
-\figura{1}{img/conv-example}{Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imagen tomada del curso CS231n de Standford University.}{fig:conv-example}{}
+\figura{0.8}{img/conv-example}{Capa de convolución de profundidad 2 (se usan dos filtros) con kernel de tamaño $3\times 3 \times 3$ aplicado a un volumen de entrada de tamaño $7x7x3$, volumen generado al aplicar padding de 1 px a una imagen de tamaño $5x5$ con 3 canales. El resultado es un volumen de $3x3x2$}{fig:conv-example}{}
 
 \subsubsection{Capa Pooling}
 
@@ -199,6 +199,200 @@ Siendo $p\epsilon[0,1]$ la probabilidad de que un píxel/vóxel pertenezca a una
 
 Se le añade $1$ en el numerador y denominador para evitar que haya $0$ en el numerador o denominador.
 
-\section{Arquitecturas usadas en segmentación}\label{sec:archs}
-\section{Software desarrollado}\label{sec:software}
-\section{Aportación Realizada}\label{sec:aportacion}
+\section{Arquitecturas para segmentación semántica}\label{sec:archs}
+
+En los últimos años se han desarrollado diversas arquitecturas para CNN consolidándola como el mejor método actual para resolver ciertos problemas en tratamiento de imágenes, como la clasificación o la segmentación. Esto ha sido posible gracias en parte a los avances obtenidos en el reto ImageNet \cite{Deng2009}. 
+Imagenet es una base de datos con más de 10 millones de imágenes etiquetadas a mano, entre las que hay 1000 categorías distintas. Desde 2010 se ha organizado una compteción anual donde los participantes tienen que desarrollar y entrenar el mejor modelo para clasificar estas imágenes. 
+\begin{itemize}
+\item El ganador del reto de 2012 fue un equipo de la Universidad de Toronto con la arquitectura AlexNet \cite{Krizhevsky2012}, usando filtros 11x11 y siendo el primer modelo en usar ReLU como función de activación, algo que se ha convertido en estándar.
+\item En 2014 VGGNet (VGG), del Grupo de Geometría Visual de la Universidad de Oxford, fue de los que obtuvo mejor resultado en la competición con 2 versiones distintas, VGG16 con 16 capas y VGG19 con 19 capas \cite{Simonyan2014}. Ambas versiones emparejan convolución y pooling, usan filtros para las capas de convolución, 2x2 para las capas de pooling, acabando la red en 3 capas completamente conectadas. VGG fue el primer modelo en usar filtros tan pequeños, mostrando que se obtenían mejores resultados al hacerlo.
+\item El ganador del reto de 2015 fue ResNet, desarrollada por Microsoft Research \cite{He2015}. ResNet utiliza una misma distribución de capas repetida durante toda la red. Posee 152 capas, siendo la primera vez que se alcanzaba un número tan alto de capas de forma práctica. Era difícil tener tantas capas a causa del problema del desvanecimiento de gradiente \cite{Hochreiter1998} que se da al entrenar por backpropagation y resulta en que, al hacer la propagación hacia atrás, cada capa consecutiva reduce el error propagado llegando "desvanecerse" y resultando en un difícil entrenamiento. Esto es solucionado por ResNet al conectar capas lejanas para que el error pueda propagarse entre estas más rápido, llamando a estas conexiones \textit{skip connections}.
+\end{itemize}
+
+Estas arquitecturas resultaron en hitos importantes para el desarrollo de CNN, a continuación se describirán varias arquitecturas para segmentación semántica.
+
+\subsection{Fully Convolutional Network}
+
+Fue propuesta en 2014 por investigadores de la Universidad de California en Berkeley \cite{Long2014} obteniendo los mejores resultados hasta la fecha en segmentación semántica mediante el uso de redes convolucionales. Un punto clave fue tomar una entrada de un tamaño arbitrario y producir una salida de un tamaño correspondiente. Usa como base los modelos AlexNet, VGGNet y GoogLeNet \cite{Szegedy2014}, donde se sustituyeron las capas completamente conectadas con capas convolucionales con filtros 1x1 y añadieron una capa convolucional con filtro 1x1 y profundidad C+1 para predecir las puntuaciones de cada clase, C el nº de clases y añadiendo una más para el fondo.
+
+Se compararon los modelos FCN-AlexNet, FCN-VGG16 y FCN-GoogLeNet, obteniendo los mejores resultados con FCN-VGG16 y convirtiéndose este en el modelo base. Con el objetivo de ganar más nivel de detalle en la salida, se aumentó la resolución de la salida en 32x usando interpolación bilineal. También se usaron \textit{skip connections} para conectar varias capas con la capa final. En la figura \ref{fig:FCN} se puede ver un ejemplo de la arquitectura FCN \cite{Sultana2020}.
+
+\figura{1}{img/FCN}{Arquitectura de FCN32, FCN16 y FCN8.}{fig:FCN}{}
+
+
+\subsection{Deconvnet}
+
+La red Deconvnet \cite{Noh2015} tiene una red convolucional y otra red deconvolucional. Para la red convolucional utiliza casi la misma topología que VGG16, con 13 capas de convolución 2 capas FC, cambiando sólo en la última capa que no es de clasificación ya que en Deconvnet está conectada a la red deconvolucional. La red deconvolucional tiene una topología inversa a la red convolucional, resultando en una salida de igual tamaño a la entrada. Esta red tiene capas de deconvolución, de \textit{un-pooling} y de ReLU. Todas las capas de una Deconvnet extraen características de la entrada excepto la última capa de la red deconvolocuional, que genera una probabilidad de pertenencia a cada clase para cada píxel/vóxel. Una arquitectura de esta red se puede ver en la figura \ref{fig:Deconvnet} \ref{Noh2015}.
+
+\figura{1}{img/Deconvnet}{Arquitectura Deconvnet.}{fig:Deconvnet}{}
+
+A continucación se describen brevemente las operaciones de unpooling y deconvolución (más correctamente llamada convolución transpuesta). En la figura \ref{fig:unpooling-deconv} \cite{Noh2015} se puede ver un ejemplo gráfico.
+
+\subsubsection{Unpooling}
+
+La operación unpooling es una operación que reconstruye la zona de pooling mantiendo sólo el píxel correspondiente a aquel que fue seleccionado en la capa de pooling correspondiente (figura \ref{fig:unpooling-deconv}. Para implementar esto se usan variables \textit{switch}, que almacena la posición en la que se encontraba el valor máximo al hacer pooling. Esta estrategia resuelve el problema de pérdida de información espacial que tiene el pooling \cite{Zeiler2011}.
+
+\subsubsection{Deconvoloución}
+
+La salida de una capa de unpooling aporta información espacial pero muy dispersa. Para aumentar la densidad de información se usan las operaciones de deconvolución \cite{Noh2015}. Las operación de convolución toma varias entradas y las transforma en un único valor al aplicar un filtro. La operación deconvolución toma un único valor y lo transforma en varias salidas al aplicar el mismo filtro usado en la convolución correspondiente.
+
+\figura{0.5}{img/unpooling-deconv}{Figura que ilustra las operaciones unpooling y deconvolución.}{fig:unpooling-deconv}{}
+
+\subsection{U-Net}
+
+U-Net es una arquitectura en forma de U con una parte reductora (izquierda) y otra parte expansiva (derecha) simétrica. Esta arquitectura ha mostrado muy buenos resultados con pocos ejemplos de entrenamiento al beneficiarse fuertemente de la aumentación de datos (data-augmentation)\cite{Ronneberger2015}. Fue el ganador de 2015 del reto ISBI para segmentación neuronal con resultados muy superiores al segundo puesto. 
+
+La parte reductora tiene una arquitectura típica de CNN. Cada paso de esta parte tiene dos convoluciones consecutivas con filtros 3x3 (sin padding), cada convolución seguida de por una capa ReLU, con una capa de pooling 2x2 al final de ambas convoluciones. La salida de la última capa de cada paso es usada en la capa equivalente de la parte expansiva. Después de varios pasos como este comienza la parte expansiva con una topología inversa a la convolucional, en donde en cada paso expansivo es añadida la salida de la última capa de cada paso reductor. Cada capa de pooling de la parte izquierda es sustituido en la parte derecha por una "convolución hacia arriba", similar a la operación unpooling + deconvolución. La última capa es una convolución 1x1 para mapear cada píxel/vóxel con el nº correspondiente de clases. En la arquitectura original se tienen en total 23 capas convolucionales. En la figura \ref{fig:unet-og} puede verse la arquitectura original.
+
+\figura{1}{img/unet-og}{Arquitectura original U-Net propuesta por Ronneberger et al en U-Net: Convolutional Networks for Biomedical Image Segmentation.}{fig:unet-og}{}
+
+\section{Aplicaciones recientes}\label{sec:apps}
+
+En esta sección se describirán dos aplicaciones recientes en las que se realiza segmentación celular usando la arquitectura U-Net. Primero se describirá el proyecto en general, luego se definirá brevemente el algoritmo de segmentación seguido dividiendo las operaciones en: preprocesado (preparar los datos para usarlos en el modelo U-Net, procesado (características del modelo) y postprocesado (operaciones posteriores al resultado dado por el modelo), después se mostrará resultados obtenidos y por último mencionará el software resultante de estas investigaciones.
+
+\subsection{U-Net para cuenteo, detección y morfometría, detección y morfometría de células. (2019)}
+\subsubsection{Proyecto}
+
+Ha sido desarrollado por investigadores de la Universidad de Friburgo (Alemania) en colaboración con la Universidad de Berna (Suiza) y la Universidad de París V Descartes (Francia) \cite{Falk2019}. El coautor designado es Olaf Ronneberger, uno de los principales contribuyentes en la creación de la arquitectura U-Net \cite{Ronneberger2015}.
+
+En este proyecto se aplica la arquitectura U-Net para solucionar el problema del tratamiento de imagen que hay que realizar al gran volumen de datos originados por microscopios antes de que puedan ser analizados por investigadores.
+
+\subsubsection{Pipeline}
+
+\cuadro{|c|c|c|}{Pipeline que siguen los datos de inicio a fin. GT significa \textit{groundtruth} y se refiere a la imagen ya segmentada. IM es la imagen de entrada.}{tab:prueba}{
+Preprocesado & Procesado & Postprocesado \\ 
+\hline
+GT:Espaciado de 1 vóxel entre células  	& U-Net & Ninguno \\
+GT:Células etiqueta 1, fondo 0  		& Función de pérdida: & \\
+IMyGT:Troceo de imagen a 236x236x100 vx & -Entropía Cruzada con Pesos & \\
+IMyGT:Data Augmentation: 				& -Peso alto en espaciado entre células & \\
+-Rotación 								& Optimizador ADAM: & \\
+-Deformación suave 						& -Learning rate $10^{-5}$ $\beta_1:0.9$, $\beta_2:0.999$ & \\
+-Incremento de intensidad 				& 150000 Iteraciones & \\
+}
+
+La segmentación semántica etiqueta cada vóxel con la clase correspondiente, no distingue entre distintas instancias de un mismo objeto si estos están en contacto. Para conseguir esta distinción entre células se ha aplicado un espaciado de un vóxel alrededor de cada célula en la imagen segmentada a mano. De esta forma se podrá comprobar la forma de todas las células y se podrán contabilizar.
+
+Para que la imagen ocupe menos memoria y el entrenamiento sea más rápido, se ha dividido la imagen en trozos de 236x236x100. 
+
+Se usa data augmentation (aumentación de datos) tanto en la imagen de entrada como en la imagen objetivo para mejorar el aprendizaje. Gracias a esto en este proyecto se sostiene que no son necesarias más de 10 imágenes anotadas para el correcto entrenamiento de un modelo.
+
+Respecto al modelo entrenado, se ha usado como función de pérdida la entropía cruzada con pesos a nivel de vóxel. Esto quiere decir que cada vóxel en cada imágen va a tener un peso propio. El peso de cada vóxel viene dado por la siguiente fórmula:
+\begin{equation}
+w(x):=w^{'}_{bal}+\lambda w_{sep}
+\end{equation}
+
+Donde $\lambda \epsilon R_{\geq}0$ controla la importancia de la separación de instancia. $w^{'}_{bal}$ y $w_{sep}$
+son calculados de la siguiente forma:
+
+\begin{equation}
+w^{'}_{bal}(x):= \left \{ \begin{matrix} 1 & y(x)>0
+\\ v_{bal}+(1-v_{bal})*exp(-\frac{d^2_1(x)}{2\sigma^2_{bal}}) & y(x)=0
+\\ 0 & y(x) desconocido \end{matrix}\right. 
+\end{equation}
+
+Donde $d_1$ es la distancia hacia la instancia de célula más cercana, $v_{bal}\epsilon [0,1]$ es un factor se usa para reducir la importancia de los vóxeles de fondo y $\sigma_{bal}$ es la desviación estándar deseada.
+
+\begin{equation}
+w_{sep}(x) := exp(-\frac{(d_1(x)+d_2(x))^2}{2\sigma_{sep}^2})
+\end{equation}
+
+Donde $d_2$ es la distancia a la segunda instancia de célula más cercana y $\sigma_{sep}$ es la desviación estándar deseada. 
+
+En el experimento realizado con datos volumétricos se han 
+
+\subsubsection{Resultados}
+
+\figura{1}{img/unet-morf-example}{Segmentación volumétrica. (a) Segmentación de una imagen con un modelo que se ha entrenado con imágenes del mismo dataset. (b) Segmentación de una imagen con un modelo entrenado con un dataset distinto.}{fig:unet-morf-example}{}
+
+La métrica utilizada para cuantificar la calidad del resultado es intersección sobre unión (IoU).
+
+\begin{equation}
+M_{IoU}(A, B) := \frac{|A\cap B}{A\cup B}
+\end{equation}
+
+Donde $A$ es el conjunto de vóxeles pertenecientes a la imagen perfectamente etiquetada y $B$ el conjunto de vóxeles pertencientes a la predicción. Un $M_{IoU}\epsilon[0,1]$ igual a 1 equivale a una predicción perfecta mientras que igual a 0 equivale a una predicción en la que ningún vóxel coincide.
+Acorde a los experimentos realizados, se tomará un valor $\sim0.7$ como una buena segmentación, siendo $\sim0.9$ una segmentación equivalente a la humana.
+
+Se hicieron varios experimentos, alcanzando siempre un $M_{IoU}>0.8$ para datos volumétricos.
+
+\subsubsection{Software}
+
+Este algoritmo ha sido implementado como un plugin de FIJI \cite{Schindelin2012}, una herramienta opensource para procesamiento de imágenes. Este plugin viene con modelos preentrenados para la segmentación de células y está disponible como repositorio oficial de imageJ \textit{http://sites.imagej.net/Falk/plugins/}, con código fuente incluido.
+
+El framework usado como backend es \textbf{caffe} \cite{Jia2014}, que será necesario instalar previamente. Los binarios de caffe así como modelos entrenados para segmentación 2D y 3D están disponibles en \textit{https://lmb.informatik.uni-freiburg.de/resources/opensource/unet}
+
+\subsection{Precisa y versátil segmentación 3D de tejido vegetal a resolución celular. (2020)}
+
+
+\subsubsection{Proyecto}
+
+Ha sido realizado por investigadores de la universidad de Heidelberg (Alemania), colaborando con la Universidad Técnica de Munich (Alemania) y la Universidad de Warwick (UK). Los coautores son Adrian Wolny y Lorenzo Cerrone.\cite{Wolny2020}
+
+Este proyecto está hecho con la idea de utilizar las últimas y mejores técnicas para segmentación precisa de datos volumétricos a nivel celular y hacerlo accesible a personas no expertas en la materia de visión por ordenador. El resultado de este proyecto es el software PlantSeg.
+
+\subsubsection{Pipeline}
+
+\cuadro{|c|c|c|}{Pipeline que siguen los datos de inicio a fin. GT significa \textit{groundtruth} y se refiere a la imagen ya segmentada. IM es la imagen de entrada.}{tab:prueba}{
+Preprocesado & Procesado & Postprocesado \\ 
+\hline
+GT:Bordes con 2 vóxeles de anchura		& U-Net 								& Transformada de la distancia \\
+GT:Desenfoque Gaussiano			  	   	& Funciónes de pérdida probadas: 		& Detectado de centroides\\
+IM y GT:Data Augmentation 				& -Entropía Cruzada Binaria  			& Algoritmo watershed\\
+- Volteo Horizontal y Vertical			& -Pérdida Dice							& Grafo de adyacencia\\
+- Rotación en plano XY					& Optimizador ADAM:						& Particionamiento de grafo\\
+- Deformación elástica					& -Learning rate $10^{-5}$				& \\
+IM: Noise Augmentation		 			& -$\beta_1:0.9$, $\beta_2:0.999$		& \\
+IM,GT:Troceo de imagen a 170x170x80 vx	& 100000 iteraciones					& \\
+}
+
+En el preprocesado, se parte de una imagen con etiquetado perfecto y se le aplica la función \textit{find\_ boundaries} de la librería scikit \cite{Pedregosa2011} \cite{Walt2014} obteniendo los bordes de las células con 2 vóxeles de anchura. A la imagen con los bordes se le aplica un desenfoque Gaussiano para reducir los componentes de alta frecuencia, lo que ayuda a prevenir el sobreajuste. Luego se aplica varias técnicas de \textit{data augmentation} en el espacio a la imagen de entrada y a la imagen de bordes. Tras esto se aplica \textit{noise augmentation} a la imagen de entrada. Por último se divide la imagen en trozos de 170x170x80 vx.
+
+En el procesado, se usa una arquitectura U-Net y se prueba con Entropía Cruzada Binaria y con Pérdida Dice, usando un optimizador ADAM en ambos casos.
+
+En el postprocesado, se parte de la imagen con la probabilidad de que cada vóxel pertenezca al borde de la imagen, se aplica un umbral para binarizar la imagen, donde cualquier probabilidad $>0.4$ se considera borde. A la imagen binarizada se le aplica la transformada de la distancia, dando a cada vóxel de fondo un valor igual al vóxel de borde más cercano. A esta imagen se le aplica un suavizado gaussiano con $\sigma = 2.0$ y se calculan los mínimos locales para seleccionar las semillas. Estas semillas son usadas en el algoritmo watershed para obtener la segmentación final.
+
+El algoritmo watershed trata el valor de los vóxeles como si describiese una topología.
+\begin{enumerate}
+\item Se colocan unas semillas iniciales, desde aquí se empezará la inundación. Cada semilla tendrá una etiqueta distinta.
+\item Los vecinos de cada vóxel etiquetado se insertan en una cola prioritaria teniendo más prioridad aquellos con un valor más bajo.
+\item El vóxel con más prioridad sale de la cola, si todos sus vecinos etiquetados tienen la misma etiqueta, se le pone esa etiqueta. Todos los nuevos vecinos sin marcar son puestos en la cola prioritaria.
+\item Se vuelve al paso 3 hasta que se vacía la cola.
+\end{enumerate}
+
+\subsubsection{Resultados}
+
+\figura{1}{img/wolny-resultados}{Segmentación de tejido vegetal usando PlantSeg. En el primer paso se predicen los bordes de las células usando una red U-Net 3D. En el segundo paso se aplica un algoritmo de particionamiento de grafo para segmentar cada célula.}{fig:wolny-resultados}{}
+
+Para la etapa de la predicción de bordes se han usado tres métricas:
+\begin{itemize}
+\item Precisión: Nº vóxeles correctamente etiquetados como borde en la predicción entre el nº de vóxeles etiquetados como borde en la predicción.
+\item Exhaustividad: Nº de vóxeles etiquetados correctamente en la predicción entre el nº de vóxeles etiquetados como bordes en la imagen con perfecto etiquetado.
+\item Puntuación F1: $F1=2*\frac{Precision * Exhaustividad}{Precision+Exhaustividad}$
+\end{itemize}
+
+Para estas 3 métricas mientras más alto sea el valor mejor, siendo $1$ la medida perfecta y $0$ la peor.
+
+Para la segmentación final se ha usado la variación de información (VOI), definida como:
+\begin{equation}
+VOI = H(seg|GT) + H(GT|seg)
+\end{equation}
+
+Donde $H$ es la entropía condicional, $seg$ es la predicción de la segmentación y $GT$ es la segmentación perfecta. Para esta métrica mientras más bajo sea el valor mejor, siendo 0 el valor perfecto.
+
+Se han han realizado muchas pruebas en este proyecto, en la tabla \ref{tab:plant-seg-resultados} se puede ver dos pruebas en las que se compara la entropía cruzada binaria y la pérdida Dice.
+
+\cuadro{|c|c|c|c|}{Pruebas relevantes realizadas.}{tab:plant-seg-resultados}{
+Función de pérdida 			& Precisión 		& Exhaustividad 	& Puntuación F1\\ 
+\hline
+Entropía Cruzada Binaria	& 0.806 $\pm$ 0.071	& 0.799 $\pm$ 0.028 & 0.800 $\pm$ 0.036 \\
+Pérdida Dice				& 0.744 $\pm$ 0.096 & 0.933 $\pm$ 0.017 & 0.824 $\pm$ 0.062	\\
+}
+
+Como se ven en los resultados parece que la pérdida Dice es ligeramente superior aunque no por mucho.
+
+\subsubsection{Software}
+
+PlantSeg es un programa que puede ser ejecutado por una interfaz gráfica o por línea de comandos. Dispone de todos los modelos preentenados en este proyecto, así como de todas las opciones para entrenar nuevos modelos o hacer inferencia. El software con las instrucciones para su uso están disponibles en \textit{https://github.com/hci-unihd/plant-seg}.
+
+\figura{1}{img/plantseg-software}{Interfaz gráfica del programa PlantSet. Se pueden ver las distintas opciones para cada paso del procesado.}{fig:plantseg-software}{}

@@ -7,9 +7,9 @@
 \catcode `'\active 
 \babel@aux{spanish}{}
 \@writefile{toc}{\contentsline {chapter}{\'Indice general}{2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{{\'I}ndice de cuadros}{3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\'{I}ndice de figuras}{4}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Definici\'on de objetivos}{1}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{{\'I}ndice de cuadros}{4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\'{I}ndice de figuras}{5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Presentaci\'on del problema}{1}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{defobjetivos}{{1}{1}}
@@ -66,7 +66,7 @@
 \@writefile{toc}{\contentsline {subsubsection}{Capa convolucional}{7}\protected@file@percent }
 \citation{Li2020}
 \@writefile{toc}{\contentsline {subsubsection}{Capa Pooling}{8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imagen tomada del curso CS231n de Standford University.\relax }}{9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Capa de convolución de profundidad 2 (se usan dos filtros) con kernel de tamaño $3\times 3 \times 3$ aplicado a un volumen de entrada de tamaño $7x7x3$, volumen generado al aplicar padding de 1 px a una imagen de tamaño $5x5$ con 3 canales. El resultado es un volumen de $3x3x2$\relax }}{9}\protected@file@percent }
 \newlabel{fig:conv-example}{{2.8}{9}}
 \citation{Goodfellow2016}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Imagen $4\times 4$ a la que se ha aplicado un pooling de $F=2, S=2$. Cada color de la imagen de la izquierda indica las entradas del para la operación MAX, cada color de la imagen de la derecha indica la salida de dicha operación. Figura tomada del curso CS231n de Standford University.\relax }}{10}\protected@file@percent }
@@ -76,117 +76,199 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Funciones de Pérdida}{10}\protected@file@percent }
 \citation{Jadon2020}
 \citation{Cardoso2017}
+\citation{Deng2009}
+\citation{Krizhevsky2012}
+\citation{Simonyan2014}
+\citation{He2015}
+\citation{Hochreiter1998}
 \@writefile{toc}{\contentsline {subsubsection}{Binary Cross-Entropy}{11}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Weighted Binary Cross-Entropy}{11}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Dice Loss}{11}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Arquitecturas usadas en segmentación}{11}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Arquitecturas para segmentación semántica}{11}\protected@file@percent }
 \newlabel{sec:archs}{{2.3}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Software desarrollado}{11}\protected@file@percent }
-\newlabel{sec:software}{{2.4}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Aportación Realizada}{11}\protected@file@percent }
-\newlabel{sec:aportacion}{{2.5}{11}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}An\'alisis de requisitos, dise\~no e implementaci\'on}{12}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{requisitos}{{3}{12}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Datos iniciales}{12}\protected@file@percent }
-\newlabel{sub:datos_entrada}{{3.1}{12}}
-\@writefile{toc}{\contentsline {subsubsection}{imageSequenceInterpolated}{12}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Valores mínimo y máximo de los píxeles de las imágenes de entrada.\relax }}{12}\protected@file@percent }
-\newlabel{tab:prueba}{{3.1}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Histograma de todos los valores\relax }}{13}\protected@file@percent }
-\newlabel{fig:histogram1}{{3.1}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Histograma de todos los valores con el eje y limitado a 4000\relax }}{13}\protected@file@percent }
-\newlabel{fig:histogram2}{{3.2}{13}}
-\citation{Wolny2020}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Diseño}{14}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{requisitos}{{4}{14}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Esquema general}{14}\protected@file@percent }
-\newlabel{sec:diseno-general}{{4.1}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Diseño general\relax }}{15}\protected@file@percent }
-\newlabel{fig:diseno-general}{{4.1}{15}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Preprocesado local}{16}\protected@file@percent }
-\newlabel{sec:preprocesado-local}{{4.2}{16}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{16}\protected@file@percent }
-\newlabel{fig:preprocesado}{{4.2}{16}}
-\@writefile{toc}{\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{16}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{17}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Modificar el orden de las dimensiones}{17}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Entrenamiento}{18}\protected@file@percent }
-\newlabel{sec:entrenamiento}{{4.3}{18}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces \relax }}{18}\protected@file@percent }
-\newlabel{fig:entrenamiento}{{4.3}{18}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Inferencia}{19}\protected@file@percent }
-\newlabel{sec:inferencia}{{4.4}{19}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{19}\protected@file@percent }
-\newlabel{fig:inferencia}{{4.4}{19}}
+\citation{Long2014}
+\citation{Szegedy2014}
+\citation{Sultana2020}
+\citation{Noh2015}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Fully Convolutional Network}{12}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Arquitectura de FCN32, FCN16 y FCN8.\relax }}{12}\protected@file@percent }
+\newlabel{fig:FCN}{{2.10}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Deconvnet}{12}\protected@file@percent }
+\citation{Noh2015}
+\citation{Zeiler2011}
+\citation{Noh2015}
 \citation{Ronneberger2015}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Arquitectura de las Redes Neuronales Convolucionales}{20}\protected@file@percent }
-\newlabel{sec:cnn_arch}{{4.5}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{20}\protected@file@percent }
-\newlabel{fig:unetarch-full}{{4.5}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Arquitectura U-Net completa.\relax }}{21}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{4.6}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Arquitectura Deconvnet.\relax }}{13}\protected@file@percent }
+\newlabel{fig:Deconvnet}{{2.11}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{Unpooling}{13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Deconvoloución}{13}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Figura que ilustra las operaciones unpooling y deconvolución.\relax }}{13}\protected@file@percent }
+\newlabel{fig:unpooling-deconv}{{2.12}{13}}
+\citation{Falk2019}
+\citation{Ronneberger2015}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}U-Net}{14}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Arquitectura original U-Net propuesta por Ronneberger et al en U-Net: Convolutional Networks for Biomedical Image Segmentation.\relax }}{14}\protected@file@percent }
+\newlabel{fig:unet-og}{{2.13}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Aplicaciones recientes}{14}\protected@file@percent }
+\newlabel{sec:apps}{{2.4}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}U-Net para cuenteo, detección y morfometría, detección y morfometría de células. (2019)}{15}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Proyecto}{15}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Pipeline}{15}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Pipeline que siguen los datos de inicio a fin. GT significa \textit  {groundtruth} y se refiere a la imagen ya segmentada. IM es la imagen de entrada.\relax }}{15}\protected@file@percent }
+\newlabel{tab:prueba}{{2.1}{15}}
+\citation{Schindelin2012}
+\citation{Jia2014}
+\citation{Wolny2020}
+\@writefile{toc}{\contentsline {subsubsection}{Resultados}{16}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces Segmentación volumétrica. (a) Segmentación de una imagen con un modelo que se ha entrenado con imágenes del mismo dataset. (b) Segmentación de una imagen con un modelo entrenado con un dataset distinto.\relax }}{16}\protected@file@percent }
+\newlabel{fig:unet-morf-example}{{2.14}{16}}
+\@writefile{toc}{\contentsline {subsubsection}{Software}{16}\protected@file@percent }
+\citation{Pedregosa2011}
+\citation{Walt2014}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Precisa y versátil segmentación 3D de tejido vegetal a resolución celular. (2020)}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Proyecto}{17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Pipeline}{17}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Pipeline que siguen los datos de inicio a fin. GT significa \textit  {groundtruth} y se refiere a la imagen ya segmentada. IM es la imagen de entrada.\relax }}{17}\protected@file@percent }
+\newlabel{tab:prueba}{{2.2}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{Resultados}{18}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.15}{\ignorespaces Segmentación de tejido vegetal usando PlantSeg. En el primer paso se predicen los bordes de las células usando una red U-Net 3D. En el segundo paso se aplica un algoritmo de particionamiento de grafo para segmentar cada célula.\relax }}{18}\protected@file@percent }
+\newlabel{fig:wolny-resultados}{{2.15}{18}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Pruebas relevantes realizadas.\relax }}{18}\protected@file@percent }
+\newlabel{tab:plant-seg-resultados}{{2.3}{18}}
+\@writefile{toc}{\contentsline {subsubsection}{Software}{18}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.16}{\ignorespaces Interfaz gráfica del programa PlantSet. Se pueden ver las distintas opciones para cada paso del procesado.\relax }}{19}\protected@file@percent }
+\newlabel{fig:plantseg-software}{{2.16}{19}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}An\'alisis de requisitos, dise\~no e implementaci\'on}{20}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{requisitos}{{3}{20}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Datos iniciales}{20}\protected@file@percent }
+\newlabel{sub:datos_entrada}{{3.1}{20}}
+\@writefile{toc}{\contentsline {subsubsection}{imageSequenceInterpolated}{20}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Valores mínimo y máximo de los píxeles de las imágenes de entrada.\relax }}{20}\protected@file@percent }
+\newlabel{tab:prueba}{{3.1}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Histograma de todos los valores\relax }}{21}\protected@file@percent }
+\newlabel{fig:histogram1}{{3.1}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Histograma de todos los valores con el eje y limitado a 4000\relax }}{21}\protected@file@percent }
+\newlabel{fig:histogram2}{{3.2}{21}}
+\citation{Wolny2020}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Diseño}{22}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{requisitos}{{4}{22}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Esquema general}{22}\protected@file@percent }
+\newlabel{sec:diseno-general}{{4.1}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Diseño general\relax }}{23}\protected@file@percent }
+\newlabel{fig:diseno-general}{{4.1}{23}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Preprocesado local}{24}\protected@file@percent }
+\newlabel{sec:preprocesado-local}{{4.2}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{24}\protected@file@percent }
+\newlabel{fig:preprocesado}{{4.2}{24}}
+\@writefile{toc}{\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{24}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{25}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Modificar el orden de las dimensiones}{25}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Entrenamiento}{26}\protected@file@percent }
+\newlabel{sec:entrenamiento}{{4.3}{26}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces \relax }}{26}\protected@file@percent }
+\newlabel{fig:entrenamiento}{{4.3}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Inferencia}{27}\protected@file@percent }
+\newlabel{sec:inferencia}{{4.4}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{27}\protected@file@percent }
+\newlabel{fig:inferencia}{{4.4}{27}}
+\citation{Ronneberger2015}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Arquitectura de las Redes Neuronales Convolucionales}{28}\protected@file@percent }
+\newlabel{sec:cnn_arch}{{4.5}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{28}\protected@file@percent }
+\newlabel{fig:unetarch-full}{{4.5}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Arquitectura U-Net completa.\relax }}{29}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{4.6}{29}}
 \citation{Paszke2019}
 \citation{Tiobe2020}
 \citation{VanDerWalt2011}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Implementación}{22}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Implementación}{30}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{implementacion}{{5}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Lenguaje y framework}{22}\protected@file@percent }
-\newlabel{sec:language_framework}{{5.1}{22}}
+\newlabel{implementacion}{{5}{30}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Lenguaje y framework}{30}\protected@file@percent }
+\newlabel{sec:language_framework}{{5.1}{30}}
 \citation{Walt2014}
 \citation{Wolny2020}
 \citation{Falk2019}
 \citation{Virtanen2020}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Preprocesado local}{23}\protected@file@percent }
-\newlabel{sec:local_preprocessing}{{5.2}{23}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Pruebas}{24}\protected@file@percent }
+\citation{Collette2013}
+\citation{HDFGroup20002010}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Preprocesado local}{31}\protected@file@percent }
+\newlabel{sec:local_preprocessing}{{5.2}{31}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Consideraciones}{31}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Reescalado}{31}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Encontrar bordes}{32}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Crear nuevo fichero}{32}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Pruebas}{33}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{pruebas}{{6}{24}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Arquitectura U-Net media. Batch=1. Znorm. Hay sobreajuste.\relax }}{24}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.1}{24}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Arquitectura U-Net media. Batch=1. Adam con mejores parámetros. Hay sobreajuste.\relax }}{25}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.2}{25}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Arquitectura U-Net media. Con data augmentation. Data augmentation elimia el sobreajuste.\relax }}{26}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.3}{26}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex. El autoescalado del factor de pérdida de Apex aumenta la velocidad de entrenamiento.\relax }}{27}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.4}{27}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{27}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.5}{27}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{28}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.6}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{28}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.7}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{29}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.8}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{29}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.9}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{30}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.10}{30}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{30}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.11}{30}}
+\newlabel{pruebas}{{6}{33}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Arquitectura U-Net media. Batch=1. Znorm. Hay sobreajuste.\relax }}{33}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.1}{33}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Arquitectura U-Net media. Batch=1. Adam con mejores parámetros. Hay sobreajuste.\relax }}{34}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.2}{34}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Arquitectura U-Net media. Con data augmentation. Data augmentation elimia el sobreajuste.\relax }}{35}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.3}{35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex. El autoescalado del factor de pérdida de Apex aumenta la velocidad de entrenamiento.\relax }}{36}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.4}{36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{36}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.5}{36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{37}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.6}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{37}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.7}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{38}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.8}{38}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{38}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.9}{38}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{39}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.10}{39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{39}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{6.11}{39}}
 \bibstyle{apacite}
 \bibdata{pfcbib}
+\bibcite{Cardoso2017}{\citeauthoryear {Cardoso\ \BOthers {.}}{Cardoso\ \BOthers {.}}{{\APACyear {2017}}}}
+\APACbibcite{Cardoso2017}{\citeauthoryear {Cardoso\ \BOthers {.}}{Cardoso\ \BOthers {.}}{{\APACyear {2017}}}}
+\bibcite{Deng2009}{\citeauthoryear {Deng\ \BOthers {.}}{Deng\ \BOthers {.}}{{\APACyear {2009}}}}
+\APACbibcite{Deng2009}{\citeauthoryear {Deng\ \BOthers {.}}{Deng\ \BOthers {.}}{{\APACyear {2009}}}}
 \bibcite{Falk2019}{\citeauthoryear {Falk\ \BOthers {.}}{Falk\ \BOthers {.}}{{\APACyear {2019}}}}
 \APACbibcite{Falk2019}{\citeauthoryear {Falk\ \BOthers {.}}{Falk\ \BOthers {.}}{{\APACyear {2019}}}}
 \bibcite{Goodfellow2016}{\citeauthoryear {Goodfellow, Bengio,{}\ \BBA{} Courville}{Goodfellow\ \BOthers {.}}{{\APACyear {2016}}}}
 \APACbibcite{Goodfellow2016}{\citeauthoryear {Goodfellow, Bengio,{}\ \BBA{} Courville}{Goodfellow\ \BOthers {.}}{{\APACyear {2016}}}}
+\bibcite{He2015}{\citeauthoryear {He, Zhang, Ren,{}\ \BBA{} Sun}{He\ \BOthers {.}}{{\APACyear {2015}}}}
+\APACbibcite{He2015}{\citeauthoryear {He, Zhang, Ren,{}\ \BBA{} Sun}{He\ \BOthers {.}}{{\APACyear {2015}}}}
 \bibcite{Hinton2006}{\citeauthoryear {G.\unhbox \voidb@x \nobreak  \ Hinton, Osindero,{}\ \BBA{} Teh}{G.\unhbox \voidb@x \nobreak  \ Hinton\ \BOthers {.}}{{\APACyear {2006}}}}
 \APACbibcite{Hinton2006}{\citeauthoryear {G.\unhbox \voidb@x \nobreak  \ Hinton, Osindero,{}\ \BBA{} Teh}{G.\unhbox \voidb@x \nobreak  \ Hinton\ \BOthers {.}}{{\APACyear {2006}}}}
 \bibcite{Hinton1986}{\citeauthoryear {G\BPBI  E.\unhbox \voidb@x \nobreak  \ Hinton}{G\BPBI  E.\unhbox \voidb@x \nobreak  \ Hinton}{{\APACyear {1986}}}}
 \APACbibcite{Hinton1986}{\citeauthoryear {G\BPBI  E.\unhbox \voidb@x \nobreak  \ Hinton}{G\BPBI  E.\unhbox \voidb@x \nobreak  \ Hinton}{{\APACyear {1986}}}}
+\bibcite{Hochreiter1998}{\citeauthoryear {Hochreiter}{Hochreiter}{{\APACyear {1998}}}}
+\APACbibcite{Hochreiter1998}{\citeauthoryear {Hochreiter}{Hochreiter}{{\APACyear {1998}}}}
+\bibcite{Jadon2020}{\citeauthoryear {Jadon}{Jadon}{{\APACyear {2020}}}}
+\APACbibcite{Jadon2020}{\citeauthoryear {Jadon}{Jadon}{{\APACyear {2020}}}}
+\bibcite{Jia2014}{\citeauthoryear {Jia\ \BOthers {.}}{Jia\ \BOthers {.}}{{\APACyear {2014}}}}
+\APACbibcite{Jia2014}{\citeauthoryear {Jia\ \BOthers {.}}{Jia\ \BOthers {.}}{{\APACyear {2014}}}}
+\bibcite{Krizhevsky2012}{\citeauthoryear {Krizhevsky, Sutskever,{}\ \BBA{} Hinton}{Krizhevsky\ \BOthers {.}}{{\APACyear {2012}}}}
+\APACbibcite{Krizhevsky2012}{\citeauthoryear {Krizhevsky, Sutskever,{}\ \BBA{} Hinton}{Krizhevsky\ \BOthers {.}}{{\APACyear {2012}}}}
+\bibcite{Li2020}{\citeauthoryear {Li, Krishna,{}\ \BBA{} Xu}{Li\ \BOthers {.}}{{\APACyear {2020}}}}
+\APACbibcite{Li2020}{\citeauthoryear {Li, Krishna,{}\ \BBA{} Xu}{Li\ \BOthers {.}}{{\APACyear {2020}}}}
+\bibcite{Long2014}{\citeauthoryear {Long, Shelhamer,{}\ \BBA{} Darrell}{Long\ \BOthers {.}}{{\APACyear {2014}}}}
+\APACbibcite{Long2014}{\citeauthoryear {Long, Shelhamer,{}\ \BBA{} Darrell}{Long\ \BOthers {.}}{{\APACyear {2014}}}}
 \bibcite{McCulloch1943}{\citeauthoryear {McCulloch\ \BBA{} Pitts}{McCulloch\ \BBA{} Pitts}{{\APACyear {1943}}}}
 \APACbibcite{McCulloch1943}{\citeauthoryear {McCulloch\ \BBA{} Pitts}{McCulloch\ \BBA{} Pitts}{{\APACyear {1943}}}}
 \bibcite{Minsky1969}{\citeauthoryear {Minsky\ \BBA{} Papert}{Minsky\ \BBA{} Papert}{{\APACyear {1969}}}}
 \APACbibcite{Minsky1969}{\citeauthoryear {Minsky\ \BBA{} Papert}{Minsky\ \BBA{} Papert}{{\APACyear {1969}}}}
+\bibcite{missinglink2020}{\citeauthoryear {missinglink}{missinglink}{{\APACyear {2020}}}}
+\APACbibcite{missinglink2020}{\citeauthoryear {missinglink}{missinglink}{{\APACyear {2020}}}}
 \bibcite{Nair2010}{\citeauthoryear {Nair\ \BBA{} Hinton}{Nair\ \BBA{} Hinton}{{\APACyear {2010}}}}
 \APACbibcite{Nair2010}{\citeauthoryear {Nair\ \BBA{} Hinton}{Nair\ \BBA{} Hinton}{{\APACyear {2010}}}}
+\@writefile{toc}{\contentsline {chapter}{Referencias}{40}\protected@file@percent }
+\bibcite{Noh2015}{\citeauthoryear {Noh, Hong,{}\ \BBA{} Han}{Noh\ \BOthers {.}}{{\APACyear {2015}}}}
+\APACbibcite{Noh2015}{\citeauthoryear {Noh, Hong,{}\ \BBA{} Han}{Noh\ \BOthers {.}}{{\APACyear {2015}}}}
 \bibcite{nwankpa2018activation}{\citeauthoryear {Nwankpa, Ijomah, Gachagan,{}\ \BBA{} Marshall}{Nwankpa\ \BOthers {.}}{{\APACyear {2018}}}}
 \APACbibcite{nwankpa2018activation}{\citeauthoryear {Nwankpa, Ijomah, Gachagan,{}\ \BBA{} Marshall}{Nwankpa\ \BOthers {.}}{{\APACyear {2018}}}}
 \bibcite{Paszke2019}{\citeauthoryear {Paszke\ \BOthers {.}}{Paszke\ \BOthers {.}}{{\APACyear {2019}}}}
@@ -197,17 +279,24 @@
 \APACbibcite{Rosenblatt1958}{\citeauthoryear {Rosenblatt}{Rosenblatt}{{\APACyear {1958}}}}
 \bibcite{Rumelhart1986}{\citeauthoryear {Rumelhart, Hinton,{}\ \BBA{} Williams}{Rumelhart\ \BOthers {.}}{{\APACyear {1986}}}}
 \APACbibcite{Rumelhart1986}{\citeauthoryear {Rumelhart, Hinton,{}\ \BBA{} Williams}{Rumelhart\ \BOthers {.}}{{\APACyear {1986}}}}
+\bibcite{Schindelin2012}{\citeauthoryear {Schindelin\ \BOthers {.}}{Schindelin\ \BOthers {.}}{{\APACyear {2012}}}}
+\APACbibcite{Schindelin2012}{\citeauthoryear {Schindelin\ \BOthers {.}}{Schindelin\ \BOthers {.}}{{\APACyear {2012}}}}
+\bibcite{Simonyan2014}{\citeauthoryear {Simonyan\ \BBA{} Zisserman}{Simonyan\ \BBA{} Zisserman}{{\APACyear {2014}}}}
+\APACbibcite{Simonyan2014}{\citeauthoryear {Simonyan\ \BBA{} Zisserman}{Simonyan\ \BBA{} Zisserman}{{\APACyear {2014}}}}
+\bibcite{Szegedy2014}{\citeauthoryear {Szegedy\ \BOthers {.}}{Szegedy\ \BOthers {.}}{{\APACyear {2014}}}}
+\APACbibcite{Szegedy2014}{\citeauthoryear {Szegedy\ \BOthers {.}}{Szegedy\ \BOthers {.}}{{\APACyear {2014}}}}
 \bibcite{Tiobe2020}{\citeauthoryear {Tiobe}{Tiobe}{{\APACyear {2020}}}}
 \APACbibcite{Tiobe2020}{\citeauthoryear {Tiobe}{Tiobe}{{\APACyear {2020}}}}
 \bibcite{VanDerWalt2011}{\citeauthoryear {Van Der\unhbox \voidb@x \nobreak  \ Walt, Colbert,{}\ \BBA{} Varoquaux}{Van Der\unhbox \voidb@x \nobreak  \ Walt\ \BOthers {.}}{{\APACyear {2011}}}}
 \APACbibcite{VanDerWalt2011}{\citeauthoryear {Van Der\unhbox \voidb@x \nobreak  \ Walt, Colbert,{}\ \BBA{} Varoquaux}{Van Der\unhbox \voidb@x \nobreak  \ Walt\ \BOthers {.}}{{\APACyear {2011}}}}
 \bibcite{Walt2014}{\citeauthoryear {van\unhbox \voidb@x \nobreak  \ der Walt\ \BOthers {.}}{van\unhbox \voidb@x \nobreak  \ der Walt\ \BOthers {.}}{{\APACyear {2014}}}}
 \APACbibcite{Walt2014}{\citeauthoryear {van\unhbox \voidb@x \nobreak  \ der Walt\ \BOthers {.}}{van\unhbox \voidb@x \nobreak  \ der Walt\ \BOthers {.}}{{\APACyear {2014}}}}
-\@writefile{toc}{\contentsline {chapter}{Referencias}{31}\protected@file@percent }
 \bibcite{Virtanen2020}{\citeauthoryear {{Virtanen}\ \BOthers {.}}{{Virtanen}\ \BOthers {.}}{{\APACyear {2020}}}}
 \APACbibcite{Virtanen2020}{\citeauthoryear {{Virtanen}\ \BOthers {.}}{{Virtanen}\ \BOthers {.}}{{\APACyear {2020}}}}
 \bibcite{Widrow2015}{\citeauthoryear {Widrow\ \BBA{} Hoff}{Widrow\ \BBA{} Hoff}{{\APACyear {2015}}}}
 \APACbibcite{Widrow2015}{\citeauthoryear {Widrow\ \BBA{} Hoff}{Widrow\ \BBA{} Hoff}{{\APACyear {2015}}}}
 \bibcite{Wolny2020}{\citeauthoryear {Wolny\ \BOthers {.}}{Wolny\ \BOthers {.}}{{\APACyear {2020}}}}
 \APACbibcite{Wolny2020}{\citeauthoryear {Wolny\ \BOthers {.}}{Wolny\ \BOthers {.}}{{\APACyear {2020}}}}
+\bibcite{Zeiler2011}{\citeauthoryear {{Zeiler}, {Taylor},{}\ \BBA{} {Fergus}}{{Zeiler}\ \BOthers {.}}{{\APACyear {2011}}}}
+\APACbibcite{Zeiler2011}{\citeauthoryear {{Zeiler}, {Taylor},{}\ \BBA{} {Fergus}}{{Zeiler}\ \BOthers {.}}{{\APACyear {2011}}}}
 \ttl@finishall

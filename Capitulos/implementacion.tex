@@ -33,6 +33,39 @@ Todos los frameworks populares de Python son una buena elección, ya que todos t
 El primer paso a realizar es preparar los datos, para ello se han usado las siguientes librerías:
 
 \begin{itemize}
-\item scikit-image \cite{Walt2014}. Es una librería de procesamiento de imágenes. Se ha usado para encontrar los bordes de la imagen con etiquetado multiclase sin espaciado entre células. Esta imagen no podía ser usada directamente en el entrenamiento de la CNN, por lo que se ha seguido la estrategia de encontrar los bordes de cada célula con la función \textit{(segmentation.searchboundaries)} \cite{Wolny2020}, después de encontrar los contornos se substraen de la imagen original y se cambian todas las etiquetas a 1, consiguiendo así un espaciado entre células, tal y como se indica en \cite{Falk2019}. También se ha usado esta librería \textit{(measure label)} para asegurarnos de que el nº de células no varía al realizar las operaciones de preprocesado (por ejemplo, podría ser que dos células con etiqueta 1 eliminaran el espacio entre sí, convirtiendose en la misma instancia de célula).
-\item SciPy \cite{Virtanen2020}. Contiene diversos módulos con algoritmos útiles en el ámbito científico. En el submódulo \textit{ndimage} se pueden encontrar los algoritmos relativos al procesamiento de imagen. Se ha utilizado la función \textit{ndimage.zoom()} para reescalar las imágenes de entrada, haciendo que ocupen menos memoria y sea viable usarlas para el entrenamiento.
+\item \textbf{scikit-image} \cite{Walt2014}. Es una librería de procesamiento de imágenes. Se ha usado para encontrar los bordes de la imagen con etiquetado multiclase sin espaciado entre células. Esta imagen no podía ser usada directamente en el entrenamiento de la CNN, por lo que se ha seguido la estrategia de encontrar los bordes de cada célula con la función \textit{(segmentation.search\_boundaries())} \cite{Wolny2020}, después de encontrar los contornos se substraen de la imagen original y se cambian todas las etiquetas a 1, consiguiendo así un espaciado entre células, tal y como se indica en \cite{Falk2019}. También se ha usado esta librería (\textit{measure\_label()}) para asegurarnos de que el nº de células no varía al realizar las operaciones de preprocesado (por ejemplo, podría ser que dos células con etiqueta 1 eliminaran el espacio entre sí, convirtiendose en la misma instancia de célula).
+\item \textbf{SciPy} \cite{Virtanen2020}. Contiene diversos módulos con algoritmos útiles en el ámbito científico. En el submódulo \textit{ndimage} se pueden encontrar los algoritmos relativos al procesamiento de imagen. Se ha utilizado la función \textit{ndimage.zoom()} para reescalar las imágenes de entrada, haciendo que ocupen menos memoria y sea viable usarlas para el entrenamiento.
+\item \textbf{h5py} \cite{Collette2013}. Aporta una interfaz para trabajar con el formato de datos HDF5 \cite{HDFGroup20002010}, útil para usar en python ficheros generados en programas como MATLAB. El tratamiento de datos con esta librería es muy intuitivo ya que imita la sintaxis de NumPy. Ha sido usado para archivos .mat generados en MATLAB con los datos iniciales. Tras el preprocesado, se ha usado esta librería para generar un nuevo archivo con todas las imágenes en un nuevo archivo .mat.
 \end{itemize}
+
+\subsection{Consideraciones}
+\subsubsection{Reescalado}
+
+Para la operación de reescalado se ha usado la función \textit{ndimage.zoom()}. Esta función hace interpolación con splines seleccionado un factor por el que hacer zoom por cada dimensión, el orden de la interpolación spline. Se han tomado las siguientes decisiones:
+\begin{itemize}
+\item \textbf{Factor para escalar hacia abajo.} Las imágenes originales ocupan $\sim 2GB$ en memoria, intentar usarlas en una U-Net sobrepasa en gran medida los 16GB de memoria disponibles en este proyecto. Se ha decidido reducir las dimensiones en $(1/8, 1/8, 1/4)$ de sus dimensiones $(X, Y, Z)$ originales, consiguiendo una reducción de $8*8*4=256$ de su tamaño original, se pasa de $\sim 2GB$ a $\sim 8MB$. Con un tamaño de $8MB$ es posible realizar todo el proceso de entrenamiento e inferencia, aunque se pierda calidad en la imagen. Gracias a la característica de U-Net de aceptar imágenes de cualquier dimensión, si no se hace entrenamiento por batch no es necesario asegurarse de que todas las imágenes tengan las mismas dimensiones. Por experimentación, he comprobado que los factores de las dimensiones no deben de ser muy diferentes, ya que cambiaría el tamaño en $\mu m^3$ de cada vóxel, además de provocar una deformación elástica en los imágenes.
+\item \textbf{Escalado hacia arriba.} Después de escalar hacia abajo, si se quiere hacer entrenamiento por batch con la imagen completa es necesario que todas las imágenes tengan las mismas dimensiones. Para esto se comprueba las mayores dimensiones de las imágenes después de escalar hacia abajo y se elige como objetivo $(X_{obj}, Y_{obj}, Z_{obj})$. Para cada imagen $(X, Y, Z)$ el procedimiento es crear una nueva matriz de ceros de tamaño $(X_{obj}, Y_{obj}, Z_{obj})$ y asignar a la imagen a los valores $([0:X-1],[0:Y-1],[0:Z-1])$. De esta forma el volumen de las células mantienen el mismo ratio entre todas las imágenes.
+\item \textbf{Orden.} Se ha utilizado orden 3, ya que es el que está por defecto y se han obtenido buenos resultados con él.
+\end{itemize}
+
+\subsubsection{Encontrar bordes}
+
+Para encontrar los bordes se ha usado la función \textit{segmentation.find\_boundaries()}. Esta función realiza operaciones morfológicas para encontrar los bordes de los objetos de una imagen con valores enteros o binarios. Se han tomado las siguientes decisiones:
+\begin{itemize}
+\item \textbf{Conectividad.} Hay N tipos de conectividad siendo N el nº de dimensiones de la imagen de entrada, en nuestro caso N=3. Con conectividad 1 los vóxeles compartiendo al menos una cara son considerados vecinos. Con conectividad 3 se amplía el rango de vecinos al hacer que cualquier vóxel compartiendo una esquina también son considerados vecinos. Si dos vóxeles vecinos tienen distinta etiqueta, son bordes. Se ha elegido conectividad 3 para priorizar el que no haya células en contacto en ninguna de las 3 dimensiones.
+\item \textbf{Modo.} Este modo define qué vóxeles son marcados como bordes. El modo escogido es \textit{outer}, que selecciona como bordes los vóxeles de fondo alrededor de los elementos, si hay 2 elementos en contacto, se marca su frontera como borde. Se ha escogido este modo ya que, al escoger el fondo como borde retiene la mayor cantidad de volumen celular original.
+\end{itemize}
+
+\subsubsection{Crear nuevo fichero}
+
+La creación del nuevo fichero se ha hecho con la librería h5py. Los datos originales tienen dos puntos en los que se puede mejorar su almacenamiento para que ocupe menos espacio y sea más fácil de transferir.
+\begin{itemize}
+\item \textbf{Tipo de dato.} Tanto la imagen de entrada como la imagen etiquetada tienen el tipo de datos $f8$. Es posible pasar la imagen de entrada al tipo $f4$ y la imagen etiquetada al tipo $i1$ sin perder información. Esto va a reducir el tamaño en disco en más de la mitad. Por lo escribir las imágenes en el fichero se harán con los tipos $f4$ y $i1$.
+\item \textbf{Compresión.} Se ha optado por usar la compresión \textit{gzip}, que ofrece una buena compresión a una velocidad no muy alta. Tiene 10 niveles de compresión $[0,9]$. Se ha probado a comprimir con el nivel $9$ consiguiendo una buena compresión pero es excesivamente lento, al final se ha optado por usar una compresión de nivel $4$ que, aunque tiene $\sim 10\%$ más tamaño que con el nivel $9$, el tiempo de la compresión se reduce a más de la mitad y de todas formas el resultado ya es muy bueno.
+\end{itemize}
+
+\section{Preprocesado en carga de datos}\label{sec:data_loading_processing}
+
+\section{U-Net}\label{sec:data_loading_processing}
+
+\section{Postprocesado}\label{sec:data_loading_processing}

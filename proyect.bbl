@@ -1,6 +1,69 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Cardoso%
+\ \protect \BOthers {.}}{%
+Cardoso%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+Cardoso2017}
+\APACinsertmetastar {%
+Cardoso2017}%
+\begin{APACrefauthors}%
+Cardoso, M\BPBI J.%
+, Arbel, T.%
+, Carneiro, G.%
+, Syeda-Mahmood, T.%
+, Tavares, J.%
+, Moradi, M.%
+\BDBL {}Lu, Z.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2017}.
+\newblock
+\APACrefbtitle {Deep Learning in Medical Image Analysis and Multimodal Learning
+  for Clinical Decision Support: Third International Workshop, DLMIA 2017, and
+  7th International Workshop, ML-CDS 2017, Held in Conjunction with MICCAI
+  2017, Québec City, QC, Canada, September 14, Proceedings} {Deep learning in
+  medical image analysis and multimodal learning for clinical decision support:
+  Third international workshop, dlmia 2017, and 7th international workshop,
+  ml-cds 2017, held in conjunction with miccai 2017, québec city, qc, canada,
+  september 14, proceedings}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/978-3-319-67558-9} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Deng%
+\ \protect \BOthers {.}}{%
+Deng%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2009}}%
+}]{%
+Deng2009}
+\APACinsertmetastar {%
+Deng2009}%
+\begin{APACrefauthors}%
+Deng, J.%
+, Dong, W.%
+, Socher, R.%
+, Li, L\BHBI J.%
+, Li, K.%
+\BCBL {}\ \BBA {} Fei-Fei, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{ImageNet: A Large-Scale Hierarchical Image Database}}
+  {{ImageNet: A Large-Scale Hierarchical Image Database}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {CVPR09.} {Cvpr09.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Falk%
 \ \protect \BOthers {.}}{%
 Falk%
@@ -68,6 +131,33 @@ Goodfellow, I.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+He%
+, Zhang%
+, Ren%
+\BCBL {}\ \BBA {} Sun%
+}{%
+He%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+He2015}
+\APACinsertmetastar {%
+He2015}%
+\begin{APACrefauthors}%
+He, K.%
+, Zhang, X.%
+, Ren, S.%
+\BCBL {}\ \BBA {} Sun, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+\APACrefbtitle {Deep Residual Learning for Image Recognition.} {Deep residual
+  learning for image recognition.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 G.~Hinton%
 , Osindero%
 \BCBL {}\ \BBA {} Teh%
@@ -119,6 +209,168 @@ Hinton, G\BPBI E.%
 \BIn{} \APACrefbtitle {Proceedings of the Eighth Annual Conference of the
   Cognitive Science Society.} {Proceedings of the eighth annual conference of
   the cognitive science society.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hochreiter%
+}{%
+Hochreiter%
+}{%
+{\protect \APACyear {1998}}%
+}]{%
+Hochreiter1998}
+\APACinsertmetastar {%
+Hochreiter1998}%
+\begin{APACrefauthors}%
+Hochreiter, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1998}{04}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The Vanishing Gradient Problem During Learning Recurrent
+  Neural Nets and Problem Solutions} {The vanishing gradient problem during
+  learning recurrent neural nets and problem solutions}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Uncertainty, Fuzziness and
+  Knowledge-Based Systems}{6}{}{107-116}.
+\newblock
+\begin{APACrefDOI} \doi{10.1142/S0218488598000094} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jadon%
+}{%
+Jadon%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+Jadon2020}
+\APACinsertmetastar {%
+Jadon2020}%
+\begin{APACrefauthors}%
+Jadon, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {A survey of loss functions for semantic segmentation.} {A
+  survey of loss functions for semantic segmentation.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jia%
+\ \protect \BOthers {.}}{%
+Jia%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+Jia2014}
+\APACinsertmetastar {%
+Jia2014}%
+\begin{APACrefauthors}%
+Jia, Y.%
+, Shelhamer, E.%
+, Donahue, J.%
+, Karayev, S.%
+, Long, J.%
+, Girshick, R.%
+\BDBL {}Darrell, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Caffe: Convolutional Architecture for Fast Feature
+  Embedding} {Caffe: Convolutional architecture for fast feature
+  embedding}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint arXiv:1408.5093}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Krizhevsky%
+, Sutskever%
+\BCBL {}\ \BBA {} Hinton%
+}{%
+Krizhevsky%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2012}}%
+}]{%
+Krizhevsky2012}
+\APACinsertmetastar {%
+Krizhevsky2012}%
+\begin{APACrefauthors}%
+Krizhevsky, A.%
+, Sutskever, I.%
+\BCBL {}\ \BBA {} Hinton, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{01}{}.
+\newblock
+{\BBOQ}\APACrefatitle {ImageNet Classification with Deep Convolutional Neural
+  Networks} {Imagenet classification with deep convolutional neural
+  networks}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Neural Information Processing Systems}{25}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1145/3065386} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Li%
+, Krishna%
+\BCBL {}\ \BBA {} Xu%
+}{%
+Li%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Li2020}
+\APACinsertmetastar {%
+Li2020}%
+\begin{APACrefauthors}%
+Li, F\BHBI F.%
+, Krishna, R.%
+\BCBL {}\ \BBA {} Xu, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {{CS231n} Convolutional Neural Networks for Visual Recognition.}
+  {{CS231n} convolutional neural networks for visual recognition.}
+\newblock
+\begin{APACrefURL}
+  [{2020-09-03}]\url{https://cs231n.github.io/convolutional-networks/}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Long%
+, Shelhamer%
+\BCBL {}\ \BBA {} Darrell%
+}{%
+Long%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+Long2014}
+\APACinsertmetastar {%
+Long2014}%
+\begin{APACrefauthors}%
+Long, J.%
+, Shelhamer, E.%
+\BCBL {}\ \BBA {} Darrell, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+\APACrefbtitle {Fully Convolutional Networks for Semantic Segmentation.} {Fully
+  convolutional networks for semantic segmentation.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -180,6 +432,30 @@ Minsky, M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+missinglink%
+}{%
+missinglink%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+missinglink2020}
+\APACinsertmetastar {%
+missinglink2020}%
+\begin{APACrefauthors}%
+missinglink.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {{missinglink.ai}.} {{missinglink.ai}.}
+\newblock
+\begin{APACrefURL}
+  [{2020-09-03}]\url{https://missinglink.ai/guides/convolutional-neural-networks/convolutional-neural-network-tutorial-basic-advanced/}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Nair%
 \ \BBA {} Hinton%
 }{%
@@ -209,6 +485,31 @@ Nair, V.%
   (\BPG~807–814).
 \newblock
 \APACaddressPublisher{Madison, WI, USA}{Omnipress}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Noh%
+, Hong%
+\BCBL {}\ \BBA {} Han%
+}{%
+Noh%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Noh2015}
+\APACinsertmetastar {%
+Noh2015}%
+\begin{APACrefauthors}%
+Noh, H.%
+, Hong, S.%
+\BCBL {}\ \BBA {} Han, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+\APACrefbtitle {Learning Deconvolution Network for Semantic Segmentation.}
+  {Learning deconvolution network for semantic segmentation.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -355,6 +656,92 @@ Rumelhart, D\BPBI E.%
 \begin{APACrefURL} \url{https://doi.org/10.1038/323533a0} \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1038/323533a0} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Schindelin%
+\ \protect \BOthers {.}}{%
+Schindelin%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2012}}%
+}]{%
+Schindelin2012}
+\APACinsertmetastar {%
+Schindelin2012}%
+\begin{APACrefauthors}%
+Schindelin, J.%
+, Arganda-Carreras, I.%
+, Frise, E.%
+, Kaynig, V.%
+, Longair, M.%
+, Pietzsch, T.%
+\BDBL {}Cardona, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{Jul}{01}.
+\newblock
+{\BBOQ}\APACrefatitle {Fiji: an open-source platform for biological-image
+  analysis} {Fiji: an open-source platform for biological-image
+  analysis}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Nature Methods}{9}{7}{676-682}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1038/nmeth.2019} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1038/nmeth.2019} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Simonyan%
+\ \BBA {} Zisserman%
+}{%
+Simonyan%
+\ \BBA {} Zisserman%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+Simonyan2014}
+\APACinsertmetastar {%
+Simonyan2014}%
+\begin{APACrefauthors}%
+Simonyan, K.%
+\BCBT {}\ \BBA {} Zisserman, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+\APACrefbtitle {Very Deep Convolutional Networks for Large-Scale Image
+  Recognition.} {Very deep convolutional networks for large-scale image
+  recognition.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Szegedy%
+\ \protect \BOthers {.}}{%
+Szegedy%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+Szegedy2014}
+\APACinsertmetastar {%
+Szegedy2014}%
+\begin{APACrefauthors}%
+Szegedy, C.%
+, Liu, W.%
+, Jia, Y.%
+, Sermanet, P.%
+, Reed, S.%
+, Anguelov, D.%
+\BDBL {}Rabinovich, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+\APACrefbtitle {Going Deeper with Convolutions.} {Going deeper with
+  convolutions.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -531,6 +918,35 @@ Wolny, A.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1101/2020.01.17.910562} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Zeiler}%
+, {Taylor}%
+\BCBL {}\ \BBA {} {Fergus}%
+}{%
+{Zeiler}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+Zeiler2011}
+\APACinsertmetastar {%
+Zeiler2011}%
+\begin{APACrefauthors}%
+{Zeiler}, M\BPBI D.%
+, {Taylor}, G\BPBI W.%
+\BCBL {}\ \BBA {} {Fergus}, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Adaptive deconvolutional networks for mid and high level
+  feature learning} {Adaptive deconvolutional networks for mid and high level
+  feature learning}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2011 International Conference on Computer Vision} {2011
+  international conference on computer vision}\ (\BPG~2018-2025).
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

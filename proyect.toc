@@ -1,8 +1,8 @@
 \babel@toc {spanish}{}
 \contentsline {chapter}{\'Indice general}{2}%
-\contentsline {chapter}{{\'I}ndice de cuadros}{3}%
-\contentsline {chapter}{\'{I}ndice de figuras}{4}%
-\contentsline {chapter}{\numberline {1}Definici\'on de objetivos}{1}%
+\contentsline {chapter}{{\'I}ndice de cuadros}{4}%
+\contentsline {chapter}{\'{I}ndice de figuras}{5}%
+\contentsline {chapter}{\numberline {1}Presentaci\'on del problema}{1}%
 \contentsline {chapter}{\numberline {2}An\'alisis de antecedentes}{2}%
 \contentsline {section}{\numberline {2.1}Red Neuronal Artificial}{2}%
 \contentsline {subsection}{\numberline {2.1.1}Introducción a Redes Neuronales Artificiales}{2}%
@@ -21,25 +21,43 @@
 \contentsline {subsubsection}{Binary Cross-Entropy}{11}%
 \contentsline {subsubsection}{Weighted Binary Cross-Entropy}{11}%
 \contentsline {subsubsection}{Dice Loss}{11}%
-\contentsline {section}{\numberline {2.3}Arquitecturas usadas en segmentación}{11}%
-\contentsline {section}{\numberline {2.4}Software desarrollado}{11}%
-\contentsline {section}{\numberline {2.5}Aportación Realizada}{11}%
-\contentsline {chapter}{\numberline {3}An\'alisis de requisitos, dise\~no e implementaci\'on}{12}%
-\contentsline {section}{\numberline {3.1}Datos iniciales}{12}%
-\contentsline {subsubsection}{imageSequenceInterpolated}{12}%
-\contentsline {chapter}{\numberline {4}Diseño}{14}%
-\contentsline {section}{\numberline {4.1}Esquema general}{14}%
-\contentsline {section}{\numberline {4.2}Preprocesado local}{16}%
-\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{16}%
-\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{16}%
-\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{17}%
-\contentsline {subsubsection}{Modificar el orden de las dimensiones}{17}%
-\contentsline {section}{\numberline {4.3}Entrenamiento}{18}%
-\contentsline {section}{\numberline {4.4}Inferencia}{19}%
-\contentsline {section}{\numberline {4.5}Arquitectura de las Redes Neuronales Convolucionales}{20}%
-\contentsline {chapter}{\numberline {5}Implementación}{22}%
-\contentsline {section}{\numberline {5.1}Lenguaje y framework}{22}%
-\contentsline {section}{\numberline {5.2}Preprocesado local}{23}%
-\contentsline {chapter}{\numberline {6}Pruebas}{24}%
-\contentsline {chapter}{Referencias}{31}%
+\contentsline {section}{\numberline {2.3}Arquitecturas para segmentación semántica}{11}%
+\contentsline {subsection}{\numberline {2.3.1}Fully Convolutional Network}{12}%
+\contentsline {subsection}{\numberline {2.3.2}Deconvnet}{12}%
+\contentsline {subsubsection}{Unpooling}{13}%
+\contentsline {subsubsection}{Deconvoloución}{13}%
+\contentsline {subsection}{\numberline {2.3.3}U-Net}{14}%
+\contentsline {section}{\numberline {2.4}Aplicaciones recientes}{14}%
+\contentsline {subsection}{\numberline {2.4.1}U-Net para cuenteo, detección y morfometría, detección y morfometría de células. (2019)}{15}%
+\contentsline {subsubsection}{Proyecto}{15}%
+\contentsline {subsubsection}{Pipeline}{15}%
+\contentsline {subsubsection}{Resultados}{16}%
+\contentsline {subsubsection}{Software}{16}%
+\contentsline {subsection}{\numberline {2.4.2}Precisa y versátil segmentación 3D de tejido vegetal a resolución celular. (2020)}{17}%
+\contentsline {subsubsection}{Proyecto}{17}%
+\contentsline {subsubsection}{Pipeline}{17}%
+\contentsline {subsubsection}{Resultados}{18}%
+\contentsline {subsubsection}{Software}{18}%
+\contentsline {chapter}{\numberline {3}An\'alisis de requisitos, dise\~no e implementaci\'on}{20}%
+\contentsline {section}{\numberline {3.1}Datos iniciales}{20}%
+\contentsline {subsubsection}{imageSequenceInterpolated}{20}%
+\contentsline {chapter}{\numberline {4}Diseño}{22}%
+\contentsline {section}{\numberline {4.1}Esquema general}{22}%
+\contentsline {section}{\numberline {4.2}Preprocesado local}{24}%
+\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{24}%
+\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{24}%
+\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{25}%
+\contentsline {subsubsection}{Modificar el orden de las dimensiones}{25}%
+\contentsline {section}{\numberline {4.3}Entrenamiento}{26}%
+\contentsline {section}{\numberline {4.4}Inferencia}{27}%
+\contentsline {section}{\numberline {4.5}Arquitectura de las Redes Neuronales Convolucionales}{28}%
+\contentsline {chapter}{\numberline {5}Implementación}{30}%
+\contentsline {section}{\numberline {5.1}Lenguaje y framework}{30}%
+\contentsline {section}{\numberline {5.2}Preprocesado local}{31}%
+\contentsline {subsection}{\numberline {5.2.1}Consideraciones}{31}%
+\contentsline {subsubsection}{Reescalado}{31}%
+\contentsline {subsubsection}{Encontrar bordes}{32}%
+\contentsline {subsubsection}{Crear nuevo fichero}{32}%
+\contentsline {chapter}{\numberline {6}Pruebas}{33}%
+\contentsline {chapter}{Referencias}{40}%
 \contentsfinish 

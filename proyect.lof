@@ -8,30 +8,37 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Imagen de 4x4 px aplanada y usada como entrada en una FCNN con 4 neuronas en su única capa oculta. No se muestra su capa de salida. Imagen del curso Intro to Deep Learning with PyTorch de Udacity.\relax }}{6}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imágenes del curso Intro to Deep Learning with PyTorch de Udacity.\relax }}{7}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Red Neuronal Convolucional simple en la que la imagen de un barco es clasificada.\relax }}{7}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imagen tomada del curso CS231n de Standford University.\relax }}{9}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Capa de convolución de profundidad 2 (se usan dos filtros) con kernel de tamaño $3\times 3 \times 3$ aplicado a un volumen de entrada de tamaño $7x7x3$, volumen generado al aplicar padding de 1 px a una imagen de tamaño $5x5$ con 3 canales. El resultado es un volumen de $3x3x2$\relax }}{9}%
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Imagen $4\times 4$ a la que se ha aplicado un pooling de $F=2, S=2$. Cada color de la imagen de la izquierda indica las entradas del para la operación MAX, cada color de la imagen de la derecha indica la salida de dicha operación. Figura tomada del curso CS231n de Standford University.\relax }}{10}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Arquitectura de FCN32, FCN16 y FCN8.\relax }}{12}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Arquitectura Deconvnet.\relax }}{13}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Figura que ilustra las operaciones unpooling y deconvolución.\relax }}{13}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Arquitectura original U-Net propuesta por Ronneberger et al en U-Net: Convolutional Networks for Biomedical Image Segmentation.\relax }}{14}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Segmentación volumétrica. (a) Segmentación de una imagen con un modelo que se ha entrenado con imágenes del mismo dataset. (b) Segmentación de una imagen con un modelo entrenado con un dataset distinto.\relax }}{16}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Segmentación de tejido vegetal usando PlantSeg. En el primer paso se predicen los bordes de las células usando una red U-Net 3D. En el segundo paso se aplica un algoritmo de particionamiento de grafo para segmentar cada célula.\relax }}{18}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Interfaz gráfica del programa PlantSet. Se pueden ver las distintas opciones para cada paso del procesado.\relax }}{19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Histograma de todos los valores\relax }}{13}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Histograma de todos los valores con el eje y limitado a 4000\relax }}{13}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Histograma de todos los valores\relax }}{21}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Histograma de todos los valores con el eje y limitado a 4000\relax }}{21}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Diseño general\relax }}{15}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{16}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces \relax }}{18}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{19}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{20}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Arquitectura U-Net completa.\relax }}{21}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diseño general\relax }}{23}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{24}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \relax }}{26}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{27}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{28}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Arquitectura U-Net completa.\relax }}{29}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Arquitectura U-Net media. Batch=1. Znorm. Hay sobreajuste.\relax }}{24}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Arquitectura U-Net media. Batch=1. Adam con mejores parámetros. Hay sobreajuste.\relax }}{25}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Arquitectura U-Net media. Con data augmentation. Data augmentation elimia el sobreajuste.\relax }}{26}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex. El autoescalado del factor de pérdida de Apex aumenta la velocidad de entrenamiento.\relax }}{27}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{27}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{28}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{28}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{29}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{29}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{30}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{30}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Arquitectura U-Net media. Batch=1. Znorm. Hay sobreajuste.\relax }}{33}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Arquitectura U-Net media. Batch=1. Adam con mejores parámetros. Hay sobreajuste.\relax }}{34}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Arquitectura U-Net media. Con data augmentation. Data augmentation elimia el sobreajuste.\relax }}{35}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex. El autoescalado del factor de pérdida de Apex aumenta la velocidad de entrenamiento.\relax }}{36}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{36}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{37}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{37}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{38}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{38}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{39}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{39}%
 \contentsfinish 
 \contentsfinish 
