@@ -38,8 +38,7 @@
 \contentsline {subsubsection}{Pipeline}{17}%
 \contentsline {subsubsection}{Resultados}{18}%
 \contentsline {subsubsection}{Software}{18}%
-\contentsline {chapter}{\numberline {3}An\'alisis de requisitos, dise\~no e implementaci\'on}{20}%
-\contentsline {section}{\numberline {3.1}Datos iniciales}{20}%
+\contentsline {chapter}{\numberline {3}Datos de entrada}{20}%
 \contentsline {subsubsection}{imageSequenceInterpolated}{20}%
 \contentsline {chapter}{\numberline {4}Diseño}{22}%
 \contentsline {section}{\numberline {4.1}Esquema general}{22}%
@@ -58,6 +57,26 @@
 \contentsline {subsubsection}{Reescalado}{31}%
 \contentsline {subsubsection}{Encontrar bordes}{32}%
 \contentsline {subsubsection}{Crear nuevo fichero}{32}%
-\contentsline {chapter}{\numberline {6}Pruebas}{33}%
-\contentsline {chapter}{Referencias}{40}%
+\contentsline {section}{\numberline {5.3}Carga de datos}{32}%
+\contentsline {subsection}{\numberline {5.3.1}Consideraciones}{33}%
+\contentsline {subsubsection}{Tamaño del batch}{33}%
+\contentsline {subsubsection}{Normalización}{33}%
+\contentsline {subsubsection}{Data Augmentation}{34}%
+\contentsline {section}{\numberline {5.4}U-Net}{34}%
+\contentsline {subsubsection}{Funciones de pérdida}{34}%
+\contentsline {subsubsection}{Precisión Mixta}{35}%
+\contentsline {subsubsection}{Ficheros generados}{35}%
+\contentsline {section}{\numberline {5.5}Postprocesado}{36}%
+\contentsline {chapter}{\numberline {6}Resultados}{37}%
+\contentsline {subsubsection}{MiniUnet3D vs Unet3D}{38}%
+\contentsline {subsubsection}{Sin data augmentation vs Con data augmentation}{39}%
+\contentsline {subsubsection}{Sin Apex vs Con Apex}{40}%
+\contentsline {subsubsection}{Prueba de espaciado entre células.}{41}%
+\contentsline {subsubsection}{Prueba de bordes.}{42}%
+\contentsline {subsubsection}{DT Watershed a bordes.}{43}%
+\contentsline {subsubsection}{Comparación DT Watershed con espaciado entre células.}{44}%
+\contentsline {chapter}{\numberline {7}An\'alisis temporal}{45}%
+\contentsline {chapter}{\numberline {8}Conclusiones}{46}%
+\contentsline {chapter}{\numberline {9}Manual}{47}%
+\contentsline {chapter}{Referencias}{48}%
 \contentsfinish 

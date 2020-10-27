@@ -1,17 +1,7 @@
 \cdpchapter{Resumen}
 
-En la actualidad existen microscopios que emplean técnicas ópticas para reconstruir imágenes 3D con una alta precisión. Gracias a esto los investigadores tienen a su alcance imágenes microscópicas de alta calidad y pueden sacar conclusiones de ellas. Estas imágenes suelen requerir un procesado digital con el objetivo de discernir los elementos importantes del resto.
+En este proyecto se han utilizado técnicas modernas para la segmentación de células en imágenes 3D. Actualmente los mejores resultados para tratamiento de imágenes en deep learning se obtienen con las redes neuronales convolucionales (CNN), obteniendose muy buenos resultados en segmentación celular 3D con la arquitectura UNet.
 
-En este proyecto se abordará el problema de la segmentación de células en imágenes 3D. Para ello se usarán imágenes  cedidas por el Departamento de Biología Celular de la Facultad de Biología de la Universidad de Sevilla. En cada imagen hay decenas de células, todas en contacto con otras células sin espacio entre ellas.
+En este proyecto se han estudiado varios algoritmos y métodos para hacer segmentación celular y se han implementado aquellos que han obtenido mejores resultados en los últimos años. El desarrollo se ha basa fuertemente en \cite{Wolny2020} y \cite{Falk2019}, con una estrategia de segmentación de bordes + DT Watershed como un método y con segmentación de células añadiendo espaciado entre ellas como otro método.
 
-El procesado digital de estas imágenes actualmente se hace de forma manual teniendo una duración de una a dos semanas, por lo que la automatización de este proceso conllevará un gran ahorro de tiempo.
-
-Respecto a las técnicas usadas, este proyecto se centrará en el uso de redes neuronales para la segmentación de células. Se validará la efectividad del uso de redes neuronales y se estudiará qué tipo de red neuronal y arquitectura será mejor para esta tarea, teniendo en cuenta la exactitud de la segmentación y el coste computacional.
-
-En el análisis de antecedenes se comprobará que la CNN (Convolutional Neural Network o Red Neuronal Convolucional) será con la que se obtienen mejores resultados en el reconocimiento de patrones en imágenes. También se verá que al diseñar una CNN con la arquitectura U-Net se obtienen buenos resultados.
-
-Se probarán varios modelos de CNNs para la segmentación de células, esperándose el mejor resultado de la arquitectura U-Net.
-
-Adicionalmente, se estudiará el uso de un preprocesado y postprocesado para aumentar la eficacia de la segmentación, así como un posterior mapeado a color de las células para ayudar a su visualización.
-
-El código fuente de esta herramienta estará disponible, así como Jupyter Notebooks y un ficher python para efectuar entrenamiento e inferencias por línea de comandos.
+Se ha desarrollado un programa sencillo que puede ser usado y modificado fácilmente. Se puede entrenar nuevos modelos y hacer inferencia con modelos ya entrenados.

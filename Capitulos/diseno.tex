@@ -42,22 +42,27 @@ El formato de las imágenes inicialmente es $ (Z,X,Y) $, siendo para todas las i
 
 \subsubsection{Generar las imágenes etiquetadas correctamente}
 
-El problema principal que nos encontramos en las imágenes con el etiquetado perfecto es que las células, siendo instancias de una misma clase (la clase "célula"), tienen etiquetas distintas. En una segmentación semántica cada vóxel es etiquetado con la clase a la que se cree que pertenece. Si usáramos el etiquetado actual necesitaríamos una clase por cada célula, pero eso no tiene mucho sentido ya que el nº de células en una imagen puede variar, además todas las células tienen características similares. Probaremos dos soluciones a este problema:
+El problema principal que nos encontramos en las imágenes con el etiquetado perfecto es que las células, siendo instancias de una misma clase (la clase \"célula\"), tienen etiquetas distintas. En una segmentación semántica cada vóxel es etiquetado con la clase a la que se cree que pertenece. Si usáramos el etiquetado actual necesitaríamos una clase por cada célula, pero eso no tiene mucho sentido ya que el nº de células en una imagen puede variar, además todas las células tienen características similares. Probaremos dos soluciones a este problema:
 
 \begin{enumerate}
 \item Añadir espacio entre células para que ninguna esté en contacto y hacer que todas tengan $ 1 $ como etiqueta.
-\item Cambiar las etiquetas a $ 1 $ sin añadir espaciado y entrenar un modelo A para su predicción. Encontrar los bordes exteriores de las células y entrenar un modelo B para su predicción. La predicción final será la predicción del modelo A menos la predicción del modelo B.
+\item Etiquetar los bordes de las células con $ 1 $ para luego aplicarle DT Watershed.
 \end{enumerate}
-
-Los 3 etiquetados distintos son preprocesados en este paso.
+Los 2 etiquetados distintos son preprocesados en este paso.
 
 \subsubsection{Reducir el tamaño de los archivos resultantes}
 
-Al estar trabajando con herramientas en la nube, será recomendable reducir el tamaño de los archivos lo mayor posible.
+Al estar trabajando con herramientas en la nube será recomendable reducir el tamaño de los archivos lo mayor posible.
 
-Todas las imágenes tienen una precisión de 8 bytes, cuando en un estudio previo se concluyó que no era necesaria tanta precisión para los valores de esas imágenes, especialmente para el etiquetado que usa valores enteros entre $0$ y $100$. Es importante tener en cuenta que al almacenar tensores en la memoria de la GPU, la imagen no tendrá ningún tipo de compresión, cada elemento ocupará espacio en memoria. Si hacemos que la imagen de entrada pase de 8 bytes a 4 bytes, estaremos reduciendo su tamaño a la mitad. De forma similar si hacemos que la imagen del etiquetado pase de 8 bytes a 1 bytes, estaremos reduciendo su tamaño a una octava parte. Con 1 byte de precisión podremos almacenar hasta 256 valores distintos, suficiente ya que sólo tendremos 2 valores distintos: 0 para el fondo y 1 para la célula o los bordes.
+Todas las imágenes tienen una precisión de 8 bytes, cuando en un estudio previo se concluyó que no era necesaria tanta precisión para los valores de esas imágenes, especialmente para el etiquetado, en el que usa valores enteros entre $0$ y $100$. Si hacemos que los valores de la imagen de entrada pasen de 8 bytes a 4 bytes, estaremos reduciendo su tamaño a la mitad. De forma similar si hacemos que la los valores de la imagen etiquetada pase de 8 bytes a 1 bytes, estaremos reduciendo su tamaño a una octava parte. Con 1 byte de precisión podremos almacenar hasta 256 valores distintos, suficiente ya que sólo tendremos 2 valores distintos: 0 para el fondo y 1 para la célula o los bordes. 
 
-Además se comprimirán las imágenes, aunque esto sólo reducirá el tamaño del archivo, el tamaño de los tensores almacenados en memoria será el mismo. Esta compresión será muy efectiva en las imágenes etiquetadas, ya que los elementos sólo tendrán 2 valores distintos.
+Además se comprimirán las imágenes, aunque esto sólo reducirá el tamaño del archivo, el tamaño de los tensores almacenados en memoria será el mismo. Esta compresión será muy efectiva en las imágenes etiquetadas, ya que los elementos sólo tendrán 2 valores distintos. 
+
+Después de hacer estos cambios se habrá reducido el tamaño del fichero pero no de los tensores cargados en memoria al leer esas imágenes. Esto es así por dos motivos:
+\begin{enumerate}
+\item Los tensores al cargarlos en memoria estarán sin ningún tipo de compresión. Cada valor del tensor ocupará el espacio correspondiente a su tipo de dato.
+\item Las operaciones implementadas en los frameworks de deep learning limitan el tipo de dato que pueden tener los tensores. Están implementados a muy bajo nivel para optimizar las operaciones, por lo que será necesario  convertir los tipos a unos que acepten, si no lo son ya.
+\end{enumerate}
 
 \subsubsection{Modificar el orden de las dimensiones}
 
@@ -67,11 +72,11 @@ Añadir una \textit{singleton dimension} es necesario para tener en cuenta el ca
 
 \pagebreak \section{Entrenamiento}\label{sec:entrenamiento}
 
-\figura{1}{img/Diseno-Entrenamiento}{}{fig:entrenamiento}{}
+\figura{1}{img/Diseno-Entrenamiento}{Pasos llevados a cabo en el entrenamiento}{fig:entrenamiento}{}
 
-En la figura \ref{fig:entrenamiento} se muestra el proceso que se lleva a cabo durante el entrenamiento de un modelo. Como ya se mencionó antes, este proceso deberá realizarse con una GPU de alto rendimiento, en este proyecto se realizará en una máquina en la nube. Antes de comenzar este proceso, los datos ya habrán sido cargados en un disco duro virtual.
+En la figura \ref{fig:entrenamiento} se muestra el proceso que se lleva a cabo durante el entrenamiento de un modelo. Como ya se mencionó antes este proceso deberá realizarse con una GPU de alto rendimiento, por lo que en este proyecto se realizará en una máquina en la nube. Antes de comenzar este proceso los datos ya habrán sido cargados en un disco duro virtual.
 
-Se utilizará un DataLoader, encargado de leer el dataset y realizar el preprocesado conveniente. Será importante normalizar los datos de entrada para que tengan un valor en rango $ [0, 1] $, esto se hará siempre. Adicionalmente, se probarán distintas técnicas como estandarizar el histograma, o \textit{data augmentation}. Al etiquetado objetivo no se le aplicará normalización ni estandarización, sólo se le aplicará \textit{data augmentation}. Al ser importante que la segmentación de la imagen etiquetada siga siendo correcta, al aplicar \textit{data augmentation} no se intentará deformar la imagen.
+Se utilizará un DataLoader, encargado de leer el dataset y realizar el preprocesado conveniente. Será importante normalizar los datos de entrada para que tengan un valor en rango $ [0, 1] $, esto se hará siempre. Adicionalmente, se probarán distintas técnicas como estandarizar el histograma, o \textit{data augmentation}. Al etiquetado objetivo no se le aplicará normalización ni estandarización, sólo se le aplicará \textit{data augmentation}. Al ser importante que la segmentación de la imagen etiquetada siga siendo correcta, al aplicar \textit{data augmentation} no se deformará la imagen.
 
 Se dividirá el dataset en $ 70\% $ entrenamiento, $ 15\% $ validación y $ 15\% $ test. Se han escogido estos porcentajes ya que se cuenta con pocos datos de entrada y son similares entre sí.
 
@@ -88,14 +93,14 @@ Una vez el entrenamiento ha finalizado correctamente querrá decir que las capas
 Para conseguir una imagen con el etiquetado correcto se han seguido dos enfoques:
 \begin{enumerate}
 \item Enfoque 1: Usar un sólo modelo que llamaremos de \textbf{Tipo 1} que ha sido entrenado usando como objetivo imágenes en la que todas las células están etiquetadas con el valor $ 1 $ y hay un espaciado (valor $ 0 $) entre ellas. Una vez hecho esto se asignará una etiqueta distinta para cada célula.
-\item Enfoque 2: Usar dos modelos y operar con los resultados. El modelo de \textbf{Tipo 2} dará como predicción un etiquetado con las células con valor $ 1 $, pero sin espacio entre ellas. El modelo de \textbf{Tipo 2} dará como predicción un etiquetado con los bordes de las células de valor $ 1 $. La predicción final será el resultado de restar la predicción del modelo de Tipo 3 a la predicción del modelo de Tipo 2.
+\item Enfoque 2: El modelo de \textbf{Tipo 2} dará como predicción un etiquetado con los bordes de las células de valor $ 1 $. A la predicción se le aplica del algoritmo DT Watershed.
 \end{enumerate}
 
 \pagebreak \section{Arquitectura de las Redes Neuronales Convolucionales}\label{sec:cnn_arch}
 
 Se probará principalmente una arquitectura de tipo U-Net. Se usará un modelo con una arquitectura reducida para facilitar las pruebas que decidirán el uso de técnicas como \textit{data augmentation}, qué reescalado se hará a las imágenes, el tamaño del batch, la función de pérdida o el optimizador a utilizar. Una vez la mayor parte de estos aspectos haya sido decidido, se pasará a probar la arquitectura completa.
 
-En la figura \ref{fig:unetarch-full} se puede ver la arquitectura completa de la red U-Net utilizada, arquitectura usada con éxito para segmentación volumétrica densa cite{Cicek2016}, basada en la arquitectura U-Net propuesta por Ronneberger et al \cite{Ronneberger2015}. Se ha omitido el tamaño de las imágenes ya que la red acepta imágenes de cualquier tamaño, Lo único a tener en cuenta es el nº de canales que tiene la imagen. Los nº mostrados en las capas determinan la profundidad de cada capa o, lo que es lo mismo, el nº de filtros distintos usados en cada capa. En la capa inicial, que simboliza la imagen de entrada, el número 1 indica que la imagen debe tener tan sólo 1 canal de entrada (escala de grises). Este tipo de arquitectura también es válida para imágenes 2D o 3D, la diferencia estaría en que las convoluciones y el pooling sean sobre 2 dimensiones o sobre 3 dimensiones.
+En la figura \ref{fig:unetarch-full} se puede ver la arquitectura completa de la red U-Net utilizada, arquitectura usada con éxito para segmentación volumétrica densa \cite{Cicek2016}, basada en la arquitectura U-Net propuesta por Ronneberger et al \cite{Ronneberger2015}. Se ha omitido el tamaño de las imágenes ya que la red acepta imágenes de cualquier tamaño, Lo único a tener en cuenta es el nº de canales que tiene la imagen. Los nº mostrados en las capas determinan la profundidad de cada capa o, lo que es lo mismo, el nº de filtros distintos usados en cada capa. En la capa inicial, que simboliza la imagen de entrada, el número 1 indica que la imagen debe tener tan sólo 1 canal de entrada (escala de grises). Este tipo de arquitectura también es válida para imágenes 2D o 3D, la diferencia estaría en que las convoluciones y el pooling sean sobre 2 dimensiones o sobre 3 dimensiones.
 
 \figura{1}{img/Diseno-unetarch-full}{Arquitectura U-Net completa.}{fig:unetarch-full}{}
 

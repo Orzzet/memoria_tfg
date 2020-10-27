@@ -161,6 +161,12 @@
 }}
  
 
+\newcommand{\colaborador}[1]{\def\@colaborador{#1}}%vble tutor
+\newcommand{\@colaborador}{\ClassError{pclass}{Falta especificar \string\tutor{} 
+\MessageBreak Usa el comando \string\colaborador{} en el preambulo para 
+\MessageBreak especificar el nombre del tutor de tu proyecto. 
+}}
+
 \newcommand{\tutor}[1]{\def\@tutor{#1}}%vble tutor
 \newcommand{\@tutor}{\ClassError{pclass}{Falta especificar \string\tutor{} 
 \MessageBreak Usa el comando \string\tutor{} en el preambulo para 
@@ -194,7 +200,7 @@
  \begin{center}\bf\sffamily
  
   {\normalsize ESCUELA T{\'E}CNICA SUPERIOR DE INGENIER{\'I}A INFORM{\'A}TICA}\\[1.5cm]
-  {\large Proyecto fin de Carrera \@tipo{}}\\[2cm]
+  {\large Proyecto fin de \@tipo{}}\\[2cm]
   {\large \@titulacion{}}\\[2cm]
   {\large \@titulopro{}}\\[1.75cm]
   {\large Realizado por}\\
@@ -204,7 +210,9 @@
   {\large Dirigido por}\\
   {\large \@tutor}\\[1.5cm]
   {\large Departamento}\\
-  {\large \@departamento}   
+  {\large \@departamento}\\[1.5cm]
+  {\large Profesor Colaborador}\\
+  {\large \@colaborador}\\
 \end{center}
 \vfill
  \begin{flushright}

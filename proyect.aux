@@ -6,6 +6,8 @@
 \@nameuse{es@quoting}
 \catcode `'\active 
 \babel@aux{spanish}{}
+\citation{Wolny2020}
+\citation{Falk2019}
 \@writefile{toc}{\contentsline {chapter}{\'Indice general}{2}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{{\'I}ndice de cuadros}{4}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\'{I}ndice de figuras}{5}\protected@file@percent }
@@ -138,12 +140,10 @@
 \@writefile{toc}{\contentsline {subsubsection}{Software}{18}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.16}{\ignorespaces Interfaz gráfica del programa PlantSet. Se pueden ver las distintas opciones para cada paso del procesado.\relax }}{19}\protected@file@percent }
 \newlabel{fig:plantseg-software}{{2.16}{19}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}An\'alisis de requisitos, dise\~no e implementaci\'on}{20}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Datos de entrada}{20}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{requisitos}{{3}{20}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Datos iniciales}{20}\protected@file@percent }
-\newlabel{sub:datos_entrada}{{3.1}{20}}
 \@writefile{toc}{\contentsline {subsubsection}{imageSequenceInterpolated}{20}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Valores mínimo y máximo de los píxeles de las imágenes de entrada.\relax }}{20}\protected@file@percent }
 \newlabel{tab:prueba}{{3.1}{20}}
@@ -170,12 +170,13 @@
 \@writefile{toc}{\contentsline {subsubsection}{Modificar el orden de las dimensiones}{25}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4.3}Entrenamiento}{26}\protected@file@percent }
 \newlabel{sec:entrenamiento}{{4.3}{26}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces \relax }}{26}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Pasos llevados a cabo en el entrenamiento\relax }}{26}\protected@file@percent }
 \newlabel{fig:entrenamiento}{{4.3}{26}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}Inferencia}{27}\protected@file@percent }
 \newlabel{sec:inferencia}{{4.4}{27}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{27}\protected@file@percent }
 \newlabel{fig:inferencia}{{4.4}{27}}
+\citation{Cicek2016}
 \citation{Ronneberger2015}
 \@writefile{toc}{\contentsline {section}{\numberline {4.5}Arquitectura de las Redes Neuronales Convolucionales}{28}\protected@file@percent }
 \newlabel{sec:cnn_arch}{{4.5}{28}}
@@ -204,36 +205,70 @@
 \@writefile{toc}{\contentsline {subsubsection}{Reescalado}{31}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Encontrar bordes}{32}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Crear nuevo fichero}{32}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Pruebas}{33}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Carga de datos}{32}\protected@file@percent }
+\newlabel{sec:data_loading_processing}{{5.3}{32}}
+\citation{PerezGarcia2020}
+\citation{ERiba2020}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Consideraciones}{33}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Tamaño del batch}{33}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Normalización}{33}\protected@file@percent }
+\citation{Ronneberger2015}
+\citation{shiba242017}
+\citation{Falk2019}
+\@writefile{toc}{\contentsline {subsubsection}{Data Augmentation}{34}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}U-Net}{34}\protected@file@percent }
+\newlabel{sec:unet_implementation}{{5.4}{34}}
+\@writefile{toc}{\contentsline {subsubsection}{Funciones de pérdida}{34}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Precisión Mixta}{35}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Ficheros generados}{35}\protected@file@percent }
+\citation{Wolny2020}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Postprocesado}{36}\protected@file@percent }
+\newlabel{sec:data_loading_processing}{{5.5}{36}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Resultados}{37}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{pruebas}{{6}{33}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Arquitectura U-Net media. Batch=1. Znorm. Hay sobreajuste.\relax }}{33}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.1}{33}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Arquitectura U-Net media. Batch=1. Adam con mejores parámetros. Hay sobreajuste.\relax }}{34}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.2}{34}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Arquitectura U-Net media. Con data augmentation. Data augmentation elimia el sobreajuste.\relax }}{35}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.3}{35}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex. El autoescalado del factor de pérdida de Apex aumenta la velocidad de entrenamiento.\relax }}{36}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.4}{36}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{36}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.5}{36}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Arquitectura U-Net completa. Bordes. Data augmentation. Apex.\relax }}{37}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.6}{37}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{37}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.7}{37}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces U-Net completa. Espaciado. Data augmentation. Apex\relax }}{38}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.8}{38}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{38}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.9}{38}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{39}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.10}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces U-Net completa. Sin espaciado. Data augmentation. Apex\relax }}{39}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{6.11}{39}}
+\newlabel{pruebas}{{6}{37}}
+\@writefile{toc}{\contentsline {subsubsection}{MiniUnet3D vs Unet3D}{38}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Modelo miniunet2.1. 100 epochs. Se usa MiniUnet3D. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{38}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Modelo unet4.1. 200 epochs. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{38}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Sin data augmentation vs Con data augmentation}{39}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Modelo unet4.13. 200 epochs. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{39}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Modelo unet4.8. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation.\relax }}{39}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Sin Apex vs Con Apex}{40}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Modelo unet4.8. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Sin Apex\relax }}{40}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Modelo unet5.2. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Con Apex.\relax }}{40}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Prueba de espaciado entre células.}{41}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Modelo unet6t. 100 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Pérdida Dice. Sin postprocesado. Primera fila imagen de entrada. Segunda fila segmentación objetivo. Tercera fila predicción. Z=20,25,45,50 en las columnas. IoU 0.72\relax }}{41}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Modelo unet6t. 100 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Sin postprocesado.\relax }}{41}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Prueba de bordes.}{42}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Sin postprocesado. Primera fila imagen de entrada. Segunda fila segmentación objetivo. Tercera fila predicción. Z=20,25,45,50 en las columnas. IoU 0.84\relax }}{42}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Sin postprocesado.\relax }}{42}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{DT Watershed a bordes.}{43}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces DT Watershed aplicado a la salida del modelo unet6b. Primera fila bordes. Segunda fila transformación de la distancia. Filtro gaussiano. Cuarta fila watershed con mínimos locales como semilla. Z=20,25,45,50 en las columnas.\relax }}{43}\protected@file@percent }
+\newlabel{fig:unet6t-100e-resultados}{{6.11}{43}}
+\@writefile{toc}{\contentsline {subsubsection}{Comparación DT Watershed con espaciado entre células.}{44}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.12}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Componentes conexas con etiquetas distintas. IoU 0.72\relax }}{44}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.13}{\ignorespaces DT Watershed aplicado a la salida del modelo unet6b. IoU 0.70\relax }}{44}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}An\'alisis temporal}{45}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{anatemporal}{{7}{45}}
+\@writefile{lot}{\contentsline {table}{\numberline {7.1}{\ignorespaces Tabla de tiempos\relax }}{45}\protected@file@percent }
+\newlabel{tab:prueba}{{7.1}{45}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusiones}{46}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{pruebas}{{8}{46}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Manual}{47}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{manual}{{9}{47}}
 \bibstyle{apacite}
 \bibdata{pfcbib}
 \bibcite{Cardoso2017}{\citeauthoryear {Cardoso\ \BOthers {.}}{Cardoso\ \BOthers {.}}{{\APACyear {2017}}}}
 \APACbibcite{Cardoso2017}{\citeauthoryear {Cardoso\ \BOthers {.}}{Cardoso\ \BOthers {.}}{{\APACyear {2017}}}}
+\bibcite{Collette2013}{\citeauthoryear {Collette}{Collette}{{\APACyear {2013}}}}
+\APACbibcite{Collette2013}{\citeauthoryear {Collette}{Collette}{{\APACyear {2013}}}}
 \bibcite{Deng2009}{\citeauthoryear {Deng\ \BOthers {.}}{Deng\ \BOthers {.}}{{\APACyear {2009}}}}
 \APACbibcite{Deng2009}{\citeauthoryear {Deng\ \BOthers {.}}{Deng\ \BOthers {.}}{{\APACyear {2009}}}}
 \bibcite{Falk2019}{\citeauthoryear {Falk\ \BOthers {.}}{Falk\ \BOthers {.}}{{\APACyear {2019}}}}
@@ -264,15 +299,21 @@
 \APACbibcite{Minsky1969}{\citeauthoryear {Minsky\ \BBA{} Papert}{Minsky\ \BBA{} Papert}{{\APACyear {1969}}}}
 \bibcite{missinglink2020}{\citeauthoryear {missinglink}{missinglink}{{\APACyear {2020}}}}
 \APACbibcite{missinglink2020}{\citeauthoryear {missinglink}{missinglink}{{\APACyear {2020}}}}
+\@writefile{toc}{\contentsline {chapter}{Referencias}{48}\protected@file@percent }
 \bibcite{Nair2010}{\citeauthoryear {Nair\ \BBA{} Hinton}{Nair\ \BBA{} Hinton}{{\APACyear {2010}}}}
 \APACbibcite{Nair2010}{\citeauthoryear {Nair\ \BBA{} Hinton}{Nair\ \BBA{} Hinton}{{\APACyear {2010}}}}
-\@writefile{toc}{\contentsline {chapter}{Referencias}{40}\protected@file@percent }
 \bibcite{Noh2015}{\citeauthoryear {Noh, Hong,{}\ \BBA{} Han}{Noh\ \BOthers {.}}{{\APACyear {2015}}}}
 \APACbibcite{Noh2015}{\citeauthoryear {Noh, Hong,{}\ \BBA{} Han}{Noh\ \BOthers {.}}{{\APACyear {2015}}}}
 \bibcite{nwankpa2018activation}{\citeauthoryear {Nwankpa, Ijomah, Gachagan,{}\ \BBA{} Marshall}{Nwankpa\ \BOthers {.}}{{\APACyear {2018}}}}
 \APACbibcite{nwankpa2018activation}{\citeauthoryear {Nwankpa, Ijomah, Gachagan,{}\ \BBA{} Marshall}{Nwankpa\ \BOthers {.}}{{\APACyear {2018}}}}
 \bibcite{Paszke2019}{\citeauthoryear {Paszke\ \BOthers {.}}{Paszke\ \BOthers {.}}{{\APACyear {2019}}}}
 \APACbibcite{Paszke2019}{\citeauthoryear {Paszke\ \BOthers {.}}{Paszke\ \BOthers {.}}{{\APACyear {2019}}}}
+\bibcite{Pedregosa2011}{\citeauthoryear {Pedregosa\ \BOthers {.}}{Pedregosa\ \BOthers {.}}{{\APACyear {2011}}}}
+\APACbibcite{Pedregosa2011}{\citeauthoryear {Pedregosa\ \BOthers {.}}{Pedregosa\ \BOthers {.}}{{\APACyear {2011}}}}
+\bibcite{PerezGarcia2020}{\citeauthoryear {P{\'e}rez-Garc{\'i}a, Sparks,{}\ \BBA{} Ourselin}{P{\'e}rez-Garc{\'i}a\ \BOthers {.}}{{\APACyear {2020}}}}
+\APACbibcite{PerezGarcia2020}{\citeauthoryear {P{\'e}rez-Garc{\'i}a, Sparks,{}\ \BBA{} Ourselin}{P{\'e}rez-Garc{\'i}a\ \BOthers {.}}{{\APACyear {2020}}}}
+\bibcite{ERiba2020}{\citeauthoryear {Riba, Mishkin, Ponsa, Rublee,{}\ \BBA{} Bradski}{Riba\ \BOthers {.}}{{\APACyear {2020}}}}
+\APACbibcite{ERiba2020}{\citeauthoryear {Riba, Mishkin, Ponsa, Rublee,{}\ \BBA{} Bradski}{Riba\ \BOthers {.}}{{\APACyear {2020}}}}
 \bibcite{Ronneberger2015}{\citeauthoryear {Ronneberger, Fischer,{}\ \BBA{} Brox}{Ronneberger\ \BOthers {.}}{{\APACyear {2015}}}}
 \APACbibcite{Ronneberger2015}{\citeauthoryear {Ronneberger, Fischer,{}\ \BBA{} Brox}{Ronneberger\ \BOthers {.}}{{\APACyear {2015}}}}
 \bibcite{Rosenblatt1958}{\citeauthoryear {Rosenblatt}{Rosenblatt}{{\APACyear {1958}}}}
@@ -281,10 +322,14 @@
 \APACbibcite{Rumelhart1986}{\citeauthoryear {Rumelhart, Hinton,{}\ \BBA{} Williams}{Rumelhart\ \BOthers {.}}{{\APACyear {1986}}}}
 \bibcite{Schindelin2012}{\citeauthoryear {Schindelin\ \BOthers {.}}{Schindelin\ \BOthers {.}}{{\APACyear {2012}}}}
 \APACbibcite{Schindelin2012}{\citeauthoryear {Schindelin\ \BOthers {.}}{Schindelin\ \BOthers {.}}{{\APACyear {2012}}}}
+\bibcite{shiba242017}{\citeauthoryear {shiba24}{shiba24}{{\APACyear {2017}}}}
+\APACbibcite{shiba242017}{\citeauthoryear {shiba24}{shiba24}{{\APACyear {2017}}}}
 \bibcite{Simonyan2014}{\citeauthoryear {Simonyan\ \BBA{} Zisserman}{Simonyan\ \BBA{} Zisserman}{{\APACyear {2014}}}}
 \APACbibcite{Simonyan2014}{\citeauthoryear {Simonyan\ \BBA{} Zisserman}{Simonyan\ \BBA{} Zisserman}{{\APACyear {2014}}}}
 \bibcite{Szegedy2014}{\citeauthoryear {Szegedy\ \BOthers {.}}{Szegedy\ \BOthers {.}}{{\APACyear {2014}}}}
 \APACbibcite{Szegedy2014}{\citeauthoryear {Szegedy\ \BOthers {.}}{Szegedy\ \BOthers {.}}{{\APACyear {2014}}}}
+\bibcite{HDFGroup20002010}{\citeauthoryear {{The HDF Group}}{{The HDF Group}}{{\APACyear {2000-2010}}}}
+\APACbibcite{HDFGroup20002010}{\citeauthoryear {{The HDF Group}}{{The HDF Group}}{{\APACyear {2000-2010}}}}
 \bibcite{Tiobe2020}{\citeauthoryear {Tiobe}{Tiobe}{{\APACyear {2020}}}}
 \APACbibcite{Tiobe2020}{\citeauthoryear {Tiobe}{Tiobe}{{\APACyear {2020}}}}
 \bibcite{VanDerWalt2011}{\citeauthoryear {Van Der\unhbox \voidb@x \nobreak  \ Walt, Colbert,{}\ \BBA{} Varoquaux}{Van Der\unhbox \voidb@x \nobreak  \ Walt\ \BOthers {.}}{{\APACyear {2011}}}}
@@ -299,4 +344,6 @@
 \APACbibcite{Wolny2020}{\citeauthoryear {Wolny\ \BOthers {.}}{Wolny\ \BOthers {.}}{{\APACyear {2020}}}}
 \bibcite{Zeiler2011}{\citeauthoryear {{Zeiler}, {Taylor},{}\ \BBA{} {Fergus}}{{Zeiler}\ \BOthers {.}}{{\APACyear {2011}}}}
 \APACbibcite{Zeiler2011}{\citeauthoryear {{Zeiler}, {Taylor},{}\ \BBA{} {Fergus}}{{Zeiler}\ \BOthers {.}}{{\APACyear {2011}}}}
+\bibcite{Cicek2016}{\citeauthoryear {Özgün Çiçek, Abdulkadir, Lienkamp, Brox,{}\ \BBA{} Ronneberger}{Özgün Çiçek\ \BOthers {.}}{{\APACyear {2016}}}}
+\APACbibcite{Cicek2016}{\citeauthoryear {Özgün Çiçek, Abdulkadir, Lienkamp, Brox,{}\ \BBA{} Ronneberger}{Özgün Çiçek\ \BOthers {.}}{{\APACyear {2016}}}}
 \ttl@finishall

@@ -36,6 +36,28 @@ Cardoso, M\BPBI J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Collette%
+}{%
+Collette%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+Collette2013}
+\APACinsertmetastar {%
+Collette2013}%
+\begin{APACrefauthors}%
+Collette, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2013}.
+\newblock
+\APACrefbtitle {Python and HDF5} {Python and hdf5}.
+\newblock
+\APACaddressPublisher{}{O'Reilly}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Deng%
 \ \protect \BOthers {.}}{%
 Deng%
@@ -578,6 +600,106 @@ Paszke, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Pedregosa%
+\ \protect \BOthers {.}}{%
+Pedregosa%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+Pedregosa2011}
+\APACinsertmetastar {%
+Pedregosa2011}%
+\begin{APACrefauthors}%
+Pedregosa, F.%
+, Varoquaux, G.%
+, Gramfort, A.%
+, Michel, V.%
+, Thirion, B.%
+, Grisel, O.%
+\BDBL {}Duchesnay, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Scikit-learn: Machine Learning in {P}ython}
+  {Scikit-learn: Machine learning in {P}ython}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Machine Learning
+  Research}{12}{}{2825--2830}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+P{\'e}rez-Garc{\'i}a%
+, Sparks%
+\BCBL {}\ \BBA {} Ourselin%
+}{%
+P{\'e}rez-Garc{\'i}a%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+PerezGarcia2020}
+\APACinsertmetastar {%
+PerezGarcia2020}%
+\begin{APACrefauthors}%
+P{\'e}rez-Garc{\'i}a, F.%
+, Sparks, R.%
+\BCBL {}\ \BBA {} Ourselin, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{{\APACmonth{03}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{TorchIO}: a {Python} library for efficient loading,
+  preprocessing, augmentation and patch-based sampling of medical images in
+  deep learning} {{TorchIO}: a {Python} library for efficient loading,
+  preprocessing, augmentation and patch-based sampling of medical images in
+  deep learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv:2003.04696 [cs, eess, stat]}{}{}{}.
+\newblock
+\begin{APACrefURL} [{2020-03-11}]\url{http://arxiv.org/abs/2003.04696}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{arXiv: 2003.04696}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Riba%
+, Mishkin%
+, Ponsa%
+, Rublee%
+\BCBL {}\ \BBA {} Bradski%
+}{%
+Riba%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+ERiba2020}
+\APACinsertmetastar {%
+ERiba2020}%
+\begin{APACrefauthors}%
+Riba, E.%
+, Mishkin, D.%
+, Ponsa, D.%
+, Rublee, E.%
+\BCBL {}\ \BBA {} Bradski, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Kornia: an Open Source Differentiable Computer Vision
+  Library for PyTorch} {Kornia: an open source differentiable computer vision
+  library for pytorch}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Winter Conference on Applications of Computer Vision.}
+  {Winter conference on applications of computer vision.}
+\newblock
+\begin{APACrefURL} \url{https://arxiv.org/pdf/1910.02190.pdf} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Ronneberger%
 , Fischer%
 \BCBL {}\ \BBA {} Brox%
@@ -693,6 +815,30 @@ Schindelin, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+shiba24%
+}{%
+shiba24%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+shiba242017}
+\APACinsertmetastar {%
+shiba242017}%
+\begin{APACrefauthors}%
+shiba24.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\APACrefbtitle {3D UNet implementation.} {3d unet implementation.}
+\newblock
+\APAChowpublished {\url{https://github.com/shiba24/3d-unet}}.
+\newblock
+\APACaddressPublisher{}{GitHub}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Simonyan%
 \ \BBA {} Zisserman%
 }{%
@@ -742,6 +888,29 @@ Szegedy, C.%
 \newblock
 \APACrefbtitle {Going Deeper with Convolutions.} {Going deeper with
   convolutions.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{The HDF Group}%
+}{%
+{The HDF Group}%
+}{%
+{\protect \APACyear {2000-2010}}%
+}]{%
+HDFGroup20002010}
+\APACinsertmetastar {%
+HDFGroup20002010}%
+\begin{APACrefauthors}%
+{The HDF Group}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2000-2010}{}{}.
+\newblock
+\APACrefbtitle {{Hierarchical data format version 5}.} {{Hierarchical data
+  format version 5}.}
+\newblock
+\begin{APACrefURL} \url{http://www.hdfgroup.org/HDF5} \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -947,6 +1116,36 @@ Zeiler2011}%
 \newblock
 \BIn{} \APACrefbtitle {2011 International Conference on Computer Vision} {2011
   international conference on computer vision}\ (\BPG~2018-2025).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Özgün Çiçek%
+, Abdulkadir%
+, Lienkamp%
+, Brox%
+\BCBL {}\ \BBA {} Ronneberger%
+}{%
+Özgün Çiçek%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+Cicek2016}
+\APACinsertmetastar {%
+Cicek2016}%
+\begin{APACrefauthors}%
+Özgün Çiçek%
+, Abdulkadir, A.%
+, Lienkamp, S\BPBI S.%
+, Brox, T.%
+\BCBL {}\ \BBA {} Ronneberger, O.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\APACrefbtitle {3D U-Net: Learning Dense Volumetric Segmentation from Sparse
+  Annotation.} {3d u-net: Learning dense volumetric segmentation from sparse
+  annotation.}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

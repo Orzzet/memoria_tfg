@@ -1,2 +1,22 @@
 \chapter{Manual}\label{manual}
 
+El proyecto está disponible en el siguiente enlace, donde hay instrucciones sobre su instalación \url{https://github.com/Orzzet/segmentacion_celular_unet3d}.
+
+Prerequisitos:
+\begin{itemize}
+\item CUDA \url{https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html}
+\item CUDNN \url{https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html}
+\item Python 3.5+ \url{https://www.python.org/downloads/}
+\item PyTorch \url{https://github.com/pytorch/pytorch}
+\item Jupyter Notebook \url{https://jupyter.readthedocs.io/en/latest/install.html} o un Software que pueda ejectura Notebooks
+\end{itemize}
+
+Cómo usarlo:
+\begin{enumerate}
+\item Descargar el proyecto del repositorio y descomprimir en el lugar deseado.
+\item El notebook 0\_preprocesado trata las imágenes y las transforma en el formato correcto. En caso de tener imágenes en un formato distinto, hay que modificar este fichero.
+\item El notebook 1\_procesado es para hacer el entrenamiento.
+\item El notebook 2\_inferencia es para utilizar el modelo, bien para estadísticas o para comprobar el resultado.
+\end{enumerate}
+
+

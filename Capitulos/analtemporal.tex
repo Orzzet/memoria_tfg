@@ -1,8 +1,36 @@
-\chapter{An\'alisis temporal y costes de desarrollo}\label{anatemporal}
+\chapter{An\'alisis temporal}\label{anatemporal}
 
-\section{An\'alisis temporal}
-	
-\section{Costes de desarrollo}		
-	
-
-	
+\cuadro{|c|c|c|}{Tabla de tiempos}{tab:prueba}{
+Tarea & Subtarea & Tiempo \\ 
+\hline
+Configurar servicios Cloud				&  								& 16h 55m \\
+\hline
+Diseñar primera CNN para segm. semántica.			  	   	& Primer modelo U-Net 		& 40m\\
+										& Preparar Función de Pérdida y Optimizador  			& 1h 21m\\
+										& Simplificar red o inputs para disminuir memoria		& 9h 40m\\
+										& Resultados de primer entrenamiento de red						& 4h 22m\\
+	 									& Elegir función de pérdida correcta		& 2h 50m\\
+\hline
+Usar métricas implementadas en kornia				&  								& 2h 55m \\
+\hline
+Investigar sobre CNN				&  								& 32h 18m \\
+\hline
+Mejoras en la CNN				& General 								& 11h 34m\\
+				& Añadir métricas de validación y test  								& 3h \\
+				& Implementar Apex 								& 2h 5m\\
+				& Watershed  								& 2h 38m \\
+\hline
+Mejoras en los datos				& Prepar datos para batch							& 2h 37m\\
+				& Data Augmentation 								& 2h 16m \\
+\hline
+Memoria				&   								& 71h 15m \\
+\hline
+Preparar Código				&  								& 2h 20m \\
+\hline
+Preparar Dataset en PyTorch				& Crear nuevo Dataset (clase en PyTorch)	& 29m \\
+				& Estudiar imágenes de entrada  								& 19h 10m \\
+				& Añadir espacio entre células   				& 10h 56m \\
+				& Otros   								& 1h 47m \\
+\hline
+Total				&   								& 201 h 7m \\
+}

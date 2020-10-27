@@ -16,7 +16,7 @@ La elección del lenguaje Python es sencilla: los frameworks más utilizados en 
 
 Además, tal y como se muestra en el índice TIOBE \cite{Tiobe2020}, Python es el tercer lenguaje de programación con mejor puntuación teniendo en cuenta su presencia en los buscadores web.
 
-Aún así Python tiene se su velocidad. Es lento cuando se compara con lenguajes como C y esto se debe principalmente a 2 motivos:
+Aún así Python tiene es lento cuando se compara con lenguajes como C y esto se debe principalmente a 2 motivos:
 \begin{enumerate}
 \item Es interpretado, no compilado. Al compilar un programa escrito en un lenguaje compilado el compilador optimiza el programa con una multitud de técnicas, como el desenrollado de bucles, que elimina o reduce las instrucciones de control de un bucle. En Python el intérprete sólo accede a la instrucción a realizar, no realiza ninguna tarea de optimización.
 \item Es de tipado dinámico. Esto quiere decir que el intérprete no sabe de qué tipo es una variable hasta que intenta acceder a ella, por lo que antes de acceder a su valor debe comprobar el tipo de variable. Esto hace que las variables en Python sean fáciles de declarar y asignar, pero reduce el rendimiento.
@@ -43,7 +43,7 @@ El primer paso a realizar es preparar los datos, para ello se han usado las sigu
 
 Para la operación de reescalado se ha usado la función \textit{ndimage.zoom()}. Esta función hace interpolación con splines seleccionado un factor por el que hacer zoom por cada dimensión, el orden de la interpolación spline. Se han tomado las siguientes decisiones:
 \begin{itemize}
-\item \textbf{Factor para escalar hacia abajo.} Las imágenes originales ocupan $\sim 2GB$ en memoria, intentar usarlas en una U-Net sobrepasa en gran medida los 16GB de memoria disponibles en este proyecto. Se ha decidido reducir las dimensiones en $(1/8, 1/8, 1/4)$ de sus dimensiones $(X, Y, Z)$ originales, consiguiendo una reducción de $8*8*4=256$ de su tamaño original, se pasa de $\sim 2GB$ a $\sim 8MB$. Con un tamaño de $8MB$ es posible realizar todo el proceso de entrenamiento e inferencia, aunque se pierda calidad en la imagen. Gracias a la característica de U-Net de aceptar imágenes de cualquier dimensión, si no se hace entrenamiento por batch no es necesario asegurarse de que todas las imágenes tengan las mismas dimensiones. Por experimentación, he comprobado que los factores de las dimensiones no deben de ser muy diferentes, ya que cambiaría el tamaño en $\mu m^3$ de cada vóxel, además de provocar una deformación elástica en los imágenes.
+\item \textbf{Factor para escalar hacia abajo.} Las imágenes originales ocupan $\sim 2GB$ en memoria, intentar usarlas en una U-Net sobrepasa en gran medida los 16GB de memoria disponibles en este proyecto. Se ha decidido reducir las dimensiones en $(1/8, 1/8, 1/4)$ de sus dimensiones $(X, Y, Z)$ originales, consiguiendo una reducción de $8*8*4=256$ de su tamaño original, se pasa de $\sim 2GB$ a $\sim 8MB$. Con un tamaño de $8MB$ es posible realizar todo el proceso de entrenamiento e inferencia aunque se pierda calidad en la imagen. Gracias a la característica de U-Net de aceptar imágenes de cualquier dimensión, si no se hace entrenamiento por batch no es necesario asegurarse de que todas las imágenes tengan las mismas dimensiones. Por experimentación, he comprobado que los factores de las dimensiones no deben de ser muy diferentes, ya que cambiaría el tamaño en $\mu m^3$ de cada vóxel, además de provocar una deformación elástica en los imágenes.
 \item \textbf{Escalado hacia arriba.} Después de escalar hacia abajo, si se quiere hacer entrenamiento por batch con la imagen completa es necesario que todas las imágenes tengan las mismas dimensiones. Para esto se comprueba las mayores dimensiones de las imágenes después de escalar hacia abajo y se elige como objetivo $(X_{obj}, Y_{obj}, Z_{obj})$. Para cada imagen $(X, Y, Z)$ el procedimiento es crear una nueva matriz de ceros de tamaño $(X_{obj}, Y_{obj}, Z_{obj})$ y asignar a la imagen a los valores $([0:X-1],[0:Y-1],[0:Z-1])$. De esta forma el volumen de las células mantienen el mismo ratio entre todas las imágenes.
 \item \textbf{Orden.} Se ha utilizado orden 3, ya que es el que está por defecto y se han obtenido buenos resultados con él.
 \end{itemize}
@@ -64,8 +64,109 @@ La creación del nuevo fichero se ha hecho con la librería h5py. Los datos orig
 \item \textbf{Compresión.} Se ha optado por usar la compresión \textit{gzip}, que ofrece una buena compresión a una velocidad no muy alta. Tiene 10 niveles de compresión $[0,9]$. Se ha probado a comprimir con el nivel $9$ consiguiendo una buena compresión pero es excesivamente lento, al final se ha optado por usar una compresión de nivel $4$ que, aunque tiene $\sim 10\%$ más tamaño que con el nivel $9$, el tiempo de la compresión se reduce a más de la mitad y de todas formas el resultado ya es muy bueno.
 \end{itemize}
 
-\section{Preprocesado en carga de datos}\label{sec:data_loading_processing}
+\section{Carga de datos}\label{sec:data_loading_processing}
 
-\section{U-Net}\label{sec:data_loading_processing}
+Una vez todos los datos han sido preprocesados de forma local ya se puede proceder a la carga de datos. En la carga de datos también se hace un tratamiento de imagen y será necesario que éste sea rápido, ya que se realizará cada vez que se acceda a una imagen.
+
+Para la carga de datos se han usado las siguientes librerías:
+\begin{itemize}
+\item \textbf{h5py.} La misma librería usada para crear los ficheros en la etapa anterior es usada para cargarlos.
+\item \textbf{PyTorch.} PyTorch es el framework de deep learning elegido para este trabajo, por lo que se sacará el máximo provecho de lo que ofrezca de base. Para procesamiento de imagen es especialmente útil el paquete \textit{torchvision}.
+\begin{itemize}
+\item Clase base para Dataset: Para indicar dónde encontrar los datos y qué hacer con ellos, se usará la clase \textit{torchvision.Dataset} como base. Tan sólo hay que sobreescribir 3 métodos para que la clase sea funcional, estos son los métodos de inicialización (\textit{\_\_init\_\_}), para obtener la longitud del dataset (\textit{\_\_len\_\_}) y para obtener el siguiente ejemplo (\textit{\_\_getitem\_\_}), en el que se realizará un preprocesado y se devolverá la imagen de entrada y la imagen etiquetada.
+\item DataLoader: Es usado para administrar el dataset. Se encarga de dar un nº de ejemplos aleatorios igual al batch seleccionado.
+\end{itemize}
+
+\item \textbf{TorchIO.} TorchIO \cite{PerezGarcia2020} es una librería que contiene herramientas para trabajar con datos 3D especializadas para imágenes médicas. Se ha utilizado la función \textit{transforms.ZNormalization()} en la imagen de entrada, que resta sus valores por la media y los divide por la desviación estándar.
+\item \textbf{Kornia.} Kornia \cite{ERiba2020} es una librería especializada en visión por ordenador con PyTorch como backend. Aquí es usada para data augmentation, volteando la imagen en cada una de las 3 dimensiones de forma aleatoria. Gracias a esto se pasa de 15 ejemplos de entrenamiento a 120. Esta diferencia en cantidad de ejemplos de entrenamiento hace que el modelo no se sobreajuste tan rápido.
+
+\end{itemize}
+Además, después de la ZNormalization, se han normalizado los valore al rango $[0.1, 0.9]$.  
+
+\subsection{Consideraciones}
+
+\subsubsection{Tamaño del batch}
+
+Se han hecho pruebas con varios tamaños de batch. El tamaño del batch determina cuántos ejemplos van a usarse en el entrenamiento del modelo. La entrada del modelo será de dimensión $(B,1,X,Y,Z)$, donde $B$ es el tamaño del batch. La ventaja de tener una entrada con este formato es se realizarán el mismo nº de operaciones matriciales sin importar el tamaño del batch. 
+En el modelo MiniUnet3D al usar un batch de 1 los epochs tardan 11 segundos y al usar un batch de 4 tardan 7 segundos. Por cada batch utilizado se necesitan $\sim 3GB$ de memoria, por lo que se tomó como una buena opción para mejorar la velocidad de entrenamiento, aunque los resultados de este modelo eran malos ya que es una arquitectura reducida Unet3D.
+Al entrenar con el modelo Unet3D, se comprobó que el nº de batch máximo posible era 2 debido a que se requiere más memoria al haber más capas. Con un batch de 1 tarda 39 segundos por epoch, con un batch de 2 tarde 34 segundos. Sin embargo, los resultados para un batch de 1 eran mejores, por lo que al se optó por usar un batch de 1, provocando que el tamaño de las imágenes usadas en el entrenamiento no tenga por qué ser el mismo.
+
+\subsubsection{Normalización}
+
+Para normalizar los datos se han probado dos técnicas distintas, el cambio a escala $[0,1]$ y la puntuación tipificada (ZNormalization).
+
+El cambio a escala $[0,1]$ es algo habitual en machine learning para evitar que se realicen operaciones con números muy altos, facilitando el cálculo de los gradientes. Cada vóxel pasará a tener el siguiente valor:
+\begin{equation}
+v_i^{'} = \frac{v_i - v_{min}}{v_{max}-v_{min}}
+\end{equation}
+
+Donde $v_i^{'}$ el nuevo valor del vóxel, $v_i$ el valor actual, $v_{min}$ el valor mínimo en toda la imagen y $v_{max}$ el valor máximo en toda la imagen.
+
+La puntuación tipificada hace que los valores estén más cerca entre ellos, útil para cuando hay datos muy dispersos, su fórmula es:
+\begin{equation}
+v_i^{'} = \frac{v_i - \mu}{\rho}
+\end{equation}
+
+Donde $v_i^{'}$ es el nuevo valor del vóxel, $v_i$ es el valor actual, $\mu$ es la media de los valores de la imagen y $\rho$ es la desviación estándar.
+
+Tras varias pruebas, como mejor resultado se ha obtenido ha sido haciendo primero el cambia a escala $[0,1]$ y después la ZNormalization, pese a que lo habitual en deep learning es preparar los datos de entrada con un valor $[0.1,0.9]$.
+
+\subsubsection{Data Augmentation}
+
+Los primeros modelos se entrenaron sin utilizar ninguna técnica de data augmentation, lo que provocó un sobreajuste muy rápido, como se verá en el capítulo siguiente. PyTorch ofrece varias técnicas de data augmentation pero no están adaptadas para datos volumétricos, por lo que es necesario requerir a librerías externas, como Kornia.
+
+Se ha optado por hacer transformaciones que no provoquen ninguna deformación elástica, ya que habría que aplicar una deformación elástica en la imagen etiquetada y, debido al reescalado hacia abajo hecho en la fase anterior en el que se ha perdido calidad, esto podría provocar células partidas o células en contacto entre sí.
+
+Se han utilizado las funciones \textit{RandomDepthicalFlip3D}, \textit{RandomHorizontalFlip3D} y \textit{RandomVerticalFlip3D} de Kornia para realizar estas 3 transformaciones en secuencia, todas con una probabilidad de 0.5.
+
+Se ha probado \textit{RandomRotation3D} pero no se han obtenido buenos resultados, ya que la parte etiquetada en la mayoría de los casos quedaba fuera de la imagen.
+
+\section{U-Net}\label{sec:unet_implementation}
+
+Se ha implementado arquitectura una arquitectura U-Net basada basada en la implementación de Ronneberger \cite{Ronneberger2015}. Se ha usado una implementación en PyTorch \cite{shiba242017} con la arquitectura mostrada en el capítulo anterior. Se ha desarrollado una versión de esta arquitectura llamada MiniUNet3D con menos capas. Esta versión se ha usado para iterar rápidamente y tomar decisiones como el uso da \textit{data ugmentation} o el tamaño del batch, así como comprobar que las funciones de pérdida se han implementado correctamente.
+
+\subsubsection{Funciones de pérdida}
+Se han probado 3 funciones de pérdida: la entropía cruzada, la entropía cruzada con pesos y la función de pérdida DICE.
+
+La entropía cruzada de descartó rápidamente ya que, al ser las dos clases muy desequilibradas daba demasiada prioridad al fondo sobre la segmentación y se tendía a perder mucha segmentación. 
+Tras esto se probó la pérdida DICE. Para ello se utilizó la función \textit{Softmax} en la salida del modelo (logits) para que la suma de las probabildades de que un vóxel pertenezca al fondo y a la segmentación sume 1. El resultado y el etiquetado perfecto se pasaron al formato \textit{one hot} y se compararon con la función de pérdida DICE. Esto dio muy buenos resultados, consiguiendo por primera vez un $IoU>0.7$ para la segmentación.
+Por último se probó la entropía cruzada con pesos, dando como peso a la clase de segmentación $1$ y se probó darle a la clase borde $0$, $0.1$ y $0.2$, sin obtener buenos resultados en ningún caso. En el artículo estudiado en los antecedentes \cite{Falk2019} se usó entropía cruzada con pesos dando dando pesos distintos a cada vóxel. No se llegó a probar esta implementación, que podría haber sido buena para la segmentación con espaciado entre células.
+
+\subsubsection{Precisión Mixta}
+
+Al trabajar con datos numéricos de poca precisión, como puede ser float de 16 bits, se puede producir un desbordamiento. PyTorch no va a poder reconocer que ha habido desbordamiento, lo que provocará que en las operaciones como en la actualización de pesos intervengan valores incorrectos. Para solucionar esto existe \textit{Apex}, una librería desarrollada por NVidia que gestiona estas operaciones al modificar directamente PyTorch. Hay varios niveles de optimización disponibles, se ha probado a utilizarlo con una optimización de nivel 1 y de nivel 2.
+\begin{itemize}
+\item En optimización de nivel 1 se cambia la entrada de algunas funciones para que usen FP16 (float de 16 bits) y se dejan otras que puedan beneficiarse de la precisión en FP32 (float de 32 bits).
+\item En optimización de nivel 2 se cambian los pesos del modelo a FP16, se cambian los métodos del modelo para que acepten FP16 y se mantienen unos pesos maestros en FP32 que son usados por el optimizador. En este caso no se cambia las entradas de las funciones como en el nivel 1.
+\end{itemize}
+
+En ambos casos se usa escalado dinámico de pérdida, que se usa como coeficiente para la pérdida. Comienza con un valor muy alto y, si hay desbordamiento, se divide en 2, si no hay desbordamiento durante un número de epochs (1000 por defecto), se multiplica por 2.
+
+Se han probado ambos niveles de optimización y en ambos casos no se ha visto una reducción en la cantidad de memoria ni en el tiempo de entrenamiento. Sí se ha visto un beneficio de usar el escalado dinámico de pérdida, ya que se ha alcanzado más rápidamente una pérdida pequeña. Aún así, a lo largo de 100 o 200 epochs, esto no ha provocado que se alcance mejor error de validación. En los resultados se muestra esa diferencia.
+
+\subsubsection{Ficheros generados}
+En cada iteración se ha guardado en un fichero información sobre el estado actual del entrenamiento y del modelo, con esto se puede utilizar para inferencia, para continuar el entrenamiento o para comprobar métricas, la información guardada es:
+\begin{itemize}
+\item \textbf{epochs:} Nº de epochs entrenados.
+\item \textbf{best\_model\_state\_dict:} Pesos del modelo con menor error de validación.
+\item \textbf{model\_state\_dict:} Pesos del modelo en la última iteración.
+\item \textbf{optimizer\_state\_dict:} Pesos del optimizador en la última iteración. Al usar el optimizador Adam se guarda el \textit{learning rate} de cada parámetro de forma individual y este se va modificando a lo largo del aprendizaje, por lo que es beneficioso usar el último estado de estos pesos si se desea seguir con el entrenamiento.
+\item \textbf{train\_losses:} Lista con todos los valores de pérdida en el entrenamiento.
+\item \textbf{valid\_losses:} Lista con todos los valores de pérdida en la validación. train\_losses y valid\_losses son usados para dibujar las curvas de aprendizaje.
+\item \textbf{test\_conf\_matrix:} Matriz de confusión por clases obtenida al evaluar el conjunto de test.
+\item \textbf{test\_miou:} Media del IoU para el conjunto de test.
+\item \textbf{amp\_state\_dict:} Estado del optimizador usado con precisión mixta.
+\end{itemize}
 
 \section{Postprocesado}\label{sec:data_loading_processing}
+
+Se ha probado una técnica con postprocesado basada en la usada en el programa PlantSeg \cite{Wolny2020} donde se aplica el algoritmo Watershed. Para utilizar esta técnica se ha usado la librería scikit-image (skimage) y scipy, usando las siguientes funciones en este orden:
+\begin{enumerate}
+\item \textit{scipy.ndimage.distance\_transform\_edt()} para calcular la transformada de la distancia a la predicción del modelo.
+\item \textit{skimage.filters.gaussian()} para aplicar un filtro gaussiano con $\sigma = 2$ al resultado anterior.
+\item \textit{skimage.feature.peak\_local\_max()} al $1 - G$ siendo $G$ el resultado anterior. Esto hace que encuentre los mínimos locales.
+\item \textit{scipy.ndimage.label()} al resultado anterior, para generar marcadores al etiquetar cada mínimo local con una etiqueta distinta.
+\item \textit{skimage.segmentation.watershed()} utilizando los marcadores generados y la transformada de la distancia, esto termina la segmentación.
+\end{enumerate}
+
+Se han hecho varias pruebas siguiendo este preprocesado al predecir los bordes frente a la predicción de bordes con espaciado, los resultados pueden verse en el siguiente capítulo.

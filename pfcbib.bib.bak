@@ -211,7 +211,7 @@
   url       = {http://dx.doi.org/10.1016/j.knosys.2020.106062},
 }
 
-@Article{perez-garcia_torchio_2020,
+@Article{PerezGarcia2020,
   author     = {P{\'e}rez-Garc{\'i}a, Fernando and Sparks, Rachel and Ourselin, Sebastien},
   journal    = {arXiv:2003.04696 [cs, eess, stat]},
   title      = {{TorchIO}: a {Python} library for efficient loading, preprocessing, augmentation and patch-based sampling of medical images in deep learning},
@@ -265,8 +265,8 @@
   publisher    = {GitHub},
 }
 
-@InProceedings{eriba2019kornia,
-  author    = {E. Riba, D. Mishkin, D. Ponsa, E. Rublee and G. Bradski},
+@InProceedings{ERiba2020,
+  author    = {E. Riba and D. Mishkin and D. Ponsa and E. Rublee and G. Bradski},
   booktitle = {Winter Conference on Applications of Computer Vision},
   title     = {Kornia: an Open Source Differentiable Computer Vision Library for PyTorch},
   year      = {2020},
@@ -289,7 +289,7 @@
   year    = {2020},
 }
 
-@Article{scikit-learn,
+@Article{Pedregosa2011,
   author  = {Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V. and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P. and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E.},
   journal = {Journal of Machine Learning Research},
   title   = {Scikit-learn: Machine Learning in {P}ython},
@@ -505,6 +505,31 @@
   day      = {01},
   doi      = {10.1038/nmeth.2019},
   url      = {https://doi.org/10.1038/nmeth.2019},
+}
+
+@Book{Collette2013,
+  author    = {Andrew Collette},
+  publisher = {O'Reilly},
+  title     = {Python and HDF5},
+  year      = {2013},
+  keywords  = {python, hdf5},
+}
+
+@Online{HDFGroup20002010,
+  author = {{The HDF Group}},
+  title  = {{Hierarchical data format version 5}},
+  url    = {http://www.hdfgroup.org/HDF5},
+  year   = {2000-2010},
+}
+
+@Misc{shiba242017,
+  author       = {shiba24},
+  howpublished = {\url{https://github.com/shiba24/3d-unet}},
+  title        = {3D UNet implementation},
+  year         = {2017},
+  commit       = {57e0ca31b371a833d7e60f14ca857844dc8bcc02},
+  journal      = {GitHub repository},
+  publisher    = {GitHub},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
