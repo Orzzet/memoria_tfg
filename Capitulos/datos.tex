@@ -1,6 +1,6 @@
 \chapter{Datos de entrada}\label{requisitos}
 
-Los datos iniciales son 20 ficheros con formato hdf5, cada uno contiene la siguiente:
+Los datos iniciales son 20 ficheros con formato hdf5, cada uno contiene la siguiente información:
 
 \begin{itemize}
 \item \textbf{imageSequence}: Imagen inicial con la forma $ (Z1, 1024, 1024) $
@@ -14,7 +14,7 @@ A continuación se analizarán las imágenes \textbf{imageSequenceInterpolated} 
 
 \subsubsection{imageSequenceInterpolated}
 
-El tipo usado para almacenar el valor de cada vóxel es \textit{f8} que, según la documentación de numpy es el equivalente a un número de 64-bit float.
+El tipo usado para almacenar el valor de cada vóxel es \textit{f8} que, según la documentación de numpy es el equivalente a un número de float de 8 bytes.
 
 Se han comprobado los valores máximo y mínimo de las 20 imágenes y estos son los resultados:
 

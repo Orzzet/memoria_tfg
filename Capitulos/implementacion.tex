@@ -22,7 +22,7 @@ Aún así Python tiene es lento cuando se compara con lenguajes como C y esto se
 \item Es de tipado dinámico. Esto quiere decir que el intérprete no sabe de qué tipo es una variable hasta que intenta acceder a ella, por lo que antes de acceder a su valor debe comprobar el tipo de variable. Esto hace que las variables en Python sean fáciles de declarar y asignar, pero reduce el rendimiento.
 \end{enumerate}
 
-Estas desventajas se pueden reducir gracias a que Python tiene la capacidad de llamar a subrutinas en C o C++. Prácticamente todos los frameworks en los que se realizan operaciones con un alto coste computacional tienen la parte crítica de su código escrita en C o C++.
+Estas desventajas se pueden reducir gracias a que Python tiene la capacidad de llamar a subrutinas compiladas en C. Prácticamente todos los frameworks en los que se realizan operaciones con un alto coste computacional tienen la parte crítica de su código escrita en C.
 
 En el ecosistema de Python, la base matemática para cualquier framework que haga operaciones matriciales es NumPy \cite{VanDerWalt2011}, ya que añade soporte para arrays de n dimensiones y una gran multitud de operaciones de forma eficiente.
 
@@ -81,7 +81,7 @@ Para la carga de datos se han usado las siguientes librerías:
 \item \textbf{Kornia.} Kornia \cite{ERiba2020} es una librería especializada en visión por ordenador con PyTorch como backend. Aquí es usada para data augmentation, volteando la imagen en cada una de las 3 dimensiones de forma aleatoria. Gracias a esto se pasa de 15 ejemplos de entrenamiento a 120. Esta diferencia en cantidad de ejemplos de entrenamiento hace que el modelo no se sobreajuste tan rápido.
 
 \end{itemize}
-Además, después de la ZNormalization, se han normalizado los valore al rango $[0.1, 0.9]$.  
+Además, después de la ZNormalization, se han normalizado los valore al rango $[0.0, 1.0]$.  
 
 \subsection{Consideraciones}
 
@@ -128,7 +128,7 @@ Se ha implementado arquitectura una arquitectura U-Net basada basada en la imple
 \subsubsection{Funciones de pérdida}
 Se han probado 3 funciones de pérdida: la entropía cruzada, la entropía cruzada con pesos y la función de pérdida DICE.
 
-La entropía cruzada de descartó rápidamente ya que, al ser las dos clases muy desequilibradas daba demasiada prioridad al fondo sobre la segmentación y se tendía a perder mucha segmentación. 
+La entropía cruzada se descartó rápidamente ya que, al ser las dos clases muy desequilibradas daba demasiada prioridad al fondo sobre la segmentación y se tendía a perder mucha segmentación. 
 Tras esto se probó la pérdida DICE. Para ello se utilizó la función \textit{Softmax} en la salida del modelo (logits) para que la suma de las probabildades de que un vóxel pertenezca al fondo y a la segmentación sume 1. El resultado y el etiquetado perfecto se pasaron al formato \textit{one hot} y se compararon con la función de pérdida DICE. Esto dio muy buenos resultados, consiguiendo por primera vez un $IoU>0.7$ para la segmentación.
 Por último se probó la entropía cruzada con pesos, dando como peso a la clase de segmentación $1$ y se probó darle a la clase borde $0$, $0.1$ y $0.2$, sin obtener buenos resultados en ningún caso. En el artículo estudiado en los antecedentes \cite{Falk2019} se usó entropía cruzada con pesos dando dando pesos distintos a cada vóxel. No se llegó a probar esta implementación, que podría haber sido buena para la segmentación con espaciado entre células.
 
@@ -166,7 +166,7 @@ Se ha probado una técnica con postprocesado basada en la usada en el programa P
 \item \textit{skimage.filters.gaussian()} para aplicar un filtro gaussiano con $\sigma = 2$ al resultado anterior.
 \item \textit{skimage.feature.peak\_local\_max()} al $1 - G$ siendo $G$ el resultado anterior. Esto hace que encuentre los mínimos locales.
 \item \textit{scipy.ndimage.label()} al resultado anterior, para generar marcadores al etiquetar cada mínimo local con una etiqueta distinta.
-\item \textit{skimage.segmentation.watershed()} utilizando los marcadores generados y la transformada de la distancia, esto termina la segmentación.
+\item \textit{skimage.segmentation.watershed()} utilizando los marcadores generados y la transformada de la distancia. Esto termina la segmentación.
 \end{enumerate}
 
 Se han hecho varias pruebas siguiendo este preprocesado al predecir los bordes frente a la predicción de bordes con espaciado, los resultados pueden verse en el siguiente capítulo.

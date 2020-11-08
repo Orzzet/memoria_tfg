@@ -196,7 +196,7 @@
   doi     = {10.1162/neco.2006.18.7.1527},
 }
 
-@Article{Sultana_2020,
+@Article{Sultana2020,
   author    = {Sultana, Farhana and Sufian, Abu and Dutta, Paramartha},
   journal   = {Knowledge-Based Systems},
   title     = {Evolution of Image Segmentation using Deep Convolutional Neural Network: A Survey},
@@ -255,7 +255,7 @@
   url     = {https://gradient.paperspace.com/free-gpu},
 }
 
-@Misc{pytorch_modelsize,
+@Misc{Achilleas2017,
   author       = {Achilleas},
   howpublished = {\url{https://github.com/Achilleas/pytorch-mri-segmentation-3D}},
   title        = {pytorch-mri-segmentation-3D},

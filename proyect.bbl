@@ -864,6 +864,39 @@ Simonyan, K.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Sultana%
+, Sufian%
+\BCBL {}\ \BBA {} Dutta%
+}{%
+Sultana%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Sultana2020}
+\APACinsertmetastar {%
+Sultana2020}%
+\begin{APACrefauthors}%
+Sultana, F.%
+, Sufian, A.%
+\BCBL {}\ \BBA {} Dutta, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{{\APACmonth{08}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Evolution of Image Segmentation using Deep Convolutional
+  Neural Network: A Survey} {Evolution of image segmentation using deep
+  convolutional neural network: A survey}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Knowledge-Based Systems}{201-202}{}{106062}.
+\newblock
+\begin{APACrefURL} \url{http://dx.doi.org/10.1016/j.knosys.2020.106062}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.knosys.2020.106062} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Szegedy%
 \ \protect \BOthers {.}}{%
 Szegedy%

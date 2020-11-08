@@ -74,7 +74,7 @@ Añadir una \textit{singleton dimension} es necesario para tener en cuenta el ca
 
 \figura{1}{img/Diseno-Entrenamiento}{Pasos llevados a cabo en el entrenamiento}{fig:entrenamiento}{}
 
-En la figura \ref{fig:entrenamiento} se muestra el proceso que se lleva a cabo durante el entrenamiento de un modelo. Como ya se mencionó antes este proceso deberá realizarse con una GPU de alto rendimiento, por lo que en este proyecto se realizará en una máquina en la nube. Antes de comenzar este proceso los datos ya habrán sido cargados en un disco duro virtual.
+En la figura \ref{fig:entrenamiento} se muestra el proceso que se lleva a cabo durante el entrenamiento de un modelo. Como ya se mencionó antes este proceso deberá realizarse con una GPU de alto rendimiento, por lo que en este proyecto se utilizará una máquina en la nube. Antes de comenzar este proceso los datos ya habrán sido cargados en un disco duro virtual.
 
 Se utilizará un DataLoader, encargado de leer el dataset y realizar el preprocesado conveniente. Será importante normalizar los datos de entrada para que tengan un valor en rango $ [0, 1] $, esto se hará siempre. Adicionalmente, se probarán distintas técnicas como estandarizar el histograma, o \textit{data augmentation}. Al etiquetado objetivo no se le aplicará normalización ni estandarización, sólo se le aplicará \textit{data augmentation}. Al ser importante que la segmentación de la imagen etiquetada siga siendo correcta, al aplicar \textit{data augmentation} no se deformará la imagen.
 

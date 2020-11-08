@@ -4,7 +4,7 @@ En este capítulo se hará una breve introducción a las redes neuronales, se ju
 
 \section{Red Neuronal Artificial}\label{sec:redneuronal}
 
-En esta sección se hará una breve introducción a las redes neuronales artificiales, compuesta por neuronas artificiales. Después se describirá qué es una neurona artificial y se definirán 3 tipos: perceptrón, sigmoide y unidad lineal rectificada (ReLU). Por último se hablará sobre el entrenamiento.
+En esta sección se hará un recorrido histórico haciendo énfasis en los avances del siglo XX en redes neuronales artificiales (ANNs). Después se definirá la neurona artificial y se distinguirán 3 tipos: perceptrón, sigmoide y unidad lineal rectificada (ReLU). Estos serán los tipos de neurona artificial más frecuentes en los algoritmos usados en este proyecto. Por último se hablará sobre el entrenamiento de la ANN.
 
 \subsection{Introducción a Redes Neuronales Artificiales}\label{subsec:nn_intro}
 
@@ -174,7 +174,7 @@ En las CNNs, al igual que en la inmensa mayoría de algoritmos de Deep Learning,
 
 \subsubsection{Binary Cross-Entropy}
 
-La entropía cruzada es una medida utilizada para calcular la diferencia entre dos distribuciones de probabilidad. \ref{Jadon2020}. Resultará útil si comparamos el objetivo $y$ con la predicción $\hat{y}$. La fórmula de la entropía cruzada binaria (BCE) es la siguiente:
+La entropía cruzada es una medida utilizada para calcular la diferencia entre dos distribuciones de probabilidad. \cite{Jadon2020}. Resultará útil si comparamos el objetivo $y$ con la predicción $\hat{y}$. La fórmula de la entropía cruzada binaria (BCE) es la siguiente:
 \begin{equation}
 L_{BCE}(y,\hat{y})=-(y log(\hat{y}) + (1-y)log(1-\hat{y}))
 \end{equation}
@@ -222,7 +222,7 @@ Se compararon los modelos FCN-AlexNet, FCN-VGG16 y FCN-GoogLeNet, obteniendo los
 
 \subsection{Deconvnet}
 
-La red Deconvnet \cite{Noh2015} tiene una red convolucional y otra red deconvolucional. Para la red convolucional utiliza casi la misma topología que VGG16, con 13 capas de convolución 2 capas FC, cambiando sólo en la última capa que no es de clasificación ya que en Deconvnet está conectada a la red deconvolucional. La red deconvolucional tiene una topología inversa a la red convolucional, resultando en una salida de igual tamaño a la entrada. Esta red tiene capas de deconvolución, de \textit{un-pooling} y de ReLU. Todas las capas de una Deconvnet extraen características de la entrada excepto la última capa de la red deconvolocuional, que genera una probabilidad de pertenencia a cada clase para cada píxel/vóxel. Una arquitectura de esta red se puede ver en la figura \ref{fig:Deconvnet} \ref{Noh2015}.
+La red Deconvnet \cite{Noh2015} tiene una red convolucional y otra red deconvolucional. Para la red convolucional utiliza casi la misma topología que VGG16, con 13 capas de convolución 2 capas FC, cambiando sólo en la última capa que no es de clasificación ya que en Deconvnet está conectada a la red deconvolucional. La red deconvolucional tiene una topología inversa a la red convolucional, resultando en una salida de igual tamaño a la entrada. Esta red tiene capas de deconvolución, de \textit{un-pooling} y de ReLU. Todas las capas de una Deconvnet extraen características de la entrada excepto la última capa de la red deconvolocuional, que genera una probabilidad de pertenencia a cada clase para cada píxel/vóxel. Una arquitectura de esta red se puede ver en la figura \ref{fig:Deconvnet} \cite{Noh2015}.
 
 \figura{1}{img/Deconvnet}{Arquitectura Deconvnet.}{fig:Deconvnet}{}
 
@@ -240,9 +240,9 @@ La salida de una capa de unpooling aporta información espacial pero muy dispers
 
 \subsection{U-Net}
 
-U-Net es una arquitectura en forma de U con una parte reductora (izquierda) y otra parte expansiva (derecha) simétrica. Esta arquitectura ha mostrado muy buenos resultados con pocos ejemplos de entrenamiento al beneficiarse fuertemente de la aumentación de datos (data-augmentation)\cite{Ronneberger2015}. Fue el ganador de 2015 del reto ISBI para segmentación neuronal con resultados muy superiores al segundo puesto. 
+U-Net es una arquitectura en forma de U con una parte reductora (izquierda) y otra parte expansiva (derecha) simétrica. Esta arquitectura ha mostrado muy buenos resultados con pocos ejemplos de entrenamiento al beneficiarse fuertemente de la aumentación de datos (data-augmentation)\cite{Ronneberger2015}. Fue la arquitectura ganadora en 2015 del reto ISBI para segmentación neuronal con resultados muy superiores al segundo puesto. 
 
-La parte reductora tiene una arquitectura típica de CNN. Cada paso de esta parte tiene dos convoluciones consecutivas con filtros 3x3 (sin padding), cada convolución seguida de por una capa ReLU, con una capa de pooling 2x2 al final de ambas convoluciones. La salida de la última capa de cada paso es usada en la capa equivalente de la parte expansiva. Después de varios pasos como este comienza la parte expansiva con una topología inversa a la convolucional, en donde en cada paso expansivo es añadida la salida de la última capa de cada paso reductor. Cada capa de pooling de la parte izquierda es sustituido en la parte derecha por una "convolución hacia arriba", similar a la operación unpooling + deconvolución. La última capa es una convolución 1x1 para mapear cada píxel/vóxel con el nº correspondiente de clases. En la arquitectura original se tienen en total 23 capas convolucionales. En la figura \ref{fig:unet-og} puede verse la arquitectura original.
+La parte reductora tiene una arquitectura típica de CNN. Cada paso de esta parte tiene dos convoluciones consecutivas con filtros 3x3 (sin padding), cada convolución seguida de por una capa ReLU, con una capa de pooling 2x2 al final de ambas convoluciones. La salida de la última capa de cada paso es usada en la capa equivalente de la parte expansiva. Después de varios pasos como este comienza la parte expansiva con una topología inversa a la convolucional, donde en cada paso expansivo es añadida la salida de la última capa de cada paso reductor. Cada capa de pooling de la parte izquierda es sustituida en la parte derecha por una \"convolución hacia arriba\", similar a la operación unpooling + deconvolución. La última capa es una convolución 1x1 para mapear cada píxel/vóxel con el nº correspondiente de clases. En la arquitectura original se tienen en total 23 capas convolucionales. En la figura \ref{fig:unet-og} puede verse la arquitectura original.
 
 \figura{1}{img/unet-og}{Arquitectura original U-Net propuesta por Ronneberger et al en U-Net: Convolutional Networks for Biomedical Image Segmentation.}{fig:unet-og}{}
 
@@ -250,7 +250,7 @@ La parte reductora tiene una arquitectura típica de CNN. Cada paso de esta part
 
 En esta sección se describirán dos aplicaciones recientes en las que se realiza segmentación celular usando la arquitectura U-Net. Primero se describirá el proyecto en general, luego se definirá brevemente el algoritmo de segmentación seguido dividiendo las operaciones en: preprocesado (preparar los datos para usarlos en el modelo U-Net, procesado (características del modelo) y postprocesado (operaciones posteriores al resultado dado por el modelo), después se mostrará resultados obtenidos y por último mencionará el software resultante de estas investigaciones.
 
-\subsection{U-Net para cuenteo, detección y morfometría, detección y morfometría de células. (2019)}
+\subsection{U-Net para conteo, detección y morfometría, detección y morfometría de células. (2019)}
 \subsubsection{Proyecto}
 
 Ha sido desarrollado por investigadores de la Universidad de Friburgo (Alemania) en colaboración con la Universidad de Berna (Suiza) y la Universidad de París V Descartes (Francia) \cite{Falk2019}. El coautor designado es Olaf Ronneberger, uno de los principales contribuyentes en la creación de la arquitectura U-Net \cite{Ronneberger2015}.
@@ -299,7 +299,6 @@ w_{sep}(x) := exp(-\frac{(d_1(x)+d_2(x))^2}{2\sigma_{sep}^2})
 
 Donde $d_2$ es la distancia a la segunda instancia de célula más cercana y $\sigma_{sep}$ es la desviación estándar deseada. 
 
-En el experimento realizado con datos volumétricos se han 
 
 \subsubsection{Resultados}
 
