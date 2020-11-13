@@ -1,5 +1,31 @@
 \chapter{Nacimiento del proyecto}\label{nacimiento}
-\section{Inter\'es inicial}\label{interesinicial}
-Mi inter�s en realizar un proyecto de IA, estaba dando PID, hacer algo con tratamiento de im�genes ya que nunca he hecho nada parecido. Siempre quiero hacer algo que nunca he hecho.
-\section{Visita a Biolog�a Molecular}\label{visita}
+\section{Motivaci\'on}\label{motivacion}
 
+Uno de mis mayores intereses en el mundo del software siempre ha sido el uso de técnicas de inteligencia artificial para resolver problemas actales. Ya tuve un poco de experiencia en las prácticas extracurriculares con el procesamiento de lenguaje natural, aunque tenía un rol más centrado en la aplicación de determinadas técnicas más que en el desarrollo de estas.
+
+Aproveché que estaba cursando la asignatura de Procesamiento de Imágenes Digitales con María José Jiménez Rodríguez para preguntarle si sabía de algún TFG en el que estuviesen involucradas imágenes y pudiese desarrollar una solución de inteligencia artificial. Mi principal motivación era que nunca había trabajado con imágenes digitales en el ámbito de la inteligencia artificial (que más tarde descubrí que es más correcto hablar de deep learning en vez de inteligencia artificial en estos casos).
+
+María José me habló sobre un proyecto muy interesante dirigido por Luis María Escudero Cuadrado del Departamento de Biología Celular de la Universidad de Sevilla. Parte de este este proyecto consistía en procesar imágenes 3D de glándulas salivales tomadas por un microscopio confocal para obtener la segmentación de las células. El reto era que este procesado fuese automático ya que se podría ahorrar mucho tiempo, por lo que estaban valorando el uso de técnicas de machine learning.
+
+\section{Visita a Biolog\'ia Molecular}\label{visita}
+
+Tras ver que este proyecto era interesante planeamos una primera visita al Departamento de Biología Celular en el que fuimos recibidos por Luis María Escudero, Pablo Vicente-Manuera y Pedro Gómez-Gálvez. En esta reunión nos hablaron en más detalle sobre su investigación y el problema que queríamos abordar.
+
+Estudiaban la arquitectura a nivel celular del tejido epitelial. El tejido epitelial es uno de los 4 tejidos animales básicos, por lo que gran parte del organismo está compuesto por este. Aunque las células de este tejido siempre se han representado en forma de prisma (cuando las células de la misma capa están en el mismo plano) o en forma de tronco (cuando se produce un pliegue), han demostrado que en realidad tienen siempre una nueva forma geométrica que han nombrado escutoide \cite{GomezGalvez2018}. En la figura \ref{fig:tejidoepitelial} \cite{GomezGalvez2018} se pueden ver estas formas.
+
+\figura{1}{img/tejidoepitelial}{\textbf{a} Representación de las células del tejido epitelial cuando están en una estructura plana. Se suele representar en forma de prisma. \textbf{b} Representación de las células del tejido epitelial cuando se produce un pliegue. Se suele representar en forma de tronco. \textbf{c} Geometría propuesta caracterizada por tener al menos un vértice en un plano distinto al de sus dos bases. En la figura de arriba se ven dos elementos adyacentes con forma escutoide. En la figura de abajo se ven estos elementos por separado. Las células del tejido epitelial tendrían esta geometría.}{fig:tejidoepitelial}{}
+
+Para obtener un modelo visual del tejido epitelial empiezan utilizando un microscopio confocal del que obtienen un stack de imágenes 2D, consiguiendo así una imagen 3D. Esta imagen es procesada manualmente utilizando herramientas de MATLAB y Fiji (ImageJ) para conseguir una imagen con todas las células etiquetadas correctamente, proceso conocido como segmentación. El resultado final sería una imagen en el que cada vóxel del fondo tiene valor 0 y los vóxeles pertenecientes a cada célula tienen valor $1,2,3...n$, donde $n$ es el nº de células en la imagen. Un ejemplo de la imagen original y la imagen etiquetada puede verse en la figura \ref{fig:ejemplo1_segmentacion}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.2]{img/raw 04_1a Z=77.png}
+\vspace*{1mm}
+\includegraphics[scale=0.2]{img/raw 04_1a Z=100.png}
+\includegraphics[scale=0.2]{img/target 04_1a Z=77.png}
+\includegraphics[scale=0.2]{img/target 04_1a Z=100.png}
+\caption{Esta figura muestra el resultado de aplicar el procesado a la imagen 3D obtenida por microscopía, la imagen tiene las dimensiones $1024*1024*234$, seleccionándose para su representación Z=77 y Z=100. En la primera fila se muestra la imagen obtenida por microscopía y la segunda fila se muestra la obtenida al aplicar segmentación a las células. En la primera columna se muestra la capa Z=77 y en la segunda la capa Z=100.}\bigskip
+\label{fig:ejemplo1_segmentacion}
+\end{figure}
+
+Pasar de la primera fila de la figura \ref{fig:ejemplo1_segmentacion} a la segunda fila es un proceso que les puede llevar hasta una semana ya que se requiere un etiquetado perfecto. Esto produce que se invierta mucho tiempo en una tarea repetitiva y poco interesante y se reste tiempo de las tareas de interés científico. Querían reducir el tiempo necesario para la segmentación y para ello pensaron que sería buena idea recurrir a técnicas de machine learning. Sería el objetivo principal del TFG, por tanto, obtener una segmentación automática que redujera el tiempo de segmentación manual, siendo lo ideal obtener directamente la segmentación perfecta.

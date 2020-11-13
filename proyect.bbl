@@ -123,6 +123,41 @@ Falk, T.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+G{\'o}mez-G{\'a}lvez%
+\ \protect \BOthers {.}}{%
+G{\'o}mez-G{\'a}lvez%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+GomezGalvez2018}
+\APACinsertmetastar {%
+GomezGalvez2018}%
+\begin{APACrefauthors}%
+G{\'o}mez-G{\'a}lvez, P.%
+, Vicente-Munuera, P.%
+, Tagua, A.%
+, Forja, C.%
+, Castro, A\BPBI M.%
+, Letr{\'a}n, M.%
+\BDBL {}Escudero, L\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{Jul}{27}.
+\newblock
+{\BBOQ}\APACrefatitle {Scutoids are a geometrical solution to three-dimensional
+  packing of epithelia} {Scutoids are a geometrical solution to
+  three-dimensional packing of epithelia}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Nature Communications}{9}{1}{2960}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1038/s41467-018-05376-1}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1038/s41467-018-05376-1} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Goodfellow%
 , Bengio%
 \BCBL {}\ \BBA {} Courville%

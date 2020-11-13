@@ -1,0 +1,11 @@
+\chapter{Representación 3D}
+
+Hacía falta cambiar el formato usado hasta ahora para poder usar las imágenes con la mayoría de software que tratan imágenes biomédicas.
+
+Se prueba el programa Icy http://icy.bioimageanalysis.org/, un programa gratuito Open Source que cumple la función de representación 3D de imágenes, además tiene muchas otras funciones que se podrán probar. +Imagen del programa
+Todas las imágenes se encuentran almacenadas en archivos con formato hdf5 y el programa no los carga por defecto, pero se puede instalar el plugin "H5 Importer" para ello. Por desgracia un plugin base llamado "BigDataViewerLib", necesario para que "H5 Importer" funcione, ya no se encuentra disponible para su instalación, por lo que me resulta imposible cargar archivos hdf5.
+
+Se decide convertir todas las imágenes al formato tiff ya que que es más usado que el hdf5 por defecto en software biomédico, además de también permitir guardar las imágenes con compresión sin pérdida. Para ello se escribe un pequeño script como parte de un preprocesado opcional.
+
+Pruebas de tamaños para comparar. tiff tiene la desventaja de que hay que leer la imagen entera mientras que en hdf5 sólo se leen las porciones de la imagen que se vayan a usar, aunque para el software de representación visual esto no es relevante. En el formato tiff no se pueden guardar varias imágenes, por lo que hace falta un fichero por imagen (original, imagen objetivo y las que haya).
+Se modifica el código que se encarga de la carga del dataset para permitir también imágenes en formato tiff. Se decide que la mejor forma de guardar las imágenes en tiff es en 3 carpetas: train, validation, test y que en cada carpeta la imagen original tenga el nombre habitual acabado en .tif y la imagen objetivo tenga el nombre de la imagen original correspondiente acabado en \_target.tif.

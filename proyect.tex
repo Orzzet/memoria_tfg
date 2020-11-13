@@ -23,9 +23,9 @@
 \hacerportada
 	\input{tocdef}
 %\frontmapertter
-        
+
     \input{resumen}
-%    \input{agradecimientos}	
+%    \input{agradecimientos}
 
 	\tableofcontents % Índice de contenidos
  	\listoftables % Índice de cuadros
@@ -34,19 +34,32 @@
 
  \mainmatter
      \part{Introducci\'on}\label{introduccion}
+     \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
  	 \input{Capitulos/nacimiento}
      \input{Capitulos/objetivos}
 	 \part{Planificaci\'on}\label{planificacion}
+	 \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}	 
 	 \input{Capitulos/planinicial}
 	 \input{Capitulos/planseguido}
 	 \input{Capitulos/costesestimados}
 	 \part{Desarrollo}\label{desarrollo}
+	 \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{} 
 	 \input{Capitulos/analanteced}
      \input{Capitulos/datos}
      \input{Capitulos/diseno}
      \input{Capitulos/implementacion}
+     \input{Capitulos/representacion3D}
 %     \input{Capitulos/alternativas}
      \part{Resultados}\label{resultados}     
+	 \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}     
      \input{Capitulos/resultados}
      \input{Capitulos/analtemporal}
      \input{Capitulos/conclusion}
