@@ -1,0 +1,46 @@
+\chapter{Arquitecturas para segmentación semántica}\label{sec:archs}
+
+En los últimos años se han desarrollado diversas arquitecturas para CNN consolidándola como el mejor método actual para resolver ciertos problemas en tratamiento de imágenes, como la clasificación o la segmentación. Esto ha sido posible gracias en parte a los avances obtenidos en el reto ImageNet \cite{Deng2009}. 
+Imagenet es una base de datos con más de 10 millones de imágenes etiquetadas a mano, entre las que hay 1000 categorías distintas. Desde 2010 se ha organizado una compteción anual donde los participantes tienen que desarrollar y entrenar el mejor modelo para clasificar estas imágenes. 
+\begin{itemize}
+\item El ganador del reto de 2012 fue un equipo de la Universidad de Toronto con la arquitectura AlexNet \cite{Krizhevsky2012}, usando filtros 11x11 y siendo el primer modelo en usar ReLU como función de activación, algo que se ha convertido en estándar.
+\item En 2014 VGGNet (VGG), del Grupo de Geometría Visual de la Universidad de Oxford, fue de los que obtuvo mejor resultado en la competición con 2 versiones distintas, VGG16 con 16 capas y VGG19 con 19 capas \cite{Simonyan2014}. Ambas versiones emparejan convolución y pooling, usan filtros para las capas de convolución, 2x2 para las capas de pooling, acabando la red en 3 capas completamente conectadas. VGG fue el primer modelo en usar filtros tan pequeños, mostrando que se obtenían mejores resultados al hacerlo.
+\item El ganador del reto de 2015 fue ResNet, desarrollada por Microsoft Research \cite{He2015}. ResNet utiliza una misma distribución de capas repetida durante toda la red. Posee 152 capas, siendo la primera vez que se alcanzaba un número tan alto de capas de forma práctica. Era difícil tener tantas capas a causa del problema del desvanecimiento de gradiente \cite{Hochreiter1998} que se da al entrenar por backpropagation y resulta en que, al hacer la propagación hacia atrás, cada capa consecutiva reduce el error propagado llegando "desvanecerse" y resultando en un difícil entrenamiento. Esto es solucionado por ResNet al conectar capas lejanas para que el error pueda propagarse entre estas más rápido, llamando a estas conexiones \textit{skip connections}.
+\end{itemize}
+
+Estas arquitecturas resultaron en hitos importantes para el desarrollo de CNN, a continuación se describirán varias arquitecturas para segmentación semántica.
+
+\section{Fully Convolutional Network}
+
+Fue propuesta en 2014 por investigadores de la Universidad de California en Berkeley \cite{Long2014} obteniendo los mejores resultados hasta la fecha en segmentación semántica mediante el uso de redes convolucionales. Un punto clave fue tomar una entrada de un tamaño arbitrario y producir una salida de un tamaño correspondiente. Usa como base los modelos AlexNet, VGGNet y GoogLeNet \cite{Szegedy2014}, donde se sustituyeron las capas completamente conectadas con capas convolucionales con filtros 1x1 y añadieron una capa convolucional con filtro 1x1 y profundidad C+1 para predecir las puntuaciones de cada clase, C el nº de clases y añadiendo una más para el fondo.
+
+Se compararon los modelos FCN-AlexNet, FCN-VGG16 y FCN-GoogLeNet, obteniendo los mejores resultados con FCN-VGG16 y convirtiéndose este en el modelo base. Con el objetivo de ganar más nivel de detalle en la salida, se aumentó la resolución de la salida en 32x usando interpolación bilineal. También se usaron \textit{skip connections} para conectar varias capas con la capa final. En la figura \ref{fig:FCN} se puede ver un ejemplo de la arquitectura FCN \cite{Sultana2020}.
+
+\figura{1}{img/FCN}{Arquitectura de FCN32, FCN16 y FCN8.}{fig:FCN}{}
+
+
+\section{Deconvnet}
+
+La red Deconvnet \cite{Noh2015} tiene una red convolucional y otra red deconvolucional. Para la red convolucional utiliza casi la misma topología que VGG16, con 13 capas de convolución 2 capas FC, cambiando sólo en la última capa que no es de clasificación ya que en Deconvnet está conectada a la red deconvolucional. La red deconvolucional tiene una topología inversa a la red convolucional, resultando en una salida de igual tamaño a la entrada. Esta red tiene capas de deconvolución, de \textit{un-pooling} y de ReLU. Todas las capas de una Deconvnet extraen características de la entrada excepto la última capa de la red deconvolocuional, que genera una probabilidad de pertenencia a cada clase para cada píxel/vóxel. Una arquitectura de esta red se puede ver en la figura \ref{fig:Deconvnet} \cite{Noh2015}.
+
+\figura{1}{img/Deconvnet}{Arquitectura Deconvnet.}{fig:Deconvnet}{}
+
+A continucación se describen brevemente las operaciones de unpooling y deconvolución (más correctamente llamada convolución transpuesta). En la figura \ref{fig:unpooling-deconv} \cite{Noh2015} se puede ver un ejemplo gráfico.
+
+\subsection{Unpooling}
+
+La operación unpooling es una operación que reconstruye la zona de pooling mantiendo sólo el píxel correspondiente a aquel que fue seleccionado en la capa de pooling correspondiente (figura \ref{fig:unpooling-deconv}. Para implementar esto se usan variables \textit{switch}, que almacena la posición en la que se encontraba el valor máximo al hacer pooling. Esta estrategia resuelve el problema de pérdida de información espacial que tiene el pooling \cite{Zeiler2011}.
+
+\subsection{Deconvoloución}
+
+La salida de una capa de unpooling aporta información espacial pero muy dispersa. Para aumentar la densidad de información se usan las operaciones de deconvolución \cite{Noh2015}. Las operación de convolución toma varias entradas y las transforma en un único valor al aplicar un filtro. La operación deconvolución toma un único valor y lo transforma en varias salidas al aplicar el mismo filtro usado en la convolución correspondiente.
+
+\figura{0.5}{img/unpooling-deconv}{Figura que ilustra las operaciones unpooling y deconvolución.}{fig:unpooling-deconv}{}
+
+\section{U-Net}
+
+U-Net es una arquitectura en forma de U con una parte reductora (izquierda) y otra parte expansiva (derecha) simétrica. Esta arquitectura ha mostrado muy buenos resultados con pocos ejemplos de entrenamiento al beneficiarse fuertemente de la aumentación de datos (data-augmentation)\cite{Ronneberger2015}. Fue la arquitectura ganadora en 2015 del reto ISBI para segmentación neuronal con resultados muy superiores al segundo puesto. 
+
+La parte reductora tiene una arquitectura típica de CNN. Cada paso de esta parte tiene dos convoluciones consecutivas con filtros 3x3 (sin padding), cada convolución seguida de por una capa ReLU, con una capa de pooling 2x2 al final de ambas convoluciones. La salida de la última capa de cada paso es usada en la capa equivalente de la parte expansiva. Después de varios pasos como este comienza la parte expansiva con una topología inversa a la convolucional, donde en cada paso expansivo es añadida la salida de la última capa de cada paso reductor. Cada capa de pooling de la parte izquierda es sustituida en la parte derecha por una \"convolución hacia arriba\", similar a la operación unpooling + deconvolución. La última capa es una convolución 1x1 para mapear cada píxel/vóxel con el nº correspondiente de clases. En la arquitectura original se tienen en total 23 capas convolucionales. En la figura \ref{fig:unet-og} puede verse la arquitectura original.
+
+\figura{1}{img/unet-og}{Arquitectura original U-Net propuesta por Ronneberger et al en U-Net: Convolutional Networks for Biomedical Image Segmentation.}{fig:unet-og}{}

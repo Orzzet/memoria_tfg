@@ -1,0 +1,87 @@
+\chapter{Red Neuronal Artificial}\label{redneuronal}
+
+En este capítulo se hará un recorrido histórico haciendo énfasis en los avances del siglo XX en redes neuronales artificiales (ANNs). Después se definirá la neurona artificial y se distinguirán 3 tipos: perceptrón, sigmoide y unidad lineal rectificada (ReLU). Estos serán los tipos de neurona artificial más frecuentes en los algoritmos usados en este proyecto. Por último se hablará sobre el entrenamiento de la ANN.
+
+\section{Introducción a Redes Neuronales Artificiales}\label{subsec:nn_intro}
+
+Desde la antigüedad la humanidad ha sentido interés en la posibilidad de emular la inteligencia de forma artificial. Con los avances en neurociencia hemos sido capaces de entender cómo funcionan las neuronas, la unidad básica en el funcionamiento de los cerebros. Siendo el cerebro un ejemplo funcional de un sistema inteligente, es natural  que haya interés en replicar su funcionamiento.\\
+
+Un hito importante se produjo gracias al desarrollo de la teoría del aprendizaje biológico, introducida por Warren McCulloch y Walter Pitts en 1943 \cite{McCulloch1943}, popularizando lo que fue llamado como \emph{cibernética} \cite[p13]{Goodfellow2016}. Gracias a esto surgió el ADALINE (elemento lineal adaptativo) \cite{Widrow2015}, que es un caso concreto del algoritmo descenso por gradiente estocástico (\textbf{SGD}), algoritmo que con pequeñas modificaciones es usado en la actualidad en el proceso de aprendizaje\cite[p14]{Goodfellow2016}. Fue también gracias al estudio de McCulloch y Pitts que en 1958 Frank Rosenblatt introdujo por primera vez el \textbf{perceptrón}, un modelo general de neurona artificial \cite{Rosenblatt1958}, que fue perfeccionado por Minsky Y Papert en 1969 \cite{Minsky1969}.
+
+El perceptrón es un modelo lineal que, dado un conjunto de elementos con dos categorías distintas como entrada, puede clasificar cada elemento en una de esas dos categorías. Un ejemplo sencillo son las puertas lógicas, siendo la entrada un conjunto de dos elementos con las categorías 0 o 1 y la salida sería un 0 o un 1.
+
+Minsky y Papert encontraron un problema en los modelos lineales y lo demostraron con la función XOR, siendo imposible para un modelo lineal compuesto de una neurona artificial aprender esta función. Esto causó un declive en el interés sobre este campo.\\
+
+En la década de 1980 resurgió el interés gracias en parte al conexionismo, cuya idea central es que un gran número de unidades de computación simples pueden tener un comportamiento inteligente al estar conectadas entre sí \cite[p16]{Goodfellow2016}. Durante esta etapa se hicieron importantes contribuciones como la representación distribuida \cite{Hinton1986}, donde se habla sobre representar las entradas de un sistema en base a sus características, reconocidas por patrones de actividad en redes neuronales. Otra gran contribución fue la populariación del algoritmo de propagación hacia atrás, \textbf{ backpropagation} \cite{Rumelhart1986} para entrenar redes neuronales artificales y actualizar sus pesos, siendo este algoritmo el más usado en la actualidad. 
+
+En este punto de la historia los algoritmos más importantes involucrados en las redes neuronales artificiales usadas en la actualidad habían sido descubiertos, pero no se estaban obteniendo resultados tan buenos como los esperados. Desde un principio lo que se había estado buscando era replicar de forma artificial el funcionamiento del cerebro, siendo el cerebro un sistema de computación genérico, capaz de aprender todo tipo de conocimiento distinto sin la necesidad de cambiar su arquitectura o su método para aprender. Era imposible conocer el algoritmo de aprendizaje usado en el cerebro ya que para ello haría falta monitorizar una gran cantidad de neuronas con gran precisión, lo cual es imposible incluso en la actualidad.\\
+
+En 2006 se produjo un hito importante que comenzó la etapa del \textbf{aprendizaje profundo}, cuando Geoﬀrey Hinton demostró que era posible entrenar de forma eficiente una red neuronal profunda con un gran número de capas ocultas \cite{Hinton2006}.
+
+\section{Neurona artifical}\label{subsec:neurona_artificial}
+
+En la figura \ref{fig:generic_computing_unit} se puede ver una neurona artifical genérica con la que pueden ser descritos los distintos tipos que se verán en esta sección.
+
+\figura{1}{img/Rojas1996_p31_computing_unit}{Neurona artificial genérica}{fig:generic_computing_unit}{}
+
+Siendo:
+\begin{itemize}
+\item $ (x_1, x_2, ...,x_n) $ el vector de entrada.
+\item $ (w_1, w_2, ...,w_n) $ el vector de pesos.
+\item $ g $ la función de integración, encargada de reducir el vector de entrada a un único valor.
+\item $ f $ la función de activación, encargada de producir la salida de este elemento.
+\end{itemize}
+
+Se puede simplificar la representación al asumir que siempre se usará $ \sum x_i w_i $ como función de integración. Además toda neurona artificial tendrá una entrada y un peso por defecto, independientemente del vector de entrada, esto hará referencia al \textit{bias}. Será común ver una representación como \ref{fig:neurona_artificial} en la que $ f $ indicará la función de activación.
+
+\figura{1}{img/NeuronaArtificial}{Representación de una Neurona Artificial con $ \sum x_i w_i $ como función de integración}{fig:neurona_artificial}{}
+
+\begin{itemize}
+\item Al vector de entradas se le añade un elemento de valor constante 1, siendo ahora de tamaño $ n+1 $.
+\item Al vector de pesos se le añade un elemento de valor inicial $ -\theta $, siendo ahora de tamaño $ n+1 $. A este valor se le llamará \textit{bias}.
+\item $ f $ indicará la función de activación de la neurona artificial.
+\end{itemize}
+
+\subsection{Sigmoide}\label{subsubsec:sigmoide}
+
+La función sigmoide como función de activación es una función no lineal usada principalmente en redes neuronales prealimentadas (feedforward neurals networks), que son las que usaremos en este proyecto. Es una función real, acotada y diferenciable (a diferencia de la usada en el perceptrón). Su definición es la siguiente relación \cite{nwankpa2018activation}:
+
+\begin{equation}
+ f(x) = \sigma (x) = \frac{1}{1+e^{-x}}
+\end{equation}
+
+\subsection{Unidad Lineal Rectificada (ReLU)}\label{subsubsec:relu}
+
+La unidad lineal rectificada (ReLU) fue propuesta como función de activación en 2010 por Nair y Hinton \cite{Nair2010} y desde entonces ha sido la más usada en aplicaciones de aprendizaje profundo (deep learning, DL). Si se compara con la función de activación Sigmoide, ofrece un mejor rendimiento y es más generalista \cite{nwankpa2018activation}.
+
+\begin{equation}
+ f(x) = max(0, x)=\left\{\begin{matrix}
+ x_i & $si $ x_i \geq 0 \\ 
+ 0 & $si $ x_i < 0
+\end{matrix}\right.
+\end{equation}
+
+\newpage\section{Red Neuronal Artifical}\label{subsec:neural_network}
+
+Considerando la neurona artificial como una unidad de computación básica, según el conexionismo (que más tarde evolucionó en lo que hoy conocemos como \textit{deep learning}, se podría emular un comportamiento inteligente al conectar neuronas artificiales entre sí. La conexión entre las neuronas artificales se consigue concatenando las salidas de unas con la entradas de otras y obteniendo así una red neuronal artifical (ANN).
+
+\figura{1}{img/neural_network}{Red Neuronal Artificial completamente conectada.}{fig:neurona_artificial}{}
+
+En la figura \ref{fig:neurona_artificial} se ve una Red Neuronal Artifical completamente conectada (\textit{fully connected neural network} o FCNN) en la que todos los nodos de una capa están conectados con todos los nodos de la capa siguiente. Contaría con los siguientes elementos:
+\begin{itemize}
+\item Capa de entrada $i$ (\textit{Input layer}) con $ n $ nodos. Cada nodo representa un valor del vector de entrada $ x $. En esta capa no se altera el valor de $x$, está para representar los pesos de cada elemento del vector de entrada con los nodos de la primera capa oculta.
+\item Capas ocultas $(h1, h_2, ..., h_m)$ (\textit{hidden layers}). Cada capa oculta podrá tener un nº de nodos distintos. Es en estas capas donde se reconocen los patrones del conjunto de datos y tiene el mayor coste computacional. La última capa oculta está conectada con las entradas de la capa de salida.
+\item Capa de salida $o$ (\textit{output layer}) con $c$ nodos. La última capa de la red neuronal, la salida de esta capa nos dará un vector de tamaño $c$ como salida.
+\end{itemize}
+
+\section{Descenso por Gradiente }\label{sec:gradient_descent}
+
+En cálculo de varias variables calcular el gradiente de una función ($\nabla f$) dará como resultado un vector indicando la dirección en la que esa función tiene un mayor incremento, siendo el módulo el ritmo de variación. Para el descenso del gradiente será interesante usar $-\nabla f$ ya que nos dará el vector en el que la función decrece más. Como es habitual en problemas de optimización, si suponemos que tenemos una función que nos da el error cometido, nuestro objetivo será minimizar dicha función.
+
+La función a optimizar se llamará \textbf{función de pérdida} (\textit{loss function}) en la que se comparará la salida obtenida por la red con la salida deseada. Hay que tener que este es un algoritmo de aprendizaje y sólo tendrá sentido usarlo cuando se conozca el resultado correcto para una entrada determinada.
+
+La salida obtenida por una red para una entrada determinada y, por lo tanto, el valor obtenido en la función de pérdida, dependerá únicamente de los pesos de dicha red. Esto significa que lo ideal será encontrar el mínimo global de la función de pérdida al cambiar el valor de los pesos de la red. Para actualizar los pesos se usará la fórmula $w_{ij} = w_{ij} - \eta \nabla J(W)$ donde $w_ij$ es el peso desde el nodo $i$ al nodo $j$, $\eta$ es el factor de aprendizaje o \textbf{learning rate} y $\nabla J(W)$ es la función de coste dados unos pesos determinados.
+
+No es extraño en deep learning encontrar una red con millones de pesos pero, para facilitar la visualización, se ha usado como ejemplo una ANN con 2 pesos ($\theta_0$ y $\theta_1$). En la figura \ref{fig:gradient_descent} se puede ver una ilustración de cómo en cada punto (marcado por una X negra) se calcula el gradiente de $J(\theta_0, \theta_1)$ y se actualizan los pesos, cambiando el valor de $J(\theta_0, \theta_1)$ hasta alcanzar un mínimo.
+
+\figura{1}{img/gradient_descent}{Ilustración del algoritmo de descenso por gradiente. $\theta_0$ y $\theta_1$ son los pesos de la ANN y $J$ la función de pérdida. Se puede observar cómo se produce un "descenso" hacia un mínimo de la función.}{fig:gradient_descent}{}
