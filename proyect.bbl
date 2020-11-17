@@ -1,6 +1,24 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {Bases y tipos de cotización 2019}}{%
+\APACcitebtitle {Bases y tipos de cotización 2019}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+BOE}
+\APACinsertmetastar {%
+BOE}%
+\APACrefbtitle {Bases y tipos de cotización 2019.} {Bases y tipos de
+  cotización 2019.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.seg-social.es/wps/portal/wss/internet/Trabajadores/CotizacionRecaudacionTrabajadores/36537#top}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Cardoso%
 \ \protect \BOthers {.}}{%
 Cardoso%
@@ -296,6 +314,23 @@ Hochreiter, S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {Instance Types}}{%
+\APACcitebtitle {Instance Types}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+gradientdocs}
+\APACinsertmetastar {%
+gradientdocs}%
+\APACrefbtitle {Instance Types.} {Instance types.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{https://docs.paperspace.com/gradient/instances/instance-types}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Jadon%
 }{%
 Jadon%
@@ -513,6 +548,23 @@ missinglink.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {MSI GP62 7RE}}{%
+\APACcitebtitle {MSI GP62 7RE}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+pccomponentes}
+\APACinsertmetastar {%
+pccomponentes}%
+\APACrefbtitle {MSI GP62 7RE.} {Msi gp62 7re.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.pccomponentes.com/msi-gp62-7re-431xes-leopard-pro-intel-core-i7-7700hq-8gb-1tb-gtx1050ti-156}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Nair%
 \ \BBA {} Hinton%
 }{%
@@ -697,6 +749,23 @@ P{\'e}rez-Garc{\'i}a, F.%
   \end{APACrefURL}
 \newblock
 \APACrefnote{arXiv: 2003.04696}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {PNY Quadro P5000}}{%
+\APACcitebtitle {PNY Quadro P5000}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+amazonp5000}
+\APACinsertmetastar {%
+amazonp5000}%
+\APACrefbtitle {PNY Quadro P5000.} {Pny quadro p5000.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.amazon.es/PNY-Quadro-P5000-16GB-GDDR5X/dp/B01LWVP48O}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

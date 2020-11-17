@@ -2,20 +2,21 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Tabla de resumen de la planificación.\relax }}{11}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Tabla de resumen de los costes.\relax }}{12}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Pipeline que siguen los datos de inicio a fin. GT significa \textit {groundtruth} y se refiere a la imagen ya segmentada. IM es la imagen de entrada.\relax }}{29}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Pipeline que siguen los datos de inicio a fin. GT significa \textit {groundtruth} y se refiere a la imagen ya segmentada. IM es la imagen de entrada.\relax }}{31}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Pruebas relevantes realizadas.\relax }}{32}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Valores mínimo y máximo de los píxeles de las imágenes de entrada.\relax }}{34}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Pipeline que siguen los datos de inicio a fin. GT significa \textit {groundtruth} y se refiere a la imagen ya segmentada. IM es la imagen de entrada.\relax }}{27}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Pipeline que siguen los datos de inicio a fin. GT significa \textit {groundtruth} y se refiere a la imagen ya segmentada. IM es la imagen de entrada.\relax }}{29}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Pruebas relevantes realizadas.\relax }}{30}%
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Valores mínimo y máximo de los píxeles de las imágenes de entrada.\relax }}{32}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {12.1}{\ignorespaces Tabla de tiempos\relax }}{60}%
+\contentsline {table}{\numberline {11.1}{\ignorespaces Tabla de tiempos\relax }}{62}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsfinish 

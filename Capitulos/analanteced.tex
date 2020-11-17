@@ -1,4 +1,4 @@
-\chapter{An\'alisis de antecedentes}\label{analanteced}
+\chapter{Estudio previo}\label{analanteced}
 
 En este capítulo se hará una breve introducción a las redes neuronales, se justificará el uso del tipo de red neuronal CNN para tratamiento de imágenes así como el de la arquitectura CNN U-Net para la segmentación de células.
 
@@ -90,7 +90,7 @@ No es extraño en deep learning encontrar una red con millones de pesos pero, pa
 
 \figura{1}{img/gradient_descent}{Ilustración del algoritmo de descenso por gradiente. $\theta_0$ y $\theta_1$ son los pesos de la ANN y $J$ la función de pérdida. Se puede observar cómo se produce un "descenso" hacia un mínimo de la función.}{fig:gradient_descent}{}
 
-\section{Red Neuronal Convolucional}\label{sec:archs}
+\section{Red Neuronal Convolucional}\label{sec:cnn}
 
 Hasta ahora hemos supuesto que la entrada a una ANN es un vector, algo válido para un gran número de aplicaciones en deep learning. El problema está cuando la entrada de la red neuronal es una imagen. En este caso antes de utilizar la imagen como entrada hay que aplanarla para contener la imagen en un vector, de esta forma cada píxel (o vóxel) será un elemento del vector de entrada y estará conectado a cada neurona de la capa siguiente. Para el caso de imágenes pequeñas (como la de la figura \ref{fig:image_to_ANN}) puede ser viable, pero teniendo tan sólo una imagen de $4$x$4px$ y 4 neuronas en la única capa oculta, se tendrían $16*4=64$ pesos. Si aplicáramos este sistema a una imagen 3D en escala de grises con $124*124*70=1076320vx$, se necesitarían más de un millón de pesos por cada neurona que haya en la primera capa oculta. Esto hace que sea completamente inviable usar este tipo de redes para imágenes a partir de cierto tamaño. En esta sección se presentan las redes neuronales convolucionales (CNN), que reducirán en gran medida el nº de pesos necesarios en la red neuronal y aprovecharán técnicas del procesamiento de imágenes para encontrar patrones.
 

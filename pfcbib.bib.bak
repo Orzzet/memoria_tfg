@@ -531,5 +531,46 @@
   journal      = {GitHub repository},
   publisher    = {GitHub},
 }
+﻿
+
+@Article{GomezGalvez2018,
+  author   = {G{\'o}mez-G{\'a}lvez, Pedro and Vicente-Munuera, Pablo and Tagua, Antonio and Forja, Cristina and Castro, Ana M. and Letr{\'a}n, Marta and Valencia-Exp{\'o}sito, Andrea and Grima, Clara and Berm{\'u}dez-Gallardo, Marina and Serrano-P{\'e}rez-Higueras, {\'O}scar and Cavodeassi, Florencia and Sotillos, Sol and Mart{\'i}n-Bermudo, Mar{\'i}a D. and M{\'a}rquez, Alberto and Buceta, Javier and Escudero, Luis M.},
+  journal  = {Nature Communications},
+  title    = {Scutoids are a geometrical solution to three-dimensional packing of epithelia},
+  year     = {2018},
+  issn     = {2041-1723},
+  month    = {Jul},
+  number   = {1},
+  pages    = {2960},
+  volume   = {9},
+  abstract = {As animals develop, tissue bending contributes to shape the organs into complex three-dimensional structures. However, the architecture and packing of curved epithelia remains largely unknown. Here we show by means of mathematical modelling that cells in bent epithelia can undergo intercalations along the apico-basal axis. This phenomenon forces cells to have different neighbours in their basal and apical surfaces. As a consequence, epithelial cells adopt a novel shape that we term ``scutoid''. The detailed analysis of diverse tissues confirms that generation of apico-basal intercalations between cells is a common feature during morphogenesis. Using biophysical arguments, we propose that scutoids make possible the minimization of the tissue energy and stabilize three-dimensional packing. Hence, we conclude that scutoids are one of nature's solutions to achieve epithelial bending. Our findings pave the way to understand the three-dimensional organization of epithelial organs.},
+  day      = {27},
+  doi      = {10.1038/s41467-018-05376-1},
+  url      = {https://doi.org/10.1038/s41467-018-05376-1},
+}
+
+@Misc{BOE,
+  title   = {Bases y tipos de cotización 2019},
+  journal = {Seguridad Social: Cotización / Recaudación de Trabajadores},
+  url     = {http://www.seg-social.es/wps/portal/wss/internet/Trabajadores/CotizacionRecaudacionTrabajadores/36537#top},
+}
+
+@Misc{amazonp5000,
+  title   = {PNY Quadro P5000},
+  journal = {Pny: Amazon.es: Informática},
+  url     = {https://www.amazon.es/PNY-Quadro-P5000-16GB-GDDR5X/dp/B01LWVP48O},
+}
+
+@Misc{gradientdocs,
+  title   = {Instance Types},
+  journal = {Gradient Docs},
+  url     = {https://docs.paperspace.com/gradient/instances/instance-types},
+}
+
+@Misc{pccomponentes,
+  title   = {MSI GP62 7RE},
+  journal = {PcComponentes},
+  url     = {https://www.pccomponentes.com/msi-gp62-7re-431xes-leopard-pro-intel-core-i7-7700hq-8gb-1tb-gtx1050ti-156},
+}
 
 @Comment{jabref-meta: databaseType:bibtex;}

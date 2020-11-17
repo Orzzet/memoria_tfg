@@ -1,1 +1,85 @@
-\chapter{Plan Inicial}\label{planinicial}
+\chapter{Planificaci\'on}\label{planinicial}
+
+\section{Enfoque}\label{sec:enfoque}
+
+Uno de los motivos por los que me pareció interesante este proyecto era porque nunca había aplicado técnicas de machine learning para resolver problemas reales, muchos menos de imágenes 3D. Desgraciadamente al principio no abordé el proyecto teniendo esto en cuenta, por lo que hubo una corrección en el plan que se verá en la sección \ref{sec:nosetuvoencuenta}.
+Con esto en mente, mis razones para efectuar este plan inicial son las siguiente:
+
+\begin{itemize}
+\item En algunas asignaturas y en mi tiempo libre he utilizado técnicas sencillas de inteligencia artificial.
+\item Tengo conocimiento sobre el funcionamiento de una red neuronal. Conozco los conceptos de neurona artificial, capas de la red, pérdida o descenso por gradiente.
+\item Necesito encontrar una arquitectura de red neuronal adecuada para resolver el problema dado.
+\item El uso de la GPU aumentará mucho la velocidad con la que se realizan las operaciones.
+\end{itemize}
+
+\section{Planificación inicial}\label{sec:planinicial}
+
+En este primer plan dividí las tareas en fases, siendo la fase 0 realmente un proceso de iniciación, necesaria para planificar el resto de las fases.
+
+\begin{itemize}
+\item[\textbf{Fase 0}] Estudio previo. Investigar las soluciones actuales al problema o problemas similares, las posibles técnicas de machine learning a usar en este proyecto y tecnologías para implementarlas.
+\item[\textbf{Fase 1}] Aprender a implementar una CNN en Python. Usar datos de prueba para familiarizarme con las tecnologías a usar en este proyecto. Se explica en más detalle por qué usar CNN en la sección \ref{sec:cnn}. El uso de Python se explica en la sección \ref{sec:language_framework}.
+\item[\textbf{Fase 2}] Implementar, entrenar y probar una o más CNN.
+\item[\textbf{Fase 3}] Analizar resultados obtenidos.
+\item[\textbf{Fase 4}] Investigar sobre mejoras pre y post procesado.
+\item[\textbf{Fase 5}] Realizar estas operaciones usando Spark.
+\item[\textbf{Fase 6}] Hacer que el entrenamiento y la inferencia sean usables por un usuario.
+\end{itemize}
+
+\section{Qué no se tuvo en cuenta}\label{sec:nosetuvoencuenta}
+
+Gracias a la investigación inicial realizada en la \textbf{Fase 0} se pudo definir el resto de fases del plan inicial, aunque no se tuvieron en cuenta varios factores que se empezaron a ver en la \textbf{Fase 1} y \textbf{Fase 2}. Esto provocó que se tuviese que realizar un ajuste en el plan inicial. 
+Lo que no se tuvo en cuenta fue:
+
+\begin{itemize}
+\item Las fases 2, 3 y 4 deben ser fases iterativas. Cada vez que se obtengan resultados hay que estudiarlos y hacer cambios para mejorar los resultados.
+\item No se tiene en cuenta el rendimiento de los algoritmos utilizado ni los cuellos de botella.
+\item Se quiere usar Spark con la premisa de aprovechar la RAM o el HDD cuando la VRAM se agote, pero como se verá en la sección [REDACTED] esto no es viable.
+\end{itemize}
+
+\section{Nueva metodología}\label{sec:metodologia}
+
+Cuando se estaba siguiendo la \textbf{Fase 2} del plan inicial se vieron los problemas antes mencionados, por lo que se buscó información sobre una metodología adecuada. El capítulo 11 del libro Deep Learning \cite{Goodfellow2016} habla sobre una metodología práctica para la aplicación de técnicas en deep learning. Esta metodología se centra en utilizar feedback del sistema construido en cada iteración para modificar el sistema acorde a tus objetivos. Los pasos a seguir propuestos por esta metodología son:
+
+\begin{enumerate}
+\item Determinar tus metas. Qué métrica usar como error y un valor de la métrica aceptable como objetivo.
+\item Establecer lo antes posible un sistema completo que pueda dar un valor para dicha métrica.
+\item Utilizar herramientas adecuadas para determinar cuellos de botella en el rendimiento. Comprobar qué componentes están dando peores resultados en el sistema y comprobar si los resultados negativos son debidos a overfitting, underfitting, a un fallo con los datos o en el software.
+\item Hacer cambios de forma a los datos, ajuste de hiperparámetros o cambiar algoritmos con el objetivo de mejorar la métrica usada. Volver al punto 3.
+\end{enumerate}
+
+Estos pasos se resumirán como \textit{Desarrollo del sistema} y constituirá la mayor parte del proyecto.
+\newpage
+\section{Planificación actualizada}\label{sec:planactualizado}
+
+\subsection{Resumen}\label{subsec:resumenplanactualizado}
+
+\cuadro{|c|c|}{Tabla de resumen de la planificación.}{tab:prueba}{
+Fecha de inicio & 20/02/2020 \\ 
+\hline
+Fecha de fin prevista & 14/06/2020 \\
+\hline
+Fecha de fin real & 4/12/2020 \\
+\hline
+Horas de trabajo previstas & 300\\
+\hline
+Horas de trabajo real & \\
+\hline
+}
+
+
+\subsection{Fases}\label{subsec:fasesplanactualizado}
+
+\begin{itemize}
+\item[\textbf{Fase 0}] Estudio previo. En esta fase estará todo lo necesario para que se pueda llevar a cabe la implementación de un primer sistema. Investigar sobre artículos de segmentación celular y aprender sobre machine learning y las tecnologías necesarias para llevar a cabo resultados similares aplicados al problema actual.
+\item[\textbf{Fase 1}] Desarrollo del sistema. Aplicar la metodología de la sección \ref{sec:metodologia}.
+\begin{enumerate}
+\item Determinar metas con métricas.
+\item Sistema inicial.
+\item Usar herramientas para determinar cuellos de botella en el rendimiento.
+\item Cambios en el sistema.
+\item Si no se ha alcanzado el valor objetivo de la métrica, volver al punto 3.
+\end{enumerate}
+\item[\textbf{Fase 2}] Mejoras de usabilidad. Que el proyecto sea usable por un usuario.
+\item[\textbf{Fase 3}] Cierre. Terminar de escribir la memoria con los resultados obtenidos, las conclusiones, tabla de tiempos y manual de usuario.
+\end{itemize}

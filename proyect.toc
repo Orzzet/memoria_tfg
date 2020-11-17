@@ -7,87 +7,98 @@
 \contentsline {section}{\numberline {1.1}Motivaci\'on}{3}%
 \contentsline {section}{\numberline {1.2}Visita a Biolog\'ia Molecular}{3}%
 \contentsline {chapter}{\numberline {2}Objetivos}{6}%
-\contentsline {part}{II\hspace {1em}Planificaci\'on}{7}%
-\contentsline {chapter}{\numberline {3}Plan Inicial}{9}%
-\contentsline {chapter}{\numberline {4}Plan Seguido}{10}%
-\contentsline {chapter}{\numberline {5}Costes Estimados}{11}%
-\contentsline {part}{III\hspace {1em}Desarrollo}{12}%
-\contentsline {chapter}{\numberline {6}An\'alisis de antecedentes}{14}%
-\contentsline {section}{\numberline {6.1}Red Neuronal Artificial}{14}%
-\contentsline {subsection}{\numberline {6.1.1}Introducción a Redes Neuronales Artificiales}{14}%
-\contentsline {subsection}{\numberline {6.1.2}Neurona artifical}{15}%
-\contentsline {subsubsection}{Sigmoide}{16}%
-\contentsline {subsubsection}{Unidad Lineal Rectificada (ReLU)}{16}%
-\contentsline {subsection}{\numberline {6.1.3}Red Neuronal Artifical}{16}%
-\contentsline {subsection}{\numberline {6.1.4}Descenso por Gradiente }{17}%
-\contentsline {section}{\numberline {6.2}Red Neuronal Convolucional}{18}%
-\contentsline {subsection}{\numberline {6.2.1}Tipos de capas}{19}%
-\contentsline {subsubsection}{Capa convolucional}{19}%
-\contentsline {subsubsection}{Capa Pooling}{20}%
-\contentsline {subsubsection}{Capa ReLU}{22}%
-\contentsline {subsubsection}{Capa FC}{22}%
-\contentsline {subsection}{\numberline {6.2.2}Funciones de Pérdida}{22}%
-\contentsline {subsubsection}{Binary Cross-Entropy}{23}%
-\contentsline {subsubsection}{Weighted Binary Cross-Entropy}{23}%
-\contentsline {subsubsection}{Dice Loss}{23}%
-\contentsline {section}{\numberline {6.3}Arquitecturas para segmentación semántica}{23}%
-\contentsline {subsection}{\numberline {6.3.1}Fully Convolutional Network}{24}%
-\contentsline {subsection}{\numberline {6.3.2}Deconvnet}{24}%
-\contentsline {subsubsection}{Unpooling}{25}%
-\contentsline {subsubsection}{Deconvoloución}{25}%
-\contentsline {subsection}{\numberline {6.3.3}U-Net}{25}%
-\contentsline {section}{\numberline {6.4}Aplicaciones recientes}{26}%
-\contentsline {subsection}{\numberline {6.4.1}U-Net para conteo, detección y morfometría, detección y morfometría de células. (2019)}{27}%
-\contentsline {subsubsection}{Proyecto}{27}%
-\contentsline {subsubsection}{Pipeline}{27}%
-\contentsline {subsubsection}{Resultados}{28}%
-\contentsline {subsubsection}{Software}{28}%
-\contentsline {subsection}{\numberline {6.4.2}Precisa y versátil segmentación 3D de tejido vegetal a resolución celular. (2020)}{29}%
+\contentsline {part}{II\hspace {1em}Organizaci\'on del Proyecto}{7}%
+\contentsline {chapter}{\numberline {3}Planificaci\'on}{9}%
+\contentsline {section}{\numberline {3.1}Enfoque}{9}%
+\contentsline {section}{\numberline {3.2}Planificación inicial}{9}%
+\contentsline {section}{\numberline {3.3}Qué no se tuvo en cuenta}{10}%
+\contentsline {section}{\numberline {3.4}Nueva metodología}{10}%
+\contentsline {section}{\numberline {3.5}Planificación actualizada}{11}%
+\contentsline {subsection}{\numberline {3.5.1}Resumen}{11}%
+\contentsline {subsection}{\numberline {3.5.2}Fases}{11}%
+\contentsline {chapter}{\numberline {4}Costes}{12}%
+\contentsline {section}{\numberline {4.1}Resumen}{12}%
+\contentsline {section}{\numberline {4.2}Costes directos}{12}%
+\contentsline {subsection}{\numberline {4.2.1}Costes de personal}{12}%
+\contentsline {subsection}{\numberline {4.2.2}Costes de servidores}{12}%
+\contentsline {section}{\numberline {4.3}Costes indirectos}{13}%
+\contentsline {part}{III\hspace {1em}Desarrollo}{14}%
+\contentsline {chapter}{\numberline {5}Estudio previo}{16}%
+\contentsline {section}{\numberline {5.1}Red Neuronal Artificial}{16}%
+\contentsline {subsection}{\numberline {5.1.1}Introducción a Redes Neuronales Artificiales}{16}%
+\contentsline {subsection}{\numberline {5.1.2}Neurona artifical}{17}%
+\contentsline {subsubsection}{Sigmoide}{18}%
+\contentsline {subsubsection}{Unidad Lineal Rectificada (ReLU)}{18}%
+\contentsline {subsection}{\numberline {5.1.3}Red Neuronal Artifical}{18}%
+\contentsline {subsection}{\numberline {5.1.4}Descenso por Gradiente }{19}%
+\contentsline {section}{\numberline {5.2}Red Neuronal Convolucional}{20}%
+\contentsline {subsection}{\numberline {5.2.1}Tipos de capas}{21}%
+\contentsline {subsubsection}{Capa convolucional}{21}%
+\contentsline {subsubsection}{Capa Pooling}{22}%
+\contentsline {subsubsection}{Capa ReLU}{24}%
+\contentsline {subsubsection}{Capa FC}{24}%
+\contentsline {subsection}{\numberline {5.2.2}Funciones de Pérdida}{24}%
+\contentsline {subsubsection}{Binary Cross-Entropy}{25}%
+\contentsline {subsubsection}{Weighted Binary Cross-Entropy}{25}%
+\contentsline {subsubsection}{Dice Loss}{25}%
+\contentsline {section}{\numberline {5.3}Arquitecturas para segmentación semántica}{25}%
+\contentsline {subsection}{\numberline {5.3.1}Fully Convolutional Network}{26}%
+\contentsline {subsection}{\numberline {5.3.2}Deconvnet}{26}%
+\contentsline {subsubsection}{Unpooling}{27}%
+\contentsline {subsubsection}{Deconvoloución}{27}%
+\contentsline {subsection}{\numberline {5.3.3}U-Net}{27}%
+\contentsline {section}{\numberline {5.4}Aplicaciones recientes}{28}%
+\contentsline {subsection}{\numberline {5.4.1}U-Net para conteo, detección y morfometría, detección y morfometría de células. (2019)}{29}%
 \contentsline {subsubsection}{Proyecto}{29}%
 \contentsline {subsubsection}{Pipeline}{29}%
 \contentsline {subsubsection}{Resultados}{30}%
 \contentsline {subsubsection}{Software}{30}%
-\contentsline {chapter}{\numberline {7}Datos de entrada}{32}%
-\contentsline {subsubsection}{imageSequenceInterpolated}{32}%
-\contentsline {chapter}{\numberline {8}Diseño}{34}%
-\contentsline {section}{\numberline {8.1}Esquema general}{34}%
-\contentsline {section}{\numberline {8.2}Preprocesado local}{36}%
-\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{36}%
-\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{36}%
-\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{37}%
-\contentsline {subsubsection}{Modificar el orden de las dimensiones}{37}%
-\contentsline {section}{\numberline {8.3}Entrenamiento}{38}%
-\contentsline {section}{\numberline {8.4}Inferencia}{39}%
-\contentsline {section}{\numberline {8.5}Arquitectura de las Redes Neuronales Convolucionales}{40}%
-\contentsline {chapter}{\numberline {9}Implementación}{42}%
-\contentsline {section}{\numberline {9.1}Lenguaje y framework}{42}%
-\contentsline {section}{\numberline {9.2}Preprocesado local}{43}%
-\contentsline {subsection}{\numberline {9.2.1}Consideraciones}{43}%
-\contentsline {subsubsection}{Reescalado}{43}%
-\contentsline {subsubsection}{Encontrar bordes}{44}%
-\contentsline {subsubsection}{Crear nuevo fichero}{44}%
-\contentsline {section}{\numberline {9.3}Carga de datos}{44}%
-\contentsline {subsection}{\numberline {9.3.1}Consideraciones}{45}%
-\contentsline {subsubsection}{Tamaño del batch}{45}%
-\contentsline {subsubsection}{Normalización}{45}%
-\contentsline {subsubsection}{Data Augmentation}{46}%
-\contentsline {section}{\numberline {9.4}U-Net}{46}%
-\contentsline {subsubsection}{Funciones de pérdida}{46}%
-\contentsline {subsubsection}{Precisión Mixta}{47}%
-\contentsline {subsubsection}{Ficheros generados}{47}%
-\contentsline {section}{\numberline {9.5}Postprocesado}{48}%
-\contentsline {chapter}{\numberline {10}Representación 3D}{49}%
-\contentsline {part}{IV\hspace {1em}Resultados}{50}%
-\contentsline {chapter}{\numberline {11}Resultados}{52}%
-\contentsline {subsubsection}{MiniUnet3D vs Unet3D}{53}%
-\contentsline {subsubsection}{Sin data augmentation vs Con data augmentation}{54}%
-\contentsline {subsubsection}{Sin Apex vs Con Apex}{55}%
-\contentsline {subsubsection}{Prueba de espaciado entre células.}{56}%
-\contentsline {subsubsection}{Prueba de bordes.}{57}%
-\contentsline {subsubsection}{DT Watershed a bordes.}{58}%
-\contentsline {subsubsection}{Comparación DT Watershed con espaciado entre células.}{59}%
-\contentsline {chapter}{\numberline {12}An\'alisis temporal}{60}%
-\contentsline {chapter}{\numberline {13}Conclusiones}{61}%
-\contentsline {chapter}{\numberline {14}Manual}{62}%
-\contentsline {chapter}{Referencias}{63}%
+\contentsline {subsection}{\numberline {5.4.2}Precisa y versátil segmentación 3D de tejido vegetal a resolución celular. (2020)}{31}%
+\contentsline {subsubsection}{Proyecto}{31}%
+\contentsline {subsubsection}{Pipeline}{31}%
+\contentsline {subsubsection}{Resultados}{32}%
+\contentsline {subsubsection}{Software}{32}%
+\contentsline {chapter}{\numberline {6}Datos de entrada}{34}%
+\contentsline {subsubsection}{imageSequenceInterpolated}{34}%
+\contentsline {chapter}{\numberline {7}Diseño}{36}%
+\contentsline {section}{\numberline {7.1}Esquema general}{36}%
+\contentsline {section}{\numberline {7.2}Preprocesado local}{38}%
+\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{38}%
+\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{38}%
+\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{39}%
+\contentsline {subsubsection}{Modificar el orden de las dimensiones}{39}%
+\contentsline {section}{\numberline {7.3}Entrenamiento}{40}%
+\contentsline {section}{\numberline {7.4}Inferencia}{41}%
+\contentsline {section}{\numberline {7.5}Arquitectura de las Redes Neuronales Convolucionales}{42}%
+\contentsline {chapter}{\numberline {8}Implementación}{44}%
+\contentsline {section}{\numberline {8.1}Lenguaje y framework}{44}%
+\contentsline {section}{\numberline {8.2}Preprocesado local}{45}%
+\contentsline {subsection}{\numberline {8.2.1}Consideraciones}{45}%
+\contentsline {subsubsection}{Reescalado}{45}%
+\contentsline {subsubsection}{Encontrar bordes}{46}%
+\contentsline {subsubsection}{Crear nuevo fichero}{46}%
+\contentsline {section}{\numberline {8.3}Carga de datos}{46}%
+\contentsline {subsection}{\numberline {8.3.1}Consideraciones}{47}%
+\contentsline {subsubsection}{Tamaño del batch}{47}%
+\contentsline {subsubsection}{Normalización}{47}%
+\contentsline {subsubsection}{Data Augmentation}{48}%
+\contentsline {section}{\numberline {8.4}U-Net}{48}%
+\contentsline {subsubsection}{Funciones de pérdida}{48}%
+\contentsline {subsubsection}{Precisión Mixta}{49}%
+\contentsline {subsubsection}{Ficheros generados}{49}%
+\contentsline {section}{\numberline {8.5}Postprocesado}{50}%
+\contentsline {chapter}{\numberline {9}Representación 3D}{51}%
+\contentsline {part}{IV\hspace {1em}Cierre}{52}%
+\contentsline {chapter}{\numberline {10}Resultados}{54}%
+\contentsline {subsubsection}{MiniUnet3D vs Unet3D}{55}%
+\contentsline {subsubsection}{Sin data augmentation vs Con data augmentation}{56}%
+\contentsline {subsubsection}{Sin Apex vs Con Apex}{57}%
+\contentsline {subsubsection}{Prueba de espaciado entre células.}{58}%
+\contentsline {subsubsection}{Prueba de bordes.}{59}%
+\contentsline {subsubsection}{DT Watershed a bordes.}{60}%
+\contentsline {subsubsection}{Comparación DT Watershed con espaciado entre células.}{61}%
+\contentsline {chapter}{\numberline {11}An\'alisis temporal}{62}%
+\contentsline {chapter}{\numberline {12}Conclusiones}{63}%
+\contentsline {chapter}{\numberline {13}Manual}{64}%
+\contentsline {chapter}{Referencias}{65}%
 \contentsfinish 
