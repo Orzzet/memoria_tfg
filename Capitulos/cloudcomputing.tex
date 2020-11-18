@@ -1,4 +1,4 @@
-\chapter{De desarrollo local a desarrollo en la nube}\label{cloudcomputing}
+\chapter{De computación local a computación en la nube}\label{cloudcomputing}
 
 En este capítulo se mostrará el problema encontrado al intentar desarrollar en local con un hardware limitado. Se pasará de probar en local un ejemplo de fastai a probarlo en un ordenador en la nube y se compararán los resultados.
 
@@ -8,7 +8,7 @@ Después de investigar sobre las soluciones actuales he llegado a la conclusión
 
 Voy a empezar siguiendo los pasos del “Getting started” del framework fastai \cite{Howard2018} de Python. Este framework es una capa de abstracción por encima de PyTorch \cite{Paszke2019}. Parece ser que abstrae muchos elementos del programador e incluye mejoras de optimización por debajo, haciendo que probar modelos sea rápido. También es importante que esta librería tenga implementada la arquitectura u-unet (y otras de procesamiento de imágenes).
 
-\section{Desarrollo local}\label{sec:local_dev}
+\section{Computación local}\label{sec:local_dev}
 
 He seguido un tutorial en el que usa una u-net para segmentar imágenes 2D. El tutorial se puede encontrar en el siguiente notebook:
 
@@ -28,7 +28,7 @@ En la figura \ref{fig:fastai_tuto_local} se pueden ver las métricas obtenidas d
 
 Es importante tener en cuenta que ha sido necesario disminuir la imagen original de $(720, 960)px$ a $(90, 120)px$, que cuyo tamaño de imagen es $\frac{1}{8*8}=\frac{1}{64}$ del original.
 
-\section{Desarrollo en la nube}\label{sec:cloud_dev}
+\section{Computación en la nube}\label{sec:cloud_dev}
 
 He estado intentando trabajar con mi propia gpu (2GB vRAM) en este ejemplo 2D, realizando optimizaciones y reduciendo los datos de entrada. He podido obtener resultados pese a reducir mucho el tamaño de imagen, por lo que entrenar con mi propia máquina podría ser válido para datos 2D. Aún así, en este proyecto se va a trabajar con datos 3D, por lo que no es realista usar mi propia máquina para el entrenamiento e inferencia.
 
