@@ -1,0 +1,52 @@
+\chapter{De desarrollo local a desarrollo en la nube}\label{cloudcomputing}
+
+En este capítulo se mostrará el problema encontrado al intentar desarrollar en local con un hardware limitado. Se pasará de probar en local un ejemplo de fastai a probarlo en un ordenador en la nube y se compararán los resultados.
+
+\section{Introducci\'on}\label{sec:intro_cloudcomputing}
+
+Después de investigar sobre las soluciones actuales he llegado a la conclusión de que dichas soluciones están pensadas para un hardware superior al que tengo disponible. Voy a implementar redes neuronales convolucionales de forma manual. Lo más probable es que obtenga peores resultados que los que obtendría por las soluciones vistas en el estudio previo, pero voy a tener libertad a la hora de decidir la complejidad del modelo, lo que reducirá el coste de entrenarlo y usarlo. 
+
+Voy a empezar siguiendo los pasos del “Getting started” del framework fastai \cite{Howard2018} de Python. Este framework es una capa de abstracción por encima de PyTorch \cite{Paszke2019}. Parece ser que abstrae muchos elementos del programador e incluye mejoras de optimización por debajo, haciendo que probar modelos sea rápido. También es importante que esta librería tenga implementada la arquitectura u-unet (y otras de procesamiento de imágenes).
+
+\section{Desarrollo local}\label{sec:local_dev}
+
+He seguido un tutorial en el que usa una u-net para segmentar imágenes 2D. El tutorial se puede encontrar en el siguiente notebook:
+
+\url{https://www.kaggle.com/dipam7/image-segmentation-using-fastai}
+
+He tenido que modificar parámetros para poder ejecutarlo en mi máquina, que tiene una GPU con 2 GB de VRAM. Los parámetros cambiados son:
+\begin{itemize}
+\item $image\_size = (720, 960) / 8 = (90, 120)$ En el tutorial ya se reduce el tamaño de cada dimensión a la mitad, pero he tenido que reducirlo a una octava parte para que el entrenamiento quepa en la memoria GPU.
+\item $dataset\_size = 0.1$ Esto quiere decir que se usa un $10\%$ del dataset.
+\item $batch\_size = 8 -> 2$ El nº de imágenes que se usan a la vez en cada ciclo del entrenamiento.
+\item $\#learn.recorder.plot()$ Esta operación nos muestra una gráfica de “Learning rate” vs “Loss”, en el que se podría comprobar qué ratio de aprendizaje tiene menor pérdida. No he podido ejecutarla porque consume mucha memoria.
+\end{itemize}
+
+\figura{0.5}{img/fastai_tuto_local}{Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.}{fig:fastai_tuto_local}{}
+
+En la figura \ref{fig:fastai_tuto_local} se pueden ver las métricas obtenidas durante el entrenamiento. Esta tarea es de segmentación, por lo que a cada píxel de la imagen se le da un valor dependiendo de a la clase a la que pertenezca. Carece de interés analizar en detalle este caso ya que se ha hecho como primer ejemplo de uso de esta librería para segmentación.
+
+Es importante tener en cuenta que ha sido necesario disminuir la imagen original de $(720, 960)px$ a $(90, 120)px$, que cuyo tamaño de imagen es $\frac{1}{8*8}=\frac{1}{64}$ del original.
+
+\section{Desarrollo en la nube}\label{sec:cloud_dev}
+
+He estado intentando trabajar con mi propia gpu (2GB vRAM) en este ejemplo 2D, realizando optimizaciones y reduciendo los datos de entrada. He podido obtener resultados pese a reducir mucho el tamaño de imagen, por lo que entrenar con mi propia máquina podría ser válido para datos 2D. Aún así, en este proyecto se va a trabajar con datos 3D, por lo que no es realista usar mi propia máquina para el entrenamiento e inferencia.
+
+Por ello he investigado sobre el uso de GPUs en Cloud Computing. Estoy ejecutando el código de las imágenes 2D en un notebook Jupyter gratuito con una GPU P5000, que tiene 16GB vRAM (el coste de adquirir un equipo similar al ofrecido superaría los 2000€). La empresa que ofrece este servicio es Paperspace \cite{Paperspace2020}, que tiene una tier gratuita en la que te ofrecen un notebook con la GPU P5000 con pocas limitaciones.
+
+Gracias a esto he conseguido ejecutarlo con los siguientes parámetros:
+
+\begin{itemize}
+\item $image\_size = (720, 960) / 2 = (360, 480)px$
+\item $dataset\_size = 1$
+\item $batch\_size = 16$
+\end{itemize}
+
+\figura{0.5}{img/fastai_tuto_cloud}{Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.}{fig:fastai_tuto_cloud}{}
+
+En la figura \ref{fig:fastai_tuto_cloud} se pueden ver las métricas obtenidas en las que se muestra cómo se ha conseguido un acc\_camvid superior, que es la métrica usada para medir lo bueno que es la predicción, donde 1 sería una predicción perfecta. Las pérdidas de entrenamiento y validación también son menores.
+
+En cada epoch de entrenamiento se han usado $16$ imágenes de $(720, 960) / 2px$. Cada imagen tiene $\frac{1}{4}$ del tamaño original y las 16 imágenes entran en memoria a la vez, por lo que se podría decir que en cada epoch se usa como dato de entrada uno con tamaño $\frac{1}{4}*16=4$ veces de la imagen original. En el caso anterior se han usado imágenes de $(720, 960) / 8 px$ con un batch de 2, por lo que se podría decir que en cada epoch se ha usado como dato de entrada uno con tamaño $\frac{1}{64}*2=\frac{1}{32}$ veces la imagen original.
+
+Aunque solo se ha aumentado de 2GB a 16GB, la mejora ha sido de poder ser capaz de usar un dato de entrada $\frac{4}{1/32} = 128$ veces mayor. 
+

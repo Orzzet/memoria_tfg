@@ -10,7 +10,7 @@ Imagenet es una base de datos con más de 10 millones de imágenes etiquetadas a
 
 Estas arquitecturas resultaron en hitos importantes para el desarrollo de CNN, a continuación se describirán varias arquitecturas para segmentación semántica.
 
-\section{Fully Convolutional Network}
+\newpage\section{Fully Convolutional Network}
 
 Fue propuesta en 2014 por investigadores de la Universidad de California en Berkeley \cite{Long2014} obteniendo los mejores resultados hasta la fecha en segmentación semántica mediante el uso de redes convolucionales. Un punto clave fue tomar una entrada de un tamaño arbitrario y producir una salida de un tamaño correspondiente. Usa como base los modelos AlexNet, VGGNet y GoogLeNet \cite{Szegedy2014}, donde se sustituyeron las capas completamente conectadas con capas convolucionales con filtros 1x1 y añadieron una capa convolucional con filtro 1x1 y profundidad C+1 para predecir las puntuaciones de cada clase, C el nº de clases y añadiendo una más para el fondo.
 

@@ -15,7 +15,7 @@
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imágenes del curso Intro to Deep Learning with PyTorch de Udacity.\relax }}{22}%
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Red Neuronal Convolucional simple en la que la imagen de un barco es clasificada.\relax }}{22}%
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Capa de convolución de profundidad 2 (se usan dos filtros) con kernel de tamaño $3\times 3 \times 3$ aplicado a un volumen de entrada de tamaño $7x7x3$, volumen generado al aplicar padding de 1 px a una imagen de tamaño $5x5$ con 3 canales. El resultado es un volumen de $3x3x2$\relax }}{24}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Imagen $4\times 4$ a la que se ha aplicado un pooling de $F=2, S=2$. Cada color de la imagen de la izquierda indica las entradas del para la operación MAX, cada color de la imagen de la derecha indica la salida de dicha operación. Figura tomada del curso CS231n de Standford University.\relax }}{24}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Imagen $4\times 4$ a la que se ha aplicado un pooling de $F=2, S=2$. Cada color de la imagen de la izquierda indica las entradas del para la operación MAX, cada color de la imagen de la derecha indica la salida de dicha operación. Figura tomada del curso CS231n de Standford University.\relax }}{25}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Arquitectura de FCN32, FCN16 y FCN8.\relax }}{28}%
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Arquitectura Deconvnet.\relax }}{29}%
@@ -26,11 +26,9 @@
 \contentsline {figure}{\numberline {8.2}{\ignorespaces Segmentación de tejido vegetal usando PlantSeg. En el primer paso se predicen los bordes de las células usando una red U-Net 3D. En el segundo paso se aplica un algoritmo de particionamiento de grafo para segmentar cada célula.\relax }}{34}%
 \contentsline {figure}{\numberline {8.3}{\ignorespaces Interfaz gráfica del programa PlantSet. Se pueden ver las distintas opciones para cada paso del procesado.\relax }}{35}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Histograma de todos los valores\relax }}{39}%
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Histograma de todos los valores con el eje y limitado a 4000\relax }}{39}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Histograma de todos los valores\relax }}{41}%
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Histograma de todos los valores con el eje y limitado a 4000\relax }}{41}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{40}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{41}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {11.1}{\ignorespaces Diseño general\relax }}{43}%
 \contentsline {figure}{\numberline {11.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{44}%
