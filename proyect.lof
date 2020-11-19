@@ -30,28 +30,33 @@
 \contentsline {figure}{\numberline {10.1}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{40}%
 \contentsline {figure}{\numberline {10.2}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{41}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {11.1}{\ignorespaces Diseño general\relax }}{43}%
-\contentsline {figure}{\numberline {11.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{44}%
-\contentsline {figure}{\numberline {11.3}{\ignorespaces Pasos llevados a cabo en el entrenamiento\relax }}{46}%
-\contentsline {figure}{\numberline {11.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{47}%
-\contentsline {figure}{\numberline {11.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{48}%
-\contentsline {figure}{\numberline {11.6}{\ignorespaces Arquitectura U-Net completa.\relax }}{49}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {14.1}{\ignorespaces Modelo miniunet2.1. 100 epochs. Se usa MiniUnet3D. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{61}%
-\contentsline {figure}{\numberline {14.2}{\ignorespaces Modelo unet4.1. 200 epochs. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{61}%
-\contentsline {figure}{\numberline {14.3}{\ignorespaces Modelo unet4.13. 200 epochs. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{62}%
-\contentsline {figure}{\numberline {14.4}{\ignorespaces Modelo unet4.8. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation.\relax }}{62}%
-\contentsline {figure}{\numberline {14.5}{\ignorespaces Modelo unet4.8. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Sin Apex\relax }}{63}%
-\contentsline {figure}{\numberline {14.6}{\ignorespaces Modelo unet5.2. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Con Apex.\relax }}{63}%
-\contentsline {figure}{\numberline {14.7}{\ignorespaces Modelo unet6t. 100 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Pérdida Dice. Sin postprocesado. Primera fila imagen de entrada. Segunda fila segmentación objetivo. Tercera fila predicción. Z=20,25,45,50 en las columnas. IoU 0.72\relax }}{64}%
-\contentsline {figure}{\numberline {14.8}{\ignorespaces Modelo unet6t. 100 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Sin postprocesado.\relax }}{64}%
-\contentsline {figure}{\numberline {14.9}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Sin postprocesado. Primera fila imagen de entrada. Segunda fila segmentación objetivo. Tercera fila predicción. Z=20,25,45,50 en las columnas. IoU 0.84\relax }}{65}%
-\contentsline {figure}{\numberline {14.10}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Sin postprocesado.\relax }}{65}%
-\contentsline {figure}{\numberline {14.11}{\ignorespaces DT Watershed aplicado a la salida del modelo unet6b. Primera fila bordes. Segunda fila transformación de la distancia. Filtro gaussiano. Cuarta fila watershed con mínimos locales como semilla. Z=20,25,45,50 en las columnas.\relax }}{66}%
-\contentsline {figure}{\numberline {14.12}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Componentes conexas con etiquetas distintas. IoU 0.72\relax }}{67}%
-\contentsline {figure}{\numberline {14.13}{\ignorespaces DT Watershed aplicado a la salida del modelo unet6b. IoU 0.70\relax }}{67}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {16.1}{\ignorespaces Diseño general\relax }}{48}%
+\contentsline {figure}{\numberline {16.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{49}%
+\contentsline {figure}{\numberline {16.3}{\ignorespaces Pasos llevados a cabo en el entrenamiento\relax }}{51}%
+\contentsline {figure}{\numberline {16.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{52}%
+\contentsline {figure}{\numberline {16.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{53}%
+\contentsline {figure}{\numberline {16.6}{\ignorespaces Arquitectura U-Net reducida. Esta arquitectura no tiene mucho interés excepto para completar un primer sistema.\relax }}{54}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {19.1}{\ignorespaces Modelo miniunet2.1. 100 epochs. Se usa MiniUnet3D. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{66}%
+\contentsline {figure}{\numberline {19.2}{\ignorespaces Modelo unet4.1. 200 epochs. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{66}%
+\contentsline {figure}{\numberline {19.3}{\ignorespaces Modelo unet4.13. 200 epochs. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{67}%
+\contentsline {figure}{\numberline {19.4}{\ignorespaces Modelo unet4.8. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation.\relax }}{67}%
+\contentsline {figure}{\numberline {19.5}{\ignorespaces Modelo unet4.8. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Sin Apex\relax }}{68}%
+\contentsline {figure}{\numberline {19.6}{\ignorespaces Modelo unet5.2. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Con Apex.\relax }}{68}%
+\contentsline {figure}{\numberline {19.7}{\ignorespaces Modelo unet6t. 100 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Pérdida Dice. Sin postprocesado. Primera fila imagen de entrada. Segunda fila segmentación objetivo. Tercera fila predicción. Z=20,25,45,50 en las columnas. IoU 0.72\relax }}{69}%
+\contentsline {figure}{\numberline {19.8}{\ignorespaces Modelo unet6t. 100 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Sin postprocesado.\relax }}{69}%
+\contentsline {figure}{\numberline {19.9}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Sin postprocesado. Primera fila imagen de entrada. Segunda fila segmentación objetivo. Tercera fila predicción. Z=20,25,45,50 en las columnas. IoU 0.84\relax }}{70}%
+\contentsline {figure}{\numberline {19.10}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Sin postprocesado.\relax }}{70}%
+\contentsline {figure}{\numberline {19.11}{\ignorespaces DT Watershed aplicado a la salida del modelo unet6b. Primera fila bordes. Segunda fila transformación de la distancia. Filtro gaussiano. Cuarta fila watershed con mínimos locales como semilla. Z=20,25,45,50 en las columnas.\relax }}{71}%
+\contentsline {figure}{\numberline {19.12}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Componentes conexas con etiquetas distintas. IoU 0.72\relax }}{72}%
+\contentsline {figure}{\numberline {19.13}{\ignorespaces DT Watershed aplicado a la salida del modelo unet6b. IoU 0.70\relax }}{72}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

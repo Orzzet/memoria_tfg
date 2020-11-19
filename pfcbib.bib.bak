@@ -573,4 +573,12 @@
   url     = {https://www.pccomponentes.com/msi-gp62-7re-431xes-leopard-pro-intel-core-i7-7700hq-8gb-1tb-gtx1050ti-156},
 }
 
+@Misc{Howard2018,
+  author       = {Howard, Jeremy and others},
+  howpublished = {\url{https://github.com/fastai/fastai}},
+  title        = {fastai},
+  year         = {2018},
+  publisher    = {GitHub},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

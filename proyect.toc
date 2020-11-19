@@ -59,49 +59,77 @@
 \contentsline {subsection}{\numberline {8.2.4}Software}{35}%
 \contentsline {part}{IV\hspace {1em}Desarrollo}{36}%
 \contentsline {chapter}{\numberline {9}Gu\'ia de cap\'itulos de desarrollo}{38}%
-\contentsline {chapter}{\numberline {10}De desarrollo local a desarrollo en la nube}{39}%
+\contentsline {chapter}{\numberline {10}De computación local a computación en la nube}{39}%
 \contentsline {section}{\numberline {10.1}Introducci\'on}{39}%
-\contentsline {section}{\numberline {10.2}Desarrollo local}{39}%
-\contentsline {section}{\numberline {10.3}Desarrollo en la nube}{40}%
-\contentsline {chapter}{\numberline {11}Diseño}{42}%
-\contentsline {section}{\numberline {11.1}Esquema general}{42}%
-\contentsline {section}{\numberline {11.2}Preprocesado local}{44}%
-\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{44}%
-\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{44}%
-\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{45}%
-\contentsline {subsubsection}{Modificar el orden de las dimensiones}{45}%
-\contentsline {section}{\numberline {11.3}Entrenamiento}{46}%
-\contentsline {section}{\numberline {11.4}Inferencia}{47}%
-\contentsline {section}{\numberline {11.5}Arquitectura de las Redes Neuronales Convolucionales}{48}%
-\contentsline {chapter}{\numberline {12}Implementación}{50}%
-\contentsline {section}{\numberline {12.1}Lenguaje y framework}{50}%
-\contentsline {section}{\numberline {12.2}Preprocesado local}{51}%
-\contentsline {subsection}{\numberline {12.2.1}Consideraciones}{51}%
-\contentsline {subsubsection}{Reescalado}{51}%
-\contentsline {subsubsection}{Encontrar bordes}{52}%
-\contentsline {subsubsection}{Crear nuevo fichero}{52}%
-\contentsline {section}{\numberline {12.3}Carga de datos}{52}%
-\contentsline {subsection}{\numberline {12.3.1}Consideraciones}{53}%
-\contentsline {subsubsection}{Tamaño del batch}{53}%
-\contentsline {subsubsection}{Normalización}{53}%
-\contentsline {subsubsection}{Data Augmentation}{54}%
-\contentsline {section}{\numberline {12.4}U-Net}{54}%
-\contentsline {subsubsection}{Funciones de pérdida}{54}%
-\contentsline {subsubsection}{Precisión Mixta}{55}%
-\contentsline {subsubsection}{Ficheros generados}{55}%
-\contentsline {section}{\numberline {12.5}Postprocesado}{56}%
-\contentsline {chapter}{\numberline {13}Representación 3D}{57}%
-\contentsline {part}{V\hspace {1em}Cierre}{58}%
-\contentsline {chapter}{\numberline {14}Resultados}{60}%
-\contentsline {subsubsection}{MiniUnet3D vs Unet3D}{61}%
-\contentsline {subsubsection}{Sin data augmentation vs Con data augmentation}{62}%
-\contentsline {subsubsection}{Sin Apex vs Con Apex}{63}%
-\contentsline {subsubsection}{Prueba de espaciado entre células.}{64}%
-\contentsline {subsubsection}{Prueba de bordes.}{65}%
-\contentsline {subsubsection}{DT Watershed a bordes.}{66}%
-\contentsline {subsubsection}{Comparación DT Watershed con espaciado entre células.}{67}%
-\contentsline {chapter}{\numberline {15}An\'alisis temporal}{68}%
-\contentsline {chapter}{\numberline {16}Conclusiones}{69}%
-\contentsline {chapter}{\numberline {17}Manual}{70}%
-\contentsline {chapter}{Referencias}{71}%
+\contentsline {section}{\numberline {10.2}Computación local}{39}%
+\contentsline {section}{\numberline {10.3}Computación en la nube}{40}%
+\contentsline {chapter}{\numberline {11}Iteración 1: Sistema inicial}{42}%
+\contentsline {section}{\numberline {11.1}Metas y m\'etricas}{42}%
+\contentsline {section}{\numberline {11.2}Lenguaje y framework}{42}%
+\contentsline {section}{\numberline {11.3}Arquitectura CNN}{42}%
+\contentsline {section}{\numberline {11.4}Carga de datos}{42}%
+\contentsline {section}{\numberline {11.5}El problema del tamaño de la imagen}{42}%
+\contentsline {section}{\numberline {11.6}Segmentación semántica multiinstancia con U-Net}{42}%
+\contentsline {section}{\numberline {11.7}Guardar modelo}{42}%
+\contentsline {section}{\numberline {11.8}Resultados}{42}%
+\contentsline {chapter}{\numberline {12}Iteración 2: Arquitectura U-Net completa}{43}%
+\contentsline {section}{\numberline {12.1}Problema detectado}{43}%
+\contentsline {section}{\numberline {12.2}Cambio a U-Net completa}{43}%
+\contentsline {section}{\numberline {12.3}Resultados}{43}%
+\contentsline {chapter}{\numberline {13}Iteración 3: Data augmentation}{44}%
+\contentsline {section}{\numberline {13.1}Problema detectado}{44}%
+\contentsline {section}{\numberline {13.2}Técnica de data augmentation}{44}%
+\contentsline {section}{\numberline {13.3}Implementación de data augmentation}{44}%
+\contentsline {section}{\numberline {13.4}Resultados}{44}%
+\contentsline {chapter}{\numberline {14}Iteración 4: Apex, precisión mixta}{45}%
+\contentsline {section}{\numberline {14.1}Problema detectado}{45}%
+\contentsline {section}{\numberline {14.2}Precisión de los tensores}{45}%
+\contentsline {section}{\numberline {14.3}Implementación de Apex}{45}%
+\contentsline {section}{\numberline {14.4}Resultados}{45}%
+\contentsline {chapter}{\numberline {15}Iteración 5: DT Watershed}{46}%
+\contentsline {section}{\numberline {15.1}Problema detectado}{46}%
+\contentsline {section}{\numberline {15.2}Algoritmo watershed}{46}%
+\contentsline {section}{\numberline {15.3}Implementación DT Watershed}{46}%
+\contentsline {section}{\numberline {15.4}Resultados}{46}%
+\contentsline {chapter}{\numberline {16}Diseño}{47}%
+\contentsline {section}{\numberline {16.1}Esquema general}{47}%
+\contentsline {section}{\numberline {16.2}Preprocesado local}{49}%
+\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{49}%
+\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{49}%
+\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{50}%
+\contentsline {subsubsection}{Modificar el orden de las dimensiones}{50}%
+\contentsline {section}{\numberline {16.3}Entrenamiento}{51}%
+\contentsline {section}{\numberline {16.4}Inferencia}{52}%
+\contentsline {section}{\numberline {16.5}Arquitectura de las Redes Neuronales Convolucionales}{53}%
+\contentsline {chapter}{\numberline {17}Implementación}{55}%
+\contentsline {section}{\numberline {17.1}Lenguaje y framework}{55}%
+\contentsline {section}{\numberline {17.2}Preprocesado local}{56}%
+\contentsline {subsection}{\numberline {17.2.1}Consideraciones}{56}%
+\contentsline {subsubsection}{Reescalado}{56}%
+\contentsline {subsubsection}{Encontrar bordes}{57}%
+\contentsline {subsubsection}{Crear nuevo fichero}{57}%
+\contentsline {section}{\numberline {17.3}Carga de datos}{57}%
+\contentsline {subsection}{\numberline {17.3.1}Consideraciones}{58}%
+\contentsline {subsubsection}{Tamaño del batch}{58}%
+\contentsline {subsubsection}{Normalización}{58}%
+\contentsline {subsubsection}{Data Augmentation}{59}%
+\contentsline {section}{\numberline {17.4}U-Net}{59}%
+\contentsline {subsubsection}{Funciones de pérdida}{59}%
+\contentsline {subsubsection}{Precisión Mixta}{60}%
+\contentsline {subsubsection}{Ficheros generados}{60}%
+\contentsline {section}{\numberline {17.5}Postprocesado}{61}%
+\contentsline {chapter}{\numberline {18}Representación 3D}{62}%
+\contentsline {part}{V\hspace {1em}Cierre}{63}%
+\contentsline {chapter}{\numberline {19}Resultados}{65}%
+\contentsline {subsubsection}{MiniUnet3D vs Unet3D}{66}%
+\contentsline {subsubsection}{Sin data augmentation vs Con data augmentation}{67}%
+\contentsline {subsubsection}{Sin Apex vs Con Apex}{68}%
+\contentsline {subsubsection}{Prueba de espaciado entre células.}{69}%
+\contentsline {subsubsection}{Prueba de bordes.}{70}%
+\contentsline {subsubsection}{DT Watershed a bordes.}{71}%
+\contentsline {subsubsection}{Comparación DT Watershed con espaciado entre células.}{72}%
+\contentsline {chapter}{\numberline {20}An\'alisis temporal}{73}%
+\contentsline {chapter}{\numberline {21}Conclusiones}{74}%
+\contentsline {chapter}{\numberline {22}Manual}{75}%
+\contentsline {chapter}{Referencias}{76}%
 \contentsfinish 

@@ -212,138 +212,204 @@
 \newlabel{guiacapitulos}{{9}{38}}
 \citation{Howard2018}
 \citation{Paszke2019}
-\@writefile{toc}{\contentsline {chapter}{\numberline {10}De desarrollo local a desarrollo en la nube}{39}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {10}De computación local a computación en la nube}{39}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{cloudcomputing}{{10}{39}}
 \@writefile{toc}{\contentsline {section}{\numberline {10.1}Introducci\'on}{39}\protected@file@percent }
 \newlabel{sec:intro_cloudcomputing}{{10.1}{39}}
-\@writefile{toc}{\contentsline {section}{\numberline {10.2}Desarrollo local}{39}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10.2}Computación local}{39}\protected@file@percent }
 \newlabel{sec:local_dev}{{10.2}{39}}
 \citation{Paperspace2020}
 \@writefile{lof}{\contentsline {figure}{\numberline {10.1}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{40}\protected@file@percent }
 \newlabel{fig:fastai_tuto_local}{{10.1}{40}}
-\@writefile{toc}{\contentsline {section}{\numberline {10.3}Desarrollo en la nube}{40}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10.3}Computación en la nube}{40}\protected@file@percent }
 \newlabel{sec:cloud_dev}{{10.3}{40}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10.2}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{41}\protected@file@percent }
 \newlabel{fig:fastai_tuto_cloud}{{10.2}{41}}
-\citation{Wolny2020}
-\@writefile{toc}{\contentsline {chapter}{\numberline {11}Diseño}{42}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {11}Iteración 1: Sistema inicial}{42}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{requisitos}{{11}{42}}
-\@writefile{toc}{\contentsline {section}{\numberline {11.1}Esquema general}{42}\protected@file@percent }
-\newlabel{sec:diseno-general}{{11.1}{42}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11.1}{\ignorespaces Diseño general\relax }}{43}\protected@file@percent }
-\newlabel{fig:diseno-general}{{11.1}{43}}
-\@writefile{toc}{\contentsline {section}{\numberline {11.2}Preprocesado local}{44}\protected@file@percent }
-\newlabel{sec:preprocesado-local}{{11.2}{44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{44}\protected@file@percent }
-\newlabel{fig:preprocesado}{{11.2}{44}}
-\@writefile{toc}{\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{44}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{44}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{45}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Modificar el orden de las dimensiones}{45}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {11.3}Entrenamiento}{46}\protected@file@percent }
-\newlabel{sec:entrenamiento}{{11.3}{46}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11.3}{\ignorespaces Pasos llevados a cabo en el entrenamiento\relax }}{46}\protected@file@percent }
-\newlabel{fig:entrenamiento}{{11.3}{46}}
-\@writefile{toc}{\contentsline {section}{\numberline {11.4}Inferencia}{47}\protected@file@percent }
-\newlabel{sec:inferencia}{{11.4}{47}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{47}\protected@file@percent }
-\newlabel{fig:inferencia}{{11.4}{47}}
+\newlabel{initial_system}{{11}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {11.1}Metas y m\'etricas}{42}\protected@file@percent }
+\newlabel{sec:goals_and_metrics}{{11.1}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {11.2}Lenguaje y framework}{42}\protected@file@percent }
+\newlabel{sec:language_and_framework}{{11.2}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {11.3}Arquitectura CNN}{42}\protected@file@percent }
+\newlabel{sec:choose_cnn_arch}{{11.3}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {11.4}Carga de datos}{42}\protected@file@percent }
+\newlabel{sec:intro_cloudcomputing}{{11.4}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {11.5}El problema del tamaño de la imagen}{42}\protected@file@percent }
+\newlabel{sec:size_problem}{{11.5}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {11.6}Segmentación semántica multiinstancia con U-Net}{42}\protected@file@percent }
+\newlabel{sec:multiinstance_segm}{{11.6}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {11.7}Guardar modelo}{42}\protected@file@percent }
+\newlabel{sec:store_model}{{11.7}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {11.8}Resultados}{42}\protected@file@percent }
+\newlabel{sec:initial_system_resultados}{{11.8}{42}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {12}Iteración 2: Arquitectura U-Net completa}{43}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{full_unet}{{12}{43}}
+\@writefile{toc}{\contentsline {section}{\numberline {12.1}Problema detectado}{43}\protected@file@percent }
+\newlabel{sec:full_unet_problem}{{12.1}{43}}
+\@writefile{toc}{\contentsline {section}{\numberline {12.2}Cambio a U-Net completa}{43}\protected@file@percent }
+\newlabel{sec:full_unet_change}{{12.2}{43}}
+\@writefile{toc}{\contentsline {section}{\numberline {12.3}Resultados}{43}\protected@file@percent }
+\newlabel{sec:full_unet_resultados}{{12.3}{43}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {13}Iteración 3: Data augmentation}{44}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{data_augmentation}{{13}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {13.1}Problema detectado}{44}\protected@file@percent }
+\newlabel{sec:data_augmentation_problem}{{13.1}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {13.2}Técnica de data augmentation}{44}\protected@file@percent }
+\newlabel{sec:data_augmentation_change}{{13.2}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {13.3}Implementación de data augmentation}{44}\protected@file@percent }
+\newlabel{sec:data_augmentation_change}{{13.3}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {13.4}Resultados}{44}\protected@file@percent }
+\newlabel{sec:data_augmentation_resultados}{{13.4}{44}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {14}Iteración 4: Apex, precisión mixta}{45}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{apex}{{14}{45}}
+\@writefile{toc}{\contentsline {section}{\numberline {14.1}Problema detectado}{45}\protected@file@percent }
+\newlabel{sec:apex_problem}{{14.1}{45}}
+\@writefile{toc}{\contentsline {section}{\numberline {14.2}Precisión de los tensores}{45}\protected@file@percent }
+\newlabel{sec:apex_precision}{{14.2}{45}}
+\@writefile{toc}{\contentsline {section}{\numberline {14.3}Implementación de Apex}{45}\protected@file@percent }
+\newlabel{sec:apex_implementation}{{14.3}{45}}
+\@writefile{toc}{\contentsline {section}{\numberline {14.4}Resultados}{45}\protected@file@percent }
+\newlabel{sec:apex_resultados}{{14.4}{45}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {15}Iteración 5: DT Watershed}{46}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{dt_watershed}{{15}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {15.1}Problema detectado}{46}\protected@file@percent }
+\newlabel{sec:dt_watershed_apex_problem}{{15.1}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {15.2}Algoritmo watershed}{46}\protected@file@percent }
+\newlabel{sec:dt_watershed_watershed}{{15.2}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {15.3}Implementación DT Watershed}{46}\protected@file@percent }
+\newlabel{sec:dt_watershed_implementation}{{15.3}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {15.4}Resultados}{46}\protected@file@percent }
+\newlabel{sec:dt_watershed_resultados}{{15.4}{46}}
+\citation{Wolny2020}
+\@writefile{toc}{\contentsline {chapter}{\numberline {16}Diseño}{47}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{requisitos}{{16}{47}}
+\@writefile{toc}{\contentsline {section}{\numberline {16.1}Esquema general}{47}\protected@file@percent }
+\newlabel{sec:diseno-general}{{16.1}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16.1}{\ignorespaces Diseño general\relax }}{48}\protected@file@percent }
+\newlabel{fig:diseno-general}{{16.1}{48}}
+\@writefile{toc}{\contentsline {section}{\numberline {16.2}Preprocesado local}{49}\protected@file@percent }
+\newlabel{sec:preprocesado-local}{{16.2}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16.2}{\ignorespaces Preprocesado llevado a cabo en la máquina local.\relax }}{49}\protected@file@percent }
+\newlabel{fig:preprocesado}{{16.2}{49}}
+\@writefile{toc}{\contentsline {subsubsection}{Reducir la resolución de la imagen de entrada}{49}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Generar las imágenes etiquetadas correctamente}{49}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Reducir el tamaño de los archivos resultantes}{50}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Modificar el orden de las dimensiones}{50}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {16.3}Entrenamiento}{51}\protected@file@percent }
+\newlabel{sec:entrenamiento}{{16.3}{51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16.3}{\ignorespaces Pasos llevados a cabo en el entrenamiento\relax }}{51}\protected@file@percent }
+\newlabel{fig:entrenamiento}{{16.3}{51}}
+\@writefile{toc}{\contentsline {section}{\numberline {16.4}Inferencia}{52}\protected@file@percent }
+\newlabel{sec:inferencia}{{16.4}{52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16.4}{\ignorespaces Se muestran dos métodos distintos para obtener la imagen correctamente etiquetada.\relax }}{52}\protected@file@percent }
+\newlabel{fig:inferencia}{{16.4}{52}}
 \citation{Cicek2016}
 \citation{Ronneberger2015}
-\@writefile{toc}{\contentsline {section}{\numberline {11.5}Arquitectura de las Redes Neuronales Convolucionales}{48}\protected@file@percent }
-\newlabel{sec:cnn_arch}{{11.5}{48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{48}\protected@file@percent }
-\newlabel{fig:unetarch-full}{{11.5}{48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11.6}{\ignorespaces Arquitectura U-Net completa.\relax }}{49}\protected@file@percent }
-\newlabel{fig:unetarch-half}{{11.6}{49}}
+\@writefile{toc}{\contentsline {section}{\numberline {16.5}Arquitectura de las Redes Neuronales Convolucionales}{53}\protected@file@percent }
+\newlabel{sec:cnn_arch}{{16.5}{53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16.5}{\ignorespaces Arquitectura U-Net completa.\relax }}{53}\protected@file@percent }
+\newlabel{fig:unetarch-full}{{16.5}{53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16.6}{\ignorespaces Arquitectura U-Net reducida. Esta arquitectura no tiene mucho interés excepto para completar un primer sistema.\relax }}{54}\protected@file@percent }
+\newlabel{fig:unetarch-half}{{16.6}{54}}
 \citation{Paszke2019}
 \citation{Tiobe2020}
 \citation{VanDerWalt2011}
-\@writefile{toc}{\contentsline {chapter}{\numberline {12}Implementación}{50}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {17}Implementación}{55}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{implementacion}{{12}{50}}
-\@writefile{toc}{\contentsline {section}{\numberline {12.1}Lenguaje y framework}{50}\protected@file@percent }
-\newlabel{sec:language_framework}{{12.1}{50}}
+\newlabel{implementacion}{{17}{55}}
+\@writefile{toc}{\contentsline {section}{\numberline {17.1}Lenguaje y framework}{55}\protected@file@percent }
+\newlabel{sec:language_framework}{{17.1}{55}}
 \citation{Walt2014}
 \citation{Wolny2020}
 \citation{Falk2019}
 \citation{Virtanen2020}
 \citation{Collette2013}
 \citation{HDFGroup20002010}
-\@writefile{toc}{\contentsline {section}{\numberline {12.2}Preprocesado local}{51}\protected@file@percent }
-\newlabel{sec:local_preprocessing}{{12.2}{51}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.2.1}Consideraciones}{51}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Reescalado}{51}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Encontrar bordes}{52}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Crear nuevo fichero}{52}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {12.3}Carga de datos}{52}\protected@file@percent }
-\newlabel{sec:data_loading_processing}{{12.3}{52}}
+\@writefile{toc}{\contentsline {section}{\numberline {17.2}Preprocesado local}{56}\protected@file@percent }
+\newlabel{sec:local_preprocessing}{{17.2}{56}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {17.2.1}Consideraciones}{56}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Reescalado}{56}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Encontrar bordes}{57}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Crear nuevo fichero}{57}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {17.3}Carga de datos}{57}\protected@file@percent }
+\newlabel{sec:data_loading_processing}{{17.3}{57}}
 \citation{PerezGarcia2020}
 \citation{ERiba2020}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.3.1}Consideraciones}{53}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Tamaño del batch}{53}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Normalización}{53}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {17.3.1}Consideraciones}{58}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Tamaño del batch}{58}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Normalización}{58}\protected@file@percent }
 \citation{Ronneberger2015}
 \citation{shiba242017}
 \citation{Falk2019}
-\@writefile{toc}{\contentsline {subsubsection}{Data Augmentation}{54}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {12.4}U-Net}{54}\protected@file@percent }
-\newlabel{sec:unet_implementation}{{12.4}{54}}
-\@writefile{toc}{\contentsline {subsubsection}{Funciones de pérdida}{54}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Precisión Mixta}{55}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Ficheros generados}{55}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Data Augmentation}{59}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {17.4}U-Net}{59}\protected@file@percent }
+\newlabel{sec:unet_implementation}{{17.4}{59}}
+\@writefile{toc}{\contentsline {subsubsection}{Funciones de pérdida}{59}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Precisión Mixta}{60}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Ficheros generados}{60}\protected@file@percent }
 \citation{Wolny2020}
-\@writefile{toc}{\contentsline {section}{\numberline {12.5}Postprocesado}{56}\protected@file@percent }
-\newlabel{sec:data_loading_processing}{{12.5}{56}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {13}Representación 3D}{57}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {17.5}Postprocesado}{61}\protected@file@percent }
+\newlabel{sec:data_loading_processing}{{17.5}{61}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {18}Representación 3D}{62}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {part}{V\hspace  {1em}Cierre}{58}\protected@file@percent }
-\newlabel{cierre}{{V}{59}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {14}Resultados}{60}\protected@file@percent }
+\@writefile{toc}{\contentsline {part}{V\hspace  {1em}Cierre}{63}\protected@file@percent }
+\newlabel{cierre}{{V}{64}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {19}Resultados}{65}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{pruebas}{{14}{60}}
-\@writefile{toc}{\contentsline {subsubsection}{MiniUnet3D vs Unet3D}{61}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.1}{\ignorespaces Modelo miniunet2.1. 100 epochs. Se usa MiniUnet3D. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{61}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.2}{\ignorespaces Modelo unet4.1. 200 epochs. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{61}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Sin data augmentation vs Con data augmentation}{62}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.3}{\ignorespaces Modelo unet4.13. 200 epochs. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{62}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.4}{\ignorespaces Modelo unet4.8. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation.\relax }}{62}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Sin Apex vs Con Apex}{63}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.5}{\ignorespaces Modelo unet4.8. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Sin Apex\relax }}{63}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.6}{\ignorespaces Modelo unet5.2. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Con Apex.\relax }}{63}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Prueba de espaciado entre células.}{64}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.7}{\ignorespaces Modelo unet6t. 100 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Pérdida Dice. Sin postprocesado. Primera fila imagen de entrada. Segunda fila segmentación objetivo. Tercera fila predicción. Z=20,25,45,50 en las columnas. IoU 0.72\relax }}{64}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.8}{\ignorespaces Modelo unet6t. 100 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Sin postprocesado.\relax }}{64}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Prueba de bordes.}{65}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.9}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Sin postprocesado. Primera fila imagen de entrada. Segunda fila segmentación objetivo. Tercera fila predicción. Z=20,25,45,50 en las columnas. IoU 0.84\relax }}{65}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.10}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Sin postprocesado.\relax }}{65}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{DT Watershed a bordes.}{66}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.11}{\ignorespaces DT Watershed aplicado a la salida del modelo unet6b. Primera fila bordes. Segunda fila transformación de la distancia. Filtro gaussiano. Cuarta fila watershed con mínimos locales como semilla. Z=20,25,45,50 en las columnas.\relax }}{66}\protected@file@percent }
-\newlabel{fig:unet6t-100e-resultados}{{14.11}{66}}
-\@writefile{toc}{\contentsline {subsubsection}{Comparación DT Watershed con espaciado entre células.}{67}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.12}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Componentes conexas con etiquetas distintas. IoU 0.72\relax }}{67}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14.13}{\ignorespaces DT Watershed aplicado a la salida del modelo unet6b. IoU 0.70\relax }}{67}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {15}An\'alisis temporal}{68}\protected@file@percent }
+\newlabel{pruebas}{{19}{65}}
+\@writefile{toc}{\contentsline {subsubsection}{MiniUnet3D vs Unet3D}{66}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.1}{\ignorespaces Modelo miniunet2.1. 100 epochs. Se usa MiniUnet3D. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{66}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.2}{\ignorespaces Modelo unet4.1. 200 epochs. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{66}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Sin data augmentation vs Con data augmentation}{67}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.3}{\ignorespaces Modelo unet4.13. 200 epochs. Imagen objetivo con espaciado entre células. Sin data augmentation.\relax }}{67}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.4}{\ignorespaces Modelo unet4.8. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation.\relax }}{67}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Sin Apex vs Con Apex}{68}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.5}{\ignorespaces Modelo unet4.8. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Sin Apex\relax }}{68}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.6}{\ignorespaces Modelo unet5.2. 200 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Con Apex.\relax }}{68}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Prueba de espaciado entre células.}{69}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.7}{\ignorespaces Modelo unet6t. 100 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Pérdida Dice. Sin postprocesado. Primera fila imagen de entrada. Segunda fila segmentación objetivo. Tercera fila predicción. Z=20,25,45,50 en las columnas. IoU 0.72\relax }}{69}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.8}{\ignorespaces Modelo unet6t. 100 epochs. Imagen objetivo con espaciado entre células. Con data augmentation. Sin postprocesado.\relax }}{69}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Prueba de bordes.}{70}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.9}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Sin postprocesado. Primera fila imagen de entrada. Segunda fila segmentación objetivo. Tercera fila predicción. Z=20,25,45,50 en las columnas. IoU 0.84\relax }}{70}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.10}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Sin postprocesado.\relax }}{70}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{DT Watershed a bordes.}{71}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.11}{\ignorespaces DT Watershed aplicado a la salida del modelo unet6b. Primera fila bordes. Segunda fila transformación de la distancia. Filtro gaussiano. Cuarta fila watershed con mínimos locales como semilla. Z=20,25,45,50 en las columnas.\relax }}{71}\protected@file@percent }
+\newlabel{fig:unet6t-100e-resultados}{{19.11}{71}}
+\@writefile{toc}{\contentsline {subsubsection}{Comparación DT Watershed con espaciado entre células.}{72}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.12}{\ignorespaces Modelo unet6b. 100 epochs. Imagen objetivo bordes de células. Con data augmentation. Pérdida Dice. Componentes conexas con etiquetas distintas. IoU 0.72\relax }}{72}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {19.13}{\ignorespaces DT Watershed aplicado a la salida del modelo unet6b. IoU 0.70\relax }}{72}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {20}An\'alisis temporal}{73}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{anatemporal}{{15}{68}}
-\@writefile{lot}{\contentsline {table}{\numberline {15.1}{\ignorespaces Tabla de tiempos\relax }}{68}\protected@file@percent }
-\newlabel{tab:prueba}{{15.1}{68}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {16}Conclusiones}{69}\protected@file@percent }
+\newlabel{anatemporal}{{20}{73}}
+\@writefile{lot}{\contentsline {table}{\numberline {20.1}{\ignorespaces Tabla de tiempos\relax }}{73}\protected@file@percent }
+\newlabel{tab:prueba}{{20.1}{73}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {21}Conclusiones}{74}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{pruebas}{{16}{69}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {17}Manual}{70}\protected@file@percent }
+\newlabel{pruebas}{{21}{74}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {22}Manual}{75}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{manual}{{17}{70}}
+\newlabel{manual}{{22}{75}}
 \bibstyle{apacite}
 \bibdata{pfcbib}
 \bibcite{BOE}{\citeauthoryear {{\em  Bases y tipos de cotización 2019\/}}{{\em  Bases y tipos de cotización 2019\/}}{{\APACyear {{\bibnodate {}}}}}}
@@ -380,7 +446,7 @@
 \APACbibcite{Li2020}{\citeauthoryear {Li, Krishna,{}\ \BBA{} Xu}{Li\ \BOthers {.}}{{\APACyear {2020}}}}
 \bibcite{Long2014}{\citeauthoryear {Long, Shelhamer,{}\ \BBA{} Darrell}{Long\ \BOthers {.}}{{\APACyear {2014}}}}
 \APACbibcite{Long2014}{\citeauthoryear {Long, Shelhamer,{}\ \BBA{} Darrell}{Long\ \BOthers {.}}{{\APACyear {2014}}}}
-\@writefile{toc}{\contentsline {chapter}{Referencias}{71}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Referencias}{76}\protected@file@percent }
 \bibcite{McCulloch1943}{\citeauthoryear {McCulloch\ \BBA{} Pitts}{McCulloch\ \BBA{} Pitts}{{\APACyear {1943}}}}
 \APACbibcite{McCulloch1943}{\citeauthoryear {McCulloch\ \BBA{} Pitts}{McCulloch\ \BBA{} Pitts}{{\APACyear {1943}}}}
 \bibcite{Minsky1969}{\citeauthoryear {Minsky\ \BBA{} Papert}{Minsky\ \BBA{} Papert}{{\APACyear {1969}}}}
