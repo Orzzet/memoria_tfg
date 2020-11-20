@@ -10,7 +10,7 @@ Imagenet es una base de datos con más de 10 millones de imágenes etiquetadas a
 
 Estas arquitecturas resultaron en hitos importantes para el desarrollo de CNN, a continuación se describirán varias arquitecturas para segmentación semántica.
 
-\newpage\section{Fully Convolutional Network}
+\newpage\section{Fully Convolutional Network}\label{sec:fcn}
 
 Fue propuesta en 2014 por investigadores de la Universidad de California en Berkeley \cite{Long2014} obteniendo los mejores resultados hasta la fecha en segmentación semántica mediante el uso de redes convolucionales. Un punto clave fue tomar una entrada de un tamaño arbitrario y producir una salida de un tamaño correspondiente. Usa como base los modelos AlexNet, VGGNet y GoogLeNet \cite{Szegedy2014}, donde se sustituyeron las capas completamente conectadas con capas convolucionales con filtros 1x1 y añadieron una capa convolucional con filtro 1x1 y profundidad C+1 para predecir las puntuaciones de cada clase, C el nº de clases y añadiendo una más para el fondo.
 
@@ -19,7 +19,7 @@ Se compararon los modelos FCN-AlexNet, FCN-VGG16 y FCN-GoogLeNet, obteniendo los
 \figura{1}{img/FCN}{Arquitectura de FCN32, FCN16 y FCN8.}{fig:FCN}{}
 
 
-\section{Deconvnet}
+\section{Deconvnet}\label{sec:deconvnet}
 
 La red Deconvnet \cite{Noh2015} tiene una red convolucional y otra red deconvolucional. Para la red convolucional utiliza casi la misma topología que VGG16, con 13 capas de convolución 2 capas FC, cambiando sólo en la última capa que no es de clasificación ya que en Deconvnet está conectada a la red deconvolucional. La red deconvolucional tiene una topología inversa a la red convolucional, resultando en una salida de igual tamaño a la entrada. Esta red tiene capas de deconvolución, de \textit{un-pooling} y de ReLU. Todas las capas de una Deconvnet extraen características de la entrada excepto la última capa de la red deconvolocuional, que genera una probabilidad de pertenencia a cada clase para cada píxel/vóxel. Una arquitectura de esta red se puede ver en la figura \ref{fig:Deconvnet} \cite{Noh2015}.
 
@@ -27,17 +27,17 @@ La red Deconvnet \cite{Noh2015} tiene una red convolucional y otra red deconvolu
 
 A continucación se describen brevemente las operaciones de unpooling y deconvolución (más correctamente llamada convolución transpuesta). En la figura \ref{fig:unpooling-deconv} \cite{Noh2015} se puede ver un ejemplo gráfico.
 
-\subsection{Unpooling}
+\subsection{Unpooling}\label{subsec:unpooling}
 
 La operación unpooling es una operación que reconstruye la zona de pooling mantiendo sólo el píxel correspondiente a aquel que fue seleccionado en la capa de pooling correspondiente (figura \ref{fig:unpooling-deconv}. Para implementar esto se usan variables \textit{switch}, que almacena la posición en la que se encontraba el valor máximo al hacer pooling. Esta estrategia resuelve el problema de pérdida de información espacial que tiene el pooling \cite{Zeiler2011}.
 
-\subsection{Deconvoloución}
+\subsection{Deconvoloución}\label{subsec:deconvolution}
 
 La salida de una capa de unpooling aporta información espacial pero muy dispersa. Para aumentar la densidad de información se usan las operaciones de deconvolución \cite{Noh2015}. Las operación de convolución toma varias entradas y las transforma en un único valor al aplicar un filtro. La operación deconvolución toma un único valor y lo transforma en varias salidas al aplicar el mismo filtro usado en la convolución correspondiente.
 
 \figura{0.5}{img/unpooling-deconv}{Figura que ilustra las operaciones unpooling y deconvolución.}{fig:unpooling-deconv}{}
 
-\section{U-Net}
+\section{U-Net}\label{sec:unet}
 
 U-Net es una arquitectura en forma de U con una parte reductora (izquierda) y otra parte expansiva (derecha) simétrica. Esta arquitectura ha mostrado muy buenos resultados con pocos ejemplos de entrenamiento al beneficiarse fuertemente de la aumentación de datos (data-augmentation)\cite{Ronneberger2015}. Fue la arquitectura ganadora en 2015 del reto ISBI para segmentación neuronal con resultados muy superiores al segundo puesto. 
 

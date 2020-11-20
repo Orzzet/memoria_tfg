@@ -4,15 +4,7 @@ En este capítulo se describirá el flujo por el que pasan los datos suministrad
 
 \section{Esquema general}\label{sec:diseno-general}
 
-El principal cuello de botella al usar técnicas de deep learning es el hardware requerido para ello. 
-
-Sería ideal ser capaz de entrenar una CNN usando las imágenes provistas directamente, pero a causa de su gran resolución no es viable. Una imagen de resolución $ (200, 1024, 1024)vx $ con una precisión de 8 bytes ocupa en memoria (siempre hablaremos de memoria de GPU) $size(imagen)=\frac{1024*1024*200*8}{1024*1024}=1600MB $. Si bien podríamos almacenar esta imagen en memoria, las CNN se caracterizan por aplicar un gran número de filtros distintos en paralelo a una imagen de entrada, utilizando los resultados de la aplicación de estos filtros en el siguiente paso de la CNN. Tal y cómo se verá en más detalle en la sección sobre las arquitecturas seleccionadas, es completamente inviable para nosotros usar la resolución original. Es por ello que como parte del preprocesado se han simplificado los datos de entrada.
-
-Por otro lado, también sería ideal contar con la última tecnología en GPU o TPU. En un artículo sobre segmentación de tejido celular 3D usando U-Net se explica cómo han usado 8 NVIDIA GeForce RTX 2080 Ti GPUs para realizar 100K iteraciones \cite{Wolny2020}. El acceso a un hardware superior permite el uso de arquitecturas más complejas, datos más precisos o mayor nº de iteraciones, lo que va a influir en el resultado obtenido. 
-
-Para tener acceso a mejor hardware se usarán tecnologías cloud, donde puedes alquilar el uso de GPUs por hora siendo común pruebas gratuitas especialmente para estudiantes.
-
-Para la parte del entrenamiento y la inferencia se usará Jupyter Notebook, esto hará que sea fácil trasladar el código entre distintas máquinas, locales o en internet.
+Por otro lado, también sería ideal contar con la última tecnología en GPU o TPU. En un artículo sobre segmentación de tejido celular 3D usando U-Net se explica cómo han usado 8 NVIDIA GeForce RTX 2080 Ti GPUs para realizar 100K iteraciones \cite{Wolny2020}. El acceso a un hardware superior permite el uso de arquitecturas más complejas, datos más precisos o mayor nº de iteraciones, lo que va a influir en el resultado obtenido.
 
 \pagebreak \figura{1}{img/Diseno-General}{Diseño general}{fig:diseno-general}{}
 
@@ -36,13 +28,9 @@ Tras esto, se generarán nuevos archivos hdf5 y se subirán a un disco duro virt
 
 En la figura \ref{fig:preprocesado} se puede ver con más detalle el resultado que se obtendría en esta etapa.
 
-\subsubsection{Reducir la resolución de la imagen de entrada}
-
-El formato de las imágenes inicialmente es $ (Z,X,Y) $, siendo para todas las imágenes $ X = Y = 1024 $ y $ Z\epsilon[216,368] $. Además de reducir la resolución de las imágenes, es importante que todas tengan la misma, de lo contrario no podrán ser usadas en operaciones batch. También es esencial que la imagen de entrada y la imagen etiquetada no se deformen demasiado.
-
 \subsubsection{Generar las imágenes etiquetadas correctamente}
 
-El problema principal que nos encontramos en las imágenes con el etiquetado perfecto es que las células, siendo instancias de una misma clase (la clase \"célula\"), tienen etiquetas distintas. En una segmentación semántica cada vóxel es etiquetado con la clase a la que se cree que pertenece. Si usáramos el etiquetado actual necesitaríamos una clase por cada célula, pero eso no tiene mucho sentido ya que el nº de células en una imagen puede variar, además todas las células tienen características similares. Probaremos dos soluciones a este problema:
+Probaremos dos soluciones a este problema:
 
 \begin{enumerate}
 \item Añadir espacio entre células para que ninguna esté en contacto y hacer que todas tengan $ 1 $ como etiqueta.
@@ -103,7 +91,3 @@ Se probará principalmente una arquitectura de tipo U-Net. Se usará un modelo c
 En la figura \ref{fig:unetarch-full} se puede ver la arquitectura completa de la red U-Net utilizada, arquitectura usada con éxito para segmentación volumétrica densa \cite{Cicek2016}, basada en la arquitectura U-Net propuesta por Ronneberger et al \cite{Ronneberger2015}. Se ha omitido el tamaño de las imágenes ya que la red acepta imágenes de cualquier tamaño, Lo único a tener en cuenta es el nº de canales que tiene la imagen. Los nº mostrados en las capas determinan la profundidad de cada capa o, lo que es lo mismo, el nº de filtros distintos usados en cada capa. En la capa inicial, que simboliza la imagen de entrada, el número 1 indica que la imagen debe tener tan sólo 1 canal de entrada (escala de grises). Este tipo de arquitectura también es válida para imágenes 2D o 3D, la diferencia estaría en que las convoluciones y el pooling sean sobre 2 dimensiones o sobre 3 dimensiones.
 
 \figura{1}{img/Diseno-unetarch-full}{Arquitectura U-Net completa.}{fig:unetarch-full}{}
-
-\pagebreak En la figura \ref{fig:unetarch-half} se muestra la arquitectura anterior eliminando varias capas de convolución y una de pooling. Los modelos generados por esta arquitectura serán menos fiables, pero el entrenamiento será más rápido, por lo que es útil para realizar comparaciones al cambiar técnicas de preprocesado o de entrenamiento.
-
-\figura{1}{img/Diseno-unetarch-half}{Arquitectura U-Net reducida. Esta arquitectura no tiene mucho interés excepto para completar un primer sistema.}{fig:unetarch-half}{}

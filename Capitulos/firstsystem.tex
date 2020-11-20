@@ -1,16 +1,127 @@
 \chapter{Iteración 1: Sistema inicial}\label{initial_system}
 
-\section{Metas y m\'etricas}\label{sec:goals_and_metrics}
-
 \section{Lenguaje y framework}\label{sec:language_and_framework}
 
-\section{Arquitectura CNN}\label{sec:choose_cnn_arch}
+\subsubsection{Lenguaje}\label{subsec:language}
+
+El sistema se implementará completamente con el lenguaje de programación Python 3.7.
+
+La elección del lenguaje Python es sencilla: los frameworks más utilizados en deep learning pueden ser usados en Python. Con una búsqueda rápida en GitHub bajo los términos "deep learning", "machine learning" y "neural network" se puede ver que los frameworks más populares pueden ser usados en Python.
+\begin{itemize}
+\item TensorFlow con 148k estrellas.
+\item Keras con 49.4k estrellas.
+\item PyTorch con 41.5k estrellas.
+\item Caffe con 30.8k estrellas
+\end{itemize}
+
+Además, tal y como se muestra en el índice TIOBE \cite{Tiobe2020}, Python es el tercer lenguaje de programación con mejor puntuación teniendo en cuenta su presencia en los buscadores web.
+
+Aún así Python es lento cuando se compara con lenguajes como C y esto se debe principalmente a 2 motivos:
+\begin{enumerate}
+\item Es interpretado, no compilado. Al compilar un programa escrito en un lenguaje compilado el compilador optimiza el programa con una multitud de técnicas, como el desenrollado de bucles, que elimina o reduce las instrucciones de control de un bucle. En Python el intérprete sólo accede a la instrucción a realizar, no realiza ninguna tarea de optimización.
+\item Es de tipado dinámico. Esto quiere decir que el intérprete no sabe de qué tipo es una variable hasta que intenta acceder a ella, por lo que antes de acceder a su valor debe comprobar el tipo de variable. Gracias a esto la semántica del lenguaje puede omitir los tipos al declarar y asignar variables, pero el rendimiento es menor.
+\end{enumerate}
+
+Estas desventajas se pueden reducir gracias a que Python tiene la capacidad de llamar a subrutinas compiladas en C. Prácticamente todos los frameworks en los que se realizan operaciones con un alto coste computacional tienen la parte crítica de su código escrita en C.
+
+En el ecosistema de Python, la base matemática para cualquier framework que haga operaciones matriciales es NumPy \cite{VanDerWalt2011}, ya que añade soporte para arrays de n dimensiones y una gran multitud de operaciones de forma eficiente.
+
+\subsubsection{Framework}\label{subsec:framework}
+
+El framework utilizado será PyTorch 1.6 \cite{Paszke2019}.
+
+En capítulos anteriores se mencionó el uso de fastai. Mi intención en un principio era usar fastai para la parte de deep learning, pero me encontré con la barrera de que no había modelos que tomaran como dato de entrada imágenes 3D. El framework te permite implementar tus propias arquitecturas para los modelos, pero debes hacerlo utilizando PyTorch, ya que fastai está construido por encima de PyTorch. A raíz de esto decidí aprender a usar PyTorch con un curso de Udacity \cite[Deep Learning with PyTorch]{Serrano2020}.
+
+Una vez completé el curso decidí seguir usando PyTorch en vez de fastai ya que al usar un software de más bajo nivel tengo más control sobre las operaciones que se realizan.
+
+Aún así, todos los frameworks populares de Python son una buena elección, ya que todos tienen \textit{bindings} a lenguajes de bajo nivel compilados, pero con la facilidad de uso de Python. Aunque TensorFlow puede ser difícil de utilizar, cuenta con Keras, que es un framework desarrollado por encima que abstrae muchas operaciones. PyTorch, basado en Torch, también ofrece un uso fácil y buen rendimiento.
+
+\section{Metas y m\'etricas}\label{sec:goals_and_metrics}
+
+\cuadro{|c|c|c|}{Tabla de métricas y metas.}{tab:metricas}{
+Métrica & Buen resultado & Resultado ideal \\ 
+\hline
+IoU & $\geq 0.7$ & $\geq 0.9$ \\
+}
+
+Para decidir las métricas me apoyo en el artículo descrito en la sección \ref{apps1} \cite{Falk2019}, donde se usa la métrica intersección sobre unión (IoU) para medir sus resultados.
+
+\begin{equation}
+M_{IoU}(A, B) := \frac{|A\cap B|}{|A\cup B|}
+\end{equation}
+
+Donde $A$ es el conjunto de vóxeles pertenecientes a la imagen perfectamente etiquetada y $B$ el conjunto de vóxeles pertenecientes a la predicción.
+
+En ese mismo artículo se observa que si la tarea de etiquetado es realizada por un humano se obtiene un IoU $\sim0.9$ y se define como buen resultado un IoU $\sim0.7$.
+
+
+\pagebreak \section{Arquitectura CNN}\label{sec:choose_cnn_arch}
+
+Se ha implementado una arquitectura U-Net basada en la implementación de Ronneberger \cite{Ronneberger2015}. Se ha usado una implementación en PyTorch \cite{shiba242017} con la arquitectura mostrada en la figura \ref{fig:unetarch-half}. Se ha desarrollado una versión de esta arquitectura llamada MiniUNet3D con menos capas. Esta versión se ha usado para comprobar que el primer sistema se ha implementado correctamente, sin errores de memoria.
+
+Como función de pérdida se ha escogido la función 
+
+\figura{0.8}{img/Diseno-unetarch-half}{Arquitectura U-Net reducida. Arquitectura completa (vista en \ref{sec:unet} eliminando varias capas de convolución y una de pooling. Los modelos generados por esta arquitectura serán menos fiables, pero el entrenamiento será más rápido, por lo que es útil para implementar un primer sistema.}{fig:unetarch-half}{}
 
 \section{Carga de datos}\label{sec:intro_cloudcomputing}
 
 \section{El problema del tamaño de la imagen}\label{sec:size_problem}
 
+\subsection{Problema}\label{sec:size_problem_problem}
+El principal cuello de botella al usar técnicas de deep learning es el hardware requerido para ello. 
+
+Sería ideal ser capaz de entrenar una CNN usando las imágenes provistas directamente, pero a causa de su gran resolución no es viable. Una imagen de resolución $ (200, 1024, 1024)vx $ con una precisión de 8 bytes ocupa en memoria (siempre hablaremos de memoria de GPU) $size(imagen)=\frac{1024*1024*200*8}{1024*1024}=1600MB $. Si bien podríamos almacenar esta imagen en memoria, las CNN se caracterizan por aplicar un gran número de filtros distintos en paralelo a una imagen de entrada, utilizando los resultados de la aplicación de estos filtros en el siguiente paso de la CNN. Además, en el caso de U-Net, se guardan los resultados de algunas etapas para usarla en etapas futuras. Es completamente inviable usar la resolución original en este proyecto directamente como dato de entrada.
+
+\subsection{Solución: Reducir resolución}\label{subsec:lowscale}
+\subsubsection{Escalado hacia abajo}\label{subsubsec:downscale}
+
+Las imágenes originales ocupan $\sim 2GB$ en memoria, intentar usarlas en una U-Net sobrepasa en gran medida los 16GB de memoria disponibles en este proyecto. Se ha decidido reducir las dimensiones en $(1/8, 1/8, 1/4)$ de sus dimensiones $(X, Y, Z)$ originales, consiguiendo una reducción de $8*8*4=256$ de su tamaño original, se pasa de $\sim 2GB$ a $\sim 8MB$. Con un tamaño de $8MB$ es posible realizar todo el proceso de entrenamiento e inferencia aunque se pierda calidad en la imagen. Gracias a la característica de U-Net de aceptar imágenes de cualquier dimensión, si no se hace entrenamiento por batch no es necesario asegurarse de que todas las imágenes tengan las mismas dimensiones. Por experimentación, he comprobado que los factores de las dimensiones no deben de ser muy diferentes, ya que cambiaría el tamaño en $\mu m^3$ de cada vóxel, además de provocar una deformación elástica en los imágenes.
+
+\subsubsection{Escalado hacia arriba}\label{subsubsec:upscale}
+
+Después de escalar hacia abajo, si se quiere hacer entrenamiento por batch con la imagen completa es necesario que todas las imágenes tengan las mismas dimensiones. Para esto se comprueba las mayor dimensión de las imágenes después de escalar hacia abajo y se elige como objetivo $(X_{obj}, Y_{obj}, Z_{obj})$. Para cada imagen $(X, Y, Z)$ el procedimiento es crear una nueva matriz de ceros de tamaño $(X_{obj}, Y_{obj}, Z_{obj})$ y asignar a la imagen los valores $([0:X-1],[0:Y-1],[0:Z-1])$. De esta forma no se deforman las imágenes al hacer el escalado hacia arriba.
+
+El formato de las imágenes inicialmente es $ (Z,X,Y) $, siendo para todas las imágenes $ X = Y = 1024 $ y $ Z\epsilon[216,368] $. Además de reducir la resolución de las imágenes, es importante que todas tengan la misma, de lo contrario no podrán ser usadas en operaciones batch. También es esencial que la imagen de entrada y la imagen etiquetada no se deformen demasiado.
+
+\subsection{Implementación}\label{subsec:size_problem_implementation}
+
+Para implementar esta solución se ha utilizado la librería \textbf{SciPy} \cite{Virtanen2020}. 
+
+Contiene diversos módulos con algoritmos útiles en el ámbito científico. En el submódulo \textit{ndimage} se pueden encontrar los algoritmos relativos al procesamiento de imagen. Se ha utilizado la función \textit{ndimage.zoom()} para reescalar las imágenes de entrada.
+
+Esta función hace interpolación con splines, polinomios definidos a trozos de orden n. Se ha utilizado orden 3 porque es el orden por defecto y ha dado buenos resultados.
+
 \section{Segmentación semántica multiinstancia con U-Net}\label{sec:multiinstance_segm}
+
+\subsection{Problema}\label{subsec:multi_problem}
+
+El problema principal que nos encontramos en las imágenes con el etiquetado perfecto es que las células, siendo instancias de una misma clase (la clase \" célula\"), tienen etiquetas distintas. En una segmentación semántica cada vóxel es etiquetado con la clase a la que se cree que pertenece. 
+
+Si usáramos el etiquetado actual necesitaríamos una clase por cada célula, pero eso no tiene mucho sentido ya que el nº de células en una imagen puede variar y las células no tienen unas posiciones preestablecidas ni nada que las diferencien unas de otras (a priori, al menos). Que se sepa, todas las células tienen las mismas características por lo que deben tener la misma clase en una segmentación semántica.
+
+\subsection{Solución}\label{subsec:multi_problem}
+
+La solución que se probará primero será añadir un espaciado entre células, tal y como se hace en el pipeline del artículo descrito en la sección \ref{sec:app1} \cite{Falk2019}. Al existir un espaciado entre células, estas no estarían tocándose entre sí, por lo que todas podrían tener la misma etiqueta y contar como instancias distintas.
+
+Para añadir este espaciado entre células primero se encuentran los bordes de cada célula y después se substraen de la imagen original. Por último se cambian todas las etiquetas a 1.
+
+\subsection{Implementación}\label{subsec:multi_implementation}
+
+Para hacer estas operaciones se ha utilizado la librería \textbf{scikit-image} \cite{Walt2014}, una librería de procesamiento de imágenes.
+
+\subsubsection{Encontrar bordes}\label{subsubsec:multi_find_borders}
+
+Para encontrar los bordes se ha usado la función \textit{segmentation.find\_boundaries()}. Esta función realiza operaciones morfológicas para encontrar los bordes de los objetos de una imagen con valores enteros o binarios. Se han tomado las siguientes decisiones:
+\begin{itemize}
+\item \textbf{Conectividad.} Hay N tipos de conectividad siendo N el nº de dimensiones de la imagen de entrada, en nuestro caso N=3. Con conectividad 1 los vóxeles compartiendo al menos una cara son considerados vecinos. Con conectividad 3 se amplía el rango de vecinos al hacer que cualquier vóxel compartiendo una esquina también son considerados vecinos. Si dos vóxeles vecinos tienen distinta etiqueta, son bordes. Se ha elegido conectividad 3 para priorizar el que no haya células en contacto en ninguna de las 3 dimensiones.
+\item \textbf{Modo.} Este modo define qué vóxeles son marcados como bordes. El modo escogido es \textit{outer}, que selecciona como bordes los vóxeles de fondo alrededor de los elementos, si hay 2 elementos en contacto, se marca su frontera como borde. Se ha escogido este modo ya que, al escoger el fondo como borde retiene la mayor cantidad de volumen celular original.
+\end{itemize}
+
+\subsubsection{Comprobar cantidad de células}\label{subsubsec:multi_count_cells}
+
+También se ha usado la función (\textit{measure\_label()}) para asegurarnos de que el nº de células no varía al hacer las operaciones de preprocesado (por ejemplo, podría ser que dos células con etiqueta 1 eliminaran el espacio entre sí, convirtiendose en la misma instancia de célula).
+
+
 
 \section{Guardar modelo}\label{sec:store_model}
 
