@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  19 NOV 2020 21:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  20 NOV 2020 03:49
 entering extended mode
 **./proyect.tex
 (proyect.tex
@@ -307,29 +307,155 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
- (apacite.sty
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\hyperref.sty"
+Package: hyperref 2019/11/10 v7.00c Hypertext links for LaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/ltxcmds\ltxcmds.sty"
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/pdftexcmds\pdftexcmds.sty"
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/infwarerr\infwarerr.sty"
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/kvsetkeys\kvsetkeys.sty"
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/kvdefinekeys\kvdefinekeys.sty"
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/pdfescape\pdfescape.sty"
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/hycolor\hycolor.sty"
+Package: hycolor 2019/12/15 v1.9 Color options for hyperref/bookmark (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/hycolor\xcolor-patch.sty"
+Package: xcolor-patch 2019/12/15 xcolor patch
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\hopatch.sty"
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+)))
+("C:\Program Files\MiKTeX 2.9\tex/latex/letltxmacro\letltxmacro.sty"
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/auxhook\auxhook.sty"
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/kvoptions\kvoptions.sty"
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen138
+\Hy@linkcounter=\count123
+\Hy@pagecounter=\count124
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\pd1enc.def"
+File: pd1enc.def 2019/11/10 v7.00c Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/intcalc\intcalc.sty"
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/etexcmds\etexcmds.sty"
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count125
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4535.
+Package hyperref Info: Link nesting OFF on input line 4540.
+Package hyperref Info: Hyper index ON on input line 4543.
+Package hyperref Info: Plain pages OFF on input line 4550.
+Package hyperref Info: Backreferencing OFF on input line 4555.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4788.
+\c@Hy@tempcnt=\count126
+LaTeX Info: Redefining \url on input line 5147.
+\XeTeXLinkMargin=\dimen139
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/bitset\bitset.sty"
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/bigintcalc\bigintcalc.sty"
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count127
+\Field@Width=\dimen140
+\Fld@charsize=\dimen141
+Package hyperref Info: Hyper figures OFF on input line 6418.
+Package hyperref Info: Link nesting OFF on input line 6423.
+Package hyperref Info: Hyper index ON on input line 6426.
+Package hyperref Info: backreferencing OFF on input line 6433.
+Package hyperref Info: Link coloring OFF on input line 6438.
+Package hyperref Info: Link coloring with OCG OFF on input line 6443.
+Package hyperref Info: PDF/A mode OFF on input line 6448.
+LaTeX Info: Redefining \ref on input line 6488.
+LaTeX Info: Redefining \pageref on input line 6492.
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/atbegshi\atbegshi.sty"
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count128
+\c@Item=\count129
+\c@Hfootnote=\count130
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\hpdftex.def"
+File: hpdftex.def 2019/11/10 v7.00c Hyperref driver for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/atveryend\atveryend.sty"
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
+\Fld@listcount=\count131
+\c@bookmark@seq@number=\count132
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/rerunfilecheck\rerunfilecheck.sty"
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/uniquecounter\uniquecounter.sty"
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip55
+)
+(apacite.sty
 Package: apacite 2013/07/21 v6.03 APA citation
-\c@BibCnt=\count123
-\bibleftmargin=\skip55
-\bibindent=\skip56
-\bibparsep=\skip57
-\bibitemsep=\skip58
-\biblabelsep=\skip59
+\c@BibCnt=\count133
+\bibleftmargin=\skip56
+\bibindent=\skip57
+\bibparsep=\skip58
+\bibitemsep=\skip59
+\biblabelsep=\skip60
 ) (fancyhdr.sty
-\fancy@headwidth=\skip60
-\f@ncyO@elh=\skip61
-\f@ncyO@erh=\skip62
-\f@ncyO@olh=\skip63
-\f@ncyO@orh=\skip64
-\f@ncyO@elf=\skip65
-\f@ncyO@erf=\skip66
-\f@ncyO@olf=\skip67
-\f@ncyO@orf=\skip68
+\fancy@headwidth=\skip61
+\f@ncyO@elh=\skip62
+\f@ncyO@erh=\skip63
+\f@ncyO@olh=\skip64
+\f@ncyO@orh=\skip65
+\f@ncyO@elf=\skip66
+\f@ncyO@erf=\skip67
+\f@ncyO@olf=\skip68
+\f@ncyO@orf=\skip69
 ) (block.tss
 File: block.tss 2007/08/12
 )
-\c@thm=\count124
-\c@defn=\count125
+\c@thm=\count134
+\c@defn=\count135
 )
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\inputenc.sty"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
@@ -348,21 +474,22 @@ Package: caption 2020/05/30 v3.4k Customizing captions (AR)
 ("C:\Program Files\MiKTeX 2.9\tex/latex/caption\caption3.sty"
 Package: caption3 2020/07/20 v1.12b caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen138
-\captionmargin@=\dimen139
-\captionwidth=\dimen140
-\caption@tempdima=\dimen141
-\caption@indent=\dimen142
-\caption@parindent=\dimen143
-\caption@hangindent=\dimen144
+\captionmargin=\dimen142
+\captionmargin@=\dimen143
+\captionwidth=\dimen144
+\caption@tempdima=\dimen145
+\caption@indent=\dimen146
+\caption@parindent=\dimen147
+\caption@hangindent=\dimen148
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count126
-\c@continuedfloat=\count127
+\c@caption@flags=\count136
+\c@continuedfloat=\count137
+Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
-\c@subfigure=\count128
-\c@subtable=\count129
+\c@subfigure=\count138
+\c@subtable=\count139
 )
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\textcomp.sty"
 Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
@@ -533,6 +660,15 @@ LaTeX Warning: Label `tab:prueba' multiply defined.
 LaTeX Warning: Label `tab:prueba' multiply defined.
 
 
+LaTeX Warning: Label `sec:intro_cloudcomputing' multiply defined.
+
+
+LaTeX Warning: Label `subsec:multi_problem' multiply defined.
+
+
+LaTeX Warning: Label `sec:data_augmentation_change' multiply defined.
+
+
 LaTeX Warning: Label `sec:data_loading_processing' multiply defined.
 
 
@@ -544,27 +680,29 @@ LaTeX Warning: Label `pruebas' multiply defined.
 )
 \openout1 = `proyect.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-4.
+7.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    ... okay on input line 17.
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-4.
+7.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -605,57 +743,84 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count130
-\scratchdimen=\dimen145
+\scratchcounter=\count140
+\scratchdimen=\dimen149
 \scratchbox=\box35
-\nofMPsegments=\count131
-\nofMParguments=\count132
+\nofMPsegments=\count141
+\nofMParguments=\count142
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count133
-\MPscratchDim=\dimen146
-\MPnumerator=\count134
-\makeMPintoPDFobject=\count135
+\MPscratchCnt=\count143
+\MPscratchDim=\dimen150
+\MPnumerator=\count144
+\makeMPintoPDFobject=\count145
 \everyMPtoPDFconversion=\toks33
 ) ("C:\Program Files\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2019-12-09 v2.10 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-\c@lstlisting=\count136
-\c@maskedRefs=\count137
+\c@lstlisting=\count146
+\AtBeginShipoutBox=\box36
+Package hyperref Info: Link coloring OFF on input line 17.
 
-(spanish.apc
+("C:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/refcount\refcount.sty"
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/gettitlestring\gettitlestring.sty"
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count147
+)
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+LaTeX Info: Redefining \nameref on input line 17.
+
+(proyect.out) (proyect.out)
+\@outlinefile=\write3
+\openout3 = `proyect.out'.
+
+\c@maskedRefs=\count148
+ (spanish.apc
 File: spanish.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 138.
 LaTeX Info: Redefining \BHBI on input line 139.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<img/us.jpg, id=1, 36.135pt x 36.135pt>
+<img/us.jpg, id=475, 36.135pt x 36.135pt>
 File: img/us.jpg Graphic file (type jpg)
 <use img/us.jpg>
-Package pdftex.def Info: img/us.jpg  used on input line 25.
+Package pdftex.def Info: img/us.jpg  used on input line 28.
 (pdftex.def)             Requested size: 90.33722pt x 90.33722pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 2
-5.
- ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1phv.fd"
+8.
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1phv.fd"
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 25.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 28.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 25.
-
-[1
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 28.
+ [1
 
 
 {C:/Users/Adrian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./img/us.j
-pg>] (tocdef.tex) (resumen.tex
+pg>] (tocdef.tex)
+(resumen.tex
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
-) [1
+)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.35 	\tableofcontents
+                       % Índice de contenidos [1
 
 
 ] (proyect.toc
@@ -678,7 +843,7 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sl' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/sl' tried instead on input line 76.
+(Font)              Font shape `OT1/ptm/b/sl' tried instead on input line 78.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -686,17 +851,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3])
-\tf@toc=\write3
-\openout3 = `proyect.toc'.
+[3] [4])
+\tf@toc=\write4
+\openout4 = `proyect.toc'.
 
- [4] (proyect.lot)
-\tf@lot=\write4
-\openout4 = `proyect.lot'.
+ [5] (proyect.lot)
+\tf@lot=\write5
+\openout5 = `proyect.lot'.
 
- [5
+ [6
 
-] (proyect.lof [6
+] (proyect.lof [7
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
@@ -704,72 +869,113 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ts1ptm.fd"
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [7])
-\tf@lof=\write5
-\openout5 = `proyect.lof'.
+) [8])
+\tf@lof=\write6
+\openout6 = `proyect.lof'.
 
- [8]
+ [9]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
- [1
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.41      \part{Introducci\'on}
+                               \label{introduccion} [1
 
 
 ]
-(Capitulos/nacimiento.tex [2]
+(Capitulos/nacimiento.texpdfTeX warning (ext4): destination with the same ident
+ifier (name{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            {Nacimiento del proyecto}\label{nacimiento} [2]
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
-<img/tejidoepitelial.png, id=49, 1100.61188pt x 750.55406pt>
+<img/tejidoepitelial.png, id=808, 1100.61188pt x 750.55406pt>
 File: img/tejidoepitelial.png Graphic file (type png)
 <use img/tejidoepitelial.png>
 Package pdftex.def Info: img/tejidoepitelial.png  used on input line 16.
 (pdftex.def)             Requested size: 426.79135pt x 291.04283pt.
-[3
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.19 
+      [3
 
-] [4 <./img/tejidoepitelial.png>]
-<img/raw 04_1a Z=77.png, id=57, 1027.84pt x 1027.84pt>
+]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.19 
+      [4 <./img/tejidoepitelial.png>]
+<img/raw 04_1a Z=77.png, id=818, 1027.84pt x 1027.84pt>
 File: img/raw 04_1a Z=77.png Graphic file (type png)
 <use img/raw 04_1a Z=77.png>
 Package pdftex.def Info: img/raw 04_1a Z=77.png  used on input line 22.
 (pdftex.def)             Requested size: 205.56436pt x 205.56436pt.
-<img/raw 04_1a Z=100.png, id=58, 1027.84pt x 1027.84pt>
+<img/raw 04_1a Z=100.png, id=819, 1027.84pt x 1027.84pt>
 File: img/raw 04_1a Z=100.png Graphic file (type png)
 <use img/raw 04_1a Z=100.png>
 Package pdftex.def Info: img/raw 04_1a Z=100.png  used on input line 24.
 (pdftex.def)             Requested size: 205.56436pt x 205.56436pt.
-<img/target 04_1a Z=77.png, id=59, 1027.84pt x 1027.84pt>
+<img/target 04_1a Z=77.png, id=820, 1027.84pt x 1027.84pt>
 File: img/target 04_1a Z=77.png Graphic file (type png)
 <use img/target 04_1a Z=77.png>
 Package pdftex.def Info: img/target 04_1a Z=77.png  used on input line 25.
 (pdftex.def)             Requested size: 205.56436pt x 205.56436pt.
-<img/target 04_1a Z=100.png, id=60, 1027.84pt x 1027.84pt>
+<img/target 04_1a Z=100.png, id=821, 1027.84pt x 1027.84pt>
 File: img/target 04_1a Z=100.png Graphic file (type png)
 <use img/target 04_1a Z=100.png>
 Package pdftex.def Info: img/target 04_1a Z=100.png  used on input line 26.
 (pdftex.def)             Requested size: 205.56436pt x 205.56436pt.
-) (Capitulos/objetivos.tex [5 <./img/raw 04_1a Z=77.png (PNG copy)> <./img/raw 
-04_1a Z=100.png (PNG copy)> <./img/target 04_1a Z=77.png (PNG copy)> <./img/tar
-get 04_1a Z=100.png (PNG copy)>]
+) (Capitulos/objetivos.texpdfTeX warning (ext4): destination with the same iden
+tifier (name{page.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            {Objetivos} [5 <./img/raw 04_1a Z=77.png (PNG copy)> <./img/raw 04_
+1a Z=100.png (PNG copy)> <./img/target 04_1a Z=77.png (PNG copy)> <./img/target
+ 04_1a Z=100.png (PNG copy)>]
 Cap\'{\i }tulo 2.
+)pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.47 	 \part
+            {Organizaci\'on del Proyecto}\label{organizacion} [6
 
-LaTeX Warning: Reference `planseguido' on page 6 undefined on input line 3.
+]pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.47 	 \part{Organizaci\'on del Proyecto}
+                                         \label{organizacion} [7
 
-) [6
-
-] [7
-
-] (Capitulos/planinicial.tex [8]
+]
+(Capitulos/planinicial.texpdfTeX warning (ext4): destination with the same iden
+tifier (name{page.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            {Planificaci\'on}\label{planinicial} [8]
 Cap\'{\i }tulo 3.
+pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.29 \section{Qué no se tuvo en cuenta}
+                                        \label{sec:nosetuvoencuenta} [9
 
-LaTeX Warning: Reference `sec:cnn' on page 9 undefined on input line 21.
-
-[9
-
-] [10]
+]
+[10]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
 ) (Capitulos/costesestimados.tex [11]
@@ -797,38 +1003,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-<img/Rojas1996_p31_computing_unit.png, id=99, 441.90094pt x 123.46124pt>
+<img/Rojas1996_p31_computing_unit.png, id=929, 441.90094pt x 123.46124pt>
 File: img/Rojas1996_p31_computing_unit.png Graphic file (type png)
 <use img/Rojas1996_p31_computing_unit.png>
 Package pdftex.def Info: img/Rojas1996_p31_computing_unit.png  used on input li
 ne 25.
 (pdftex.def)             Requested size: 426.79135pt x 119.24483pt.
-<img/NeuronaArtificial.png, id=101, 437.83575pt x 101.78024pt>
+<img/NeuronaArtificial.png, id=932, 437.83575pt x 101.78024pt>
 File: img/NeuronaArtificial.png Graphic file (type png)
 <use img/NeuronaArtificial.png>
 Package pdftex.def Info: img/NeuronaArtificial.png  used on input line 37.
 (pdftex.def)             Requested size: 426.79135pt x 99.21745pt.
 [17 <./img/Rojas1996_p31_computing_unit.png>] [18 <./img/NeuronaArtificial.png>
 ]
-<img/neural_network.png, id=111, 853.1875pt x 499.8675pt>
+<img/neural_network.png, id=956, 853.1875pt x 499.8675pt>
 File: img/neural_network.png Graphic file (type png)
 <use img/neural_network.png>
 Package pdftex.def Info: img/neural_network.png  used on input line 68.
 (pdftex.def)             Requested size: 426.79135pt x 250.05516pt.
  [19 <./img/neural_network.png>]
-<img/gradient_descent.png, id=116, 1405.25pt x 537.00626pt>
+<img/gradient_descent.png, id=964, 1405.25pt x 537.00626pt>
 File: img/gradient_descent.png Graphic file (type png)
 <use img/gradient_descent.png>
 Package pdftex.def Info: img/gradient_descent.png  used on input line 87.
 (pdftex.def)             Requested size: 426.79135pt x 163.09427pt.
 ) (Capitulos/redneuronalconvo.tex [20 <./img/gradient_descent.png (PNG copy)>]
 Cap\'{\i }tulo 6.
-<img/image_to_ANN.png, id=120, 1033.61156pt x 563.10374pt>
+<img/image_to_ANN.png, id=970, 1033.61156pt x 563.10374pt>
 File: img/image_to_ANN.png Graphic file (type png)
 <use img/image_to_ANN.png>
 Package pdftex.def Info: img/image_to_ANN.png  used on input line 5.
 (pdftex.def)             Requested size: 341.43437pt x 186.00525pt.
-<img/image_to_CNN_.png, id=121, 1040.38687pt x 303.38344pt>
+<img/image_to_CNN_.png, id=973, 1040.38687pt x 303.38344pt>
 File: img/image_to_CNN_.png Graphic file (type png)
 <use img/image_to_CNN_.png>
 Package pdftex.def Info: img/image_to_CNN_.png  used on input line 9.
@@ -836,19 +1042,19 @@ Package pdftex.def Info: img/image_to_CNN_.png  used on input line 9.
 [21
 
  <./img/image_to_ANN.png>]
-<img/simple-convnet.png, id=126, 1131.47719pt x 259.7203pt>
+<img/simple-convnet.png, id=983, 1131.47719pt x 259.7203pt>
 File: img/simple-convnet.png Graphic file (type png)
 <use img/simple-convnet.png>
 Package pdftex.def Info: img/simple-convnet.png  used on input line 17.
 (pdftex.def)             Requested size: 426.79135pt x 97.96555pt.
  [22 <./img/image_to_CNN_.png> <./img/simple-convnet.png>]
-<img/conv-example.png, id=132, 710.655pt x 630.85687pt>
+<img/conv-example.png, id=993, 710.655pt x 630.85687pt>
 File: img/conv-example.png Graphic file (type png)
 <use img/conv-example.png>
 Package pdftex.def Info: img/conv-example.png  used on input line 44.
 (pdftex.def)             Requested size: 341.43437pt x 303.10626pt.
  [23] [24 <./img/conv-example.png>]
-<img/maxpool.jpeg, id=141, 789.95125pt x 369.38pt>
+<img/maxpool.jpeg, id=1005, 789.95125pt x 369.38pt>
 File: img/maxpool.jpeg Graphic file (type jpg)
 <use img/maxpool.jpeg>
 Package pdftex.def Info: img/maxpool.jpeg  used on input line 67.
@@ -859,24 +1065,24 @@ Cap\'{\i }tulo 7.
 [27
 
 ]
-<img/FCN.png, id=151, 845.40843pt x 359.84438pt>
+<img/FCN.png, id=1055, 845.40843pt x 359.84438pt>
 File: img/FCN.png Graphic file (type png)
 <use img/FCN.png>
 Package pdftex.def Info: img/FCN.png  used on input line 19.
 (pdftex.def)             Requested size: 426.79135pt x 181.65683pt.
-<img/Deconvnet.png, id=152, 838.63312pt x 237.88875pt>
+<img/Deconvnet.png, id=1061, 838.63312pt x 237.88875pt>
 File: img/Deconvnet.png Graphic file (type png)
 <use img/Deconvnet.png>
 Package pdftex.def Info: img/Deconvnet.png  used on input line 26.
 (pdftex.def)             Requested size: 426.79135pt x 121.06392pt.
  [28 <./img/FCN.png>]
-<img/unpooling-deconv.png, id=158, 701.62125pt x 487.8225pt>
+<img/unpooling-deconv.png, id=1080, 701.62125pt x 487.8225pt>
 File: img/unpooling-deconv.png Graphic file (type png)
 <use img/unpooling-deconv.png>
 Package pdftex.def Info: img/unpooling-deconv.png  used on input line 38.
 (pdftex.def)             Requested size: 213.39568pt x 148.36508pt.
  [29 <./img/Deconvnet.png> <./img/unpooling-deconv.png>]
-<img/unet-og.png, id=164, 770.88pt x 519.44063pt>
+<img/unet-og.png, id=1092, 770.88pt x 519.44063pt>
 File: img/unet-og.png Graphic file (type png)
 <use img/unet-og.png>
 Package pdftex.def Info: img/unet-og.png  used on input line 46.
@@ -891,7 +1097,7 @@ Overfull \hbox (45.99707pt too wide) in paragraph at lines 24--24
 [31
 
 ]
-<img/unet-morf-example.png, id=172, 714.41907pt x 377.91188pt>
+<img/unet-morf-example.png, id=1108, 714.41907pt x 377.91188pt>
 File: img/unet-morf-example.png Graphic file (type png)
 <use img/unet-morf-example.png>
 Package pdftex.def Info: img/unet-morf-example.png  used on input line 57.
@@ -902,13 +1108,13 @@ Overfull \hbox (65.26086pt too wide) in paragraph at lines 98--98
  []
 
 [33 <./img/unet-morf-example.png>]
-<img/wolny-resultados.png, id=182, 654.19406pt x 256.70906pt>
+<img/wolny-resultados.png, id=1140, 654.19406pt x 256.70906pt>
 File: img/wolny-resultados.png Graphic file (type png)
 <use img/wolny-resultados.png>
 Package pdftex.def Info: img/wolny-resultados.png  used on input line 116.
 (pdftex.def)             Requested size: 426.79135pt x 167.47388pt.
  [34 <./img/wolny-resultados.png>]
-<img/plantseg-software.png, id=188, 1192.455pt x 582.67688pt>
+<img/plantseg-software.png, id=1151, 1192.455pt x 582.67688pt>
 File: img/plantseg-software.png Graphic file (type png)
 <use img/plantseg-software.png>
 Package pdftex.def Info: img/plantseg-software.png  used on input line 149.
@@ -921,15 +1127,12 @@ Cap\'{\i }tulo 9.
 
 ]
 Cap\'{\i }tulo 10.
-
-LaTeX Warning: Citation `Howard2018' undefined on input line 9.
-
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
 5.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<img/fastai_tuto_local.png, id=201, 398.48875pt x 340.27126pt>
+<img/fastai_tuto_local.png, id=1174, 398.48875pt x 340.27126pt>
 File: img/fastai_tuto_local.png Graphic file (type png)
 <use img/fastai_tuto_local.png>
 Package pdftex.def Info: img/fastai_tuto_local.png  used on input line 25.
@@ -943,10 +1146,7 @@ io dis-mi-nuir la ima-gen ori-gi-nal de $\OT1/cmr/m/n/10.95 (720\OML/cmm/m/it/1
 0.95 ; \OT1/cmr/m/n/10.95 960)\OML/cmm/m/it/10.95 px$
  []
 
-
-LaTeX Warning: Citation `Paperspace2020' undefined on input line 35.
-
-<img/fastai_tuto_cloud.png, id=206, 404.51125pt x 345.29pt>
+<img/fastai_tuto_cloud.png, id=1187, 404.51125pt x 345.29pt>
 File: img/fastai_tuto_cloud.png Graphic file (type png)
 <use img/fastai_tuto_cloud.png>
 Package pdftex.def Info: img/fastai_tuto_cloud.png  used on input line 45.
@@ -954,160 +1154,167 @@ Package pdftex.def Info: img/fastai_tuto_cloud.png  used on input line 45.
 [40 <./img/fastai_tuto_local.png>]) (Capitulos/firstsystem.tex [41 <./img/fasta
 i_tuto_cloud.png>]
 Cap\'{\i }tulo 11.
-) (Capitulos/addfullunet.tex [42
+[42
 
-]
+] [43]
+<img/Diseno-unetarch-half.png, id=1229, 692.5875pt x 666.99188pt>
+File: img/Diseno-unetarch-half.png Graphic file (type png)
+<use img/Diseno-unetarch-half.png>
+Package pdftex.def Info: img/Diseno-unetarch-half.png  used on input line 64.
+(pdftex.def)             Requested size: 341.43437pt x 328.82365pt.
+ [44 <./img/Diseno-unetarch-half.png>] [45])
+(Capitulos/addfullunet.tex [46]
 Cap\'{\i }tulo 12.
-) (Capitulos/dataaugmentation.tex [43
+) (Capitulos/dataaugmentation.tex [47
 
 ]
 Cap\'{\i }tulo 13.
-) (Capitulos/apex.tex [44
+) (Capitulos/apex.tex [48
 
 ]
 Cap\'{\i }tulo 14.
-) (Capitulos/dtwatershed.tex [45
+) (Capitulos/dtwatershed.tex [49
 
 ]
 Cap\'{\i }tulo 15.
-) (Capitulos/diseno.tex [46
+) (Capitulos/diseno.tex [50
 
 ]
 Cap\'{\i }tulo 16.
-[47
+[51
 
 ]
-<img/Diseno-General.png, id=233, 750.805pt x 356.33125pt>
+<img/Diseno-General.png, id=1282, 750.805pt x 356.33125pt>
 File: img/Diseno-General.png Graphic file (type png)
 <use img/Diseno-General.png>
-Package pdftex.def Info: img/Diseno-General.png  used on input line 17.
+Package pdftex.def Info: img/Diseno-General.png  used on input line 9.
 (pdftex.def)             Requested size: 426.79135pt x 202.55632pt.
- [48 <./img/Diseno-General.png>]
-<img/Diseno-Preprocesado.png, id=238, 763.85374pt x 503.8825pt>
+ [52 <./img/Diseno-General.png>]
+<img/Diseno-Preprocesado.png, id=1293, 763.85374pt x 503.8825pt>
 File: img/Diseno-Preprocesado.png Graphic file (type png)
 <use img/Diseno-Preprocesado.png>
-Package pdftex.def Info: img/Diseno-Preprocesado.png  used on input line 35.
+Package pdftex.def Info: img/Diseno-Preprocesado.png  used on input line 27.
 (pdftex.def)             Requested size: 426.79135pt x 281.53412pt.
- [49 <./img/Diseno-Preprocesado.png>]
-[50]
-<img/Diseno-Entrenamiento.png, id=246, 954.56625pt x 229.85875pt>
+ [53 <./img/Diseno-Preprocesado.png>]
+[54]
+<img/Diseno-Entrenamiento.png, id=1311, 954.56625pt x 229.85875pt>
 File: img/Diseno-Entrenamiento.png Graphic file (type png)
 <use img/Diseno-Entrenamiento.png>
-Package pdftex.def Info: img/Diseno-Entrenamiento.png  used on input line 75.
+Package pdftex.def Info: img/Diseno-Entrenamiento.png  used on input line 63.
 (pdftex.def)             Requested size: 426.79135pt x 102.76907pt.
- [51 <./img/Diseno-Entrenamiento.png>]
-<img/Diseno-Inferencia.png, id=251, 818.05624pt x 432.61626pt>
+ [55 <./img/Diseno-Entrenamiento.png>]
+<img/Diseno-Inferencia.png, id=1318, 818.05624pt x 432.61626pt>
 File: img/Diseno-Inferencia.png Graphic file (type png)
 <use img/Diseno-Inferencia.png>
-Package pdftex.def Info: img/Diseno-Inferencia.png  used on input line 89.
+Package pdftex.def Info: img/Diseno-Inferencia.png  used on input line 77.
 (pdftex.def)             Requested size: 426.79135pt x 225.70769pt.
- [52 <./img/Diseno-Inferencia.png>]
-<img/Diseno-unetarch-full.png, id=257, 718.18312pt x 414.04688pt>
+ [56 <./img/Diseno-Inferencia.png>]
+<img/Diseno-unetarch-full.png, id=1331, 718.18312pt x 414.04688pt>
 File: img/Diseno-unetarch-full.png Graphic file (type png)
 <use img/Diseno-unetarch-full.png>
-Package pdftex.def Info: img/Diseno-unetarch-full.png  used on input line 105.
+Package pdftex.def Info: img/Diseno-unetarch-full.png  used on input line 93.
 (pdftex.def)             Requested size: 426.79135pt x 246.06084pt.
-
-[53 <./img/Diseno-unetarch-full.png>]
-<img/Diseno-unetarch-half.png, id=261, 692.5875pt x 666.99188pt>
-File: img/Diseno-unetarch-half.png Graphic file (type png)
-<use img/Diseno-unetarch-half.png>
-Package pdftex.def Info: img/Diseno-unetarch-half.png  used on input line 109.
-(pdftex.def)             Requested size: 426.79135pt x 411.02704pt.
-) (Capitulos/implementacion.tex [54 <./img/Diseno-unetarch-half.png>]
+)
+(Capitulos/implementacion.tex [57 <./img/Diseno-unetarch-full.png>]
 Cap\'{\i }tulo 17.
-[55
 
-] [56] [57] [58] [59] [60]) (Capitulos/representacion3D.tex [61]
+Overfull \hbox (6.73828pt too wide) in paragraph at lines 9--10
+\OT1/ptm/m/n/10.95 HDF Group[], []2000-2010[]), []util pa-ra usar en pyt-hon fi
+-che-ros ge-ne-ra-dos en pro-gra-mas co-mo MATLAB.
+ []
+
+[58
+
+] [59] [60] [61]) (Capitulos/representacion3D.tex [62]
 Cap\'{\i }tulo 18.
-) [62
+) [63
 
-] [63
+] [64
 
-] (Capitulos/resultados.tex [64]
+] (Capitulos/resultados.tex [65]
 Cap\'{\i }tulo 19.
-[65
+[66
 
 ]
-<img/unet2.1 100.png, id=301, 386.94562pt x 278.03876pt>
+<img/unet2.1 100.png, id=1410, 386.94562pt x 278.03876pt>
 File: img/unet2.1 100.png Graphic file (type png)
 <use img/unet2.1 100.png>
 Package pdftex.def Info: img/unet2.1 100.png  used on input line 13.
 (pdftex.def)             Requested size: 309.55692pt x 222.4313pt.
-<img/unet4.1-200e-LQNOB-norm-Znorm.png, id=302, 386.94562pt x 278.03876pt>
+<img/unet4.1-200e-LQNOB-norm-Znorm.png, id=1411, 386.94562pt x 278.03876pt>
 File: img/unet4.1-200e-LQNOB-norm-Znorm.png Graphic file (type png)
 <use img/unet4.1-200e-LQNOB-norm-Znorm.png>
 Package pdftex.def Info: img/unet4.1-200e-LQNOB-norm-Znorm.png  used on input l
 ine 15.
 (pdftex.def)             Requested size: 309.55692pt x 222.4313pt.
- [66
+ [67
 
  <./img/unet2.1 100.png> <./img/unet4.1-200e-LQNOB-norm-Znorm.png>]
-<img/unet4.13-200e-LQNOB-norm-Znorm.png, id=308, 386.94562pt x 278.03876pt>
+<img/unet4.13-200e-LQNOB-norm-Znorm.png, id=1419, 386.94562pt x 278.03876pt>
 File: img/unet4.13-200e-LQNOB-norm-Znorm.png Graphic file (type png)
 <use img/unet4.13-200e-LQNOB-norm-Znorm.png>
 Package pdftex.def Info: img/unet4.13-200e-LQNOB-norm-Znorm.png  used on input 
 line 23.
 (pdftex.def)             Requested size: 309.55692pt x 222.4313pt.
-<img/unet4.8-200e-aug.png, id=309, 386.94562pt x 278.03876pt>
+<img/unet4.8-200e-aug.png, id=1420, 386.94562pt x 278.03876pt>
 File: img/unet4.8-200e-aug.png Graphic file (type png)
 <use img/unet4.8-200e-aug.png>
 Package pdftex.def Info: img/unet4.8-200e-aug.png  used on input line 25.
 (pdftex.def)             Requested size: 309.55692pt x 222.4313pt.
 
-[67
+[68
 
  <./img/unet4.13-200e-LQNOB-norm-Znorm.png> <./img/unet4.8-200e-aug.png>]
 File: img/unet4.8-200e-aug.png Graphic file (type png)
 <use img/unet4.8-200e-aug.png>
 Package pdftex.def Info: img/unet4.8-200e-aug.png  used on input line 32.
 (pdftex.def)             Requested size: 309.55692pt x 222.4313pt.
-<img/unet5.2-sample-200e-target-apex.png, id=315, 386.94562pt x 278.03876pt>
+<img/unet5.2-sample-200e-target-apex.png, id=1428, 386.94562pt x 278.03876pt>
 File: img/unet5.2-sample-200e-target-apex.png Graphic file (type png)
 <use img/unet5.2-sample-200e-target-apex.png>
 Package pdftex.def Info: img/unet5.2-sample-200e-target-apex.png  used on input
  line 34.
 (pdftex.def)             Requested size: 309.55692pt x 222.4313pt.
 
-[68
+[69
 
  <./img/unet5.2-sample-200e-target-apex.png>]
-<img/unet6t-100e-resultados.png, id=320, 934.49126pt x 689.07437pt>
+<img/unet6t-100e-resultados.png, id=1436, 934.49126pt x 689.07437pt>
 File: img/unet6t-100e-resultados.png Graphic file (type png)
 <use img/unet6t-100e-resultados.png>
 Package pdftex.def Info: img/unet6t-100e-resultados.png  used on input line 41.
 
 (pdftex.def)             Requested size: 327.07684pt x 241.17964pt.
-<img/unet6t.png, id=321, 386.94562pt x 278.03876pt>
+<img/unet6t.png, id=1437, 386.94562pt x 278.03876pt>
 File: img/unet6t.png Graphic file (type png)
 <use img/unet6t.png>
 Package pdftex.def Info: img/unet6t.png  used on input line 43.
 (pdftex.def)             Requested size: 270.86008pt x 194.6258pt.
- [69
+ [70
 
  <./img/unet6t-100e-resultados.png> <./img/unet6t.png>]
-<img/unet6b-res.png, id=327, 934.49126pt x 689.07437pt>
+<img/unet6b-res.png, id=1445, 934.49126pt x 689.07437pt>
 File: img/unet6b-res.png Graphic file (type png)
 <use img/unet6b-res.png>
 Package pdftex.def Info: img/unet6b-res.png  used on input line 50.
 (pdftex.def)             Requested size: 327.07684pt x 241.17964pt.
-<img/unet6b-loss.png, id=328, 386.94562pt x 278.03876pt>
+<img/unet6b-loss.png, id=1446, 386.94562pt x 278.03876pt>
 File: img/unet6b-loss.png Graphic file (type png)
 <use img/unet6b-loss.png>
 Package pdftex.def Info: img/unet6b-loss.png  used on input line 52.
 (pdftex.def)             Requested size: 270.86008pt x 194.6258pt.
- [70
+ [71
 
  <./img/unet6b-res.png> <./img/unet6b-loss.png>]
-<img/unet6b-color.png, id=335, 931.48pt x 907.39pt>
+<img/unet6b-color.png, id=1454, 931.48pt x 907.39pt>
 File: img/unet6b-color.png Graphic file (type png)
 <use img/unet6b-color.png>
 Package pdftex.def Info: img/unet6b-color.png  used on input line 58.
 (pdftex.def)             Requested size: 426.79135pt x 415.75684pt.
- [71
+ [72
 
  <./img/unet6b-color.png>]
-<img/unet6t-color.png, id=340, 936.49875pt x 228.855pt>
+<img/unet6t-color.png, id=1461, 936.49875pt x 228.855pt>
 File: img/unet6t-color.png Graphic file (type png)
 <use img/unet6t-color.png>
 Package pdftex.def Info: img/unet6t-color.png  used on input line 64.
@@ -1117,7 +1324,7 @@ Overfull \hbox (41.45688pt too wide) in paragraph at lines 64--65
  [][] 
  []
 
-<img/unet6b-solocolor.png, id=341, 919.93687pt x 231.36438pt>
+<img/unet6b-solocolor.png, id=1462, 919.93687pt x 231.36438pt>
 File: img/unet6b-solocolor.png Graphic file (type png)
 <use img/unet6b-solocolor.png>
 Package pdftex.def Info: img/unet6b-solocolor.png  used on input line 66.
@@ -1127,7 +1334,7 @@ Overfull \hbox (33.17596pt too wide) in paragraph at lines 66--67
  [][] 
  []
 
-) (Capitulos/analtemporal.tex [72
+) (Capitulos/analtemporal.tex [73
 
  <./img/unet6t-color.png> <./img/unet6b-solocolor.png>]
 Cap\'{\i }tulo 20.
@@ -1136,32 +1343,32 @@ Overfull \hbox (57.62767pt too wide) in paragraph at lines 36--36
  [][] 
  []
 
-) (Capitulos/conclusion.tex [73
+) (Capitulos/conclusion.tex [74
 
 ]
 Cap\'{\i }tulo 21.
-) (Capitulos/manual.tex [74
+) (Capitulos/manual.tex [75
 
 ]
 Cap\'{\i }tulo 22.
 
 Overfull \hbox (20.87631pt too wide) in paragraph at lines 7--8
-[]\OT1/ptm/m/n/10.95 CUDA $\OT1/pcr/m/n/10.95 https :// docs [] .nvidia [] .com
- / cuda / cuda [] -installation [] -guide [] -linux /
+[]\OT1/ptm/m/n/10.95 CUDA []$\OT1/pcr/m/n/10.95 https :// docs [] .nvidia [] .c
+om / cuda / cuda [] -installation [] -guide [] -linux /
  []
 
 
 Overfull \hbox (16.08008pt too wide) in paragraph at lines 8--9
-[]\OT1/ptm/m/n/10.95 CUDNN $\OT1/pcr/m/n/10.95 https :// docs [] .nvidia [] .co
-m / deeplearning / cudnn / install [] -guide /
+[]\OT1/ptm/m/n/10.95 CUDNN []$\OT1/pcr/m/n/10.95 https :// docs [] .nvidia [] .
+com / deeplearning / cudnn / install [] -guide /
  []
 
-) [75
+) [76
 
 ] (proyect.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 12--20
 []\OT1/ptm/m/it/10.95 Bases y ti-pos de co-ti-za-ci[]on 2019.  \OT1/ptm/m/n/10.
-95 (s.f.[]).  Des-car-ga-do de $\OT1/pcr/m/n/10.95 http :// www []
+95 (s.f.[]).  Des-car-ga-do de []$\OT1/pcr/m/n/10.95 http :// www []
  []
 
 
@@ -1178,61 +1385,68 @@ OT1/ptm/m/it/10.95 Deep lear-ning\OT1/ptm/m/n/10.95 .  MIT Press.
 
 
 Underfull \hbox (badness 5756) in paragraph at lines 191--207
-\OT1/ptm/m/n/10.95 Des-car-ga-do de $\OT1/pcr/m/n/10.95 https :// www [] .deepl
-earningbook [] .org /$   \OT1/ptm/m/n/10.95 ($\OT1/pcr/m/n/10.95 http :// www [
-]
+\OT1/ptm/m/n/10.95 Des-car-ga-do de []$\OT1/pcr/m/n/10.95 https :// www [] .dee
+plearningbook [] .org /$[]   \OT1/ptm/m/n/10.95 ([]$\OT1/pcr/m/n/10.95 http ://
+ www []
  []
 
-[76
+[77
 
 
 ]
-Underfull \hbox (badness 7925) in paragraph at lines 537--549
+Underfull \hbox (badness 7925) in paragraph at lines 562--574
 []\OT1/ptm/m/n/10.95 missinglink.  (2020).  \OT1/ptm/m/it/10.95 mis-sin-glink.a
-i.  \OT1/ptm/m/n/10.95 Des-car-ga-do 2020-09-03, de $\OT1/pcr/m/n/10.95 https :
-//
+i.  \OT1/ptm/m/n/10.95 Des-car-ga-do 2020-09-03, de []$\OT1/pcr/m/n/10.95 https
+ ://
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 537--549
+Underfull \hbox (badness 10000) in paragraph at lines 562--574
 \OT1/pcr/m/n/10.95 missinglink [] .ai / guides / convolutional [] -neural [] -n
 etworks /
  []
 
 
-Underfull \hbox (badness 7047) in paragraph at lines 558--566
+Underfull \hbox (badness 7047) in paragraph at lines 583--591
 []\OT1/ptm/m/it/10.95 Msi gp62 7re.  \OT1/ptm/m/n/10.95 (s.f.[]).  Des-car-ga-d
-o de $\OT1/pcr/m/n/10.95 https :// www [] .pccomponentes [] .com /
+o de []$\OT1/pcr/m/n/10.95 https :// www [] .pccomponentes [] .com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 558--566
+Underfull \hbox (badness 10000) in paragraph at lines 583--591
 \OT1/pcr/m/n/10.95 msi [] -gp62 [] -7re [] -431xes [] -leopard [] -pro [] -inte
 l [] -core [] -i7 [] -7700hq [] -8gb []
  []
 
 
-Underfull \hbox (badness 1072) in paragraph at lines 663--688
+Underfull \hbox (badness 1072) in paragraph at lines 711--736
 \OT1/ptm/m/it/10.95 in neu-ral in-for-ma-tion pro-ces-sing sys-tems 32 \OT1/ptm
 /m/n/10.95 (pp.[] 8024--8035).  Cu-rran As-so-cia-tes,
  []
 
-[77]) [78] (proyect.aux)
-
-LaTeX Warning: There were undefined references.
+[78])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
+ [79]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
+ (proyect.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
+Package rerunfilecheck Info: File `proyect.out' has not changed.
+(rerunfilecheck)             Checksum: 9BD92D8BC681EA4E770ECB9C10907B52;8034.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
  ) 
 Here is how much of TeX's memory you used:
- 9207 strings out of 492483
- 132372 string characters out of 3131035
- 217083 words of memory out of 3000000
- 13268 multiletter control sequences out of 15000+200000
+ 13536 strings out of 492483
+ 200025 string characters out of 3131035
+ 323566 words of memory out of 3000000
+ 17122 multiletter control sequences out of 15000+200000
  33877 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 45i,13n,49p,1269b,597s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 48i,13n,49p,1269b,671s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
@@ -1249,9 +1463,9 @@ a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on proyect.pdf (87 pages, 4033052 bytes).
+Output written on proyect.pdf (89 pages, 4200848 bytes).
 PDF statistics:
- 423 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 211 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1687 PDF objects out of 1728 (max. 8388607)
+ 368 named destinations out of 1000 (max. 500000)
+ 1155 words of extra memory for PDF output out of 10000 (max. 10000000)
 

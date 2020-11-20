@@ -314,6 +314,31 @@ Hochreiter, S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Howard%
+\ \protect \BOthers {.}}{%
+Howard%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+Howard2018}
+\APACinsertmetastar {%
+Howard2018}%
+\begin{APACrefauthors}%
+Howard, J.%
+\BCBT {}\ \BOthersPeriod {.}
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+\APACrefbtitle {fastai.} {fastai.}
+\newblock
+\APAChowpublished {\url{https://github.com/fastai/fastai}}.
+\newblock
+\APACaddressPublisher{}{GitHub}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 \APACcitebtitle {Instance Types}}{%
 \APACcitebtitle {Instance Types}}{%
 {\protect \APACyear {{\protect \bibnodate {}}}}%
@@ -650,6 +675,29 @@ Nwankpa, C.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Paperspace%
+}{%
+Paperspace%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+Paperspace2020}
+\APACinsertmetastar {%
+Paperspace2020}%
+\begin{APACrefauthors}%
+Paperspace.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {Paperspace.} {Paperspace.}
+\newblock
+\begin{APACrefURL} \url{https://gradient.paperspace.com/free-gpu}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Paszke%
 \ \protect \BOthers {.}}{%
 Paszke%
@@ -916,6 +964,30 @@ Schindelin, J.%
 \begin{APACrefURL} \url{https://doi.org/10.1038/nmeth.2019} \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1038/nmeth.2019} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Serrano%
+}{%
+Serrano%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+Serrano2020}
+\APACinsertmetastar {%
+Serrano2020}%
+\begin{APACrefauthors}%
+Serrano, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {{Deep Learning with PyTorch}.} {{Deep Learning with PyTorch}.}
+\newblock
+\begin{APACrefURL}
+  [{2020-09-03}]\url{https://classroom.udacity.com/courses/ud188}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

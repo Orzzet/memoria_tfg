@@ -44,7 +44,7 @@ Métrica & Buen resultado & Resultado ideal \\
 IoU & $\geq 0.7$ & $\geq 0.9$ \\
 }
 
-Para decidir las métricas me apoyo en el artículo descrito en la sección \ref{apps1} \cite{Falk2019}, donde se usa la métrica intersección sobre unión (IoU) para medir sus resultados.
+Para decidir las métricas me apoyo en el artículo descrito en la sección \ref{sec:apps1} \cite{Falk2019}, donde se usa la métrica intersección sobre unión (IoU) para medir sus resultados.
 
 \begin{equation}
 M_{IoU}(A, B) := \frac{|A\cap B|}{|A\cup B|}
@@ -101,7 +101,7 @@ Si usáramos el etiquetado actual necesitaríamos una clase por cada célula, pe
 
 \subsection{Solución}\label{subsec:multi_problem}
 
-La solución que se probará primero será añadir un espaciado entre células, tal y como se hace en el pipeline del artículo descrito en la sección \ref{sec:app1} \cite{Falk2019}. Al existir un espaciado entre células, estas no estarían tocándose entre sí, por lo que todas podrían tener la misma etiqueta y contar como instancias distintas.
+La solución que se probará primero será añadir un espaciado entre células, tal y como se hace en el pipeline del artículo descrito en la sección \ref{sec:apps1} \cite{Falk2019}. Al existir un espaciado entre células, estas no estarían tocándose entre sí, por lo que todas podrían tener la misma etiqueta y contar como instancias distintas.
 
 Para añadir este espaciado entre células primero se encuentran los bordes de cada célula y después se substraen de la imagen original. Por último se cambian todas las etiquetas a 1.
 
