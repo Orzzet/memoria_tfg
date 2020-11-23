@@ -1,0 +1,43 @@
+\chapter{Mejora 1: Función de pérdida Dice}\label{loss_function}
+
+\section{Problema detectado}\label{sec:loss_function_problem}
+
+En los resultados del capítulo anterior se mostró en cada iteración el algoritmo de aprendizaje hace el modelo se acerque más a su objetivo. Esto es lo que debe de ocurrir al entrenar un modelo, por lo que a priori todo está funcionando correctamente.
+
+Sin embargo, los resultados son muy malos, obteniéndose un $IoU=0.0018$, muy lejos del $0.7$ propuesto como meta.
+
+El motivo de que esta discrepancia ocurra es porque no se ha elegido una función de pérdida que represente correctamente el acercamiento a un objetivo útil para el problema actual.
+
+La pérdida actual se calcula con la entropía cruzada (sin pesos):
+
+\begin{equation}
+L_{BCE}(y,\hat{y})=-(y log(\hat{y}) + (1-y)log(1-\hat{y}))
+\end{equation}
+
+Donde $y$ es el y es el objetivo y $\hat{y}$ la predicción.
+
+El problema principal se tiene en que las dos clases (fondo-0 y célula-1) están desbalanceadas y la entropía cruzada da la misma importancia a las dos clases. El modelo va a tender a etiquetar toda la imagen como fondo ya que así va a obtener una puntuación muy alta con esta función de pérdida.
+
+\section{Solución}\label{sec:loss_function_change}
+
+La solución será cambiar la función de pérdida por otra que tenga en cuenta este desbalanceo entre clases. En el artículo estudiado en la sección \ref{sec:app1} se utiliza la entropía cruzada binaria, mientras que en el artículo estudiado en la sección \ref{sec:app2} se utiliza la pérdida Dice.
+
+Se ha optado por probar primero la pérdida Dice ya que el cálculo de los pesos de la entropía cruzada binaria puede ser muy complejo. En un futuro se valorará el uso de esta pérdida.
+
+\section{Implementación}\label{sec:loss_function_change}
+
+
+
+\section{Resultados}\label{sec:data_augmentation_resultados}
+
+\cuadro{|c|c|c|}{Métricas.}{tab:metricas_2}{
+IoU fondo & IoU células\\ 
+\hline
+0.9381 & 0.2582\\
+}
+
+\figura{0.8}{img/pruebas/sistema_2_dice_perdidas}{Pérdida de entrenamiento en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.}{fig:sistema_2_dice_perdidas}{}
+
+\figura{0.8}{img/pruebas/sistema_2_dice_visual}{Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.}{fig:sistema_2_dice_visual}{}
+
+Esta vez la función de pérdida sí que representa correctamente el objetivo del problema actual. Se ha obtenido un $IoU=0.2582$ y visualmente se puede ver cómo la segmentación empieza a formarse. Se ignorará el $IoU$ del fondo ya que debería ser siempre mayor que $0.9$.

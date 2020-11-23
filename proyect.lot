@@ -16,6 +16,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {11.1}{\ignorespaces Tabla de métricas y metas.\relax }}{43}{table.caption.35}%
+\contentsline {table}{\numberline {11.2}{\ignorespaces Métricas. En la primera fila está cómo de bien se ha predicho el fondo. En la segunda fila está cómo de bien se han predicho las células.\relax }}{48}{table.caption.41}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {12.1}{\ignorespaces Métricas.\relax }}{51}{table.caption.44}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {13.1}{\ignorespaces Métricas.\relax }}{55}{table.caption.48}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -24,8 +29,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {20.1}{\ignorespaces Tabla de tiempos\relax }}{74}{table.caption.70}%
+\contentsline {table}{\numberline {21.1}{\ignorespaces Tabla de tiempos\relax }}{80}{table.caption.76}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsfinish 

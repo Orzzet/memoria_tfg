@@ -1,9 +1,39 @@
-\chapter{Iteración 3: Data augmentation}\label{data_augmentation}
+\chapter{Mejora 2: Data augmentation}\label{data_augmentation}
 
 \section{Problema detectado}\label{sec:data_augmentation_problem}
+
+En la gráfica de la función de pérdida de los resultados anteriores se puede ver algo preocupante: la pérdida de validación ha empezado a subir mientras que la pérdida de entrenamiento baja.
+
+En cada iteración del algoritmo de entrenamiento, se comparan todos los ejemplos del conjunto de entrenamiento para obtener la pérdida de entrenamiento. A menos que haya un error grave esta pérdida debería bajar ya que el modelo es entrenado con ejemplos de este mismo conjunto de entrenamiento. Sin embargo no se utilizan ejemplos del conjunto de validación para el entrenamiento, sólo se utilizan para calcular la pérdida de validación en cada iteración.
+
+Si el modelo mejora en predecir el conjunto de entrenamiento pero empeora en predecir el conjunto de validación esto es un indicativo de que se está produciendo un sobreajuste. En la figura \ref{fig:sistema_2_dice_perdidas_200} se ha entrenado 100 iteraciones más (200 en total) el modelo anterior para comprobar si este sobreajuste se está produciendo realmente o era un fenómeno durante un tramo pequeño. Claramente se puede ver que hay sobreajuste.
+
+\figura{0.8}{img/pruebas/sistema_2_dice_perdidas_200}{Pérdida de entrenamiento en cada iteración. 200 iteraciones. Se puede ver claramente cómo se produce sobreajuste.}{fig:sistema_2_dice_perdidas_200}{}
 
 \section{Técnica de data augmentation}\label{sec:data_augmentation_change}
 
 \section{Implementación de data augmentation}\label{sec:data_augmentation_change}
 
+PyTorch ofrece varias técnicas de data augmentation pero no están adaptadas para datos volumétricos, por lo que es necesario recurrir a librerías externas, como Kornia.
+
+\textbf{Kornia.} Kornia \cite{ERiba2020} es una librería especializada en visión por ordenador con PyTorch como backend. Aquí es usada para voltear la imagen en cada una de las 3 dimensiones de forma aleatoria. Gracias a esto se pasa de 15 ejemplos de entrenamiento a 120. Esta diferencia en cantidad de ejemplos de entrenamiento hace que el modelo no se sobreajuste tan rápido.
+
+Se ha optado por hacer transformaciones que no provoquen ninguna deformación elástica, ya que habría que aplicar una deformación elástica en la imagen etiquetada y, debido al reescalado hacia abajo hecho en el preprocesado, se ha perdido calidad y esto podría provocar células partidas o células en contacto entre sí.
+
+Se han utilizado las funciones \textit{RandomDepthicalFlip3D}, \textit{RandomHorizontalFlip3D} y \textit{RandomVerticalFlip3D} de Kornia para realizar estas 3 transformaciones en secuencia, todas con una probabilidad de 0.5.
+
+Se ha probado \textit{RandomRotation3D} pero no se han obtenido buenos resultados, ya que la parte etiquetada en la mayoría de los casos quedaba fuera de la imagen.
+
 \section{Resultados}\label{sec:data_augmentation_resultados}
+
+\cuadro{|c|c|c|}{Métricas.}{tab:metricas_2}{
+IoU fondo & IoU células\\ 
+\hline
+0.9031 & 0.3165\\
+}
+
+\figura{0.8}{img/pruebas/sistema_3_augm_perdidas}{Pérdida de entrenamiento. 100 iteraciones.}{fig:sistema_3_augm_perdidas}{}
+
+\figura{0.8}{img/pruebas/sistema_3_augm_visual}{Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.}{fig:sistema_3_augm_visual}{}
+
+Gracias a este cambio se ha eliminado el sobreajuste, tal y como se puede ver en la gráfica \ref{fig:sistema_3_augm_perdidas}. Se ha obtenido un $IoU=0.3165$, mejor que sin data augmentation.

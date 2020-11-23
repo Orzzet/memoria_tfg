@@ -82,14 +82,14 @@ En las CNNs, al igual que en la inmensa mayoría de algoritmos de Deep Learning,
 
 \subsection{Binary Cross-Entropy}
 
-La entropía cruzada es una medida utilizada para calcular la diferencia entre dos distribuciones de probabilidad. \cite{Jadon2020}. Resultará útil si comparamos el objetivo $y$ con la predicción $\hat{y}$. La fórmula de la entropía cruzada binaria (BCE) es la siguiente:
+La entropía cruzada binaria es una medida utilizada para calcular la diferencia entre dos distribuciones de probabilidad. \cite{Jadon2020}. Resultará útil si comparamos el objetivo $y$ con la predicción $\hat{y}$. La fórmula de la entropía cruzada binaria (BCE) es la siguiente:
 \begin{equation}
 L_{BCE}(y,\hat{y})=-(y log(\hat{y}) + (1-y)log(1-\hat{y}))
 \end{equation}
 
 \subsection{Weighted Binary Cross-Entropy}
 
-Cross entropía binaria con pesos (WCE) es una variante de BCE. En esta variante se aplica un coeficiente a cada ejemplo positivo. Es muy útil cuando los datos están sesgados, como por ejemplo una segmentación de un elemento muy pequeño en comparación con el fondo. La formula es la siguiente:
+La entropía cruzada binaria con pesos (WCE) es una variante de BCE. En esta variante se aplica un coeficiente a cada ejemplo positivo. Es muy útil cuando los datos están sesgados, como por ejemplo una segmentación de un elemento muy pequeño en comparación con el fondo. La formula es la siguiente:
 \begin{equation}
 L_{WBCE}(y,\hat{y})=-(\beta y log(\hat{y}) + (1-y)log(1-\hat{y}))
 \end{equation}

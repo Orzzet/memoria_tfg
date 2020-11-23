@@ -1,37 +1,8 @@
 \chapter{Implementación}\label{implementacion}
 
-En este capítulo se mostrarán las tecnologías utilizadas para llevar a cabo el diseño deseado.
-
-\section{Preprocesado local}\label{sec:local_preprocessing}
-
-El primer paso a realizar es preparar los datos, para ello se han usado las siguientes librerías:
-
-\textbf{h5py} \cite{Collette2013}. Aporta una interfaz para trabajar con el formato de datos HDF5 \cite{HDFGroup20002010}, útil para usar en python ficheros generados en programas como MATLAB. El tratamiento de datos con esta librería es muy intuitivo ya que imita la sintaxis de NumPy. Ha sido usado para archivos .mat generados en MATLAB con los datos iniciales. Tras el preprocesado, se ha usado esta librería para generar un nuevo archivo con todas las imágenes en un nuevo archivo .mat.
-
-\subsection{Consideraciones}
-\subsubsection{Crear nuevo fichero}
-
-La creación del nuevo fichero se ha hecho con la librería h5py. Los datos originales tienen dos puntos en los que se puede mejorar su almacenamiento para que ocupe menos espacio y sea más fácil de transferir.
-\begin{itemize}
-\item \textbf{Tipo de dato.} Tanto la imagen de entrada como la imagen etiquetada tienen el tipo de datos $f8$. Es posible pasar la imagen de entrada al tipo $f4$ y la imagen etiquetada al tipo $i1$ sin perder información. Esto va a reducir el tamaño en disco en más de la mitad. Por lo escribir las imágenes en el fichero se harán con los tipos $f4$ y $i1$.
-\item \textbf{Compresión.} Se ha optado por usar la compresión \textit{gzip}, que ofrece una buena compresión a una velocidad no muy alta. Tiene 10 niveles de compresión $[0,9]$. Se ha probado a comprimir con el nivel $9$ consiguiendo una buena compresión pero es excesivamente lento, al final se ha optado por usar una compresión de nivel $4$ que, aunque tiene $\sim 10\%$ más tamaño que con el nivel $9$, el tiempo de la compresión se reduce a más de la mitad y de todas formas el resultado ya es muy bueno.
-\end{itemize}
-
 \section{Carga de datos}\label{sec:data_loading_processing}
-
-Una vez todos los datos han sido preprocesados de forma local ya se puede proceder a la carga de datos. En la carga de datos también se hace un tratamiento de imagen y será necesario que éste sea rápido, ya que se realizará cada vez que se acceda a una imagen.
-
-Para la carga de datos se han usado las siguientes librerías:
 \begin{itemize}
-\item \textbf{h5py.} La misma librería usada para crear los ficheros en la etapa anterior es usada para cargarlos.
-\item \textbf{PyTorch.} PyTorch es el framework de deep learning elegido para este trabajo, por lo que se sacará el máximo provecho de lo que ofrezca de base. Para procesamiento de imagen es especialmente útil el paquete \textit{torchvision}.
-\begin{itemize}
-\item Clase base para Dataset: Para indicar dónde encontrar los datos y qué hacer con ellos, se usará la clase \textit{torchvision.Dataset} como base. Tan sólo hay que sobreescribir 3 métodos para que la clase sea funcional, estos son los métodos de inicialización (\textit{\_\_init\_\_}), para obtener la longitud del dataset (\textit{\_\_len\_\_}) y para obtener el siguiente ejemplo (\textit{\_\_getitem\_\_}), en el que se realizará un preprocesado y se devolverá la imagen de entrada y la imagen etiquetada.
-\item DataLoader: Es usado para administrar el dataset. Se encarga de dar un nº de ejemplos aleatorios igual al batch seleccionado.
-\end{itemize}
-
 \item \textbf{TorchIO.} TorchIO \cite{PerezGarcia2020} es una librería que contiene herramientas para trabajar con datos 3D especializadas para imágenes médicas. Se ha utilizado la función \textit{transforms.ZNormalization()} en la imagen de entrada, que resta sus valores por la media y los divide por la desviación estándar.
-\item \textbf{Kornia.} Kornia \cite{ERiba2020} es una librería especializada en visión por ordenador con PyTorch como backend. Aquí es usada para data augmentation, volteando la imagen en cada una de las 3 dimensiones de forma aleatoria. Gracias a esto se pasa de 15 ejemplos de entrenamiento a 120. Esta diferencia en cantidad de ejemplos de entrenamiento hace que el modelo no se sobreajuste tan rápido.
 
 \end{itemize}
 Además, después de la ZNormalization, se han normalizado los valore al rango $[0.0, 1.0]$.  
@@ -64,16 +35,6 @@ Donde $v_i^{'}$ es el nuevo valor del vóxel, $v_i$ es el valor actual, $\mu$ es
 
 Tras varias pruebas, como mejor resultado se ha obtenido ha sido haciendo primero el cambia a escala $[0,1]$ y después la ZNormalization, pese a que lo habitual en deep learning es preparar los datos de entrada con un valor $[0.1,0.9]$.
 
-\subsubsection{Data Augmentation}
-
-Los primeros modelos se entrenaron sin utilizar ninguna técnica de data augmentation, lo que provocó un sobreajuste muy rápido, como se verá en el capítulo siguiente. PyTorch ofrece varias técnicas de data augmentation pero no están adaptadas para datos volumétricos, por lo que es necesario requerir a librerías externas, como Kornia.
-
-Se ha optado por hacer transformaciones que no provoquen ninguna deformación elástica, ya que habría que aplicar una deformación elástica en la imagen etiquetada y, debido al reescalado hacia abajo hecho en la fase anterior en el que se ha perdido calidad, esto podría provocar células partidas o células en contacto entre sí.
-
-Se han utilizado las funciones \textit{RandomDepthicalFlip3D}, \textit{RandomHorizontalFlip3D} y \textit{RandomVerticalFlip3D} de Kornia para realizar estas 3 transformaciones en secuencia, todas con una probabilidad de 0.5.
-
-Se ha probado \textit{RandomRotation3D} pero no se han obtenido buenos resultados, ya que la parte etiquetada en la mayoría de los casos quedaba fuera de la imagen.
-
 \section{U-Net}\label{sec:unet_implementation}
 
 \subsubsection{Funciones de pérdida}
@@ -96,20 +57,6 @@ Al trabajar con datos numéricos de poca precisión, como puede ser float de 16 
 En ambos casos se usa escalado dinámico de pérdida, que se usa como coeficiente para la pérdida. Comienza con un valor muy alto y, si hay desbordamiento, se divide en 2, si no hay desbordamiento durante un número de epochs (1000 por defecto), se multiplica por 2.
 
 Se han probado ambos niveles de optimización y en ambos casos no se ha visto una reducción en la cantidad de memoria ni en el tiempo de entrenamiento. Sí se ha visto un beneficio de usar el escalado dinámico de pérdida, ya que se ha alcanzado más rápidamente una pérdida pequeña. Aún así, a lo largo de 100 o 200 epochs, esto no ha provocado que se alcance mejor error de validación. En los resultados se muestra esa diferencia.
-
-\subsubsection{Ficheros generados}
-En cada iteración se ha guardado en un fichero información sobre el estado actual del entrenamiento y del modelo, con esto se puede utilizar para inferencia, para continuar el entrenamiento o para comprobar métricas, la información guardada es:
-\begin{itemize}
-\item \textbf{epochs:} Nº de epochs entrenados.
-\item \textbf{best\_model\_state\_dict:} Pesos del modelo con menor error de validación.
-\item \textbf{model\_state\_dict:} Pesos del modelo en la última iteración.
-\item \textbf{optimizer\_state\_dict:} Pesos del optimizador en la última iteración. Al usar el optimizador Adam se guarda el \textit{learning rate} de cada parámetro de forma individual y este se va modificando a lo largo del aprendizaje, por lo que es beneficioso usar el último estado de estos pesos si se desea seguir con el entrenamiento.
-\item \textbf{train\_losses:} Lista con todos los valores de pérdida en el entrenamiento.
-\item \textbf{valid\_losses:} Lista con todos los valores de pérdida en la validación. train\_losses y valid\_losses son usados para dibujar las curvas de aprendizaje.
-\item \textbf{test\_conf\_matrix:} Matriz de confusión por clases obtenida al evaluar el conjunto de test.
-\item \textbf{test\_miou:} Media del IoU para el conjunto de test.
-\item \textbf{amp\_state\_dict:} Estado del optimizador usado con precisión mixta.
-\end{itemize}
 
 \section{Postprocesado}\label{sec:data_loading_processing}
 

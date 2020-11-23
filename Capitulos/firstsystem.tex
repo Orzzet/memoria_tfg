@@ -1,4 +1,4 @@
-\chapter{Iteración 1: Sistema inicial}\label{initial_system}
+\chapter{Sistema inicial}\label{initial_system}
 
 \section{Lenguaje y framework}\label{sec:language_and_framework}
 
@@ -63,9 +63,38 @@ Como función de pérdida se ha escogido la función
 
 \figura{0.8}{img/Diseno-unetarch-half}{Arquitectura U-Net reducida. Arquitectura completa (vista en \ref{sec:unet} eliminando varias capas de convolución y una de pooling. Los modelos generados por esta arquitectura serán menos fiables, pero el entrenamiento será más rápido, por lo que es útil para implementar un primer sistema.}{fig:unetarch-half}{}
 
-\section{Carga de datos}\label{sec:intro_cloudcomputing}
+\section{El problema del tamaño de la imagen en disco}\label{sec:disk_problem}
+\subsection{Problema}\label{sec:disk_problem_problem}
+Al estar trabajando con herramientas en la nube será recomendable reducir el tamaño de los archivos lo mayor posible. Los archivos originales ocupan en total $9.17GB$, siendo el capacidad de disco de la máquina con la que se trabaja $5GB$.
 
-\section{El problema del tamaño de la imagen}\label{sec:size_problem}
+Al principio no tuve en cuenta la solución al tamaño de la imagen en memoria (sección \ref{subsec:lowscale}) en la que se reduce la resolución de las imágenes. Esto habría resuelto también el problema del tamaño en disco, pero al encontrarme primero con el problema del tamaño en disco lo resolví primero.
+
+\subsection{Solución: Formato numérico y compresión}\label{subsec:disk_formato}
+
+Todas las imágenes utilizan float de 8 bytes ($f8$) para almacenar los valores de cada vóxel. En un estudio previo se concluyó que no era necesaria tanta precisión para los valores de esas imágenes, especialmente para el etiquetado, en el que se usa valores enteros entre $0$ y $100$. 
+
+Si hacemos que los valores de la imagen de entrada pasen de 8 bytes a 4 bytes, estaremos reduciendo su tamaño a la mitad. De forma similar si hacemos que la los valores de la imagen etiquetada pase de 8 bytes a 1 bytes, estaremos reduciendo su tamaño a una octava parte. Con 1 byte de precisión podremos almacenar hasta 256 valores distintos, suficiente ya que sólo tendremos 2 valores distintos: 0 para el fondo y 1 para la célula o los bordes. 
+
+Además se comprimirán las imágenes sin pérdida, aunque esto sólo reducirá el tamaño del archivo, el tamaño de los tensores almacenados en memoria será el mismo. Esta compresión será muy efectiva en las imágenes etiquetadas, ya que los elementos sólo tendrán 2 valores distintos. 
+
+Después de hacer estos cambios se habrá reducido el tamaño del fichero pero no de los tensores cargados en memoria al leer esas imágenes. Esto es así por dos motivos:
+\begin{enumerate}
+\item Los tensores al cargarlos en memoria estarán sin ningún tipo de compresión. Cada valor del tensor ocupará el espacio correspondiente a su tipo de dato.
+\item Las operaciones implementadas en los frameworks de deep learning limitan el tipo de dato que pueden tener los tensores. Están implementados a muy bajo nivel para optimizar las operaciones, por lo que será necesario  convertir los tipos a unos que acepten, si no lo son ya.
+\end{enumerate}
+
+\subsection{Implementación}\label{subsec:disk_problem_implementation}
+
+Para leer los ficheros originales y guardarlos con el mismo formato se ha usado la librería  \textbf{h5py} \cite{Collette2013}. Esta aporta una interfaz para trabajar con el formato de datos HDF5 \cite{HDFGroup20002010}, útil para usar en python ficheros generados en programas como MATLAB.
+
+El tratamiento de datos con esta librería es muy intuitivo ya que imita la sintaxis de NumPy. Ha sido usado para archivos .mat generados en MATLAB con los datos iniciales. Tras el preprocesado, se ha usado esta librería para generar un nuevo archivo con todas las imágenes en un nuevo archivo .mat.
+
+\begin{itemize}
+\item \textbf{Tipo de dato.} Tanto la imagen de entrada como la imagen etiquetada tienen el tipo de datos $f8$. Es posible pasar la imagen de entrada al tipo $f4$ y la imagen etiquetada al tipo $i1$ sin perder información. Esto va a reducir el tamaño en disco en más de la mitad. Por lo escribir las imágenes en el fichero se harán con los tipos $f4$ y $i1$.
+\item \textbf{Compresión.} Se ha optado por usar la compresión \textit{gzip}, que ofrece una buena compresión a una velocidad no muy alta. Tiene 10 niveles de compresión $[0,9]$. Se ha probado a comprimir con el nivel $9$ consiguiendo una buena compresión pero es excesivamente lento, al final se ha optado por usar una compresión de nivel $4$ que, aunque tiene $\sim 10\%$ más tamaño que con el nivel $9$, el tiempo de la compresión se reduce a más de la mitad y de todas formas el resultado ya es muy bueno.
+\end{itemize}
+
+\section{El problema del tamaño de la imagen en memoria}\label{sec:size_problem}
 
 \subsection{Problema}\label{sec:size_problem_problem}
 El principal cuello de botella al usar técnicas de deep learning es el hardware requerido para ello. 
@@ -89,13 +118,13 @@ Para implementar esta solución se ha utilizado la librería \textbf{SciPy} \cit
 
 Contiene diversos módulos con algoritmos útiles en el ámbito científico. En el submódulo \textit{ndimage} se pueden encontrar los algoritmos relativos al procesamiento de imagen. Se ha utilizado la función \textit{ndimage.zoom()} para reescalar las imágenes de entrada.
 
-Esta función hace interpolación con splines, polinomios definidos a trozos de orden n. Se ha utilizado orden 3 porque es el orden por defecto y ha dado buenos resultados.
+Esta función hace interpolación con splines, polinomios de orden n definidos a trozos. Se ha utilizado orden 3 porque es el orden por defecto y ha dado buenos resultados.
 
 \section{Segmentación semántica multiinstancia con U-Net}\label{sec:multiinstance_segm}
 
 \subsection{Problema}\label{subsec:multi_problem}
 
-El problema principal que nos encontramos en las imágenes con el etiquetado perfecto es que las células, siendo instancias de una misma clase (la clase \" célula\"), tienen etiquetas distintas. En una segmentación semántica cada vóxel es etiquetado con la clase a la que se cree que pertenece. 
+El problema principal que nos encontramos en las imágenes con el etiquetado perfecto es que las células, siendo instancias de una misma clase (la clase ``célula"), tienen etiquetas distintas. En una segmentación semántica cada vóxel es etiquetado con la clase a la que se cree que pertenece. 
 
 Si usáramos el etiquetado actual necesitaríamos una clase por cada célula, pero eso no tiene mucho sentido ya que el nº de células en una imagen puede variar y las células no tienen unas posiciones preestablecidas ni nada que las diferencien unas de otras (a priori, al menos). Que se sepa, todas las células tienen las mismas características por lo que deben tener la misma clase en una segmentación semántica.
 
@@ -113,16 +142,58 @@ Para hacer estas operaciones se ha utilizado la librería \textbf{scikit-image} 
 
 Para encontrar los bordes se ha usado la función \textit{segmentation.find\_boundaries()}. Esta función realiza operaciones morfológicas para encontrar los bordes de los objetos de una imagen con valores enteros o binarios. Se han tomado las siguientes decisiones:
 \begin{itemize}
-\item \textbf{Conectividad.} Hay N tipos de conectividad siendo N el nº de dimensiones de la imagen de entrada, en nuestro caso N=3. Con conectividad 1 los vóxeles compartiendo al menos una cara son considerados vecinos. Con conectividad 3 se amplía el rango de vecinos al hacer que cualquier vóxel compartiendo una esquina también son considerados vecinos. Si dos vóxeles vecinos tienen distinta etiqueta, son bordes. Se ha elegido conectividad 3 para priorizar el que no haya células en contacto en ninguna de las 3 dimensiones.
-\item \textbf{Modo.} Este modo define qué vóxeles son marcados como bordes. El modo escogido es \textit{outer}, que selecciona como bordes los vóxeles de fondo alrededor de los elementos, si hay 2 elementos en contacto, se marca su frontera como borde. Se ha escogido este modo ya que, al escoger el fondo como borde retiene la mayor cantidad de volumen celular original.
+\item Conectividad. Hay N tipos de conectividad siendo N el nº de dimensiones de la imagen de entrada, en nuestro caso N=3. Con conectividad 1 los vóxeles compartiendo al menos una cara son considerados vecinos. Con conectividad 3 se amplía el rango de vecinos al hacer que cualquier vóxel compartiendo una esquina también son considerados vecinos. Si dos vóxeles vecinos tienen distinta etiqueta, son bordes. Se ha elegido conectividad 3 para priorizar el que no haya células en contacto en ninguna de las 3 dimensiones.
+\item Modo. Este modo define qué vóxeles son marcados como bordes. El modo escogido es \textit{outer}, que selecciona como bordes los vóxeles de fondo alrededor de los elementos, si hay 2 elementos en contacto, se marca su frontera como borde. Se ha escogido este modo ya que, al escoger el fondo como borde retiene la mayor cantidad de volumen celular original.
 \end{itemize}
 
 \subsubsection{Comprobar cantidad de células}\label{subsubsec:multi_count_cells}
 
 También se ha usado la función (\textit{measure\_label()}) para asegurarnos de que el nº de células no varía al hacer las operaciones de preprocesado (por ejemplo, podría ser que dos células con etiqueta 1 eliminaran el espacio entre sí, convirtiendose en la misma instancia de célula).
 
+\section{Carga de datos}\label{sec:carga_datos}
 
+Una vez todos los datos han sido preprocesados y almacenados en nuevos ficheros ya se pueden utilizar estos nuevos ficheros como fuente de datos para cargar las imágenes contenidas en tiempo de ejecución. En la carga de datos también se hace un tratamiento de imagen y será necesario que éste sea rápido, ya que se realizará cada vez que se acceda a una imagen.
+
+Para la carga de datos se han usado las siguientes librerías:
+\begin{itemize}
+\item \textbf{h5py.} La misma librería usada para crear los ficheros en la etapa anterior es usada para cargarlos.
+\item \textbf{PyTorch.} PyTorch es el framework de deep learning elegido para este trabajo, por lo que se sacará el máximo provecho de lo que ofrezca de base. Para procesamiento de imagen es especialmente útil el paquete \textit{torchvision}.
+\begin{itemize}
+\item Clase base para Dataset: Para indicar dónde encontrar los datos y qué hacer con ellos, se usará la clase \textit{torchvision.Dataset} como base. Tan sólo hay que sobreescribir 3 métodos para que la clase sea funcional, estos son los métodos de inicialización (\textit{\_\_init\_\_}), para obtener la longitud del dataset (\textit{\_\_len\_\_}) y para obtener el siguiente ejemplo (\textit{\_\_getitem\_\_}), en el que se realizará un preprocesado y se devolverá la imagen de entrada y la imagen etiquetada.
+\item DataLoader: Es usado para administrar el dataset. Se encarga de dar un nº de ejemplos aleatorios igual al batch seleccionado.
+\end{itemize}
+\end{itemize}
 
 \section{Guardar modelo}\label{sec:store_model}
 
+En cada iteración se ha guardado en un fichero información sobre el estado actual del entrenamiento y del modelo, con esto se puede utilizar para inferencia, para continuar el entrenamiento o para comprobar métricas, la información guardada es:
+
+\begin{itemize}
+\item \textbf{epochs:} Nº de epochs entrenados.
+\item \textbf{best\_model\_state\_dict:} Pesos del modelo con menor error de validación.
+\item \textbf{model\_state\_dict:} Pesos del modelo en la última iteración.
+\item \textbf{optimizer\_state\_dict:} Pesos del optimizador en la última iteración. Al usar el optimizador Adam se guarda el \textit{learning rate} de cada parámetro de forma individual y este se va modificando a lo largo del aprendizaje, por lo que es beneficioso usar el último estado de estos pesos si se desea seguir con el entrenamiento.
+\item \textbf{train\_losses:} Lista con todos los valores de pérdida en el entrenamiento.
+\item \textbf{valid\_losses:} Lista con todos los valores de pérdida en la validación. train\_losses y valid\_losses son usados para dibujar las curvas de aprendizaje.
+\item \textbf{test\_conf\_matrix:} Matriz de confusión por clases obtenida al evaluar el conjunto de test.
+\item \textbf{test\_miou:} Media del IoU para el conjunto de test.
+%\item \textbf{amp\_state\_dict:} Estado del optimizador usado con precisión mixta.
+\end{itemize}
+
 \section{Resultados}\label{sec:initial_system_resultados}
+
+Para comprobar los resultados se han utilizado 3 herramientas: la gráfica de la función de pérdida durante el entrenamiento, la métrica intersección sobre unión (IoU) y una representación visual de la segmentación.
+
+\cuadro{|c|c|c|}{Métricas. En la primera fila está cómo de bien se ha predicho el fondo. En la segunda fila está cómo de bien se han predicho las células.}{tab:metricas_inicial}{
+IoU fondo & IoU células\\ 
+\hline
+0.9437 & 0.0018\\
+}
+
+\figura{0.8}{img/pruebas/sistema_inicial_perdidas}{Pérdida de entrenamiento en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.}{fig:sistema_inicial_perdidas}{}
+
+\figura{0.8}{img/pruebas/sistema_inicial_visual}{Ejemplo de segmentación del conjunto de test. Primera fila la imagen original, segunda fila segmentación objetiva, tercera fila segmentación predicha. Se muestra en cada columna Z=20, Z=25, Z=45, Z=50.}{fig:sistema_inicial_visual}{}
+
+En las métricas de la tabla \ref{tab:metricas_inicial} se muestra que el fondo está muy bien etiquetado, sin embargo las células están muy mal etiquetadas. Esto se puede ver visualmente en la figura \ref{fig:sistema_inicial_visual}. 
+
+Sin embargo la gráfica de la función de pérdida (figura \ref{fig:sistema_inicial_perdidas} muestra que el modelo está acercándose a su objetivo correctamente. Este error se verá corregido en el capítulo siguiente, efectuando la primera mejora según la metodología vista en la sección \ref{sec:metodologia} 
