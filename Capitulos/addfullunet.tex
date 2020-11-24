@@ -4,6 +4,7 @@
 
 Al utilizar una arquitectura U-Net para hacer pruebas se conseguía un tiempo bajo de entrenamiento. Esto ha sido útil ya que se ha podido mejorar el sistema con iteraciones rápidas, pero el resultado de la segmentación no es muy bueno. Algo que era de esperar.
 
+Con la arquitectura U-Net reducida cada epoch tardaba $11s$ (en esos 11 segundos se hace entrenamiento y validación), durando el entrenamiento de $100$ iteraciones $1100s = 18m20s$. Con la arquitectura implementada en este capítulo se tardará $38s$ por iteración, durando el entrenamiento de $100$ iteraciones $3700s = 63m20s$, 
 
 \section{U-Net completa}\label{sec:full_unet_change}
 

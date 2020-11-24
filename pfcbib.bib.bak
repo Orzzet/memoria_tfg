@@ -581,4 +581,10 @@
   publisher    = {GitHub},
 }
 
+@Misc{znormalization,
+  title   = {Z-normalization of time series.},
+  journal = {Z-normalization | SAX-VSM},
+  url     = {https://jmotif.github.io/sax-vsm_site/morea/algorithm/znorm.html},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

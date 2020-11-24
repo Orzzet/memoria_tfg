@@ -2,7 +2,7 @@
 
 \section{Carga de datos}\label{sec:data_loading_processing}
 \begin{itemize}
-\item \textbf{TorchIO.} TorchIO \cite{PerezGarcia2020} es una librería que contiene herramientas para trabajar con datos 3D especializadas para imágenes médicas. Se ha utilizado la función \textit{transforms.ZNormalization()} en la imagen de entrada, que resta sus valores por la media y los divide por la desviación estándar.
+\item \textbf{TorchIO.} 
 
 \end{itemize}
 Además, después de la ZNormalization, se han normalizado los valore al rango $[0.0, 1.0]$.  
@@ -15,25 +15,6 @@ Se han hecho pruebas con varios tamaños de batch. El tamaño del batch determin
 En el modelo MiniUnet3D al usar un batch de 1 los epochs tardan 11 segundos y al usar un batch de 4 tardan 7 segundos. Por cada batch utilizado se necesitan $\sim 3GB$ de memoria, por lo que se tomó como una buena opción para mejorar la velocidad de entrenamiento, aunque los resultados de este modelo eran malos ya que es una arquitectura reducida Unet3D.
 Al entrenar con el modelo Unet3D, se comprobó que el nº de batch máximo posible era 2 debido a que se requiere más memoria al haber más capas. Con un batch de 1 tarda 39 segundos por epoch, con un batch de 2 tarde 34 segundos. Sin embargo, los resultados para un batch de 1 eran mejores, por lo que al se optó por usar un batch de 1, provocando que el tamaño de las imágenes usadas en el entrenamiento no tenga por qué ser el mismo.
 
-\subsubsection{Normalización}
-
-Para normalizar los datos se han probado dos técnicas distintas, el cambio a escala $[0,1]$ y la puntuación tipificada (ZNormalization).
-
-El cambio a escala $[0,1]$ es algo habitual en machine learning para evitar que se realicen operaciones con números muy altos, facilitando el cálculo de los gradientes. Cada vóxel pasará a tener el siguiente valor:
-\begin{equation}
-v_i^{'} = \frac{v_i - v_{min}}{v_{max}-v_{min}}
-\end{equation}
-
-Donde $v_i^{'}$ el nuevo valor del vóxel, $v_i$ el valor actual, $v_{min}$ el valor mínimo en toda la imagen y $v_{max}$ el valor máximo en toda la imagen.
-
-La puntuación tipificada hace que los valores estén más cerca entre ellos, útil para cuando hay datos muy dispersos, su fórmula es:
-\begin{equation}
-v_i^{'} = \frac{v_i - \mu}{\rho}
-\end{equation}
-
-Donde $v_i^{'}$ es el nuevo valor del vóxel, $v_i$ es el valor actual, $\mu$ es la media de los valores de la imagen y $\rho$ es la desviación estándar.
-
-Tras varias pruebas, como mejor resultado se ha obtenido ha sido haciendo primero el cambia a escala $[0,1]$ y después la ZNormalization, pese a que lo habitual en deep learning es preparar los datos de entrada con un valor $[0.1,0.9]$.
 
 \section{U-Net}\label{sec:unet_implementation}
 

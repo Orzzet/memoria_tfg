@@ -101,29 +101,31 @@
 \BOOKMARK [1][-]{section.15.1}{Problema detectado}{chapter.15}% 101
 \BOOKMARK [1][-]{section.15.2}{U-Net completa}{chapter.15}% 102
 \BOOKMARK [1][-]{section.15.3}{Resultados}{chapter.15}% 103
-\BOOKMARK [0][-]{chapter.16}{Mejora 5: Z-Normalization}{part.4}% 104
+\BOOKMARK [0][-]{chapter.16}{Mejora 5: Normalizaci\363n}{part.4}% 104
 \BOOKMARK [1][-]{section.16.1}{Problema detectado}{chapter.16}% 105
-\BOOKMARK [1][-]{section.16.2}{Implementaci\363n}{chapter.16}% 106
-\BOOKMARK [1][-]{section.16.3}{Resultados}{chapter.16}% 107
-\BOOKMARK [0][-]{chapter.17}{Mejora 6: Apex, precisi\363n mixta}{part.4}% 108
-\BOOKMARK [1][-]{section.17.1}{Problema detectado}{chapter.17}% 109
-\BOOKMARK [1][-]{section.17.2}{Precisi\363n de los tensores}{chapter.17}% 110
-\BOOKMARK [1][-]{section.17.3}{Implementaci\363n}{chapter.17}% 111
-\BOOKMARK [1][-]{section.17.4}{Resultados}{chapter.17}% 112
-\BOOKMARK [0][-]{chapter.18}{Mejora 7: DT Watershed}{part.4}% 113
-\BOOKMARK [1][-]{section.18.1}{Problema detectado}{chapter.18}% 114
-\BOOKMARK [1][-]{section.18.2}{Algoritmo watershed}{chapter.18}% 115
-\BOOKMARK [1][-]{section.18.3}{Implementaci\363n}{chapter.18}% 116
-\BOOKMARK [1][-]{section.18.4}{Resultados}{chapter.18}% 117
-\BOOKMARK [0][-]{chapter.19}{Implementaci\363n}{part.4}% 118
-\BOOKMARK [1][-]{section.19.1}{Carga de datos}{chapter.19}% 119
-\BOOKMARK [2][-]{subsection.19.1.1}{Consideraciones}{section.19.1}% 120
-\BOOKMARK [1][-]{section.19.2}{U-Net}{chapter.19}% 121
-\BOOKMARK [1][-]{section.19.3}{Postprocesado}{chapter.19}% 122
-\BOOKMARK [0][-]{chapter.20}{Representaci\363n 3D}{part.4}% 123
-\BOOKMARK [-1][-]{part.5}{V Cierre}{}% 124
-\BOOKMARK [0][-]{chapter.21}{Resultados}{part.5}% 125
-\BOOKMARK [0][-]{chapter.22}{An\341lisis temporal}{part.5}% 126
-\BOOKMARK [0][-]{chapter.23}{Conclusiones}{part.5}% 127
-\BOOKMARK [0][-]{chapter.24}{Manual}{part.5}% 128
-\BOOKMARK [0][-]{chapter*.80}{Referencias}{part.5}% 129
+\BOOKMARK [1][-]{section.16.2}{Normalizaci\363n}{chapter.16}% 106
+\BOOKMARK [1][-]{section.16.3}{Comparaci\363n de normalizaci\363n}{chapter.16}% 107
+\BOOKMARK [1][-]{section.16.4}{Implementaci\363n}{chapter.16}% 108
+\BOOKMARK [1][-]{section.16.5}{Resultados}{chapter.16}% 109
+\BOOKMARK [0][-]{chapter.17}{Mejora 6: Apex, precisi\363n mixta}{part.4}% 110
+\BOOKMARK [1][-]{section.17.1}{Problema detectado}{chapter.17}% 111
+\BOOKMARK [1][-]{section.17.2}{Precisi\363n de los tensores}{chapter.17}% 112
+\BOOKMARK [1][-]{section.17.3}{Implementaci\363n}{chapter.17}% 113
+\BOOKMARK [1][-]{section.17.4}{Resultados}{chapter.17}% 114
+\BOOKMARK [0][-]{chapter.18}{Mejora 7: DT Watershed}{part.4}% 115
+\BOOKMARK [1][-]{section.18.1}{Problema detectado}{chapter.18}% 116
+\BOOKMARK [1][-]{section.18.2}{Algoritmo watershed}{chapter.18}% 117
+\BOOKMARK [1][-]{section.18.3}{Implementaci\363n}{chapter.18}% 118
+\BOOKMARK [1][-]{section.18.4}{Resultados}{chapter.18}% 119
+\BOOKMARK [0][-]{chapter.19}{Implementaci\363n}{part.4}% 120
+\BOOKMARK [1][-]{section.19.1}{Carga de datos}{chapter.19}% 121
+\BOOKMARK [2][-]{subsection.19.1.1}{Consideraciones}{section.19.1}% 122
+\BOOKMARK [1][-]{section.19.2}{U-Net}{chapter.19}% 123
+\BOOKMARK [1][-]{section.19.3}{Postprocesado}{chapter.19}% 124
+\BOOKMARK [0][-]{chapter.20}{Representaci\363n 3D}{part.4}% 125
+\BOOKMARK [-1][-]{part.5}{V Cierre}{}% 126
+\BOOKMARK [0][-]{chapter.21}{Resultados}{part.5}% 127
+\BOOKMARK [0][-]{chapter.22}{An\341lisis temporal}{part.5}% 128
+\BOOKMARK [0][-]{chapter.23}{Conclusiones}{part.5}% 129
+\BOOKMARK [0][-]{chapter.24}{Manual}{part.5}% 130
+\BOOKMARK [0][-]{chapter*.84}{Referencias}{part.5}% 131
