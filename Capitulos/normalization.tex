@@ -57,3 +57,5 @@ IoU fondo & IoU células\\
 \figura{0.8}{img/pruebas/sistema_5_normalizacion_visual}{Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetivo, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.}{fig:sistema_5_normalizacion_visual}{}
 
 Por primera vez se ha conseguido una $IoU > 0.7$ para las células, siendo la $IoU$ del fondo casi perfecto. Al normalizar los datos la red convolucional ha podido encontrar correctamente los patrones estructurales en la imagen original para poder llegar a la segmentación objetivo.
+
+Ya se ha llegado a un $IoU > 0.7$, que era el objetivo impuesto. Los capítulos posteriores estarán orientados a reducir el consumo de memoria para aumentar la resolución de las imágenes de entrada, buscar métodos alternativos o postprocesado.

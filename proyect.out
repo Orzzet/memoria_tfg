@@ -62,70 +62,55 @@
 \BOOKMARK [1][-]{section.10.1}{Introducci\363n}{chapter.10}% 62
 \BOOKMARK [1][-]{section.10.2}{Computaci\363n local}{chapter.10}% 63
 \BOOKMARK [1][-]{section.10.3}{Computaci\363n en la nube}{chapter.10}% 64
-\BOOKMARK [0][-]{chapter.11}{Dise\361o sistema inicial}{part.4}% 65
-\BOOKMARK [1][-]{section.11.1}{Esquema general}{chapter.11}% 66
-\BOOKMARK [1][-]{section.11.2}{Preprocesado local}{chapter.11}% 67
-\BOOKMARK [1][-]{section.11.3}{Entrenamiento}{chapter.11}% 68
-\BOOKMARK [1][-]{section.11.4}{Inferencia}{chapter.11}% 69
-\BOOKMARK [1][-]{section.11.5}{Arquitectura de las Redes Neuronales Convolucionales}{chapter.11}% 70
-\BOOKMARK [0][-]{chapter.12}{Sistema inicial}{part.4}% 71
-\BOOKMARK [1][-]{section.12.1}{Lenguaje y framework}{chapter.12}% 72
-\BOOKMARK [1][-]{section.12.2}{Metas y m\351tricas}{chapter.12}% 73
-\BOOKMARK [1][-]{section.12.3}{Arquitectura CNN}{chapter.12}% 74
-\BOOKMARK [1][-]{section.12.4}{El problema del tama\361o de la imagen en disco}{chapter.12}% 75
-\BOOKMARK [2][-]{subsection.12.4.1}{Problema}{section.12.4}% 76
-\BOOKMARK [2][-]{subsection.12.4.2}{Soluci\363n: Formato num\351rico y compresi\363n}{section.12.4}% 77
-\BOOKMARK [2][-]{subsection.12.4.3}{Implementaci\363n}{section.12.4}% 78
-\BOOKMARK [1][-]{section.12.5}{El problema del tama\361o de la imagen en memoria}{chapter.12}% 79
-\BOOKMARK [2][-]{subsection.12.5.1}{Problema}{section.12.5}% 80
-\BOOKMARK [2][-]{subsection.12.5.2}{Soluci\363n: Reducir resoluci\363n}{section.12.5}% 81
-\BOOKMARK [2][-]{subsection.12.5.3}{Implementaci\363n}{section.12.5}% 82
-\BOOKMARK [1][-]{section.12.6}{Segmentaci\363n sem\341ntica multiinstancia con U-Net}{chapter.12}% 83
-\BOOKMARK [2][-]{subsection.12.6.1}{Problema}{section.12.6}% 84
-\BOOKMARK [2][-]{subsection.12.6.2}{Soluci\363n}{section.12.6}% 85
-\BOOKMARK [2][-]{subsection.12.6.3}{Implementaci\363n}{section.12.6}% 86
-\BOOKMARK [1][-]{section.12.7}{Carga de datos}{chapter.12}% 87
-\BOOKMARK [1][-]{section.12.8}{Guardar modelo}{chapter.12}% 88
-\BOOKMARK [1][-]{section.12.9}{Resultados}{chapter.12}% 89
-\BOOKMARK [0][-]{chapter.13}{Mejora 1: Funci\363n de p\351rdida Dice}{part.4}% 90
-\BOOKMARK [1][-]{section.13.1}{Problema detectado}{chapter.13}% 91
-\BOOKMARK [1][-]{section.13.2}{Soluci\363n}{chapter.13}% 92
-\BOOKMARK [1][-]{section.13.3}{Implementaci\363n}{chapter.13}% 93
-\BOOKMARK [1][-]{section.13.4}{Resultados}{chapter.13}% 94
-\BOOKMARK [0][-]{chapter.14}{Mejora 2: Data augmentation}{part.4}% 95
-\BOOKMARK [1][-]{section.14.1}{Problema detectado}{chapter.14}% 96
-\BOOKMARK [1][-]{section.14.2}{T\351cnica de data augmentation}{chapter.14}% 97
-\BOOKMARK [1][-]{section.14.3}{Implementaci\363n de data augmentation}{chapter.14}% 98
-\BOOKMARK [1][-]{section.14.4}{Resultados}{chapter.14}% 99
-\BOOKMARK [0][-]{chapter.15}{Mejora 4: Arquitectura U-Net completa}{part.4}% 100
-\BOOKMARK [1][-]{section.15.1}{Problema detectado}{chapter.15}% 101
-\BOOKMARK [1][-]{section.15.2}{U-Net completa}{chapter.15}% 102
-\BOOKMARK [1][-]{section.15.3}{Resultados}{chapter.15}% 103
-\BOOKMARK [0][-]{chapter.16}{Mejora 5: Normalizaci\363n}{part.4}% 104
+\BOOKMARK [0][-]{chapter.11}{Sistema inicial}{part.4}% 65
+\BOOKMARK [1][-]{section.11.1}{Lenguaje y framework}{chapter.11}% 66
+\BOOKMARK [1][-]{section.11.2}{Metas y m\351tricas}{chapter.11}% 67
+\BOOKMARK [1][-]{section.11.3}{Arquitectura CNN}{chapter.11}% 68
+\BOOKMARK [1][-]{section.11.4}{El problema del tama\361o de la imagen en disco}{chapter.11}% 69
+\BOOKMARK [2][-]{subsection.11.4.1}{Problema}{section.11.4}% 70
+\BOOKMARK [2][-]{subsection.11.4.2}{Soluci\363n: Formato num\351rico y compresi\363n}{section.11.4}% 71
+\BOOKMARK [2][-]{subsection.11.4.3}{Implementaci\363n}{section.11.4}% 72
+\BOOKMARK [1][-]{section.11.5}{El problema del tama\361o de la imagen en memoria}{chapter.11}% 73
+\BOOKMARK [2][-]{subsection.11.5.1}{Problema}{section.11.5}% 74
+\BOOKMARK [2][-]{subsection.11.5.2}{Soluci\363n: Reducir resoluci\363n}{section.11.5}% 75
+\BOOKMARK [2][-]{subsection.11.5.3}{Implementaci\363n}{section.11.5}% 76
+\BOOKMARK [1][-]{section.11.6}{Segmentaci\363n sem\341ntica multiinstancia con U-Net}{chapter.11}% 77
+\BOOKMARK [2][-]{subsection.11.6.1}{Problema}{section.11.6}% 78
+\BOOKMARK [2][-]{subsection.11.6.2}{Soluci\363n}{section.11.6}% 79
+\BOOKMARK [2][-]{subsection.11.6.3}{Implementaci\363n}{section.11.6}% 80
+\BOOKMARK [1][-]{section.11.7}{Carga de datos}{chapter.11}% 81
+\BOOKMARK [1][-]{section.11.8}{Guardar modelo}{chapter.11}% 82
+\BOOKMARK [1][-]{section.11.9}{Resultados}{chapter.11}% 83
+\BOOKMARK [0][-]{chapter.12}{Mejora 1: Funci\363n de p\351rdida Dice}{part.4}% 84
+\BOOKMARK [1][-]{section.12.1}{Problema detectado}{chapter.12}% 85
+\BOOKMARK [1][-]{section.12.2}{Soluci\363n}{chapter.12}% 86
+\BOOKMARK [1][-]{section.12.3}{Implementaci\363n}{chapter.12}% 87
+\BOOKMARK [1][-]{section.12.4}{Resultados}{chapter.12}% 88
+\BOOKMARK [0][-]{chapter.13}{Mejora 2: Data augmentation}{part.4}% 89
+\BOOKMARK [1][-]{section.13.1}{Problema detectado}{chapter.13}% 90
+\BOOKMARK [1][-]{section.13.2}{T\351cnica de data augmentation}{chapter.13}% 91
+\BOOKMARK [1][-]{section.13.3}{Implementaci\363n de data augmentation}{chapter.13}% 92
+\BOOKMARK [1][-]{section.13.4}{Resultados}{chapter.13}% 93
+\BOOKMARK [0][-]{chapter.14}{Mejora 4: Arquitectura U-Net completa}{part.4}% 94
+\BOOKMARK [1][-]{section.14.1}{Problema detectado}{chapter.14}% 95
+\BOOKMARK [1][-]{section.14.2}{U-Net completa}{chapter.14}% 96
+\BOOKMARK [1][-]{section.14.3}{Resultados}{chapter.14}% 97
+\BOOKMARK [0][-]{chapter.15}{Mejora 5: Normalizaci\363n}{part.4}% 98
+\BOOKMARK [1][-]{section.15.1}{Problema detectado}{chapter.15}% 99
+\BOOKMARK [1][-]{section.15.2}{Normalizaci\363n}{chapter.15}% 100
+\BOOKMARK [1][-]{section.15.3}{Comparaci\363n de normalizaci\363n}{chapter.15}% 101
+\BOOKMARK [1][-]{section.15.4}{Implementaci\363n}{chapter.15}% 102
+\BOOKMARK [1][-]{section.15.5}{Resultados}{chapter.15}% 103
+\BOOKMARK [0][-]{chapter.16}{Mejora 6: Apex, precisi\363n mixta}{part.4}% 104
 \BOOKMARK [1][-]{section.16.1}{Problema detectado}{chapter.16}% 105
-\BOOKMARK [1][-]{section.16.2}{Normalizaci\363n}{chapter.16}% 106
-\BOOKMARK [1][-]{section.16.3}{Comparaci\363n de normalizaci\363n}{chapter.16}% 107
-\BOOKMARK [1][-]{section.16.4}{Implementaci\363n}{chapter.16}% 108
-\BOOKMARK [1][-]{section.16.5}{Resultados}{chapter.16}% 109
-\BOOKMARK [0][-]{chapter.17}{Mejora 6: Apex, precisi\363n mixta}{part.4}% 110
-\BOOKMARK [1][-]{section.17.1}{Problema detectado}{chapter.17}% 111
-\BOOKMARK [1][-]{section.17.2}{Precisi\363n de los tensores}{chapter.17}% 112
-\BOOKMARK [1][-]{section.17.3}{Implementaci\363n}{chapter.17}% 113
-\BOOKMARK [1][-]{section.17.4}{Resultados}{chapter.17}% 114
-\BOOKMARK [0][-]{chapter.18}{Mejora 7: DT Watershed}{part.4}% 115
-\BOOKMARK [1][-]{section.18.1}{Problema detectado}{chapter.18}% 116
-\BOOKMARK [1][-]{section.18.2}{Algoritmo watershed}{chapter.18}% 117
-\BOOKMARK [1][-]{section.18.3}{Implementaci\363n}{chapter.18}% 118
-\BOOKMARK [1][-]{section.18.4}{Resultados}{chapter.18}% 119
-\BOOKMARK [0][-]{chapter.19}{Implementaci\363n}{part.4}% 120
-\BOOKMARK [1][-]{section.19.1}{Carga de datos}{chapter.19}% 121
-\BOOKMARK [2][-]{subsection.19.1.1}{Consideraciones}{section.19.1}% 122
-\BOOKMARK [1][-]{section.19.2}{U-Net}{chapter.19}% 123
-\BOOKMARK [1][-]{section.19.3}{Postprocesado}{chapter.19}% 124
-\BOOKMARK [0][-]{chapter.20}{Representaci\363n 3D}{part.4}% 125
-\BOOKMARK [-1][-]{part.5}{V Cierre}{}% 126
-\BOOKMARK [0][-]{chapter.21}{Resultados}{part.5}% 127
-\BOOKMARK [0][-]{chapter.22}{An\341lisis temporal}{part.5}% 128
-\BOOKMARK [0][-]{chapter.23}{Conclusiones}{part.5}% 129
-\BOOKMARK [0][-]{chapter.24}{Manual}{part.5}% 130
-\BOOKMARK [0][-]{chapter*.84}{Referencias}{part.5}% 131
+\BOOKMARK [1][-]{section.16.2}{Precisi\363n de los tensores}{chapter.16}% 106
+\BOOKMARK [1][-]{section.16.3}{Implementaci\363n}{chapter.16}% 107
+\BOOKMARK [1][-]{section.16.4}{Resultados}{chapter.16}% 108
+\BOOKMARK [0][-]{chapter.17}{Mejora 7: DT Watershed}{part.4}% 109
+\BOOKMARK [1][-]{section.17.1}{Problema detectado}{chapter.17}% 110
+\BOOKMARK [1][-]{section.17.2}{Algoritmo watershed}{chapter.17}% 111
+\BOOKMARK [1][-]{section.17.3}{Implementaci\363n}{chapter.17}% 112
+\BOOKMARK [1][-]{section.17.4}{Resultados}{chapter.17}% 113
+\BOOKMARK [-1][-]{part.5}{V Cierre}{}% 114
+\BOOKMARK [0][-]{chapter.18}{An\341lisis temporal}{part.5}% 115
+\BOOKMARK [0][-]{chapter*.61}{Referencias}{part.5}% 116
