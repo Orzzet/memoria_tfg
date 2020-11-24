@@ -1,4 +1,4 @@
-\chapter{Diseño}\label{requisitos}
+\chapter{Diseño sistema inicial}\label{requisitos}
 
 En este capítulo se describirá el flujo por el que pasan los datos suministrados hasta dar lugar a la segmentación objetivo, sin entrar en detalles sobre la las herramientas usadas en la implementación.
 
@@ -73,7 +73,3 @@ Para conseguir una imagen con el etiquetado correcto se han seguido dos enfoques
 \pagebreak \section{Arquitectura de las Redes Neuronales Convolucionales}\label{sec:cnn_arch}
 
 Se probará principalmente una arquitectura de tipo U-Net. Se usará un modelo con una arquitectura reducida para facilitar las pruebas que decidirán el uso de técnicas como \textit{data augmentation}, qué reescalado se hará a las imágenes, el tamaño del batch, la función de pérdida o el optimizador a utilizar. Una vez la mayor parte de estos aspectos haya sido decidido, se pasará a probar la arquitectura completa.
-
-En la figura \ref{fig:unetarch-full} se puede ver la arquitectura completa de la red U-Net utilizada, arquitectura usada con éxito para segmentación volumétrica densa \cite{Cicek2016}, basada en la arquitectura U-Net propuesta por Ronneberger et al \cite{Ronneberger2015}. Se ha omitido el tamaño de las imágenes ya que la red acepta imágenes de cualquier tamaño, Lo único a tener en cuenta es el nº de canales que tiene la imagen. Los nº mostrados en las capas determinan la profundidad de cada capa o, lo que es lo mismo, el nº de filtros distintos usados en cada capa. En la capa inicial, que simboliza la imagen de entrada, el número 1 indica que la imagen debe tener tan sólo 1 canal de entrada (escala de grises). Este tipo de arquitectura también es válida para imágenes 2D o 3D, la diferencia estaría en que las convoluciones y el pooling sean sobre 2 dimensiones o sobre 3 dimensiones.
-
-\figura{1}{img/Diseno-unetarch-full}{Arquitectura U-Net completa.}{fig:unetarch-full}{}
