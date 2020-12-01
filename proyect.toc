@@ -1,7 +1,7 @@
 \babel@toc {spanish}{}
 \contentsline {chapter}{\'Indice general}{2}{section*.3}%
-\contentsline {chapter}{{\'I}ndice de cuadros}{6}{section*.5}%
-\contentsline {chapter}{\'{I}ndice de figuras}{7}{section*.7}%
+\contentsline {chapter}{{\'I}ndice de cuadros}{5}{section*.5}%
+\contentsline {chapter}{\'{I}ndice de figuras}{6}{section*.7}%
 \contentsline {part}{I\hspace {1em}Introducci\'on}{1}{part.1}%
 \contentsline {chapter}{\numberline {1}Nacimiento del proyecto}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivaci\'on}{3}{section.1.1}%
@@ -58,67 +58,65 @@
 \contentsline {subsection}{\numberline {8.2.3}Resultados}{34}{subsection.8.2.3}%
 \contentsline {subsection}{\numberline {8.2.4}Software}{35}{subsection.8.2.4}%
 \contentsline {part}{IV\hspace {1em}Desarrollo}{36}{part.4}%
-\contentsline {chapter}{\numberline {9}Gu\'ia de cap\'itulos de desarrollo}{38}{chapter.9}%
-\contentsline {chapter}{\numberline {10}De computación local a computación en la nube}{39}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Introducci\'on}{39}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Computación local}{39}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Computación en la nube}{40}{section.10.3}%
-\contentsline {chapter}{\numberline {11}Sistema inicial}{42}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Lenguaje y framework}{42}{section.11.1}%
-\contentsline {subsubsection}{Lenguaje}{42}{subsubsection*.33}%
-\contentsline {subsubsection}{Framework}{43}{subsubsection*.34}%
-\contentsline {section}{\numberline {11.2}Metas y m\'etricas}{43}{section.11.2}%
-\contentsline {section}{\numberline {11.3}Arquitectura CNN}{44}{section.11.3}%
-\contentsline {section}{\numberline {11.4}El problema del tamaño de la imagen en disco}{44}{section.11.4}%
-\contentsline {subsection}{\numberline {11.4.1}Problema}{44}{subsection.11.4.1}%
-\contentsline {subsection}{\numberline {11.4.2}Solución: Formato numérico y compresión}{45}{subsection.11.4.2}%
-\contentsline {subsection}{\numberline {11.4.3}Implementación}{45}{subsection.11.4.3}%
-\contentsline {section}{\numberline {11.5}El problema del tamaño de la imagen en memoria}{45}{section.11.5}%
-\contentsline {subsection}{\numberline {11.5.1}Problema}{45}{subsection.11.5.1}%
-\contentsline {subsection}{\numberline {11.5.2}Solución: Reducir resolución}{46}{subsection.11.5.2}%
-\contentsline {subsubsection}{Escalado hacia abajo}{46}{subsubsection*.37}%
-\contentsline {subsubsection}{Escalado hacia arriba}{46}{subsubsection*.38}%
-\contentsline {subsection}{\numberline {11.5.3}Implementación}{46}{subsection.11.5.3}%
-\contentsline {section}{\numberline {11.6}Segmentación semántica multiinstancia con U-Net}{46}{section.11.6}%
-\contentsline {subsection}{\numberline {11.6.1}Problema}{46}{subsection.11.6.1}%
-\contentsline {subsection}{\numberline {11.6.2}Solución}{47}{subsection.11.6.2}%
-\contentsline {subsection}{\numberline {11.6.3}Implementación}{47}{subsection.11.6.3}%
-\contentsline {subsubsection}{Encontrar bordes}{47}{subsubsection*.39}%
-\contentsline {subsubsection}{Comprobar cantidad de células}{47}{subsubsection*.40}%
-\contentsline {section}{\numberline {11.7}Carga de datos}{47}{section.11.7}%
-\contentsline {section}{\numberline {11.8}Guardar modelo}{48}{section.11.8}%
-\contentsline {section}{\numberline {11.9}Resultados}{48}{section.11.9}%
-\contentsline {chapter}{\numberline {12}Mejora 1: Función de pérdida Dice}{51}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Problema detectado}{51}{section.12.1}%
-\contentsline {section}{\numberline {12.2}Solución}{51}{section.12.2}%
-\contentsline {section}{\numberline {12.3}Implementación}{51}{section.12.3}%
-\contentsline {section}{\numberline {12.4}Resultados}{51}{section.12.4}%
-\contentsline {chapter}{\numberline {13}Mejora 2: Data augmentation}{54}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Problema detectado}{54}{section.13.1}%
-\contentsline {section}{\numberline {13.2}Técnica de data augmentation}{55}{section.13.2}%
-\contentsline {section}{\numberline {13.3}Implementación de data augmentation}{55}{section.13.3}%
-\contentsline {section}{\numberline {13.4}Resultados}{55}{section.13.4}%
-\contentsline {chapter}{\numberline {14}Mejora 4: Arquitectura U-Net completa}{57}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Problema detectado}{57}{section.14.1}%
-\contentsline {section}{\numberline {14.2}U-Net completa}{57}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Resultados}{57}{section.14.3}%
-\contentsline {chapter}{\numberline {15}Mejora 5: Normalización}{60}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Problema detectado}{60}{section.15.1}%
-\contentsline {section}{\numberline {15.2}Normalización}{60}{section.15.2}%
-\contentsline {section}{\numberline {15.3}Comparación de normalización}{61}{section.15.3}%
-\contentsline {section}{\numberline {15.4}Implementación}{61}{section.15.4}%
-\contentsline {section}{\numberline {15.5}Resultados}{61}{section.15.5}%
-\contentsline {chapter}{\numberline {16}Mejora 6: Apex, precisión mixta}{63}{chapter.16}%
-\contentsline {section}{\numberline {16.1}Problema detectado}{63}{section.16.1}%
-\contentsline {section}{\numberline {16.2}Precisión de los tensores}{63}{section.16.2}%
-\contentsline {section}{\numberline {16.3}Implementación}{63}{section.16.3}%
-\contentsline {section}{\numberline {16.4}Resultados}{63}{section.16.4}%
-\contentsline {chapter}{\numberline {17}Mejora 7: DT Watershed}{64}{chapter.17}%
-\contentsline {section}{\numberline {17.1}Problema detectado}{64}{section.17.1}%
-\contentsline {section}{\numberline {17.2}Algoritmo watershed}{64}{section.17.2}%
-\contentsline {section}{\numberline {17.3}Implementación}{64}{section.17.3}%
-\contentsline {section}{\numberline {17.4}Resultados}{64}{section.17.4}%
-\contentsline {part}{V\hspace {1em}Cierre}{65}{part.5}%
-\contentsline {chapter}{\numberline {18}An\'alisis temporal}{67}{chapter.18}%
-\contentsline {chapter}{Referencias}{68}{chapter*.61}%
+\contentsline {chapter}{\numberline {9}Computación en la nube}{38}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Computación local}{38}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Computación en la nube}{39}{section.9.2}%
+\contentsline {chapter}{\numberline {10}Sistema inicial}{41}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Lenguaje y framework}{41}{section.10.1}%
+\contentsline {subsubsection}{Lenguaje}{41}{subsubsection*.33}%
+\contentsline {subsubsection}{Framework}{42}{subsubsection*.34}%
+\contentsline {section}{\numberline {10.2}Metas y m\'etricas}{42}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Arquitectura CNN}{43}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Tamaño de la imagen en disco}{43}{section.10.4}%
+\contentsline {subsection}{\numberline {10.4.1}Problema}{43}{subsection.10.4.1}%
+\contentsline {subsection}{\numberline {10.4.2}Solución: Formato numérico y compresión}{44}{subsection.10.4.2}%
+\contentsline {subsection}{\numberline {10.4.3}Implementación}{44}{subsection.10.4.3}%
+\contentsline {section}{\numberline {10.5}Tamaño de la imagen en memoria}{45}{section.10.5}%
+\contentsline {subsection}{\numberline {10.5.1}Problema}{45}{subsection.10.5.1}%
+\contentsline {subsection}{\numberline {10.5.2}Solución: Reducir resolución}{45}{subsection.10.5.2}%
+\contentsline {subsubsection}{Escalado hacia abajo}{45}{subsubsection*.38}%
+\contentsline {subsubsection}{Escalado hacia arriba}{45}{subsubsection*.39}%
+\contentsline {subsection}{\numberline {10.5.3}Implementación}{45}{subsection.10.5.3}%
+\contentsline {section}{\numberline {10.6}Segmentación semántica multiinstancia con U-Net}{46}{section.10.6}%
+\contentsline {subsection}{\numberline {10.6.1}Problema}{46}{subsection.10.6.1}%
+\contentsline {subsection}{\numberline {10.6.2}Solución}{46}{subsection.10.6.2}%
+\contentsline {subsection}{\numberline {10.6.3}Implementación}{46}{subsection.10.6.3}%
+\contentsline {subsubsection}{Encontrar bordes}{46}{subsubsection*.40}%
+\contentsline {subsubsection}{Comprobar cantidad de células}{46}{subsubsection*.41}%
+\contentsline {section}{\numberline {10.7}Carga de datos}{47}{section.10.7}%
+\contentsline {section}{\numberline {10.8}Guardar modelo}{47}{section.10.8}%
+\contentsline {section}{\numberline {10.9}Resultados}{49}{section.10.9}%
+\contentsline {chapter}{\numberline {11}Mejora 1: Función de pérdida Dice}{50}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Problema detectado}{50}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Solución}{50}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Implementación}{50}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Resultados}{50}{section.11.4}%
+\contentsline {chapter}{\numberline {12}Mejora 2: Data augmentation}{52}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Problema detectado}{52}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Técnica de data augmentation}{53}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Implementación de data augmentation}{53}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Resultados}{53}{section.12.4}%
+\contentsline {chapter}{\numberline {13}Mejora 4: Arquitectura U-Net completa}{55}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Problema detectado}{55}{section.13.1}%
+\contentsline {section}{\numberline {13.2}U-Net completa}{55}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Resultados}{55}{section.13.3}%
+\contentsline {chapter}{\numberline {14}Mejora 5: Normalización}{58}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Problema detectado}{58}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Normalización}{58}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Comparación de normalización}{59}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Implementación}{59}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Resultados}{59}{section.14.5}%
+\contentsline {chapter}{\numberline {15}Mejora 6: Apex, precisión mixta}{61}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Problema detectado}{61}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Precisión de los tensores}{61}{section.15.2}%
+\contentsline {section}{\numberline {15.3}Implementación}{61}{section.15.3}%
+\contentsline {section}{\numberline {15.4}Resultados}{62}{section.15.4}%
+\contentsline {chapter}{\numberline {16}Mejora 7: DT Watershed}{65}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Problema detectado}{65}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Algoritmo watershed}{65}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Implementación}{65}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Resultados}{66}{section.16.4}%
+\contentsline {part}{V\hspace {1em}Cierre}{67}{part.5}%
+\contentsline {chapter}{\numberline {17}An\'alisis temporal}{69}{chapter.17}%
+\contentsline {chapter}{Referencias}{70}{chapter*.67}%
 \contentsfinish 

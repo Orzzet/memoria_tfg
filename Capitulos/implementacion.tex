@@ -29,25 +29,4 @@ Por último se probó la entropía cruzada con pesos, dando como peso a la clase
 
 \subsubsection{Precisión Mixta}
 
-Al trabajar con datos numéricos de poca precisión, como puede ser float de 16 bits, se puede producir un desbordamiento. PyTorch no va a poder reconocer que ha habido desbordamiento, lo que provocará que en las operaciones como en la actualización de pesos intervengan valores incorrectos. Para solucionar esto existe \textit{Apex}, una librería desarrollada por NVidia que gestiona estas operaciones al modificar directamente PyTorch. Hay varios niveles de optimización disponibles, se ha probado a utilizarlo con una optimización de nivel 1 y de nivel 2.
-\begin{itemize}
-\item En optimización de nivel 1 se cambia la entrada de algunas funciones para que usen FP16 (float de 16 bits) y se dejan otras que puedan beneficiarse de la precisión en FP32 (float de 32 bits).
-\item En optimización de nivel 2 se cambian los pesos del modelo a FP16, se cambian los métodos del modelo para que acepten FP16 y se mantienen unos pesos maestros en FP32 que son usados por el optimizador. En este caso no se cambia las entradas de las funciones como en el nivel 1.
-\end{itemize}
 
-En ambos casos se usa escalado dinámico de pérdida, que se usa como coeficiente para la pérdida. Comienza con un valor muy alto y, si hay desbordamiento, se divide en 2, si no hay desbordamiento durante un número de epochs (1000 por defecto), se multiplica por 2.
-
-Se han probado ambos niveles de optimización y en ambos casos no se ha visto una reducción en la cantidad de memoria ni en el tiempo de entrenamiento. Sí se ha visto un beneficio de usar el escalado dinámico de pérdida, ya que se ha alcanzado más rápidamente una pérdida pequeña. Aún así, a lo largo de 100 o 200 epochs, esto no ha provocado que se alcance mejor error de validación. En los resultados se muestra esa diferencia.
-
-\section{Postprocesado}\label{sec:data_loading_processing}
-
-Se ha probado una técnica con postprocesado basada en la usada en el programa PlantSeg \cite{Wolny2020} donde se aplica el algoritmo Watershed. Para utilizar esta técnica se ha usado la librería scikit-image (skimage) y scipy, usando las siguientes funciones en este orden:
-\begin{enumerate}
-\item \textit{scipy.ndimage.distance\_transform\_edt()} para calcular la transformada de la distancia a la predicción del modelo.
-\item \textit{skimage.filters.gaussian()} para aplicar un filtro gaussiano con $\sigma = 2$ al resultado anterior.
-\item \textit{skimage.feature.peak\_local\_max()} al $1 - G$ siendo $G$ el resultado anterior. Esto hace que encuentre los mínimos locales.
-\item \textit{scipy.ndimage.label()} al resultado anterior, para generar marcadores al etiquetar cada mínimo local con una etiqueta distinta.
-\item \textit{skimage.segmentation.watershed()} utilizando los marcadores generados y la transformada de la distancia. Esto termina la segmentación.
-\end{enumerate}
-
-Se han hecho varias pruebas siguiendo este preprocesado al predecir los bordes frente a la predicción de bordes con espaciado, los resultados pueden verse en el siguiente capítulo.

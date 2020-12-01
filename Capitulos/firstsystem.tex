@@ -6,7 +6,7 @@
 
 El sistema se implementará completamente con el lenguaje de programación Python 3.7.
 
-La elección del lenguaje Python es sencilla: los frameworks más utilizados en deep learning pueden ser usados en Python. Con una búsqueda rápida en GitHub bajo los términos "deep learning", "machine learning" y "neural network" se puede ver que los frameworks más populares pueden ser usados en Python.
+La elección del lenguaje Python es sencilla: los frameworks más utilizados de deep learning pueden ser usados en Python. Con una búsqueda rápida en GitHub bajo los términos "deep learning", "machine learning" y "neural network" se puede ver que los frameworks más populares pueden ser usados en Python.
 \begin{itemize}
 \item TensorFlow con 148k estrellas.
 \item Keras con 49.4k estrellas.
@@ -24,27 +24,27 @@ Aún así Python es lento cuando se compara con lenguajes como C y esto se debe 
 
 Estas desventajas se pueden reducir gracias a que Python tiene la capacidad de llamar a subrutinas compiladas en C. Prácticamente todos los frameworks en los que se realizan operaciones con un alto coste computacional tienen la parte crítica de su código escrita en C.
 
-En el ecosistema de Python, la base matemática para cualquier framework que haga operaciones matriciales es NumPy \cite{VanDerWalt2011}, ya que añade soporte para arrays de n dimensiones y una gran multitud de operaciones de forma eficiente.
+En el ecosistema de Python, la base matemática para cualquier framework que haga operaciones matriciales es NumPy \cite{VanDerWalt2011}, ya que añade soporte para arrays de n dimensiones y multitud de operaciones de forma eficiente.
 
 \subsubsection{Framework}\label{subsec:framework}
 
 El framework utilizado será PyTorch 1.6 \cite{Paszke2019}.
 
-En capítulos anteriores se mencionó el uso de fastai. Mi intención en un principio era usar fastai para la parte de deep learning, pero me encontré con la barrera de que no había modelos que tomaran como dato de entrada imágenes 3D. El framework te permite implementar tus propias arquitecturas para los modelos, pero debes hacerlo utilizando PyTorch, ya que fastai está construido por encima de PyTorch. A raíz de esto decidí aprender a usar PyTorch con un curso de Udacity \cite[Deep Learning with PyTorch]{Serrano2020}.
+En capítulos anteriores se mencionó el uso de fastai. Desde un principio se pretendia usar fastai para la parte de deep learning, pero en fastai no hay modelos que tomen como dato de entrada imágenes 3D. El framework permite implementar arquitecturas personalizadas para los modelos, pero para ello hay que utilizar PyTorch, ya que fastai está construido por encima de PyTorch. A causa de esto se decide aprender a usar PyTorch con un curso de Udacity \cite[Deep Learning with PyTorch]{Serrano2020}.
 
-Una vez completé el curso decidí seguir usando PyTorch en vez de fastai ya que al usar un software de más bajo nivel tengo más control sobre las operaciones que se realizan.
+Una vez completado el curso, se decide seguir usando PyTorch en vez de fastai ya que al usar un software de más bajo nivel se tiene más control sobre las operaciones que se realizan.
 
 Aún así, todos los frameworks populares de Python son una buena elección, ya que todos tienen \textit{bindings} a lenguajes de bajo nivel compilados, pero con la facilidad de uso de Python. Aunque TensorFlow puede ser difícil de utilizar, cuenta con Keras, que es un framework desarrollado por encima que abstrae muchas operaciones. PyTorch, basado en Torch, también ofrece un uso fácil y buen rendimiento.
 
 \section{Metas y m\'etricas}\label{sec:goals_and_metrics}
 
-\cuadro{|c|c|c|}{Tabla de métricas y metas.}{tab:metricas}{
-Métrica & Buen resultado & Resultado ideal \\ 
+\cuadro{|c|c|c|}{Cuadro de métricas y metas.}{tab:metricas}{
+Métrica & Buen resultado & Resultado ideal \\
 \hline
 IoU & $\geq 0.7$ & $\geq 0.9$ \\
 }
 
-Para decidir las métricas me apoyo en el artículo descrito en la sección \ref{sec:apps1} \cite{Falk2019}, donde se usa la métrica intersección sobre unión (IoU) para medir sus resultados.
+Una buena métrica para la segmetación semántica es la utilizada en el artículo descrito en la sección \ref{sec:apps1} \cite{Falk2019}, donde se usa la métrica intersección sobre unión (IoU) para comprobar los resultados.
 
 \begin{equation}
 M_{IoU}(A, B) := \frac{|A\cap B|}{|A\cup B|}
@@ -57,21 +57,27 @@ En ese mismo artículo se observa que si la tarea de etiquetado es realizada por
 
 \pagebreak \section{Arquitectura CNN}\label{sec:choose_cnn_arch}
 
-Se ha implementado una arquitectura U-Net basada en la implementación de Ronneberger \cite{Ronneberger2015}. Se ha usado una implementación en PyTorch \cite{shiba242017} con la arquitectura mostrada en la figura \ref{fig:unetarch-half}. Se ha desarrollado una versión de esta arquitectura llamada MiniUNet3D con menos capas. Esta versión se ha usado para comprobar que el primer sistema se ha implementado correctamente, sin errores de memoria.
-
-Como función de pérdida se ha escogido la función 
+Se ha implementado una arquitectura U-Net basada en la implementación de Ronneberger \cite{Ronneberger2015}. Se ha usado una implementación en PyTorch \cite{shiba242017} con la arquitectura mostrada en la figura \ref{fig:unetarch-half}. Se ha desarrollado una versión de la arquitectura UNet3D que se ha llamado MiniUNet3D, con menos capas. Esta versión se ha usado para comprobar que el primer sistema se ha implementado correctamente sin provocar errores en tiempo de ejecución.
 
 \figura{0.8}{img/Diseno-unetarch-half}{Arquitectura U-Net reducida. Arquitectura completa (vista en \ref{sec:unet} eliminando varias capas de convolución y una de pooling. Los modelos generados por esta arquitectura serán menos fiables, pero el entrenamiento será más rápido, por lo que es útil para implementar un primer sistema.}{fig:unetarch-half}{}
 
-\section{El problema del tamaño de la imagen en disco}\label{sec:disk_problem}
+\section{Tamaño de la imagen en disco}\label{sec:disk_problem}
 \subsection{Problema}\label{sec:disk_problem_problem}
-Al estar trabajando con herramientas en la nube será recomendable reducir el tamaño de los archivos lo mayor posible. Los archivos originales ocupan en total $9.17GB$, siendo el capacidad de disco de la máquina con la que se trabaja $5GB$.
+Al estar trabajando con herramientas en la nube será recomendable reducir el tamaño de los archivos lo mayor posible. Los archivos originales ocupan en total $9.17GB$, siendo el almacenamiento disponible de la máquina en la nube con la que se trabaja de $5GB$.
 
-Al principio no tuve en cuenta la solución al tamaño de la imagen en memoria (sección \ref{subsec:lowscale}) en la que se reduce la resolución de las imágenes. Esto habría resuelto también el problema del tamaño en disco, pero al encontrarme primero con el problema del tamaño en disco lo resolví primero.
+Al principio no se tuvo en cuenta la solución al tamaño de la imagen en memoria (sección \ref{subsec:lowscale}) en la que se reduce la resolución de las imágenes. Esto habría resuelto también el problema del tamaño en disco. Aún así, en esta sección se aplican técnicas para reducir aún más el tamaño en disco sin perder información.
 
 \subsection{Solución: Formato numérico y compresión}\label{subsec:disk_formato}
 
-Todas las imágenes utilizan float de 8 bytes ($f8$) para almacenar los valores de cada vóxel. En un estudio previo se concluyó que no era necesaria tanta precisión para los valores de esas imágenes, especialmente para el etiquetado, en el que se usa valores enteros entre $0$ y $100$. 
+Todas las imágenes utilizan float de 8 bytes ($f8$) para almacenar los valores de cada vóxel. En el cuadro \ref{cuadro1:intensidad_min_max} se puede ver que la valor máximo de los vóxeles es $65535.0$, por lo que no es necesaria una precisión de 8 bytes ($[2^{-1023}, 2^{1023}]$) para los valores de esas imágenes, especialmente para el etiquetado, en el que se usa valores enteros entre $0$ y $100$.
+
+\cuadro{|r|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}{Valores mínimo y máximo de los píxeles de las imágenes de entrada.}{cuadro1:intensidad_min_max}{
+35.0 & 32.0 & 33.0 & 0.0 & 31.0 & 24.0 & 19.0 & 0.0 & 0.0 & 24.0 \\ 
+4095.0 & 4095.0 & 4095.0 & 65535.0 & 4069.0 & 4095.0 & 4095.0 & 65535.0 & 65535.0 & 4095.0 \\
+\hline
+22.0 & 22.0 & 23.0 & 30.0 & 31.0 & 30.0 & 25.0 & 30.0 & 23.0 & 19.0 \\
+4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 \\
+}
 
 Si hacemos que los valores de la imagen de entrada pasen de 8 bytes a 4 bytes, estaremos reduciendo su tamaño a la mitad. De forma similar si hacemos que la los valores de la imagen etiquetada pase de 8 bytes a 1 bytes, estaremos reduciendo su tamaño a una octava parte. Con 1 byte de precisión podremos almacenar hasta 256 valores distintos, suficiente ya que sólo tendremos 2 valores distintos: 0 para el fondo y 1 para la célula o los bordes. 
 
@@ -94,7 +100,7 @@ El tratamiento de datos con esta librería es muy intuitivo ya que imita la sint
 \item \textbf{Compresión.} Se ha optado por usar la compresión \textit{gzip}, que ofrece una buena compresión a una velocidad no muy alta. Tiene 10 niveles de compresión $[0,9]$. Se ha probado a comprimir con el nivel $9$ consiguiendo una buena compresión pero es excesivamente lento, al final se ha optado por usar una compresión de nivel $4$ que, aunque tiene $\sim 10\%$ más tamaño que con el nivel $9$, el tiempo de la compresión se reduce a más de la mitad y de todas formas el resultado ya es muy bueno.
 \end{itemize}
 
-\section{El problema del tamaño de la imagen en memoria}\label{sec:size_problem}
+\section{Tamaño de la imagen en memoria}\label{sec:size_problem}
 
 \subsection{Problema}\label{sec:size_problem_problem}
 El principal cuello de botella al usar técnicas de deep learning es el hardware requerido para ello. 
@@ -104,7 +110,7 @@ Sería ideal ser capaz de entrenar una CNN usando las imágenes provistas direct
 \subsection{Solución: Reducir resolución}\label{subsec:lowscale}
 \subsubsection{Escalado hacia abajo}\label{subsubsec:downscale}
 
-Las imágenes originales ocupan $\sim 2GB$ en memoria, intentar usarlas en una U-Net sobrepasa en gran medida los 16GB de memoria disponibles en este proyecto. Se ha decidido reducir las dimensiones en $(1/8, 1/8, 1/4)$ de sus dimensiones $(X, Y, Z)$ originales, consiguiendo una reducción de $8*8*4=256$ de su tamaño original, se pasa de $\sim 2GB$ a $\sim 8MB$. Con un tamaño de $8MB$ es posible realizar todo el proceso de entrenamiento e inferencia aunque se pierda calidad en la imagen. Gracias a la característica de U-Net de aceptar imágenes de cualquier dimensión, si no se hace entrenamiento por batch no es necesario asegurarse de que todas las imágenes tengan las mismas dimensiones. Por experimentación, he comprobado que los factores de las dimensiones no deben de ser muy diferentes, ya que cambiaría el tamaño en $\mu m^3$ de cada vóxel, además de provocar una deformación elástica en los imágenes.
+Las imágenes originales ocupan $\sim 2GB$ en memoria, intentar usarlas en una U-Net sobrepasa en gran medida los 16GB de memoria disponibles en este proyecto. Se ha decidido reducir las dimensiones en $(1/8, 1/8, 1/4)$ de sus dimensiones $(X, Y, Z)$ originales, consiguiendo una reducción de $8*8*4=256$ de su tamaño original, se pasa de $\sim 2GB$ a $\sim 8MB$. Con un tamaño de $8MB$ es posible realizar todo el proceso de entrenamiento e inferencia aunque se pierda calidad en la imagen. Gracias a la característica de U-Net de aceptar imágenes de cualquier dimensión, si no se hace entrenamiento por batch no es necesario asegurarse de que todas las imágenes tengan las mismas dimensiones. Por experimentación, se ha comprobado que los factores de las dimensiones no deben de ser muy diferentes, ya que cambiaría el tamaño en $\mu m^3$ de cada vóxel, además de provocar una deformación elástica en los imágenes.
 
 \subsubsection{Escalado hacia arriba}\label{subsubsec:upscale}
 
@@ -124,9 +130,9 @@ Esta función hace interpolación con splines, polinomios de orden n definidos a
 
 \subsection{Problema}\label{subsec:multi_problem}
 
-El problema principal que nos encontramos en las imágenes con el etiquetado perfecto es que las células, siendo instancias de una misma clase (la clase ``célula"), tienen etiquetas distintas. En una segmentación semántica cada vóxel es etiquetado con la clase a la que se cree que pertenece. 
+El dataset disponible para este proyecto está compuesto por dos tipos distintos de imágenes. Uno es la imagen original y otro es una segmentación manual con el etiquetado perfecto. En el etiquetado perfecto cada célula está representada por un entero distinto sin espacio entre ellas, el fondo está representado por 0.
 
-Si usáramos el etiquetado actual necesitaríamos una clase por cada célula, pero eso no tiene mucho sentido ya que el nº de células en una imagen puede variar y las células no tienen unas posiciones preestablecidas ni nada que las diferencien unas de otras (a priori, al menos). Que se sepa, todas las células tienen las mismas características por lo que deben tener la misma clase en una segmentación semántica.
+Si se usara el etiquetado actual sería necesario una clasificación con una clase por cada célula, pero eso no tiene mucho sentido ya que el nº de células en una imagen puede variar y las células no tienen unas posiciones preestablecidas ni nada que las diferencien unas de otras (a priori, al menos). Que se sepa, todas las células tienen las mismas características por lo que deben tener la misma clase en una segmentación semántica. Tampoco se puede cambiar la etiqueta de todas las células a 1 (siendo 1 la clase célula) ya que las células están en contacto entre sí (no hay espacio entre células), lo que provocaría que los bordes originales de las células se perdieran.
 
 \subsection{Solución}\label{subsec:multi_problem}
 
@@ -143,16 +149,16 @@ Para hacer estas operaciones se ha utilizado la librería \textbf{scikit-image} 
 Para encontrar los bordes se ha usado la función \textit{segmentation.find\_boundaries()}. Esta función realiza operaciones morfológicas para encontrar los bordes de los objetos de una imagen con valores enteros o binarios. Se han tomado las siguientes decisiones:
 \begin{itemize}
 \item Conectividad. Hay N tipos de conectividad siendo N el nº de dimensiones de la imagen de entrada, en nuestro caso N=3. Con conectividad 1 los vóxeles compartiendo al menos una cara son considerados vecinos. Con conectividad 3 se amplía el rango de vecinos al hacer que cualquier vóxel compartiendo una esquina también son considerados vecinos. Si dos vóxeles vecinos tienen distinta etiqueta, son bordes. Se ha elegido conectividad 3 para priorizar el que no haya células en contacto en ninguna de las 3 dimensiones.
-\item Modo. Este modo define qué vóxeles son marcados como bordes. El modo escogido es \textit{outer}, que selecciona como bordes los vóxeles de fondo alrededor de los elementos, si hay 2 elementos en contacto, se marca su frontera como borde. Se ha escogido este modo ya que, al escoger el fondo como borde retiene la mayor cantidad de volumen celular original.
+\item Modo. Este modo define qué vóxeles son marcados como bordes. El modo escogido es \textit{outer}, que selecciona como bordes los vóxeles de fondo alrededor de los elementos. Si hay 2 elementos en contacto se marca su frontera como borde. Se ha escogido este modo ya que es el que retiene la mayor cantidad de volumen celular original.
 \end{itemize}
 
 \subsubsection{Comprobar cantidad de células}\label{subsubsec:multi_count_cells}
 
-También se ha usado la función (\textit{measure\_label()}) para asegurarnos de que el nº de células no varía al hacer las operaciones de preprocesado (por ejemplo, podría ser que dos células con etiqueta 1 eliminaran el espacio entre sí, convirtiendose en la misma instancia de célula).
+También se ha usado la función (\textit{measure\_label()}) para comprobar que el nº de células no varía al hacer las operaciones de preprocesado (por ejemplo, podría ser que dos células con etiqueta 1 eliminaran el espacio entre sí, convirtiendose en la misma instancia de célula).
 
 \section{Carga de datos}\label{sec:carga_datos}
 
-Una vez todos los datos han sido preprocesados y almacenados en nuevos ficheros ya se pueden utilizar estos nuevos ficheros como fuente de datos para cargar las imágenes contenidas en tiempo de ejecución. En la carga de datos también se hace un tratamiento de imagen y será necesario que éste sea rápido, ya que se realizará cada vez que se acceda a una imagen.
+Una vez todos los datos han sido preprocesados y almacenados en nuevos ficheros ya se pueden utilizar como fuente de datos para cargar las imágenes en tiempo de ejecución. En la carga de datos también se hace un tratamiento de imagen y será necesario que éste sea rápido, ya que se realizará cada vez que se acceda a una imagen durante el entrenamientos.
 
 Para la carga de datos se han usado las siguientes librerías:
 \begin{itemize}
@@ -184,7 +190,7 @@ En cada iteración se ha guardado en un fichero información sobre el estado act
 
 Para comprobar los resultados se han utilizado 3 herramientas: la gráfica de la función de pérdida durante el entrenamiento, la métrica intersección sobre unión (IoU) y una representación visual de la segmentación.
 
-\cuadro{|c|c|c|}{Métricas. En la primera fila está cómo de bien se ha predicho el fondo. En la segunda fila está cómo de bien se han predicho las células.}{tab:metricas_inicial}{
+\cuadro{|c|c|c|}{Métricas sistema inicial. En la primera fila está cómo de bien se ha predicho el fondo. En la segunda fila está cómo de bien se han predicho las células.}{tab:metricas_inicial}{
 IoU fondo & IoU células\\ 
 \hline
 0.9437 & 0.0018\\

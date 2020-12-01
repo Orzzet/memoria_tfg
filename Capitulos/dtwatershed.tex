@@ -4,6 +4,25 @@
 
 \section{Algoritmo watershed}\label{sec:dt_watershed_watershed}
 
+El algoritmo watershed trata el valor de los vóxeles como si describiese una topología.
+\begin{enumerate}
+\item Se colocan unas semillas iniciales, desde aquí se empezará la inundación. Cada semilla tendrá una etiqueta distinta.
+\item Los vecinos de cada vóxel etiquetado se insertan en una cola prioritaria teniendo más prioridad aquellos con un valor más bajo.
+\item El vóxel con más prioridad sale de la cola, si todos sus vecinos etiquetados tienen la misma etiqueta, se le pone esa etiqueta. Todos los nuevos vecinos sin marcar son puestos en la cola prioritaria.
+\item Se vuelve al paso 3 hasta que se vacía la cola.
+\end{enumerate}
+
 \section{Implementación}\label{sec:dt_watershed_implementation}
+
+Se ha probado una técnica con postprocesado basada en la usada en el programa PlantSeg \cite{Wolny2020} donde se usa el algoritmo Watershed y la transformada de la distnacia. Para utilizar esta técnica se ha usado la librería scikit-image (skimage) y scipy, usando las siguientes funciones en este orden:
+\begin{enumerate}
+\item \textit{scipy.ndimage.distance\_transform\_edt()} para calcular la transformada de la distancia a la predicción del modelo.
+\item \textit{skimage.filters.gaussian()} para aplicar un filtro gaussiano con $\sigma = 2$ al resultado anterior.
+\item \textit{skimage.feature.peak\_local\_max()} al $1 - G$ siendo $G$ el resultado anterior. Esto hace que encuentre los mínimos locales.
+\item \textit{scipy.ndimage.label()} al resultado anterior, para generar marcadores al etiquetar cada mínimo local con una etiqueta distinta.
+\item \textit{skimage.segmentation.watershed()} utilizando los marcadores generados y la transformada de la distancia. Esto termina la segmentación.
+\end{enumerate}
+
+Se han hecho varias pruebas siguiendo este preprocesado al predecir los bordes frente a la predicción de bordes con espaciado, los resultados pueden verse en el siguiente capítulo.
 
 \section{Resultados}\label{sec:dt_watershed_resultados}

@@ -2,13 +2,15 @@
 
 \section{Problema detectado}\label{sec:full_unet_problem}
 
-Al utilizar una arquitectura U-Net para hacer pruebas se conseguía un tiempo bajo de entrenamiento. Esto ha sido útil ya que se ha podido mejorar el sistema con iteraciones rápidas, pero el resultado de la segmentación no es muy bueno. Algo que era de esperar.
+Al utilizar una arquitectura U-Net para hacer pruebas se conseguía un tiempo bajo de entrenamiento. Esto ha sido útil ya que se ha podido mejorar el sistema con iteraciones rápidas, pero estaba lejos de producir una segmentación adecuada, algo que era de esperar.
 
-Con la arquitectura U-Net reducida cada epoch tardaba $11s$ (en esos 11 segundos se hace entrenamiento y validación), durando el entrenamiento de $100$ iteraciones $1100s = 18m20s$. Con la arquitectura implementada en este capítulo se tardará $38s$ por iteración, durando el entrenamiento de $100$ iteraciones $3700s = 63m20s$, 
+Con la arquitectura U-Net reducida cada epoch tardaba $11s$ (en esos 11 segundos se hace entrenamiento y validación), durando el entrenamiento de $100$ iteraciones $1100s = 18m20s$. Con la arquitectura implementada en este capítulo se tardará $37s$ por iteración, durando el entrenamiento de $100$ iteraciones $3700s = 63m20s$, 
 
 \section{U-Net completa}\label{sec:full_unet_change}
 
-En la figura \ref{fig:unetarch-full} se puede ver la arquitectura completa de la red U-Net utilizada, arquitectura usada con éxito para segmentación volumétrica densa \cite{Cicek2016}, basada en la arquitectura U-Net propuesta por Ronneberger et al \cite{Ronneberger2015}. Más detalle en el capítulo \ref{cnn} y en la sección\ref{sec:unet}. Se ha omitido el tamaño de las imágenes ya que la red acepta imágenes de cualquier tamaño, Lo único a tener en cuenta es el nº de canales que tiene la imagen. Los nº mostrados en las capas determinan la profundidad de cada capa o, lo que es lo mismo, el nº de filtros distintos usados en cada capa. En la capa inicial, que simboliza la imagen de entrada, el número 1 indica que la imagen debe tener tan sólo 1 canal de entrada (escala de grises). Este tipo de arquitectura también es válida para imágenes 2D o 3D, la diferencia estaría en que las convoluciones y el pooling sean sobre 2 dimensiones o sobre 3 dimensiones.
+En la figura \ref{fig:unetarch-full} se puede ver la arquitectura completa de la red U-Net utilizada. Esta arquitectura ha sido usada con éxito para segmentación volumétrica densa \cite{Cicek2016} y está basada en la arquitectura U-Net propuesta por Ronneberger et al \cite{Ronneberger2015}. Más detalle en el capítulo \ref{cnn} y en la sección \ref{sec:unet}.
+
+Se ha omitido el tamaño de las imágenes ya que la red acepta imágenes de cualquier tamaño, Lo único a tener en cuenta es el nº de canales que tiene la imagen. Los nº mostrados en las capas determinan la profundidad de cada capa o, lo que es lo mismo, el nº de filtros distintos usados en cada capa. En la capa inicial, que representa la imagen de entrada, el número 1 indica que la imagen debe tener tan sólo 1 canal de entrada (escala de grises). Este tipo de arquitectura también es válida para imágenes 2D o 3D, la diferencia estaría en que las convoluciones y el pooling sean sobre 2 dimensiones o sobre 3 dimensiones.
 
 \figura{1}{img/Diseno-unetarch-full}{Arquitectura U-Net completa.}{fig:unetarch-full}{}
 
@@ -24,8 +26,8 @@ IoU fondo & IoU células\\
 
 \figura{0.8}{img/pruebas/sistema_4_fullunet_visualbuena}{Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetivo, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.}{fig:sistema_4_fullunet_visualbuena}{}
 
-Por una parte, la pérdida ha llegado a un valor de $\sim 0.2$ (gráfica \ref{sistema_4_fullunet_perdidasbuena} mientras que con la arquitectura reducida  llegó a un valor de $\sim 0.4$. Es la misma función de pérdida que ya se ha validado que representa correctamente un acercamiento a la solución del problema de segmentación, por lo que podemos suponer que la segmentación es mejor.
+Por una parte, la pérdida ha llegado a un valor de $\sim 0.2$ (gráfica \ref{fig:sistema_4_fullunet_perdidasbuena} mientras que con la arquitectura reducida  llegó a un valor de $\sim 0.4$. Es la misma función de pérdida que ya se ha validado que representa correctamente un acercamiento a la solución del problema de segmentación, por lo que podemos suponer que la segmentación es mejor.
 
-Que la segmentación de las células es mejor se puede verificar en la figura \ref{sistema_4_fullunet_visualbuena}. Se puede apreciar cómo las células están mejor definidas. Aún así, se mantiene el problema de etiquetar como célula zonas perteneciente al fondo.
+Que la segmentación de las células es mejor se puede verificar en la figura \ref{fig:sistema_4_fullunet_visualbuena}. Se puede apreciar cómo las células están mejor definidas. Aún así, se mantiene el problema de etiquetar como célula zonas perteneciente al fondo.
 
-A causa de etiquetar incorrectamente como célula el fondo, se siguen obteniendo malos resultados en la métrica $IoU$. En este caso son peores que el anterior, pero por primera vez se ha podido ver claramente una segmentación de las células, por lo que se mantendrá este cambio y el siguiente capítulo se centrará en eliminar el problema actual.
+A causa de etiquetar incorrectamente como célula el fondo, se siguen sin obtener resultados adecuados en la métrica $IoU$ (tabla \ref{tab:metricas_4}). En este caso la métrica $IoU$ indica resultados inferiores al anterior, pero por primera vez se ha podido ver claramente una segmentación de las células, por lo que se mantendrá este cambio y el siguiente capítulo se centrará en eliminar el sobreetiquetado actual.

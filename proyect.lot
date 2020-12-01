@@ -14,21 +14,24 @@
 \contentsline {table}{\numberline {8.3}{\ignorespaces Pruebas relevantes realizadas.\relax }}{35}{table.caption.29}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {10.1}{\ignorespaces Cuadro de métricas y metas.\relax }}{42}{table.caption.35}%
+\contentsline {table}{\numberline {10.2}{\ignorespaces Valores mínimo y máximo de los píxeles de las imágenes de entrada.\relax }}{44}{table.caption.37}%
+\contentsline {table}{\numberline {10.3}{\ignorespaces Métricas sistema inicial. En la primera fila está cómo de bien se ha predicho el fondo. En la segunda fila está cómo de bien se han predicho las células.\relax }}{48}{table.caption.42}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {11.1}{\ignorespaces Tabla de métricas y metas.\relax }}{43}{table.caption.35}%
-\contentsline {table}{\numberline {11.2}{\ignorespaces Métricas. En la primera fila está cómo de bien se ha predicho el fondo. En la segunda fila está cómo de bien se han predicho las células.\relax }}{48}{table.caption.41}%
+\contentsline {table}{\numberline {11.1}{\ignorespaces Métricas pérdida dice.\relax }}{51}{table.caption.45}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {12.1}{\ignorespaces Métricas.\relax }}{51}{table.caption.44}%
+\contentsline {table}{\numberline {12.1}{\ignorespaces Métricas data augmentation.\relax }}{53}{table.caption.49}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {13.1}{\ignorespaces Métricas.\relax }}{55}{table.caption.48}%
+\contentsline {table}{\numberline {13.1}{\ignorespaces Métricas.\relax }}{55}{table.caption.53}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {14.1}{\ignorespaces Métricas.\relax }}{57}{table.caption.52}%
+\contentsline {table}{\numberline {14.1}{\ignorespaces Valores mínimo y máximo de los píxeles de las imágenes de entrada.\relax }}{58}{table.caption.56}%
+\contentsline {table}{\numberline {14.2}{\ignorespaces Métricas normalización.\relax }}{59}{table.caption.58}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {15.1}{\ignorespaces Valores mínimo y máximo de los píxeles de las imágenes de entrada.\relax }}{60}{table.caption.55}%
-\contentsline {table}{\numberline {15.2}{\ignorespaces Métricas.\relax }}{61}{table.caption.57}%
+\contentsline {table}{\numberline {15.1}{\ignorespaces Métricas normalización.)\relax }}{62}{table.caption.61}%
+\contentsline {table}{\numberline {15.2}{\ignorespaces Métricas precisión mixta O1. Se han hecho 2 pruebas con la misma configuración.\relax }}{62}{table.caption.62}%
+\contentsline {table}{\numberline {15.3}{\ignorespaces Métricas precisión mixta O2. Se han hecho 2 pruebas con la misma configuración.\relax }}{62}{table.caption.64}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {18.1}{\ignorespaces Tabla de tiempos\relax }}{67}{table.caption.60}%
+\contentsline {table}{\numberline {17.1}{\ignorespaces Tabla de tiempos\relax }}{69}{table.caption.66}%
 \contentsfinish 
 \contentsfinish 

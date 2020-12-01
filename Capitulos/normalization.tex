@@ -2,9 +2,9 @@
 
 \section{Problema detectado}\label{sec:znormalization_problem}
 
-Aunque en los últimos resultados se empiezan a segmentar las células correctamente, se está etiquetando como célula incorrectamente el fondo.
+Aunque en los últimos resultados ya se empieza a ver una segmentación adecuada de las células, se está etiquetando incorrectamente el fondo como célula.
 
-Tras estudiar la imagen original he pensado que podría deberse a la diferencia en la intensidad de los vóxeles. En el cuadro \ref{cuadro:intensidad_min_max} se muestra la intensidad mínima y máxima de las 20 imágenes que componen el dataset. Puede ser un problema que haya vóxeles con valor 60000 y otros con valor 1, ya que los que tengan un valor más alto tendrán mucho más peso en la red convolucional. Lo interesante con la red convolucional será encontrar patrones estructurales, no patrones relacionados con una diferencia alta de intensidad.
+Tras estudiar la imagen original se ha llegado a la conclusión de que podría deberse a la diferencia en la intensidad de los vóxeles. En el cuadro \ref{cuadro:intensidad_min_max} se muestra la intensidad mínima y máxima de las 20 imágenes que componen el dataset. Puede ser un problema que haya vóxeles con valor 60000 y otros con valor 1, ya que los que tengan un valor más alto tendrán mucho más peso en la red convolucional. Lo interesante en la red convolucional será encontrar patrones estructurales, no patrones relacionados con una diferencia alta de intensidad.
 
 \cuadro{|r|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}{Valores mínimo y máximo de los píxeles de las imágenes de entrada.}{cuadro:intensidad_min_max}{
 35.0 & 32.0 & 33.0 & 0.0 & 31.0 & 24.0 & 19.0 & 0.0 & 0.0 & 24.0 \\ 
@@ -16,7 +16,7 @@ Tras estudiar la imagen original he pensado que podría deberse a la diferencia 
 
 \section{Normalización}\label{sec:normalization_techs}
 
-Para ignorar esta diferencia alta de intensidad y centrarnos en las diferencias estructurales se puede recurrir a la normalización. En concreto se probarán dos normalizaciones distintas: el cambio a escala $[0,1]$ y por distribución normal.
+Para ignorar esta diferencia alta de intensidad y centrarnos en las diferencias estructurales se puede recurrir a la normalización. En concreto se probarán dos normalizaciones distintas: el cambio a escala $[0,1]$ y por distribución normal (puntuación tipificada).
 
 El cambio a escala $[0,1]$ es algo habitual en machine learning para evitar que se realicen operaciones con números muy altos, facilitando el cálculo de los gradientes. Cada vóxel pasará a tener el siguiente valor:
 \begin{equation}
@@ -25,7 +25,7 @@ v_i^{'} = \frac{v_i - v_{min}}{v_{max}-v_{min}}
 
 Donde $v_i^{'}$ el nuevo valor del vóxel, $v_i$ el valor actual, $v_{min}$ el valor mínimo en toda la imagen y $v_{max}$ el valor máximo en toda la imagen.
 
-La puntuación tipificada hace que los valores estén más cerca entre ellos, útil para cuando hay datos muy dispersos, su fórmula es:
+La puntuación tipificada hace que los valores estén más cerca entre ellos, útil para cuando hay datos muy dispersos. Su fórmula es:
 \begin{equation}
 v_i^{'} = \frac{v_i - \mu}{\rho}
 \end{equation}
@@ -46,7 +46,7 @@ Aunque las operaciones matemáticas son simples, se utilizará TorchIO \cite{Per
 
 \section{Resultados}\label{sec:apex_resultados}
 
-\cuadro{|c|c|c|}{Métricas.}{tab:metricas_5}{
+\cuadro{|c|c|c|}{Métricas normalización.}{tab:metricas_5}{
 IoU fondo & IoU células\\ 
 \hline
 0.9811 & 0.7224\\

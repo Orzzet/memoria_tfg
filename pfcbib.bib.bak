@@ -341,7 +341,7 @@
   url       = {http://papers.neurips.cc/paper/9015-pytorch-an-imperative-style-high-performance-deep-learning-library.pdf},
 }
 
-@Online{NumpyDocs,
+@Online{Apex2020,
   author  = {nVidia Apex},
   title   = {{A PyTorch Extension: Tools for easy mixed precision and distributed training in Pytorch}},
   url     = {https://github.com/NVIDIA/apex},
@@ -585,6 +585,22 @@
   title   = {Z-normalization of time series.},
   journal = {Z-normalization | SAX-VSM},
   url     = {https://jmotif.github.io/sax-vsm_site/morea/algorithm/znorm.html},
+}
+
+@Misc{wookayin,
+  author  = {Wookayin},
+  title   = {wookayin/gpustat},
+  journal = {GitHub},
+  url     = {https://github.com/wookayin/gpustat},
+}
+
+@Misc{Micikevicius2018,
+  author        = {Paulius Micikevicius and Sharan Narang and Jonah Alben and Gregory Diamos and Erich Elsen and David Garcia and Boris Ginsburg and Michael Houston and Oleksii Kuchaiev and Ganesh Venkatesh and Hao Wu},
+  title         = {Mixed Precision Training},
+  year          = {2018},
+  archiveprefix = {arXiv},
+  eprint        = {1710.03740},
+  primaryclass  = {cs.AI},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

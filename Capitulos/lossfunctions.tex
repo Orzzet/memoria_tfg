@@ -14,7 +14,7 @@ La pérdida actual se calcula con la entropía cruzada (sin pesos):
 L_{BCE}(y,\hat{y})=-(y log(\hat{y}) + (1-y)log(1-\hat{y}))
 \end{equation}
 
-Donde $y$ es el y es el objetivo y $\hat{y}$ la predicción.
+Donde $y$ es el objetivo y $\hat{y}$ la predicción.
 
 El problema principal se tiene en que las dos clases (fondo-0 y célula-1) están desbalanceadas y la entropía cruzada da la misma importancia a las dos clases. El modelo va a tender a etiquetar toda la imagen como fondo ya que así va a obtener una puntuación muy alta con esta función de pérdida.
 
@@ -22,15 +22,14 @@ El problema principal se tiene en que las dos clases (fondo-0 y célula-1) está
 
 La solución será cambiar la función de pérdida por otra que tenga en cuenta este desbalanceo entre clases. En el artículo estudiado en la sección \ref{sec:app1} se utiliza la entropía cruzada binaria, mientras que en el artículo estudiado en la sección \ref{sec:app2} se utiliza la pérdida Dice.
 
-Se ha optado por probar primero la pérdida Dice ya que el cálculo de los pesos de la entropía cruzada binaria puede ser muy complejo. En un futuro se valorará el uso de esta pérdida.
+Se ha optado por probar primero la pérdida Dice ya que el cálculo de los pesos de la entropía cruzada binaria por pesos puede ser muy complejo. En un futuro se valorará el uso de esta pérdida.
 
 \section{Implementación}\label{sec:loss_function_change}
-
-
+-falta-
 
 \section{Resultados}\label{sec:data_augmentation_resultados}
 
-\cuadro{|c|c|c|}{Métricas.}{tab:metricas_2}{
+\cuadro{|c|c|c|}{Métricas pérdida dice.}{tab:metricas_2}{
 IoU fondo & IoU células\\ 
 \hline
 0.9381 & 0.2582\\

@@ -2,8 +2,78 @@
 
 \section{Problema detectado}\label{sec:apex_problem}
 
+Durante el entrenamiento se ha usado la herramienta gpustat \cite{wookayin} para medir la vRAM de la GPU utilizada. Desde el sistema inicial se han utilizado imágenes de baja calidad al reescalar la original a un tamaño de $(Z_L, 126, 126)$, donde $Z_L$ depende de cada imagen, y un batch de tamaño 1. Al entrenar se consumía $11525GB$ y al hacer inferencia $6063GB$. Se ha intentado utilizar imágenes de mayor calidad $(Z_M, 252, 252)$ pero no había suficiente memoria. También se había intentado utilizar un batch de tamaño 2 en el sistema inicial, pero la memoria también lo limitaba.
+
+El problema que se quiere resolver es el alto consumo de memoria. Si se reduce la memoria necesaria se podrían utilizar imágenes de mayor calidad, aumentando la cantidad de información que tienen las imágenes durante el entrenamiento. Además, usando imágenes de mayor calidad se reduciría el espaciado entre células ya que el espaciado entre dos células adyacentes seguiría teniendo el mismo nº de píxeles pero la imagen (y cada célula) sería mayor.
+
+Si no fuera posible aumentar la calidad de imagen aún consiguiendo una reducción de memoria, se intentará aumentar el tamaño del batch para reducir el tiempo de entrenamiento.
+
 \section{Precisión de los tensores}\label{sec:apex_precision}
+
+En 2017 se publicó el artículo \textit{Mixed Precision Training} en el se demostró que el uso de precisión mixta no influye negativamente en el entrenamiento de CNNs \cite{Micikevicius2018} y reduce el uso de memoria y el tiempo de entrenamiento.
+
+En la precisión mixta se usa FP16 para almacenar los tensores involucrados en el entrenamiento y para operaciones aritméticas, aunque algunas operaciones (como sumar todos los elementos de un vector) se dejan en FP32. Además se añade una copia maestra de pesos en FP32.
+
+\begin{itemize}
+\item \textbf{FP32} Formato en coma flotante de precisión simple. Ocupa 32 bits, con rango $[2^{-126},2^{127}]$
+\item \textbf{FP16} Formato en coma flotante de precisión media. Ocupa 16 bits, con rango $[2^{-14},2^{15}]$
+\end{itemize}
 
 \section{Implementación}\label{sec:apex_implementation}
 
+Las técnicas explicadas en \textit{Mixed Precision Training} están implementadas para su uso en PyTorch por \textit{Apex} \cite{Apex2020}. Apex es una librería desarrollada por NVidia que gestiona estas operaciones al modificar directamente PyTorch. Hay varios niveles de optimización disponibles, se ha probado a utilizarlo con una optimización de nivel 1 y de nivel 2.
+\begin{itemize}
+\item En optimización de nivel 1 (O1) se cambia la entrada de algunas funciones para que usen FP16 (float de 16 bits) y se dejan otras que puedan beneficiarse de la precisión en FP32 (float de 32 bits).
+\item En optimización de nivel 2 (O2) se cambian los pesos del modelo a FP16, se cambian los métodos del modelo para que acepten FP16 y se mantienen unos pesos maestros en FP32 que son usados por el optimizador. En este caso no se cambia las entradas de las funciones como en el nivel 1.
+\end{itemize}
+
+En ambos casos se usa escalado dinámico de pérdida, que se usa como coeficiente para la pérdida. Comienza con un valor muy alto y, si hay desbordamiento, se divide en 2. Si no hay desbordamiento durante un número de epochs (1000 por defecto), se multiplica por 2.
+
 \section{Resultados}\label{sec:apex_resultados}
+
+A partir de este capítulo se utilizará otra herramienta para medir la mejora de un modelo y tener más información.
+
+Por cada ejemplo del conjunto de test (2), se comparará el nº de componentes conexas de la segmentación predicha con el nº de componentes conexas que debería haber en la segmentación perfecta. Cada componente conexa es una célula, esto significa que si en la predicción hay menos componentes conexas habrá células en contacto que se interpretarán como una sola célula. La métrica utilizada será $wrongCells$:
+
+\begin{equation}
+wrongCells = \sum_{i=0}^{n-1} \lvert correctCount_i - predictionCount_i \rvert
+\end{equation}
+
+Dónde $i$ es el índice del ejemplo del conjunto de test y $n$ es el nº de ejemplos en el conjunto de test.
+
+Además se medirá el consumo de memoria y tiempo por epoch del entrenamiento.
+
+El cuadro \ref{tab:metricas_relevantes_normalizacion} muestra las nuevas métricas usadas en este capítulo para la mejora de normalización del capítulo \ref{znormalization}.
+
+\cuadro{|c|c|c|c|c|c|c|}{Métricas normalización.)}{tab:metricas_relevantes_normalizacion}{
+IoU fondo & IoU células & $wrongCells$ & Tiempo epoch & Mem. entre. & Mem. infe.\\
+\hline
+0.9811 & 0.7224 & 30 & $\sim$37s & 11525GB & 6063GB\\
+}
+
+\cuadro{|c|c|c|c|c|c|c|c|}{Métricas precisión mixta O1. Se han hecho 2 pruebas con la misma configuración.}{tab:metricas_6o1}{
+Nº & IoU fondo & IoU células & $wrongCells$ & Tiempo epoch & Mem. entre. & Mem. infe.\\
+\hline
+1 & 0.9821 & 0.7431 & 32 & $\sim$37s & 6243GB & 6063GB\\
+2 & 0.9818 & 0.7396 & 29 & $\sim$37s & 6243GB & 6063GB\\
+}
+
+\figura{0.8}{img/pruebas/sistema_6_apexo12_perdidas}{Pérdida de entrenamiento. 100 iteraciones.}{fig:sistema_6_apexo12_perdidas}{}
+
+
+\cuadro{|c|c|c|c|c|c|c|c|}{Métricas precisión mixta O2. Se han hecho 2 pruebas con la misma configuración.}{tab:metricas_6o2}{
+Nº & IoU fondo & IoU células & $wrongCells$ & Tiempo epoch & Mem. entre. & Mem. infe.\\
+\hline
+1 & 0.9805 & 0.7539 & 11 & $\sim$37s & 6633GB & 6063GB\\
+2 & 0.9805 & 0.7263 & 74 & $\sim$37s & 6633GB & 6063GB\\
+}
+
+\figura{0.8}{img/pruebas/sistema_6_apexo2_perdidas}{Pérdida de entrenamiento. 100 iteraciones.}{fig:sistema_6_apexo2_perdidas}{}
+
+El objetivo principal de esta mejora es reducir la cantidad de memoria necesaria para el entrenamiento e inferencia y así poder usar imágenes de mayor resolución o un tamaño del batch mayor que $1$.
+
+En el sistema del capítulo \ref{znormalization} eran necesarios $11525GB$ de memoria para el entrenamiento (cuadro \ref{tab:metricas_relevantes_normalizacion}). Al aplicar la técnica de precisión mixta se ha conseguido reducir la memoria necesaria durante el entrenamiento a $6243GB$.
+
+Hasta ahora se han utilizado imágenes con dimensión $[Z/4, X/8, Y/8]$, siendo $[Z, X, Y]$ las dimensiones originales. Tras conseguir esta disminución de memoria se ha intentado entrenar un modelo utilizando imágenes de dimensión $[Z/2, X/4, Y/4]$, pero no ha sido posible. Se estima que se necesitarán al menos $25GB$ para esto. La otra opción para aprovechar esta reducción de memoria podría ser aumentar el batch de entrenamiento.
+
+De cualquier forma, el uso de un escalado dinámico de pérdida ha hecho que en 100 iteraciones se alcance un error de entrenamiento y validación menor, lo que ha provocado un $IoU$ mayor. Aún así, gracias a la nueva métrica utilizada ($wrongCells$), se puede ver un comportamiento anómalo en las métricas de precisión mixta O2 (tabla \ref{tab:metricas_6o2}). Pese a obtener buen $IoU$ se ha obtenido en cada prueba un recuento de células muy distintos, etiquetando 11 células incorrectamente en la prueba 1 (el mejor resultado hasta ahora) y 74 células en la prueba 2 (el peor resultado hasta ahora). Se va a optar por la precisión mixta O1 por aportar resultados más consistentes (cuadro \ref{tab:metricas_6o1}).

@@ -26,29 +26,30 @@
 \contentsline {figure}{\numberline {8.2}{\ignorespaces Segmentación de tejido vegetal usando PlantSeg. En el primer paso se predicen los bordes de las células usando una red U-Net 3D. En el segundo paso se aplica un algoritmo de particionamiento de grafo para segmentar cada célula.\relax }}{34}{figure.caption.28}%
 \contentsline {figure}{\numberline {8.3}{\ignorespaces Interfaz gráfica del programa PlantSet. Se pueden ver las distintas opciones para cada paso del procesado.\relax }}{35}{figure.caption.30}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{39}{figure.caption.31}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{40}{figure.caption.32}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{40}{figure.caption.31}%
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{41}{figure.caption.32}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Arquitectura U-Net reducida. Arquitectura completa (vista en \ref {sec:unet} eliminando varias capas de convolución y una de pooling. Los modelos generados por esta arquitectura serán menos fiables, pero el entrenamiento será más rápido, por lo que es útil para implementar un primer sistema.\relax }}{43}{figure.caption.36}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Pérdida de entrenamiento en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.\relax }}{48}{figure.caption.43}%
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Primera fila la imagen original, segunda fila segmentación objetiva, tercera fila segmentación predicha. Se muestra en cada columna Z=20, Z=25, Z=45, Z=50.\relax }}{48}{figure.caption.44}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {11.1}{\ignorespaces Arquitectura U-Net reducida. Arquitectura completa (vista en \ref {sec:unet} eliminando varias capas de convolución y una de pooling. Los modelos generados por esta arquitectura serán menos fiables, pero el entrenamiento será más rápido, por lo que es útil para implementar un primer sistema.\relax }}{44}{figure.caption.36}%
-\contentsline {figure}{\numberline {11.2}{\ignorespaces Pérdida de entrenamiento en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.\relax }}{49}{figure.caption.42}%
-\contentsline {figure}{\numberline {11.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Primera fila la imagen original, segunda fila segmentación objetiva, tercera fila segmentación predicha. Se muestra en cada columna Z=20, Z=25, Z=45, Z=50.\relax }}{49}{figure.caption.43}%
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Pérdida de entrenamiento en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.\relax }}{51}{figure.caption.46}%
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{51}{figure.caption.47}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {12.1}{\ignorespaces Pérdida de entrenamiento en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.\relax }}{52}{figure.caption.45}%
-\contentsline {figure}{\numberline {12.2}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{52}{figure.caption.46}%
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Pérdida de entrenamiento en cada iteración. 200 iteraciones. Se puede ver claramente cómo se produce sobreajuste.\relax }}{52}{figure.caption.48}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{54}{figure.caption.50}%
+\contentsline {figure}{\numberline {12.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{54}{figure.caption.51}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {13.1}{\ignorespaces Pérdida de entrenamiento en cada iteración. 200 iteraciones. Se puede ver claramente cómo se produce sobreajuste.\relax }}{54}{figure.caption.47}%
-\contentsline {figure}{\numberline {13.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{55}{figure.caption.49}%
-\contentsline {figure}{\numberline {13.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{56}{figure.caption.50}%
+\contentsline {figure}{\numberline {13.1}{\ignorespaces Arquitectura U-Net completa.\relax }}{56}{figure.caption.52}%
+\contentsline {figure}{\numberline {13.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{56}{figure.caption.54}%
+\contentsline {figure}{\numberline {13.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetivo, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{57}{figure.caption.55}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {14.1}{\ignorespaces Arquitectura U-Net completa.\relax }}{58}{figure.caption.51}%
-\contentsline {figure}{\numberline {14.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{58}{figure.caption.53}%
-\contentsline {figure}{\numberline {14.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetivo, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{59}{figure.caption.54}%
+\contentsline {figure}{\numberline {14.1}{\ignorespaces Izquierda: Normalización tipificada. Derecha: Cambio a escala $[0,1]$.\relax }}{59}{figure.caption.57}%
+\contentsline {figure}{\numberline {14.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{60}{figure.caption.59}%
+\contentsline {figure}{\numberline {14.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetivo, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{60}{figure.caption.60}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {15.1}{\ignorespaces Izquierda: Normalización tipificada. Derecha: Cambio a escala $[0,1]$.\relax }}{61}{figure.caption.56}%
-\contentsline {figure}{\numberline {15.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{62}{figure.caption.58}%
-\contentsline {figure}{\numberline {15.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetivo, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{62}{figure.caption.59}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {15.1}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{63}{figure.caption.63}%
+\contentsline {figure}{\numberline {15.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{63}{figure.caption.65}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsfinish 
