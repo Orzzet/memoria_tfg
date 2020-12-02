@@ -618,4 +618,13 @@
   primaryclass  = {cs.NE},
 }
 
+@Misc{wikipedia_convolution,
+  month     = {Nov},
+  title     = {Convolution},
+  year      = {2020},
+  journal   = {Wikipedia},
+  publisher = {Wikimedia Foundation},
+  url       = {https://en.wikipedia.org/wiki/Convolution},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

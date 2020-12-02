@@ -10,7 +10,9 @@ ImageNet es una base de datos con más de 10 millones de imágenes etiquetadas a
 \item El ganador del reto de 2015 fue ResNet, desarrollada por Microsoft Research \cite{He2015}. ResNet utiliza una misma distribución de capas repetida durante toda la red. Posee 152 capas, siendo la primera vez que se alcanzaba un número tan alto de capas de forma práctica. Era difícil tener tantas capas a causa del problema del desvanecimiento de gradiente \cite{Hochreiter1998} que se da al entrenar por backpropagation y resulta en que, al hacer la propagación hacia atrás, cada capa consecutiva reduce el error propagado llegando ``desvanecerse'', resultando en un difícil entrenamiento. Esto es solucionado por ResNet al conectar capas lejanas para que el error pueda propagarse entre estas más rápido, llamando a estas conexiones \textit{skip connections}.
 \end{itemize}
 
-Estas arquitecturas resultaron en hitos importantes para el desarrollo de CNN, a continuación se describirán varias arquitecturas para segmentación semántica.
+Estas arquitecturas resultaron en hitos importantes para el desarrollo de CNN, a continuación se describirán varias arquitecturas para segmentación semántica. En la figura \ref{fig:sem-segm-example} \cite{Jeong2018} se muestra un ejemplo de segmentación semántica.
+
+\figura{1}{img/sem-segm-example}{Ejemplo de segmentación semántica. Se clasifica cada píxel en función del tipo de objeto (clase) al que pertenezca.(Imagen tomada de Jeong, Yoon, y Park, 2018)}{fig:sem-segm-example}{}
 
 \newpage\section{Fully Convolutional Network}\label{sec:fcn}
 
@@ -23,7 +25,7 @@ Se compararon los modelos FCN-AlexNet, FCN-VGG16 y FCN-GoogLeNet, obteniendo los
 
 \section{Deconvnet}\label{sec:deconvnet}
 
-La red Deconvnet \cite{Noh2015} tiene una red convolucional y otra red deconvolucional. Para la red convolucional utiliza casi la misma topología que VGG16, con 13 capas de convolución 2 capas FC, cambiando sólo en la última capa que no es de clasificación ya que en Deconvnet está conectada a la red deconvolucional. La red deconvolucional tiene una topología inversa a la red convolucional, resultando en una salida de igual tamaño a la entrada. Esta red tiene capas de deconvolución, de \textit{un-pooling} y de ReLU. Todas las capas de una Deconvnet extraen características de la entrada excepto la última capa de la red deconvolocuional, que genera una probabilidad de pertenencia a cada clase para cada píxel/vóxel. Una arquitectura de esta red se puede ver en la figura \ref{fig:Deconvnet} \cite{Noh2015}.
+La red Deconvnet \cite{Noh2015} tiene una red convolucional y otra red deconvolucional. Para la red convolucional utiliza casi la misma topología que VGG16, con 13 capas de convolución 2 capas FC, cambiando sólo en la última capa que no es de clasificación ya que en Deconvnet está conectada a la red deconvolucional. La red deconvolucional tiene una topología inversa a la red convolucional, resultando en una salida de igual tamaño a la entrada. Esta red tiene capas de deconvolución, de \textit{un-pooling} y de ReLU. Todas las capas de una Deconvnet extraen características de la entrada excepto la última capa de la red deconvolucional, que genera una probabilidad de pertenencia a cada clase para cada píxel/vóxel. Una arquitectura de esta red se puede ver en la figura \ref{fig:Deconvnet} \cite{Noh2015}.
 
 \figura{1}{img/Deconvnet}{Arquitectura Deconvnet.}{fig:Deconvnet}{}
 
@@ -33,7 +35,7 @@ A continucación se describen brevemente las operaciones de unpooling y deconvol
 
 La operación unpooling es una operación que reconstruye la zona de pooling mantiendo sólo el píxel correspondiente a aquel que fue seleccionado en la capa de pooling correspondiente (figura \ref{fig:unpooling-deconv}. Para implementar esto se usan variables \textit{switch}, que almacena la posición en la que se encontraba el valor máximo al hacer pooling. Esta estrategia resuelve el problema de pérdida de información espacial que tiene el pooling \cite{Zeiler2011}.
 
-\subsection{Deconvoloución}\label{subsec:deconvolution}
+\subsection{Deconvolución}\label{subsec:deconvolution}
 
 La salida de una capa de unpooling aporta información espacial pero muy dispersa. Para aumentar la densidad de información se usan las operaciones de deconvolución \cite{Noh2015}. Las operación de convolución toma varias entradas y las transforma en un único valor al aplicar un filtro. La operación deconvolución toma un único valor y lo transforma en varias salidas al aplicar el mismo filtro usado en la convolución correspondiente.
 

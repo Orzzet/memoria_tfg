@@ -5,56 +5,55 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Neurona artificial genérica\relax }}{14}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Representación de una Neurona Artificial con $ \DOTSB \sum@ \slimits@ x_i w_i $ como función de integración\relax }}{15}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Red Neuronal Artificial completamente conectada.\relax }}{16}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Ilustración del algoritmo de descenso por gradiente. $\theta _0$ y $\theta _1$ son los pesos de la ANN y $J$ la función de pérdida. Se puede observar cómo se produce un "descenso" hacia un mínimo de la función.\relax }}{17}{figure.caption.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Neurona artificial genérica\relax }}{17}{figure.caption.10}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Representación de una Neurona Artificial con $ \DOTSB \sum@ \slimits@ x_i w_i $ como función de integración\relax }}{18}{figure.caption.11}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Red Neuronal Artificial completamente conectada.\relax }}{19}{figure.caption.12}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Ilustración del algoritmo de descenso por gradiente. $\theta _0$ y $\theta _1$ son los pesos de la ANN y $J$ la función de pérdida. Se puede observar cómo se produce un "descenso" hacia un mínimo de la función.\relax }}{20}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Imagen de 4x4 px aplanada y usada como entrada en una FCNN con 4 neuronas en su única capa oculta. No se muestra su capa de salida. Imagen del curso Intro to Deep Learning with PyTorch de Udacity.\relax }}{18}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imágenes del curso Intro to Deep Learning with PyTorch de Udacity.\relax }}{19}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Kernel $2$x$2$ aplicado al elemento $(0,0)$ de una matriz $3$x$3$. Imagen tomada de d2l.ai.\relax }}{19}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Kernel $2$x$2$ aplicado al elemento $(0,0)$ de una matriz $3$x$3$ con padding 1 aplicado. Imagen tomada de d2l.ai.\relax }}{20}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Kernel $2$x$2$ aplicado al elemento $(0,0)$ de una matriz $3$x$3$ con padding 1, paso horizontal 2 y vertical 3. Imagen tomada de d2l.ai.\relax }}{20}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Efecto producido al aplicar un filtro de detección de bordes a una imagen de entrada.\relax }}{20}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Red Neuronal Convolucional simple en la que la imagen de un barco es clasificada.\relax }}{21}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Capa de convolución de profundidad 2 (se usan dos filtros) con kernel de tamaño $3\times 3 \times 3$ aplicado a un volumen de entrada de tamaño $7\times 7\times 3$, volumen generado al aplicar padding de 1 px a una imagen de tamaño $5x5$ con 3 canales. El resultado es un volumen de $3x3x2$\relax }}{23}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Imagen $4\times 4$ a la que se ha aplicado un pooling de $F=2, S=2$. Cada color de la imagen de la izquierda indica las entradas del para la operación MAX, cada color de la imagen de la derecha indica la salida de dicha operación. Figura tomada del curso ``CS231n" de Standford University.\relax }}{24}{figure.caption.23}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Imagen de 4x4 px aplanada y usada como entrada en una FCNN con 4 neuronas en su única capa oculta. No se muestra su capa de salida. Imagen del curso Intro to Deep Learning with PyTorch de Udacity.\relax }}{21}{figure.caption.14}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imágenes del curso Intro to Deep Learning with PyTorch de Udacity.\relax }}{22}{figure.caption.15}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Kernel $2$x$2$ aplicado al elemento $(0,0)$ de una matriz $3$x$3$. Imagen tomada de d2l.ai.\relax }}{22}{figure.caption.17}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Kernel $2$x$2$ aplicado al elemento $(0,0)$ de una matriz $3$x$3$ con padding 1 aplicado. Imagen tomada de d2l.ai.\relax }}{23}{figure.caption.18}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Kernel $2$x$2$ aplicado al elemento $(0,0)$ de una matriz $3$x$3$ con padding 1, paso horizontal 2 y vertical 3. Imagen tomada de d2l.ai.\relax }}{23}{figure.caption.19}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Efecto producido al aplicar un filtro de detección de bordes a una imagen de entrada.\relax }}{23}{figure.caption.20}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Red Neuronal Convolucional simple en la que la imagen de un barco es clasificada.\relax }}{24}{figure.caption.21}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Capa de convolución de profundidad 2 (se usan dos filtros) con kernel de tamaño $3\times 3 \times 3$ aplicado a un volumen de entrada de tamaño $7\times 7\times 3$, volumen generado al aplicar padding de 1 px a una imagen de tamaño $5x5$ con 3 canales. El resultado es un volumen de $3x3x2$\relax }}{26}{figure.caption.22}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Imagen $4\times 4$ a la que se ha aplicado un pooling de $F=2, S=2$. Cada color de la imagen de la izquierda indica las entradas del para la operación MAX, cada color de la imagen de la derecha indica la salida de dicha operación. Figura tomada del curso ``CS231n" de Standford University.\relax }}{27}{figure.caption.23}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Ejemplo de segmentación semántica. Se clasifica cada píxel en función del tipo de objeto (clase) al que pertenezca.(Imagen tomada de Jeong, Yoon, y Park, 2018)\relax }}{28}{figure.caption.24}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Arquitectura de FCN32, FCN16 y FCN8.\relax }}{29}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Arquitectura Deconvnet.\relax }}{30}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Figura que ilustra las operaciones unpooling y deconvolución.\relax }}{30}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura original U-Net propuesta por Ronneberger et al en U-Net: Convolutional Networks for Biomedical Image Segmentation.\relax }}{31}{figure.caption.28}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Arquitectura de FCN32, FCN16 y FCN8.\relax }}{31}{figure.caption.24}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Arquitectura Deconvnet.\relax }}{32}{figure.caption.25}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Figura que ilustra las operaciones unpooling y deconvolución.\relax }}{32}{figure.caption.26}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Arquitectura original U-Net propuesta por Ronneberger et al en U-Net: Convolutional Networks for Biomedical Image Segmentation.\relax }}{33}{figure.caption.27}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Segmentación volumétrica. (a) Segmentación de una imagen con un modelo que se ha entrenado con imágenes del mismo dataset. (b) Segmentación de una imagen con un modelo entrenado con un dataset distinto.\relax }}{34}{figure.caption.30}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Segmentación de tejido vegetal usando PlantSeg. En el primer paso se predicen los bordes de las células usando una red U-Net 3D. En el segundo paso se aplica un algoritmo de particionamiento de grafo para segmentar cada célula.\relax }}{35}{figure.caption.32}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Interfaz gráfica del programa PlantSet. Se pueden ver las distintas opciones para cada paso del procesado.\relax }}{36}{figure.caption.34}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Segmentación volumétrica. (a) Segmentación de una imagen con un modelo que se ha entrenado con imágenes del mismo dataset. (b) Segmentación de una imagen con un modelo entrenado con un dataset distinto.\relax }}{36}{figure.caption.29}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Segmentación de tejido vegetal usando PlantSeg. En el primer paso se predicen los bordes de las células usando una red U-Net 3D. En el segundo paso se aplica un algoritmo de particionamiento de grafo para segmentar cada célula.\relax }}{37}{figure.caption.31}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Interfaz gráfica del programa PlantSet. Se pueden ver las distintas opciones para cada paso del procesado.\relax }}{38}{figure.caption.33}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{40}{figure.caption.35}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{41}{figure.caption.36}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{42}{figure.caption.34}%
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.\relax }}{43}{figure.caption.35}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Arquitectura U-Net reducida. Arquitectura completa (vista en \ref {sec:unet} eliminando varias capas de convolución y una de pooling. Los modelos generados por esta arquitectura serán menos fiables, pero el entrenamiento será más rápido, por lo que es útil para implementar un primer sistema.\relax }}{44}{figure.caption.40}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Pérdida de entrenamiento en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.\relax }}{49}{figure.caption.47}%
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Primera fila la imagen original, segunda fila segmentación objetiva, tercera fila segmentación predicha. Se muestra en cada columna Z=20, Z=25, Z=45, Z=50.\relax }}{49}{figure.caption.48}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Arquitectura U-Net reducida. Arquitectura completa (vista en \ref {sec:unet} eliminando varias capas de convolución y una de pooling. Los modelos generados por esta arquitectura serán menos fiables, pero el entrenamiento será más rápido, por lo que es útil para implementar un primer sistema.\relax }}{46}{figure.caption.39}%
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Pérdida de entrenamiento en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.\relax }}{51}{figure.caption.46}%
-\contentsline {figure}{\numberline {10.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Primera fila la imagen original, segunda fila segmentación objetiva, tercera fila segmentación predicha. Se muestra en cada columna Z=20, Z=25, Z=45, Z=50.\relax }}{51}{figure.caption.47}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Pérdida de entrenamiento en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.\relax }}{52}{figure.caption.50}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{52}{figure.caption.51}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {11.1}{\ignorespaces Pérdida de entrenamiento en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.\relax }}{54}{figure.caption.49}%
-\contentsline {figure}{\numberline {11.2}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{54}{figure.caption.50}%
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Pérdida de entrenamiento en cada iteración. 200 iteraciones. Se puede ver claramente cómo se produce sobreajuste.\relax }}{53}{figure.caption.52}%
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{55}{figure.caption.54}%
+\contentsline {figure}{\numberline {11.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{55}{figure.caption.55}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {12.1}{\ignorespaces Pérdida de entrenamiento en cada iteración. 200 iteraciones. Se puede ver claramente cómo se produce sobreajuste.\relax }}{55}{figure.caption.51}%
-\contentsline {figure}{\numberline {12.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{57}{figure.caption.53}%
-\contentsline {figure}{\numberline {12.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{57}{figure.caption.54}%
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Arquitectura U-Net completa.\relax }}{57}{figure.caption.56}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{57}{figure.caption.58}%
+\contentsline {figure}{\numberline {12.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetivo, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{58}{figure.caption.59}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {13.1}{\ignorespaces Arquitectura U-Net completa.\relax }}{59}{figure.caption.55}%
-\contentsline {figure}{\numberline {13.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{59}{figure.caption.57}%
-\contentsline {figure}{\numberline {13.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetivo, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{60}{figure.caption.58}%
+\contentsline {figure}{\numberline {13.1}{\ignorespaces Izquierda: Normalización tipificada. Derecha: Cambio a escala $[0,1]$.\relax }}{60}{figure.caption.61}%
+\contentsline {figure}{\numberline {13.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{61}{figure.caption.63}%
+\contentsline {figure}{\numberline {13.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetivo, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{61}{figure.caption.64}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {14.1}{\ignorespaces Izquierda: Normalización tipificada. Derecha: Cambio a escala $[0,1]$.\relax }}{62}{figure.caption.60}%
-\contentsline {figure}{\numberline {14.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{63}{figure.caption.62}%
-\contentsline {figure}{\numberline {14.3}{\ignorespaces Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetivo, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.\relax }}{63}{figure.caption.63}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {15.1}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{66}{figure.caption.66}%
-\contentsline {figure}{\numberline {15.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{66}{figure.caption.68}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {14.1}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{64}{figure.caption.67}%
+\contentsline {figure}{\numberline {14.2}{\ignorespaces Pérdida de entrenamiento. 100 iteraciones.\relax }}{64}{figure.caption.69}%
 \addvspace {10\p@ }
 \contentsfinish 
 \contentsfinish 

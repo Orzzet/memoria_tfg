@@ -411,6 +411,35 @@ Jadon, S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Jeong%
+, Yoon%
+\BCBL {}\ \BBA {} Park%
+}{%
+Jeong%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+Jeong2018}
+\APACinsertmetastar {%
+Jeong2018}%
+\begin{APACrefauthors}%
+Jeong, J.%
+, Yoon, T.%
+\BCBL {}\ \BBA {} Park, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{08}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Towards a Meaningful 3D Map Using a 3D Lidar and a
+  Camera} {Towards a meaningful 3d map using a 3d lidar and a camera}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Sensors}{18}{}{2571}.
+\newblock
+\begin{APACrefDOI} \doi{10.3390/s18082571} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Jia%
 \ \protect \BOthers {.}}{%
 Jia%
