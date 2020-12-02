@@ -1,6 +1,22 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {ApacheSpark - Unified Analytics Engine for Big Data}}{%
+\APACcitebtitle {ApacheSpark - Unified Analytics Engine for Big Data}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+apachespark}
+\APACinsertmetastar {%
+apachespark}%
+\APACrefbtitle {ApacheSpark - Unified Analytics Engine for Big Data.}
+  {Apachespark - unified analytics engine for big data.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://spark.apache.org/} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 \APACcitebtitle {Bases y tipos de cotización 2019}}{%
 \APACcitebtitle {Bases y tipos de cotización 2019}}{%
 {\protect \APACyear {{\protect \bibnodate {}}}}%
@@ -73,6 +89,24 @@ Collette, A.%
 \APACrefbtitle {Python and HDF5} {Python and hdf5}.
 \newblock
 \APACaddressPublisher{}{O'Reilly}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {Convolution}}{%
+\APACcitebtitle {Convolution}}{%
+{\protect \APACyear {2020}}%
+}]{%
+wikipedia_convolution}
+\APACinsertmetastar {%
+wikipedia_convolution}%
+\APACrefbtitle {Convolution.} {Convolution.}
+\newblock
+\APACrefYearMonthDay{2020}{Nov}{}.
+\newblock
+\APACaddressPublisher{}{Wikimedia Foundation}.
+\newblock
+\begin{APACrefURL} \url{https://en.wikipedia.org/wiki/Convolution}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -523,6 +557,32 @@ McCulloch, W\BPBI S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Micikevicius%
+\ \protect \BOthers {.}}{%
+Micikevicius%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+Micikevicius2018}
+\APACinsertmetastar {%
+Micikevicius2018}%
+\begin{APACrefauthors}%
+Micikevicius, P.%
+, Narang, S.%
+, Alben, J.%
+, Diamos, G.%
+, Elsen, E.%
+, Garcia, D.%
+\BDBL {}Wu, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+\APACrefbtitle {Mixed Precision Training.} {Mixed precision training.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Minsky%
 \ \BBA {} Papert%
 }{%
@@ -549,9 +609,9 @@ Minsky, M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-missinglink%
+missinglink.ai%
 }{%
-missinglink%
+missinglink.ai%
 }{%
 {\protect \APACyear {2020}}%
 }]{%
@@ -559,7 +619,7 @@ missinglink2020}
 \APACinsertmetastar {%
 missinglink2020}%
 \begin{APACrefauthors}%
-missinglink.%
+missinglink.ai.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
@@ -644,6 +704,31 @@ Noh, H.%
 \newblock
 \APACrefbtitle {Learning Deconvolution Network for Semantic Segmentation.}
   {Learning deconvolution network for semantic segmentation.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+nVidia Apex%
+}{%
+nVidia Apex%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+Apex2020}
+\APACinsertmetastar {%
+Apex2020}%
+\begin{APACrefauthors}%
+nVidia Apex.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {{A PyTorch Extension: Tools for easy mixed precision and
+  distributed training in Pytorch}.} {{A PyTorch Extension: Tools for easy
+  mixed precision and distributed training in Pytorch}.}
+\newblock
+\begin{APACrefURL} [{2020-08}]\url{https://github.com/NVIDIA/apex}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -814,6 +899,31 @@ amazonp5000}%
 \begin{APACrefURL}
   \url{https://www.amazon.es/PNY-Quadro-P5000-16GB-GDDR5X/dp/B01LWVP48O}
   \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ramachandran%
+, Zoph%
+\BCBL {}\ \BBA {} Le%
+}{%
+Ramachandran%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+Ramachandran2017}
+\APACinsertmetastar {%
+Ramachandran2017}%
+\begin{APACrefauthors}%
+Ramachandran, P.%
+, Zoph, B.%
+\BCBL {}\ \BBA {} Le, Q\BPBI V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\APACrefbtitle {Searching for Activation Functions.} {Searching for activation
+  functions.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -1299,6 +1409,28 @@ Wolny, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Wookayin%
+}{%
+Wookayin%
+}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+wookayin}
+\APACinsertmetastar {%
+wookayin}%
+\begin{APACrefauthors}%
+Wookayin.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\APACrefbtitle {wookayin/gpustat.} {wookayin/gpustat.}
+\newblock
+\begin{APACrefURL} \url{https://github.com/wookayin/gpustat} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 {Zeiler}%
 , {Taylor}%
 \BCBL {}\ \BBA {} {Fergus}%
@@ -1355,6 +1487,24 @@ Cicek2016}%
 \APACrefbtitle {3D U-Net: Learning Dense Volumetric Segmentation from Sparse
   Annotation.} {3d u-net: Learning dense volumetric segmentation from sparse
   annotation.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {Z-normalization of time series.}}{%
+\APACcitebtitle {Z-normalization of time series.}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+znormalization}
+\APACinsertmetastar {%
+znormalization}%
+\APACrefbtitle {Z-normalization of time series.} {Z-normalization of time
+  series.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{https://jmotif.github.io/sax-vsm_site/morea/algorithm/znorm.html}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

@@ -1,6 +1,8 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: proyect.aux
 The style file: apacite.bst
 Database file #1: pfcbib.bib
+Warning--entry type for "Apex2020" isn't style-file defined
+--line 344 of file pfcbib.bib
 Warning--entry type for "Li2020" isn't style-file defined
 --line 381 of file pfcbib.bib
 Warning--entry type for "Serrano2020" isn't style-file defined
@@ -11,4 +13,4 @@ Warning--entry type for "HDFGroup20002010" isn't style-file defined
 --line 518 of file pfcbib.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--`others' not consistent with 6th ed. of the APA Manual
-(There were 5 warnings)
+(There were 6 warnings)

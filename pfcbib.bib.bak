@@ -395,7 +395,7 @@
 }
 
 @Online{missinglink2020,
-  author  = {missinglink},
+  author  = {missinglink.ai},
   title   = {{missinglink.ai}},
   url     = {https://missinglink.ai/guides/convolutional-neural-networks/convolutional-neural-network-tutorial-basic-advanced/},
   urldate = {2020-09-03},
@@ -601,6 +601,21 @@
   archiveprefix = {arXiv},
   eprint        = {1710.03740},
   primaryclass  = {cs.AI},
+}
+
+@Misc{apachespark,
+  title   = {ApacheSpark - Unified Analytics Engine for Big Data},
+  journal = {Apache Spark™ - Unified Analytics Engine for Big Data},
+  url     = {https://spark.apache.org/},
+}
+
+@Misc{Ramachandran2017,
+  author        = {Prajit Ramachandran and Barret Zoph and Quoc V. Le},
+  title         = {Searching for Activation Functions},
+  year          = {2017},
+  archiveprefix = {arXiv},
+  eprint        = {1710.05941},
+  primaryclass  = {cs.NE},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

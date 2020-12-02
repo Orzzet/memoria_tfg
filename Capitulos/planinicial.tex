@@ -1,20 +1,10 @@
-\chapter{Planificaci\'on}\label{planinicial}
+\chapter{Planteamiento inicial}\label{planinicial}
 
-\section{Enfoque}\label{sec:enfoque}
+\section{Plan inicial}\label{sec:planinicial}
 
-Uno de los motivos por los que me pareció interesante este proyecto era porque nunca había aplicado técnicas de machine learning para resolver problemas reales, muchos menos de imágenes 3D. Desgraciadamente al principio no abordé el proyecto teniendo esto en cuenta, por lo que hubo una corrección en el plan que se verá en la sección \ref{sec:nosetuvoencuenta}.
-Con esto en mente, mis razones para efectuar este plan inicial son las siguiente:
+El primer enfoque para abordar este proyecto fue utilizar herramientas actuales de machine learning para la segmentación semántica de las imágenes provistas y, a partir de los resultados obtenidos, investigar cómo mejorar la segmentación. Sin embargo esto no fue posible debido a la alta resolución de las imágenes provistas y al limitado acceso a hardware de alto rendimiento. Por ello se ideó un plan inicial en el que se construía una herramienta que tuviese menor requisito de hardware. La mayor limitación era por la VRAM necesaria, por lo que se pensó en utilizar Apache Spark \cite{apachespark} para aprovechar HDD y RAM.
 
-\begin{itemize}
-\item En algunas asignaturas y en mi tiempo libre he utilizado técnicas sencillas de inteligencia artificial.
-\item Tengo conocimiento sobre el funcionamiento de una red neuronal. Conozco los conceptos de neurona artificial, capas de la red, pérdida o descenso por gradiente.
-\item Necesito encontrar una arquitectura de red neuronal adecuada para resolver el problema dado.
-\item El uso de la GPU aumentará mucho la velocidad con la que se realizan las operaciones.
-\end{itemize}
-
-\section{Planificación inicial}\label{sec:planinicial}
-
-En este primer plan dividí las tareas en fases, siendo la fase 0 realmente un proceso de iniciación, necesaria para planificar el resto de las fases.
+En este primer plan se dividieron las tareas en fases, siendo la fase 0 realmente un proceso de iniciación, necesaria para planificar el resto de las fases.
 
 \begin{itemize}
 \item[\textbf{Fase 0}] Estudio previo. Investigar las soluciones actuales al problema o problemas similares, las posibles técnicas de machine learning a usar en este proyecto y tecnologías para implementarlas.
@@ -22,53 +12,33 @@ En este primer plan dividí las tareas en fases, siendo la fase 0 realmente un p
 \item[\textbf{Fase 2}] Implementar, entrenar y probar una o más CNN.
 \item[\textbf{Fase 3}] Analizar resultados obtenidos.
 \item[\textbf{Fase 4}] Investigar sobre mejoras pre y post procesado.
-\item[\textbf{Fase 5}] Realizar estas operaciones usando Spark.
+\item[\textbf{Fase 5}] Realizar estas operaciones usando Apache Spark. Framework que facilita trabajar con datos a gran escala aprovechando HDD y RAM.
 \item[\textbf{Fase 6}] Hacer que el entrenamiento y la inferencia sean usables por un usuario.
 \end{itemize}
 
-\section{Qué no se tuvo en cuenta}\label{sec:nosetuvoencuenta}
+\section{Nueva metodología}\label{sec:metodologia}
 
 Gracias a la investigación inicial realizada en la \textbf{Fase 0} se pudo definir el resto de fases del plan inicial, aunque no se tuvieron en cuenta varios factores que se empezaron a ver en la \textbf{Fase 1} y \textbf{Fase 2}. Esto provocó que se tuviese que realizar un ajuste en el plan inicial. 
 Lo que no se tuvo en cuenta fue:
 
 \begin{itemize}
 \item Las fases 2, 3 y 4 deben ser fases iterativas. Cada vez que se obtengan resultados hay que estudiarlos y hacer cambios para mejorar los resultados.
-\item No se tiene en cuenta el rendimiento de los algoritmos utilizado ni los cuellos de botella.
-\item Se quiere usar Spark con la premisa de aprovechar la RAM o el HDD cuando la VRAM se agote, pero como se verá en la sección [REDACTED] esto no es viable.
+\item No se tiene en cuenta el rendimiento de los algoritmos utilizados ni los cuellos de botella.
+\item Se quiere usar Spark con la premisa de aprovechar la RAM o el HDD cuando la VRAM se agote, pero esto no es viable ya en la VRAM se tiene que poder almacenar toda la información necesaria para ejecutar cada algoritmo.
 \end{itemize}
 
-\section{Nueva metodología}\label{sec:metodologia}
-
-Cuando se estaba siguiendo la \textbf{Fase 2} del plan inicial se vieron los problemas antes mencionados, por lo que se buscó información sobre una metodología adecuada. El capítulo 11 del libro Deep Learning \cite{Goodfellow2016} habla sobre una metodología práctica para la aplicación de técnicas en deep learning. Esta metodología se centra en utilizar feedback del sistema construido en cada iteración para modificar el sistema acorde a tus objetivos. Los pasos a seguir propuestos por esta metodología son:
+Por todo ello, se buscó información sobre una metodología adecuada. El capítulo 11 del libro Deep Learning \cite{Goodfellow2016} habla sobre una metodología práctica para la aplicación de técnicas en deep learning. Esta metodología se centra en utilizar feedback del sistema construido en cada iteración para modificar el sistema acorde a los objetivos. Los pasos a seguir propuestos por esta metodología son:
 
 \begin{enumerate}
-\item Determinar tus metas. Qué métrica usar como error y un valor de la métrica aceptable como objetivo.
+\item Determinar las metas. Qué métrica usar como error y un valor de la métrica aceptable como objetivo.
 \item Establecer lo antes posible un sistema completo que pueda dar un valor para dicha métrica.
 \item Utilizar herramientas adecuadas para determinar cuellos de botella en el rendimiento. Comprobar qué componentes están dando peores resultados en el sistema y comprobar si los resultados negativos son debidos a overfitting, underfitting, a un fallo con los datos o en el software.
 \item Hacer cambios de forma a los datos, ajuste de hiperparámetros o cambiar algoritmos con el objetivo de mejorar la métrica usada. Volver al punto 3.
 \end{enumerate}
 
-Estos pasos se resumirán como \textit{Desarrollo del sistema} y constituirá la mayor parte del proyecto.
+Estos pasos se resumirán como ``desarrollo del sistema" y constituirá la mayor parte del proyecto.
 \newpage
-\section{Planificación actualizada}\label{sec:planactualizado}
-
-\subsection{Resumen}\label{subsec:resumenplanactualizado}
-
-\cuadro{|c|c|}{Tabla de resumen de la planificación.}{tab:prueba}{
-Fecha de inicio & 20/02/2020 \\ 
-\hline
-Fecha de fin prevista & 14/06/2020 \\
-\hline
-Fecha de fin real & 4/12/2020 \\
-\hline
-Horas de trabajo previstas & 300\\
-\hline
-Horas de trabajo real & \\
-\hline
-}
-
-
-\subsection{Fases}\label{subsec:fasesplanactualizado}
+\section{Plan seguido}\label{sec:planactualizado}
 
 \begin{itemize}
 \item[\textbf{Fase 0}] Estudio previo. En esta fase se investigará sobre artículos de segmentación celular y se aprenderá sobre machine learning y las tecnologías necesarias para llevar a cabo resultados similares aplicados al problema actual.
