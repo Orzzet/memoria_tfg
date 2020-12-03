@@ -6,7 +6,7 @@ Después de investigar sobre las soluciones actuales (Capítulo \ref{apps}) e in
 
 Se empezará por seguir los pasos del “Getting started” del framework fastai \cite{Howard2018} de Python. Este framework es una capa de abstracción por encima de PyTorch \cite{Paszke2019}. Abstrae muchos elementos del programador, haciendo que probar distintas arquitecturas sea rápido, además tiene implementado mejoras de optimización a bajo nivel. También es importante tener en cuenta que este framework tiene implementado la arquitectura u-unet (y otras de procesamiento de imágenes), arquitectura vista en el estudio previo como el estado del arte en segmentación semántica.
 
-\section{Computación local}\label{sec:local_dev}
+\subsubsection{Computación local}\label{sec:local_dev}
 
 Se ha seguido un tutorial en el que se usa una u-net para segmentar imágenes 2D. El tutorial se puede encontrar en el siguiente notebook:
 
@@ -26,7 +26,7 @@ En la figura \ref{fig:fastai_tuto_local} se pueden ver las métricas obtenidas d
 
 Es importante tener en cuenta que ha sido necesario disminuir la imagen original de $(720, 960)px$ a $(90, 120)px$, que cuyo tamaño de imagen es $\frac{1}{8*8}=\frac{1}{64}$ del original.
 
-\section{Computación en la nube}\label{sec:cloud_dev}
+\subsubsection{Computación en la nube}\label{sec:cloud_dev}
 
 Se ha intentando trabajar con la GPU local (2GB vRAM) en este ejemplo 2D, realizando optimizaciones y reduciendo los datos de entrada. Se han podido obtener resultados pese a reducir mucho el tamaño de imagen, por lo que entrenar con la GPU local podría ser válido para datos 2D. Aún así, en este proyecto se va a trabajar con datos 3D, por lo tanto no es realista usar la GPU local para el entrenamiento e inferencia.
 

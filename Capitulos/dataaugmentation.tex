@@ -1,7 +1,5 @@
 \chapter{Mejora 2: Data augmentation}\label{data_augmentation}
 
-\section{Problema detectado}\label{sec:data_augmentation_problem}
-
 En la gráfica de la función de pérdida de los resultados anteriores se puede ver algo preocupante: la pérdida de validación ha empezado a subir mientras que la pérdida de entrenamiento baja.
 
 En cada iteración del algoritmo de entrenamiento se comparan todos los ejemplos del conjunto de entrenamiento para obtener la pérdida de entrenamiento. A menos que haya un error grave esta pérdida debería bajar ya que el modelo es entrenado con ejemplos de este mismo conjunto de entrenamiento. Sin embargo no se utilizan ejemplos del conjunto de validación para el entrenamiento, sólo se utilizan para calcular la pérdida de validación en cada iteración.
@@ -9,10 +7,6 @@ En cada iteración del algoritmo de entrenamiento se comparan todos los ejemplos
 Si el modelo mejora en predecir el conjunto de entrenamiento pero empeora en predecir el conjunto de validación esto es un indicativo de que se está produciendo un sobreajuste. En la figura \ref{fig:sistema_2_dice_perdidas_200} se ha entrenado 100 iteraciones más (200 en total) el modelo anterior para comprobar si este sobreajuste se está produciendo realmente o era un fenómeno que ocurría durante un tramo pequeño. Claramente se puede ver que hay sobreajuste.
 
 \figura{0.7}{img/pruebas/sistema_2_dice_perdidas_200}{Pérdida de entrenamiento en cada iteración. 200 iteraciones. Se puede ver claramente cómo se produce sobreajuste.}{fig:sistema_2_dice_perdidas_200}{}{Pérdida de entrenamiento sistema con pérdida DICE en 200 iteraciones.}
-
-\section{Técnica de data augmentation}\label{sec:data_augmentation_change}
--falta-
-\section{Implementación de data augmentation}\label{sec:data_augmentation_change}
 
 PyTorch ofrece varias técnicas de data augmentation pero no están adaptadas para datos volumétricos, por lo que es necesario recurrir a librerías externas, como Kornia.
 

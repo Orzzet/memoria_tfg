@@ -62,12 +62,10 @@ Se ha implementado una arquitectura U-Net basada en la implementación de Ronneb
 \figura{0.8}{img/Diseno-unetarch-half}{Arquitectura U-Net reducida. Arquitectura completa (vista en \ref{sec:unet} eliminando varias capas de convolución y una de pooling. Los modelos generados por esta arquitectura serán menos fiables, pero el entrenamiento será más rápido, por lo que es útil para implementar un primer sistema.}{fig:unetarch-half}{}{Arquitectura U-Net reducida.}
 
 \section{Tamaño de la imagen en disco}\label{sec:disk_problem}
-\subsection{Problema}\label{sec:disk_problem_problem}
+
 Al estar trabajando con herramientas en la nube será recomendable reducir el tamaño de los archivos lo mayor posible. Los archivos originales ocupan en total $9.17GB$, siendo el almacenamiento disponible de la máquina en la nube con la que se trabaja de $5GB$.
 
-Al principio no se tuvo en cuenta la solución al tamaño de la imagen en memoria (sección \ref{subsec:lowscale}) en la que se reduce la resolución de las imágenes. Esto habría resuelto también el problema del tamaño en disco. Aún así, en esta sección se aplican técnicas para reducir aún más el tamaño en disco sin perder información.
-
-\subsection{Solución: Formato numérico y compresión}\label{subsec:disk_formato}
+Al principio no se tuvo en cuenta la solución al tamaño de la imagen en memoria (sección \ref{sec:size_problem}) en la que se reduce la resolución de las imágenes. Esto habría resuelto también el problema del tamaño en disco. Aún así, en esta sección se aplican técnicas para reducir aún más el tamaño en disco sin perder información.
 
 Todas las imágenes utilizan float de 8 bytes ($f8$) para almacenar los valores de cada vóxel. En el cuadro \ref{cuadro1:intensidad_min_max} se puede ver que la valor máximo de los vóxeles es $65535.0$, por lo que no es necesaria una precisión de 8 bytes ($[2^{-1023}, 2^{1023}]$) para los valores de esas imágenes, especialmente para el etiquetado, en el que se usa valores enteros entre $0$ y $100$.
 
@@ -79,7 +77,7 @@ Todas las imágenes utilizan float de 8 bytes ($f8$) para almacenar los valores 
 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 \\
 }
 
-Si hacemos que los valores de la imagen de entrada pasen de 8 bytes a 4 bytes, estaremos reduciendo su tamaño a la mitad. De forma similar si hacemos que la los valores de la imagen etiquetada pase de 8 bytes a 1 bytes, estaremos reduciendo su tamaño a una octava parte. Con 1 byte de precisión podremos almacenar hasta 256 valores distintos, suficiente ya que sólo tendremos 2 valores distintos: 0 para el fondo y 1 para la célula o los bordes. 
+Si se hace que los valores de la imagen de entrada pasen de 8 bytes a 4 bytes, estaremos reduciendo su tamaño a la mitad. De forma similar si hacemos que la los valores de la imagen etiquetada pase de 8 bytes a 1 bytes, estaremos reduciendo su tamaño a una octava parte. Con 1 byte de precisión podremos almacenar hasta 256 valores distintos, suficiente ya que sólo tendremos 2 valores distintos: 0 para el fondo y 1 para la célula o los bordes. 
 
 Además se comprimirán las imágenes sin pérdida, aunque esto sólo reducirá el tamaño del archivo, el tamaño de los tensores almacenados en memoria será el mismo. Esta compresión será muy efectiva en las imágenes etiquetadas, ya que los elementos sólo tendrán 2 valores distintos. 
 
@@ -88,8 +86,6 @@ Después de hacer estos cambios se habrá reducido el tamaño del fichero pero n
 \item Los tensores al cargarlos en memoria estarán sin ningún tipo de compresión. Cada valor del tensor ocupará el espacio correspondiente a su tipo de dato.
 \item Las operaciones implementadas en los frameworks de deep learning limitan el tipo de dato que pueden tener los tensores. Están implementados a muy bajo nivel para optimizar las operaciones, por lo que será necesario  convertir los tipos a unos que acepten, si no lo son ya.
 \end{enumerate}
-
-\subsection{Implementación}\label{subsec:disk_problem_implementation}
 
 Para leer los ficheros originales y guardarlos con el mismo formato se ha usado la librería  \textbf{h5py} \cite{Collette2013}. Esta aporta una interfaz para trabajar con el formato de datos HDF5 \cite{HDFGroup20002010}, útil para usar en python ficheros generados en programas como MATLAB.
 
@@ -102,12 +98,10 @@ El tratamiento de datos con esta librería es muy intuitivo ya que imita la sint
 
 \section{Tamaño de la imagen en memoria}\label{sec:size_problem}
 
-\subsection{Problema}\label{sec:size_problem_problem}
 El principal cuello de botella al usar técnicas de deep learning es el hardware requerido para ello. 
 
 Sería ideal ser capaz de entrenar una CNN usando las imágenes provistas directamente, pero a causa de su gran resolución no es viable. Una imagen de resolución $ (200, 1024, 1024)vx $ con una precisión de 8 bytes ocupa en memoria (siempre hablaremos de memoria de GPU) $size(imagen)=\frac{1024*1024*200*8}{1024*1024}=1600MB $. Si bien podríamos almacenar esta imagen en memoria, las CNN se caracterizan por aplicar un gran número de filtros distintos en paralelo a una imagen de entrada, utilizando los resultados de la aplicación de estos filtros en el siguiente paso de la CNN. Además, en el caso de U-Net, se guardan los resultados de algunas etapas para usarla en etapas futuras. Es completamente inviable usar la resolución original en este proyecto directamente como dato de entrada.
 
-\subsection{Solución: Reducir resolución}\label{subsec:lowscale}
 \subsubsection{Escalado hacia abajo}\label{subsubsec:downscale}
 
 Las imágenes originales ocupan $\sim 2GB$ en memoria, intentar usarlas en una U-Net sobrepasa en gran medida los 16GB de memoria disponibles en este proyecto. Se ha decidido reducir las dimensiones en $(1/8, 1/8, 1/4)$ de sus dimensiones $(X, Y, Z)$ originales, consiguiendo una reducción de $8*8*4=256$ de su tamaño original, se pasa de $\sim 2GB$ a $\sim 8MB$. Con un tamaño de $8MB$ es posible realizar todo el proceso de entrenamiento e inferencia aunque se pierda calidad en la imagen. Gracias a la característica de U-Net de aceptar imágenes de cualquier dimensión, si no se hace entrenamiento por batch no es necesario asegurarse de que todas las imágenes tengan las mismas dimensiones. Por experimentación, se ha comprobado que los factores de las dimensiones no deben de ser muy diferentes, ya que cambiaría el tamaño en $\mu m^3$ de cada vóxel, además de provocar una deformación elástica en los imágenes.
@@ -118,7 +112,7 @@ Después de escalar hacia abajo, si se quiere hacer entrenamiento por batch con 
 
 El formato de las imágenes inicialmente es $ (Z,X,Y) $, siendo para todas las imágenes $ X = Y = 1024 $ y $ Z\epsilon[216,368] $. Además de reducir la resolución de las imágenes, es importante que todas tengan la misma, de lo contrario no podrán ser usadas en operaciones batch. También es esencial que la imagen de entrada y la imagen etiquetada no se deformen demasiado.
 
-\subsection{Implementación}\label{subsec:size_problem_implementation}
+\subsubsection{Implementación}\label{subsec:size_problem_implementation}
 
 Para implementar esta solución se ha utilizado la librería \textbf{SciPy} \cite{Virtanen2020}. 
 
@@ -128,19 +122,13 @@ Esta función hace interpolación con splines, polinomios de orden n definidos a
 
 \section{Segmentación semántica multiinstancia con U-Net}\label{sec:multiinstance_segm}
 
-\subsection{Problema}\label{subsec:multi_problem}
-
 El dataset disponible para este proyecto está compuesto por dos tipos distintos de imágenes. Uno es la imagen original y otro es una segmentación manual con el etiquetado perfecto. En el etiquetado perfecto cada célula está representada por un entero distinto sin espacio entre ellas, el fondo está representado por 0.
 
 Si se usara el etiquetado actual sería necesario una clasificación con una clase por cada célula, pero eso no tiene mucho sentido ya que el nº de células en una imagen puede variar y las células no tienen unas posiciones preestablecidas ni nada que las diferencien unas de otras (a priori, al menos). Que se sepa, todas las células tienen las mismas características por lo que deben tener la misma clase en una segmentación semántica. Tampoco se puede cambiar la etiqueta de todas las células a 1 (siendo 1 la clase célula) ya que las células están en contacto entre sí (no hay espacio entre células), lo que provocaría que los bordes originales de las células se perdieran.
 
-\subsection{Solución}\label{subsec:multi_problem}
-
 La solución que se probará primero será añadir un espaciado entre células, tal y como se hace en el pipeline del artículo descrito en la sección \ref{sec:app1} \cite{Falk2019}. Al existir un espaciado entre células, estas no estarían tocándose entre sí, por lo que todas podrían tener la misma etiqueta y contar como instancias distintas.
 
 Para añadir este espaciado entre células primero se encuentran los bordes de cada célula y después se substraen de la imagen original. Por último se cambian todas las etiquetas a 1.
-
-\subsection{Implementación}\label{subsec:multi_implementation}
 
 Para hacer estas operaciones se ha utilizado la librería \textbf{scikit-image} \cite{Walt2014}, una librería de procesamiento de imágenes.
 

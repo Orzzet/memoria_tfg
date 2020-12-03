@@ -1,12 +1,8 @@
 \chapter{Mejora 3: Arquitectura U-Net completa}\label{full_unet}
 
-\section{Problema detectado}\label{sec:full_unet_problem}
-
 Al utilizar una arquitectura U-Net para hacer pruebas se conseguía un tiempo bajo de entrenamiento. Esto ha sido útil ya que se ha podido mejorar el sistema con iteraciones rápidas, pero estaba lejos de producir una segmentación adecuada, algo que era de esperar.
 
 Con la arquitectura U-Net reducida cada epoch tardaba $11s$ (en esos 11 segundos se hace entrenamiento y validación), durando el entrenamiento de $100$ iteraciones $1100s = 18m20s$. Con la arquitectura implementada en este capítulo se tardará $37s$ por iteración, durando el entrenamiento de $100$ iteraciones $3700s = 63m20s$, 
-
-\section{U-Net completa}\label{sec:full_unet_change}
 
 En la figura \ref{fig:unetarch-full} se puede ver la arquitectura completa de la red U-Net utilizada. Esta arquitectura ha sido usada con éxito para segmentación volumétrica densa \cite{Cicek2016} y está basada en la arquitectura U-Net propuesta por Ronneberger et al \cite{Ronneberger2015}. Más detalle en el capítulo \ref{cnn} y en la sección \ref{sec:unet}.
 

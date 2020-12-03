@@ -1,14 +1,10 @@
 \chapter{Mejora 5: Apex, precisión mixta}\label{apex}
 
-\section{Problema detectado}\label{sec:apex_problem}
-
 Durante el entrenamiento se ha usado la herramienta gpustat \cite{wookayin} para medir la vRAM de la GPU utilizada. Desde el sistema inicial se han utilizado imágenes de baja calidad al reescalar la original a un tamaño de $(Z_L, 126, 126)$, donde $Z_L$ depende de cada imagen, y un batch de tamaño 1. Al entrenar se consumía $11525GB$ y al hacer inferencia $6063GB$. Se ha intentado utilizar imágenes de mayor calidad $(Z_M, 252, 252)$ pero no había suficiente memoria. También se había intentado utilizar un batch de tamaño 2 en el sistema inicial, pero la memoria también lo limitaba.
 
 El problema que se quiere resolver es el alto consumo de memoria. Si se reduce la memoria necesaria se podrían utilizar imágenes de mayor calidad, aumentando la cantidad de información que tienen las imágenes durante el entrenamiento. Además, usando imágenes de mayor calidad se reduciría el espaciado entre células ya que el espaciado entre dos células adyacentes seguiría teniendo el mismo nº de píxeles pero la imagen (y cada célula) sería mayor.
 
 Si no fuera posible aumentar la calidad de imagen aún consiguiendo una reducción de memoria, se intentará aumentar el tamaño del batch para reducir el tiempo de entrenamiento.
-
-\section{Precisión de los tensores}\label{sec:apex_precision}
 
 En 2017 se publicó el artículo \textit{Mixed Precision Training} en el se demostró que el uso de precisión mixta no influye negativamente en el entrenamiento de CNNs \cite{Micikevicius2018} y reduce el uso de memoria y el tiempo de entrenamiento.
 
@@ -18,8 +14,6 @@ En la precisión mixta se usa FP16 para almacenar los tensores involucrados en e
 \item \textbf{FP32} Formato en coma flotante de precisión simple. Ocupa 32 bits, con rango $[2^{-126},2^{127}]$
 \item \textbf{FP16} Formato en coma flotante de precisión media. Ocupa 16 bits, con rango $[2^{-14},2^{15}]$
 \end{itemize}
-
-\section{Implementación}\label{sec:apex_implementation}
 
 Las técnicas explicadas en \textit{Mixed Precision Training} están implementadas para su uso en PyTorch por \textit{Apex} \cite{Apex2020}. Apex es una librería desarrollada por NVidia que gestiona estas operaciones al modificar directamente PyTorch. Hay varios niveles de optimización disponibles, se ha probado a utilizarlo con una optimización de nivel 1 y de nivel 2.
 \begin{itemize}
