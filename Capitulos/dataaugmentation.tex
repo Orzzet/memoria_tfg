@@ -8,7 +8,7 @@ En cada iteración del algoritmo de entrenamiento se comparan todos los ejemplos
 
 Si el modelo mejora en predecir el conjunto de entrenamiento pero empeora en predecir el conjunto de validación esto es un indicativo de que se está produciendo un sobreajuste. En la figura \ref{fig:sistema_2_dice_perdidas_200} se ha entrenado 100 iteraciones más (200 en total) el modelo anterior para comprobar si este sobreajuste se está produciendo realmente o era un fenómeno que ocurría durante un tramo pequeño. Claramente se puede ver que hay sobreajuste.
 
-\figura{0.7}{img/pruebas/sistema_2_dice_perdidas_200}{Pérdida de entrenamiento en cada iteración. 200 iteraciones. Se puede ver claramente cómo se produce sobreajuste.}{fig:sistema_2_dice_perdidas_200}{}
+\figura{0.7}{img/pruebas/sistema_2_dice_perdidas_200}{Pérdida de entrenamiento en cada iteración. 200 iteraciones. Se puede ver claramente cómo se produce sobreajuste.}{fig:sistema_2_dice_perdidas_200}{}{Pérdida de entrenamiento sistema con pérdida DICE en 200 iteraciones.}
 
 \section{Técnica de data augmentation}\label{sec:data_augmentation_change}
 -falta-
@@ -32,8 +32,8 @@ IoU fondo & IoU células\\
 0.9031 & 0.3165\\
 }
 
-\figura{0.8}{img/pruebas/sistema_3_augm_perdidas}{Pérdida de entrenamiento. 100 iteraciones.}{fig:sistema_3_augm_perdidas}{}
+\figura{0.8}{img/pruebas/sistema_3_augm_perdidas}{Pérdida de entrenamiento y validación. 100 iteraciones.}{fig:sistema_3_augm_perdidas}{}{Pérdida de entrenamiento y validación de sistema con data augmentation.}
 
-\figura{0.8}{img/pruebas/sistema_3_augm_visual}{Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.}{fig:sistema_3_augm_visual}{}
+\figura{0.8}{img/pruebas/sistema_3_augm_visual}{Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.}{fig:sistema_3_augm_visual}{}{Ejemplo de segmentación sistema de con data augmentation.}
 
 Gracias a este cambio se ha eliminado el sobreajuste, tal y como se puede ver en la gráfica \ref{fig:sistema_3_augm_perdidas}. Se ha obtenido un $IoU=0.3165$, mejor que sin data augmentation. Aunque como se puede ver en la figura \ref{fig:sistema_3_augm_visual} este valor de $IoU$ está muy lejos de proporcionar una segmentación de células válida.

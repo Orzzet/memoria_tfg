@@ -56,7 +56,7 @@ Donde $d_2$ es la distancia a la segunda instancia de célula más cercana y $\s
 
 \subsection{Resultados}\label{app1_results}
 
-\figura{1}{img/unet-morf-example}{Segmentación volumétrica. (a) Segmentación de una imagen con un modelo que se ha entrenado con imágenes del mismo dataset. (b) Segmentación de una imagen con un modelo entrenado con un dataset distinto.}{fig:unet-morf-example}{}
+\figura{1}{img/unet-morf-example}{Segmentación volumétrica. (a) Segmentación de una imagen con un modelo que se ha entrenado con imágenes del mismo dataset. (b) Segmentación de una imagen con un modelo entrenado con un dataset distinto.}{fig:unet-morf-example}{}{Segmentación volumétrica.}
 
 La métrica utilizada para cuantificar la calidad del resultado es intersección sobre unión (IoU).
 
@@ -115,7 +115,7 @@ El algoritmo watershed trata el valor de los vóxeles como si describiese una to
 
 \subsection{Resultados}\label{app2_results}
 
-\figura{1}{img/wolny-resultados}{Segmentación de tejido vegetal usando PlantSeg. En el primer paso se predicen los bordes de las células usando una red U-Net 3D. En el segundo paso se aplica un algoritmo de particionamiento de grafo para segmentar cada célula.}{fig:wolny-resultados}{}
+\figura{1}{img/wolny-resultados}{Segmentación de tejido vegetal usando PlantSeg. En el primer paso se predicen los bordes de las células usando una red U-Net 3D. En el segundo paso se aplica un algoritmo de particionamiento de grafo para segmentar cada célula.}{fig:wolny-resultados}{}{Segmentación de tejido vegetal usando PlantSeg.}
 
 Para la etapa de la predicción de bordes se han usado tres métricas:
 \begin{itemize}
@@ -148,4 +148,4 @@ Como se ven en los resultados parece que la pérdida Dice es ligeramente superio
 
 PlantSeg es un programa que puede ser ejecutado por una interfaz gráfica o por línea de comandos. Dispone de todos los modelos preentenados en este proyecto, así como de todas las opciones para entrenar nuevos modelos o hacer inferencia. El software con las instrucciones para su uso están disponibles en \textit{https://github.com/hci-unihd/plant-seg}.
 
-\figura{1}{img/plantseg-software}{Interfaz gráfica del programa PlantSet. Se pueden ver las distintas opciones para cada paso del procesado.}{fig:plantseg-software}{}
+\figura{1}{img/plantseg-software}{Interfaz gráfica del programa PlantSet. Se pueden ver las distintas opciones para cada paso del procesado.}{fig:plantseg-software}{}{Interfaz gráfica del programa PlantSet.}

@@ -243,11 +243,12 @@
 % 3 --> Texto a pie de imagen
 % 4 --> Etiqueta (label) para referencias
 % 5 --> Opciones que queramos pasarle al \includegraphics
-\newcommand{\figura}[5]{
+% 6 --> Texto que aparece listoffigures
+\newcommand{\figura}[6]{
   \begin{figure}[hbtp]
     \begin{center}
     \includegraphics[width=#1\textwidth,#5]{#2}%
-    \caption{#3}
+    \caption[#6]{#3}
     \label{#4}
     \end{center}
   \end{figure}

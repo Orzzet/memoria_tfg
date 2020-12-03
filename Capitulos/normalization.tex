@@ -36,7 +36,7 @@ Donde $v_i^{'}$ es el nuevo valor del vóxel, $v_i$ es el valor actual, $\mu$ es
 
 Para decidir qué técnica usar se van a los histogramas.
 
-\figura{1}{img/pruebas/comparacion_normaliz}{Izquierda: Normalización tipificada. Derecha: Cambio a escala $[0,1]$.}{fig:comparacion_normaliz}{}
+\figura{1}{img/pruebas/comparacion_normaliz}{Izquierda: Normalización tipificada. Derecha: Cambio a escala $[0,1]$.}{fig:comparacion_normaliz}{}{Histogramas de aplicar la normalización tipificada y el cambio a escala }
 
 En la figura \ref{fig:comparacion_normaliz} se muestran los dos histogramas. En el histograma del cambio a escala se puede ver cómo los vóxeles sólo tienen valores entre $0$ y $1$. Aún así se observa que la mayoría de los valores están en la zona de menor intensidad, lo que se soluciona con la normalización tipificada. Por lo tanto es esta última la que se implementará.
 
@@ -52,9 +52,9 @@ IoU fondo & IoU células\\
 0.9811 & 0.7224\\
 }
 
-\figura{0.8}{img/pruebas/sistema_5_normalizacion_perdidas}{Pérdida de entrenamiento. 100 iteraciones.}{fig:sistema_5_normalizacion_perdidas}{}
+\figura{0.8}{img/pruebas/sistema_5_normalizacion_perdidas}{Pérdida de entrenamiento. 100 iteraciones.}{fig:sistema_5_normalizacion_perdidas}{}{Pérdida de entrenamiento y validación de sistema con normalización.}
 
-\figura{0.8}{img/pruebas/sistema_5_normalizacion_visual}{Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetivo, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.}{fig:sistema_5_normalizacion_visual}{}
+\figura{0.8}{img/pruebas/sistema_5_normalizacion_visual}{Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetivo, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.}{fig:sistema_5_normalizacion_visual}{}{Ejemplo de segmentación de sistema con normalización.}
 
 Por primera vez se ha conseguido una $IoU > 0.7$ para las células, siendo la $IoU$ del fondo casi perfecto. Al normalizar los datos la red convolucional ha podido encontrar correctamente los patrones estructurales en la imagen original para poder llegar a la segmentación objetivo.
 

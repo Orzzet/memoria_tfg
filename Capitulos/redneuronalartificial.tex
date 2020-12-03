@@ -24,7 +24,7 @@ Es en esta etapa de deep learning en la que se enmarca el desarrollo de este tra
 
 En la figura \ref{fig:generic_computing_unit} se puede ver una neurona artifical genérica con la que pueden ser descritos los distintos tipos que se verán en esta sección.
 
-\figura{1}{img/Rojas1996_p31_computing_unit}{Neurona artificial genérica}{fig:generic_computing_unit}{}
+\figura{1}{img/Rojas1996_p31_computing_unit}{Neurona artificial genérica}{fig:generic_computing_unit}{}{Neurona artificial genérica}
 
 Siendo:
 \begin{itemize}
@@ -36,7 +36,7 @@ Siendo:
 
 Se puede simplificar la representación al asumir que siempre se usará $ \sum x_i w_i $ como función de integración. Además toda neurona artificial tendrá una entrada y un peso por defecto, independientemente del vector de entrada, esto hará referencia al \textit{bias}. Será común ver una representación como \ref{fig:generic_computing_unit} en la que $ f $ indicará la función de activación.
 
-\figura{1}{img/NeuronaArtificial}{Representación de una Neurona Artificial con $ \sum x_i w_i $ como función de integración}{fig:neurona_artificial}{}
+\figura{1}{img/NeuronaArtificial}{Representación de una Neurona Artificial con $ \sum x_i w_i $ como función de integración}{fig:neurona_artificial}{}{Neurona artificial con $ \sum x_i w_i $ como función de integración.}
 
 \begin{itemize}
 \item Al vector de entradas se le añade un elemento de valor constante 1, siendo ahora de tamaño $ n+1 $.
@@ -69,7 +69,7 @@ La unidad lineal rectificada (ReLU) fue propuesta como función de activación e
 
 Considerando la neurona artificial como una unidad de computación básica, según el conexionismo (que más tarde evolucionó en lo que hoy se conoce como \textit{deep learning}), se podría emular un comportamiento inteligente al conectar neuronas artificiales entre sí. La conexión entre las neuronas artificales se consigue concatenando las salidas de unas con la entradas de otras y obteniendo así una red neuronal artifical (ANN).
 
-\figura{1}{img/neural_network}{Red Neuronal Artificial completamente conectada.}{fig:neurona_artificial}{}
+\figura{1}{img/neural_network}{Red Neuronal Artificial completamente conectada.}{fig:neurona_artificial}{}{Red Neuronal Artificial completamente conectada.}
 
 En la figura \ref{fig:neurona_artificial} se ve una Red Neuronal Artifical completamente conectada (\textit{fully connected neural network} o FCNN) en la que todos los nodos de una capa están conectados con todos los nodos de la capa siguiente. Contaría con los siguientes elementos:
 \begin{itemize}
@@ -98,4 +98,4 @@ Donde $w_{ij}$ es el peso desde el nodo $i$ al nodo $j$.
 
 No es extraño en deep learning encontrar una red con millones de pesos pero, para facilitar la visualización, se ha usado como ejemplo una ANN con 2 pesos ($\theta_0$ y $\theta_1$). En la figura \ref{fig:gradient_descent} se puede ver una ilustración de cómo en cada punto (marcado por una X negra) se calcula el gradiente de $J(\theta_0, \theta_1)$ y se actualizan los pesos, cambiando el valor de $J(\theta_0, \theta_1)$ hasta alcanzar un mínimo.
 
-\figura{1}{img/gradient_descent}{Ilustración del algoritmo de descenso por gradiente. $\theta_0$ y $\theta_1$ son los pesos de la ANN y $J$ la función de pérdida. Se puede observar cómo se produce un "descenso" hacia un mínimo de la función.}{fig:gradient_descent}{}
+\figura{1}{img/gradient_descent}{Ilustración del algoritmo de descenso por gradiente. $\theta_0$ y $\theta_1$ son los pesos de la ANN y $J$ la función de pérdida. Se puede observar cómo se produce un "descenso" hacia un mínimo de la función.}{fig:gradient_descent}{}{Ilustración del algoritmo descenso por gradiente.}

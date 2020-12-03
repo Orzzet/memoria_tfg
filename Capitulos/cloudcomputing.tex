@@ -20,7 +20,7 @@ Se han tenido que modificar parámetros para poder ejecutar el notebook en la m�
 \item $\#learn.recorder.plot()$ Esta operación muestra una gráfica de “Learning rate” vs “Loss”, en el que se podría comprobar qué ratio de aprendizaje tiene menor pérdida. No se ha podido ejecutar porque consume mucha memoria.
 \end{itemize}
 
-\figura{0.5}{img/fastai_tuto_local}{Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.}{fig:fastai_tuto_local}{}
+\figura{0.5}{img/fastai_tuto_local}{Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.}{fig:fastai_tuto_local}{}{Métricas CNN de prueba en local.}
 
 En la figura \ref{fig:fastai_tuto_local} se pueden ver las métricas obtenidas durante el entrenamiento. Esta tarea es de segmentación, por lo que a cada píxel de la imagen se le da un valor dependiendo de a la clase a la que pertenezca. Carece de interés analizar en detalle este caso ya que se ha hecho como primer ejemplo de uso de esta librería para segmentación.
 
@@ -40,7 +40,7 @@ Gracias a esto se ha conseguido ejecutar el notebook con los siguientes parámet
 \item $batch\_size = 16$
 \end{itemize}
 
-\figura{0.5}{img/fastai_tuto_cloud}{Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.}{fig:fastai_tuto_cloud}{}
+\figura{0.5}{img/fastai_tuto_cloud}{Métricas obtenidas al entrenar durante 10 epochs. acc\_camvid es el nº de píxeles clasificados correctamente entre el nº de píxeles totales. El tiempo es en segundos.}{fig:fastai_tuto_cloud}{}{Métricas CNN de prueba en la nube.}
 
 En la figura \ref{fig:fastai_tuto_cloud} se pueden ver las métricas obtenidas en las que se muestra cómo se ha conseguido un acc\_camvid superior, que es la métrica usada para medir cómo de buena es la predicción, donde 1 sería una predicción perfecta. Las pérdidas de entrenamiento y validación son menores, por lo que el modelo considera que se ha acercado más a su objetivo.
 

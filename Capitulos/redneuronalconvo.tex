@@ -4,11 +4,11 @@ En este capítulo se estudiarán los fundamentos de la red neuronal convoluciona
 
 Hasta ahora se ha supuesto que la entrada a una ANN es un vector, algo válido para un gran número de aplicaciones en deep learning. El problema está cuando la entrada de la red neuronal es una imagen. En este caso antes de utilizar la imagen como entrada hay que aplanarla para contener la imagen en un vector, de esta forma cada píxel (o vóxel) será un elemento del vector de entrada y estará conectado a cada neurona de la capa siguiente. Para el caso de imágenes pequeñas (como la de la figura \ref{fig:image_to_ANN}) puede ser viable, pero teniendo tan sólo una imagen de $4$x$4px$ y 4 neuronas en la única capa oculta, se tendrían $16*4=64$ pesos. Si aplicáramos este sistema a una imagen 3D en escala de grises con $124*124*70=1076320vx$, se necesitarían más de un millón de pesos por cada neurona que haya en la primera capa oculta. Esto hace que sea completamente inviable usar este tipo de redes para imágenes a partir de cierto tamaño. En este capítulo se presentan las redes neuronales convolucionales (CNN), que reducirán en gran medida el nº de pesos necesarios en la red neuronal y aprovecharán técnicas del procesamiento de imágenes para encontrar patrones.
 
-\figura{0.8}{img/image_to_ANN}{Imagen de 4x4 px aplanada y usada como entrada en una FCNN con 4 neuronas en su única capa oculta. No se muestra su capa de salida. Imagen del curso Intro to Deep Learning with PyTorch de Udacity.}{fig:image_to_ANN}{}
+\figura{0.8}{img/image_to_ANN}{Imagen de 4x4 px aplanada y usada como entrada en una FCNN con 4 neuronas en su única capa oculta. No se muestra su capa de salida. Imagen del curso Intro to Deep Learning with PyTorch de Udacity.}{fig:image_to_ANN}{}{Imagen como entrada en una ANN.}
 
 Cambiando la arquitectura de la red vista en la figura \ref{fig:image_to_ANN} por una CNN, obtendríamos una arquitectura similar a la vista en la figura \ref{fig:image_to_CNN}. En esta CNN se ha reducido el nº de conexiones de la capa de entrada a la capa oculta de $64$ a $16$, además, como veremos más adelante, los pesos de las 4 neuronas son compartidos, esto significará que sólo se necesitarán $4$ pesos distintos.
 
-\figura{1}{img/image_to_CNN_}{Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imágenes del curso Intro to Deep Learning with PyTorch de Udacity.}{fig:image_to_CNN}{}
+\figura{1}{img/image_to_CNN_}{Imagen de 4x4 px usada como entrada en una CNN. Ambas figuras muestran la misma arquitectura, estando en la figura de la izquierda la imagen aplanada y en la figura de la derecha se muestra la matriz 4x4 como entrada. Imágenes del curso Intro to Deep Learning with PyTorch de Udacity.}{fig:image_to_CNN}{}{Imagen como entrada en una CNN.}
 
 \subsubsection{Conceptos de procesamiento de imagen}
 
@@ -24,26 +24,26 @@ Siguiendo este esquema, a $g$ se le conocerá como \textbf{kernel} y definirá l
 \sum_{k=0}^{m-1}\sum_{l=0}^{m-1} X_{j,k} * Y_{y_1 - i-\lfloor l/2 \rfloor, y_2 -  j -\lfloor l/2 \rfloor}
 \end{equation}
 
-\figura{0.4}{img/kernel}{Kernel $2$x$2$ aplicado al elemento $(0,0)$ de una matriz $3$x$3$. Imagen tomada de  d2l.ai.}{fig:kernel}{}
+\figura{0.4}{img/kernel}{Kernel $2$x$2$ aplicado al elemento $(0,0)$ de una matriz $3$x$3$. Imagen tomada de  d2l.ai.}{fig:kernel}{}{Resultado de aplicar un kernel a una imagen.}
 
 En la figura \ref{fig:kernel} se puede observar un problema al intentar aplicar el kernel al punto $(0,2)$. El kernel ``se sale" de la imagen, por lo que no se puede computar esta operación y se pierde información. Para solucionar esto se aplica lo que se conoce como \textbf{padding}.
 
 El padding es una técnica que consiste en añadir píxeles de relleno alrededor de una imagen. En este contexto se añade 0 para evitar alterar los resultados. Un ejemplo de de padding puede verse en la figura \ref{fig:padding}
 
-\figura{0.5}{img/padding}{Kernel $2$x$2$ aplicado al elemento $(0,0)$ de una matriz $3$x$3$ con padding 1 aplicado. Imagen tomada de  d2l.ai.}{fig:padding}{}
+\figura{0.5}{img/padding}{Kernel $2$x$2$ aplicado al elemento $(0,0)$ de una matriz $3$x$3$ con padding 1 aplicado. Imagen tomada de  d2l.ai.}{fig:padding}{}{Resultado de aplicar un kernel a una imagen con padding.}
 
-Esta operación se debe realizar para toda la imagen de entrada. Si se quiere realizar esta operación para todos los puntos de la imagen, el kernel debe ``deslizarse" sobre la imagen elemento a elemento, tanto en horizontal como en vertical. En este caso se dirá que se tiene un \textbf{paso} de 1 horizontal y vertical. En la imagen \ref{paso} se puede ver un ejemplo con un paso horizontal de 2 y vertical de 3. De aquí en adelante se supondrá que el paso horizontal y vertical tienen el mismo valor, por lo que el paso estará definido por un solo número.
+Esta operación se debe realizar para toda la imagen de entrada. Si se quiere realizar esta operación para todos los puntos de la imagen, el kernel debe ``deslizarse" sobre la imagen elemento a elemento, tanto en horizontal como en vertical. En este caso se dirá que se tiene un \textbf{paso} de 1 horizontal y vertical. En la imagen \ref{fig:paso} se puede ver un ejemplo con un paso horizontal de 2 y vertical de 3. De aquí en adelante se supondrá que el paso horizontal y vertical tienen el mismo valor, por lo que el paso estará definido por un solo número.
 
-\figura{0.5}{img/paso}{Kernel $2$x$2$ aplicado al elemento $(0,0)$ de una matriz $3$x$3$ con padding 1, paso horizontal 2 y vertical 3. Imagen tomada de d2l.ai.}{fig:paso}{}
+\figura{0.5}{img/paso}{Kernel $2$x$2$ aplicado a una matriz $3$x$3$ con padding 1, paso horizontal 2 y vertical 3. Imagen tomada de d2l.ai.}{fig:paso}{}{Resultado de aplicar un kernel a una imagen con padding y pasos 2 y 3 para horizontal y vertical.}
 
-Al determinar el kernel, paso y padding se definirá un \textbf{filtro}. Los filtros son de gran interés en el procesamiento de imagen ya que al aplicarlos se pueden producir efectos como enfoque, realce o detección de bordes. En la figura \ref{fig:filtro} se muestra un ejemplo de aplicar un filtro a una imagen de entrada.
+Al determinar el kernel, paso y padding se definirá un \textbf{filtro}. Los filtros son de gran interés en el procesamiento de imagen ya que al aplicarlos se pueden producir efectos como enfoque, realce o detección de bordes. En la figura \ref{fig:filtro} \ref{WikipediaFiltro2020} se muestra un ejemplo de aplicar un filtro a una imagen de entrada.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=2]{img/filter_og.png}
 \includegraphics[scale=1]{img/filter_edge_kernel.png}
 \includegraphics[scale=2]{img/filter_edge.png}
-\caption{Efecto producido al aplicar un filtro de detección de bordes a una imagen de entrada.}\bigskip
+\caption[Resultado de aplicar un filtro de reconocimiento de bordes a una imagen.]{Efecto producido al aplicar un filtro de detección de bordes a una imagen de entrada. Imágenes tomadas de la página ``Núcleo (procesamiento digital de imágenes)"\phantom{x} de Wikipedia.}\bigskip
 \label{fig:filtro}
 \end{figure}
 
@@ -53,9 +53,9 @@ Antes de describir los tipos de capa usados para construir una  CNN es important
 
 A continuación se describirán las capas más comunes usadas en una CNN: Capa Convolucional, Capa de Pooling, Capa ReLU y Capa Completamente Conectada (FC). En la figura \ref{fig:simple-convnet} \cite{missinglink2020} se puede ver un ejemplo en el que la imagen de un barco pasa por varias capas de convolución + ReLU, Pooling y por último FC, dando la predicción de la clase de la imagen.
 
-\figura{1}{img/simple-convnet}{Red Neuronal Convolucional simple en la que la imagen de un barco es clasificada.}{fig:simple-convnet}{}
+\figura{1}{img/simple-convnet}{Red Neuronal Convolucional simple en la que la imagen de un barco es clasificada.}{fig:simple-convnet}{}{Ejemplo de CNN en la que se clasifica una imagen con un barco.}
 
-\newpage\subsection{Capa convolucional}\label{cnn_capa_conv}
+\subsection{Capa convolucional}\label{cnn_capa_conv}
 
 Es la capa principal de este tipo de redes, es donde se aplican los filtros a las imágenes usando convoluciones. Es descrita por 4 hiperparámetros:
 
@@ -78,9 +78,9 @@ De la misma forma que se han calculado $W$ y $H$ se puede calcular cualquier nº
 
 En la figura \ref{fig:conv-example}\cite{Li2020} se muestra un ejemplo de una capa de convolución de profundidad $2$ con imagen de entrada $5 \times 5$ con $1 px$ de padding y profundidad $3$, siendo los filtros de tamaño $3$ y aplicándose con un paso de $3$. Se obtendrá una imagen $3\times 3$ con profundidad $2$.
 
-Para que la salida tenga profundidad $2$ será necesario usar $2$ filtros, cada uno de estos filtros será de tamaño $3\times 3 \times 3$, por lo que cada uno tendrá 27 valores, uno por cada píxel. Estos valores son los pesos de las neuronas de la red neuronal y no están definidos por el usuario como los hiperparámetros, en cambio se incializarán de forma aleatoria y se irán modificando acorde al algoritmo de optimización utilizado. Entrenar una CNN significa encontrar unos valores para los filtros que minimicen el error (dado por la función de pérdida). Adicionalmente, también habrá que entrenar la capa FC, que no es más que una red neuronal como ya se ha visto previamente.
+Para que la salida tenga profundidad $2$ será necesario usar $2$ filtros. Cada uno de estos filtros tendrá un kernel de tamaño $3\times 3 \times n$, siendo $n=3$ la profundidad de la imagen de entrada a esta capa. Cada kernel tendrá 27 valores, uno por cada píxel. Estos valores son los pesos de las neuronas de la red neuronal y no están definidos por el usuario como los hiperparámetros, en cambio se incializarán de forma aleatoria y se irán modificando acorde al algoritmo de optimización utilizado. Entrenar una CNN significa encontrar unos valores para los filtros que minimicen el error (dado por la función de pérdida). Adicionalmente, también habrá que entrenar la capa FC, que no es más que una red neuronal como ya se ha visto previamente.
 
-\figura{0.8}{img/conv-example}{Capa de convolución de profundidad 2 (se usan dos filtros) con kernel de tamaño $3\times 3 \times 3$ aplicado a un volumen de entrada de tamaño $7\times7\times3$, volumen generado al aplicar padding de 1 px a una imagen de tamaño $5x5$ con 3 canales. El resultado es un volumen de $3x3x2$}{fig:conv-example}{}
+\figura{0.8}{img/conv-example}{Capa de convolución de profundidad 2 (se usan dos filtros) con kernel de tamaño $3\times 3 \times 3$ aplicado a una imagen de entrada de tamaño $5\times5$ con profundidad 3 y padding 1. El resultado es un volumen de $3x3x2$.}{fig:conv-example}{}{Ejemplo de capa de convolución.}
 
 \newpage\subsection{Capa Pooling}\label{cnn_capa_pooling}
 
@@ -103,7 +103,7 @@ Y si se tiene una entrada de tamaño $W_1 \times H_1 \times D_1$, la salida ser�
 
 Los parámetros $F$ y $S$ determinan cómo se reducirá la imagen, siendo común usar $F=2$ y $S=2$ para reducir el tamaño a la mitad. Reducir demasiado la imagen al hacer pooling puede provocar un efecto muy destructivo.
 
-\figura{1}{img/maxpool}{Imagen $4\times 4$ a la que se ha aplicado un pooling de $F=2, S=2$. Cada color de la imagen de la izquierda indica las entradas del para la operación MAX, cada color de la imagen de la derecha indica la salida de dicha operación. Figura tomada del curso ``CS231n" de Standford University.}{fig:maxpool}{}
+\figura{1}{img/maxpool}{Imagen $4\times 4$ a la que se ha aplicado un pooling de $F=2, S=2$. Cada color de la imagen de la izquierda indica las entradas del para la operación MAX, cada color de la imagen de la derecha indica la salida de dicha operación. Figura tomada del curso ``CS231n" de Standford University.}{fig:maxpool}{}{Ejemplo de pooling.}
 
 \subsection{Capa ReLU}\label{cnn_capa_relu}
 

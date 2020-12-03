@@ -12,7 +12,7 @@ ImageNet es una base de datos con más de 10 millones de imágenes etiquetadas a
 
 Estas arquitecturas resultaron en hitos importantes para el desarrollo de CNN, a continuación se describirán varias arquitecturas para segmentación semántica. En la figura \ref{fig:sem-segm-example} \cite{Jeong2018} se muestra un ejemplo de segmentación semántica.
 
-\figura{1}{img/sem-segm-example}{Ejemplo de segmentación semántica. Se clasifica cada píxel en función del tipo de objeto (clase) al que pertenezca.(Imagen tomada de Jeong, Yoon, y Park, 2018)}{fig:sem-segm-example}{}
+\figura{1}{img/sem-segm-example}{Ejemplo de segmentación semántica. Se clasifica cada píxel en función del tipo de objeto (clase) al que pertenezca.(Imagen tomada de Jeong, Yoon, y Park, 2018)}{fig:sem-segm-example}{}{Ejemplo de segmentación semántica.}
 
 \newpage\section{Fully Convolutional Network}\label{sec:fcn}
 
@@ -20,14 +20,14 @@ Fue propuesta en 2014 por investigadores de la Universidad de California en Berk
 
 Se compararon los modelos FCN-AlexNet, FCN-VGG16 y FCN-GoogLeNet, obteniendo los mejores resultados con FCN-VGG16 y convirtiéndose este en el modelo base. Con el objetivo de ganar más nivel de detalle en la salida, se aumentó la resolución de la salida en 32x usando interpolación bilineal. También se usaron \textit{skip connections} para conectar varias capas con la capa final. En la figura \ref{fig:FCN} se puede ver un ejemplo de la arquitectura FCN \cite{Sultana2020}.
 
-\figura{1}{img/FCN}{Arquitectura de FCN32, FCN16 y FCN8.}{fig:FCN}{}
+\figura{1}{img/FCN}{Arquitectura de FCN32, FCN16 y FCN8.}{fig:FCN}{}{Arquitectura de FCN32, FCN16 y FCN8.}
 
 
 \section{Deconvnet}\label{sec:deconvnet}
 
 La red Deconvnet \cite{Noh2015} tiene una red convolucional y otra red deconvolucional. Para la red convolucional utiliza casi la misma topología que VGG16, con 13 capas de convolución 2 capas FC, cambiando sólo en la última capa que no es de clasificación ya que en Deconvnet está conectada a la red deconvolucional. La red deconvolucional tiene una topología inversa a la red convolucional, resultando en una salida de igual tamaño a la entrada. Esta red tiene capas de deconvolución, de \textit{un-pooling} y de ReLU. Todas las capas de una Deconvnet extraen características de la entrada excepto la última capa de la red deconvolucional, que genera una probabilidad de pertenencia a cada clase para cada píxel/vóxel. Una arquitectura de esta red se puede ver en la figura \ref{fig:Deconvnet} \cite{Noh2015}.
 
-\figura{1}{img/Deconvnet}{Arquitectura Deconvnet.}{fig:Deconvnet}{}
+\figura{1}{img/Deconvnet}{Arquitectura Deconvnet.}{fig:Deconvnet}{}{Arquitectura Deconvnet.}
 
 A continucación se describen brevemente las operaciones de unpooling y deconvolución (más correctamente llamada convolución transpuesta). En la figura \ref{fig:unpooling-deconv} \cite{Noh2015} se puede ver un ejemplo gráfico.
 
@@ -39,7 +39,7 @@ La operación unpooling es una operación que reconstruye la zona de pooling man
 
 La salida de una capa de unpooling aporta información espacial pero muy dispersa. Para aumentar la densidad de información se usan las operaciones de deconvolución \cite{Noh2015}. Las operación de convolución toma varias entradas y las transforma en un único valor al aplicar un filtro. La operación deconvolución toma un único valor y lo transforma en varias salidas al aplicar el mismo filtro usado en la convolución correspondiente.
 
-\figura{0.5}{img/unpooling-deconv}{Figura que ilustra las operaciones unpooling y deconvolución.}{fig:unpooling-deconv}{}
+\figura{0.5}{img/unpooling-deconv}{Figura que ilustra las operaciones unpooling y deconvolución.}{fig:unpooling-deconv}{}{Figura que ilustra las operaciones unpooling y deconvolución.}
 
 \section{U-Net}\label{sec:unet}
 
@@ -47,4 +47,4 @@ U-Net es una arquitectura en forma de U con una parte reductora (izquierda) y ot
 
 La parte reductora tiene una arquitectura típica de CNN. Cada paso de esta parte tiene dos convoluciones consecutivas con filtros 3x3 (sin padding), cada convolución seguida de por una capa ReLU, con una capa de pooling 2x2 al final de ambas convoluciones. La salida de la última capa de cada paso es usada en la capa equivalente de la parte expansiva. Después de varios pasos como este comienza la parte expansiva con una topología inversa a la convolucional, donde en cada paso expansivo es añadida la salida de la última capa de cada paso reductor. Cada capa de pooling de la parte izquierda es sustituida en la parte derecha por una ``convolución hacia arriba'', similar a la operación unpooling + deconvolución. La última capa es una convolución 1x1 para mapear cada píxel/vóxel con el nº correspondiente de clases. En la arquitectura original se tienen en total 23 capas convolucionales. En la figura \ref{fig:unet-og} puede verse la arquitectura original.
 
-\figura{1}{img/unet-og}{Arquitectura original U-Net propuesta por Ronneberger et al en U-Net: Convolutional Networks for Biomedical Image Segmentation.}{fig:unet-og}{}
+\figura{1}{img/unet-og}{Arquitectura original U-Net propuesta por Ronneberger et al en U-Net: Convolutional Networks for Biomedical Image Segmentation.}{fig:unet-og}{}{Arquitectura original U-Net.}

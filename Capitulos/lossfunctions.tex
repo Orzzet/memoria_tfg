@@ -27,7 +27,7 @@ Se ha optado por probar primero la pérdida Dice ya que el cálculo de los pesos
 \section{Implementación}\label{sec:loss_function_change}
 -falta-
 
-\section{Resultados}\label{sec:data_augmentation_resultados}
+\section{Resultados}\label{sec:loss_function_resultados}
 
 \cuadro{|c|c|c|}{Métricas pérdida dice.}{tab:metricas_2}{
 IoU fondo & IoU células\\ 
@@ -35,8 +35,8 @@ IoU fondo & IoU células\\
 0.9381 & 0.2582\\
 }
 
-\figura{0.8}{img/pruebas/sistema_2_dice_perdidas}{Pérdida de entrenamiento en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.}{fig:sistema_2_dice_perdidas}{}
+\figura{0.8}{img/pruebas/sistema_2_dice_perdidas}{Pérdida de entrenamiento y validación en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.}{fig:sistema_2_dice_perdidas}{}{Pérdida sistema con función de pérdida DICE.}
 
-\figura{0.8}{img/pruebas/sistema_2_dice_visual}{Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.}{fig:sistema_2_dice_visual}{}
+\figura{0.8}{img/pruebas/sistema_2_dice_visual}{Ejemplo de segmentación del conjunto de test. Fila 1 imagen original, fila 2 segmentación objetiva, fila 3 segmentación predicha. Columnas Z=20, Z=25, Z=45, Z=50.}{fig:sistema_2_dice_visual}{}{Ejemplo de segmentación sistema con función de pérdida DICE.}
 
 Esta vez la función de pérdida sí que representa correctamente el objetivo del problema actual. Se ha obtenido un $IoU=0.2582$ y visualmente se puede ver cómo la segmentación empieza a formarse. Se ignorará el $IoU$ del fondo ya que debería ser siempre mayor que $0.9$.
