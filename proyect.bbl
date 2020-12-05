@@ -110,6 +110,23 @@ wikipedia_convolution}%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {Convolutions for Images}}{%
+\APACcitebtitle {Convolutions for Images}}{%
+{\protect \APACyear {2020}}%
+}]{%
+convolutionsforimages}
+\APACinsertmetastar {%
+convolutionsforimages}%
+\APACrefbtitle {Convolutions for Images.} {Convolutions for images.}
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{https://d2l.ai/chapter_convolutional-neural-networks/conv-layer.html#fig-correlation}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Deng%
 \ \protect \BOthers {.}}{%
 Deng%
@@ -237,6 +254,24 @@ Goodfellow, I.%
 \begin{APACrefURL} \url{https://www.deeplearningbook.org/} \end{APACrefURL}
 \newblock
 \APACrefnote{\url{http://www.deeplearningbook.org}}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {Gradient Descent and Cost Function}}{%
+\APACcitebtitle {Gradient Descent and Cost Function}}{%
+{\protect \APACyear {2020}}%
+}]{%
+kdnuggets}
+\APACinsertmetastar {%
+kdnuggets}%
+\APACrefbtitle {Gradient Descent and Cost Function.} {Gradient descent and cost
+  function.}
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.kdnuggets.com/2020/05/5-concepts-gradient-descent-cost-function.html}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -789,6 +824,23 @@ Nwankpa, C.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {Padding and Stride}}{%
+\APACcitebtitle {Padding and Stride}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+paddingandstride}
+\APACinsertmetastar {%
+paddingandstride}%
+\APACrefbtitle {Padding and Stride.} {Padding and stride.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{http://d2l.ai/chapter_convolutional-neural-networks/padding-and-strides.html}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Paperspace%
 }{%
 Paperspace%
@@ -916,14 +968,14 @@ P{\'e}rez-Garc{\'i}a, F.%
 \bibitem [\protect \citeauthoryear {%
 \APACcitebtitle {PNY Quadro P5000}}{%
 \APACcitebtitle {PNY Quadro P5000}}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
+{\protect \APACyear {2020}}%
 }]{%
 amazonp5000}
 \APACinsertmetastar {%
 amazonp5000}%
 \APACrefbtitle {PNY Quadro P5000.} {Pny quadro p5000.}
 \newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\APACrefYearMonthDay{2020}{}{}.
 \newblock
 \begin{APACrefURL}
   \url{https://www.amazon.es/PNY-Quadro-P5000-16GB-GDDR5X/dp/B01LWVP48O}
@@ -1402,6 +1454,33 @@ Widrow, B.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Wikipedia%
+}{%
+Wikipedia%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+Wikipedia2020}
+\APACinsertmetastar {%
+Wikipedia2020}%
+\begin{APACrefauthors}%
+Wikipedia.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {Núcleo (procesamiento digital de imágenes) - Wikipedia.}
+  {Núcleo (procesamiento digital de imágenes) - wikipedia.}
+\newblock
+\begin{APACrefURL}
+  \url{https://es.wikipedia.org/w/index.php?title=N%C3%BAcleo_(procesamiento_digital_de_im%C3%A1genes)&oldid=129997527}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{[Internet; descargado 2-diciembre-2020]}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Wolny%
 \ \protect \BOthers {.}}{%
 Wolny%
@@ -1442,7 +1521,7 @@ Wookayin%
 }{%
 Wookayin%
 }{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
+{\protect \APACyear {2020}}%
 }]{%
 wookayin}
 \APACinsertmetastar {%
@@ -1452,7 +1531,7 @@ Wookayin.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\APACrefYearMonthDay{2020}{}{}.
 \newblock
 \APACrefbtitle {wookayin/gpustat.} {wookayin/gpustat.}
 \newblock
@@ -1521,7 +1600,7 @@ Cicek2016}%
 \bibitem [\protect \citeauthoryear {%
 \APACcitebtitle {Z-normalization of time series.}}{%
 \APACcitebtitle {Z-normalization of time series.}}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
+{\protect \APACyear {2020}}%
 }]{%
 znormalization}
 \APACinsertmetastar {%
@@ -1529,7 +1608,7 @@ znormalization}%
 \APACrefbtitle {Z-normalization of time series.} {Z-normalization of time
   series.}
 \newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\APACrefYearMonthDay{2020}{}{}.
 \newblock
 \begin{APACrefURL}
   \url{https://jmotif.github.io/sax-vsm_site/morea/algorithm/znorm.html}

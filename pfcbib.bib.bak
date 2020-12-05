@@ -557,6 +557,7 @@
 
 @Misc{amazonp5000,
   title   = {PNY Quadro P5000},
+  year    = {2020},
   journal = {Pny: Amazon.es: Informática},
   url     = {https://www.amazon.es/PNY-Quadro-P5000-16GB-GDDR5X/dp/B01LWVP48O},
 }
@@ -583,6 +584,7 @@
 
 @Misc{znormalization,
   title   = {Z-normalization of time series.},
+  year    = {2020},
   journal = {Z-normalization | SAX-VSM},
   url     = {https://jmotif.github.io/sax-vsm_site/morea/algorithm/znorm.html},
 }
@@ -590,6 +592,7 @@
 @Misc{wookayin,
   author  = {Wookayin},
   title   = {wookayin/gpustat},
+  year    = {2020},
   journal = {GitHub},
   url     = {https://github.com/wookayin/gpustat},
 }
@@ -628,6 +631,7 @@
 }
 
 @Misc{matrizdeconvolución,
+  year    = {2020},
   journal = {8.2. Matriz de convolución},
   url     = {https://docs.gimp.org/2.6/es/plug-in-convmatrix.html},
 }
@@ -646,9 +650,29 @@
 @Misc{Wikipedia2020,
   author = {Wikipedia},
   note   = {[Internet; descargado 2-diciembre-2020]},
-  title  = {Núcleo (procesamiento digital de imágenes) --- Wikipedia{,} La enciclopedia libre},
+  title  = {Núcleo (procesamiento digital de imágenes) - Wikipedia},
   year   = {2020},
   url    = {https://es.wikipedia.org/w/index.php?title=N%C3%BAcleo_(procesamiento_digital_de_im%C3%A1genes)&oldid=129997527},
+}
+
+@Misc{kdnuggets,
+  title   = {Gradient Descent and Cost Function},
+  year    = {2020},
+  journal = {KDnuggets},
+  url     = {https://www.kdnuggets.com/2020/05/5-concepts-gradient-descent-cost-function.html},
+}
+
+@Misc{convolutionsforimages,
+  title   = {Convolutions for Images},
+  year    = {2020},
+  journal = {Convolutions for Images},
+  url     = {https://d2l.ai/chapter_convolutional-neural-networks/conv-layer.html#fig-correlation},
+}
+
+@Misc{paddingandstride,
+  title   = {Padding and Stride},
+  journal = {Padding and Stride},
+  url     = {http://d2l.ai/chapter_convolutional-neural-networks/padding-and-strides.html},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

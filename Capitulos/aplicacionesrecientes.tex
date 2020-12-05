@@ -4,7 +4,7 @@ En este capítulo se describirán dos aplicaciones recientes en las que se reali
 
 Primero se describirá cada aplicación en general, luego se definirá brevemente el algoritmo de segmentación seguido dividiendo las operaciones en: preprocesado (preparar los datos para usarlos en el modelo U-Net, procesado (características del modelo) y postprocesado (operaciones posteriores al resultado dado por el modelo), después se mostrará resultados obtenidos y por último mencionará el software resultante de estas investigaciones.
 
-\section{U-Net para conteo, detección y morfometría, detección y morfometría de células. (2019)}\label{sec:app1}
+\section{U-Net para conteo, detección y morfometría de células. (2019)}\label{sec:app1}
 \subsection{Proyecto}\label{apps1_proyect}
 
 Ha sido desarrollado por investigadores de la Universidad de Friburgo (Alemania) en colaboración con la Universidad de Berna (Suiza) y la Universidad de París V Descartes (Francia) \cite{Falk2019}. El coautor designado es Olaf Ronneberger, uno de los principales contribuyentes en la creación de la arquitectura U-Net \cite{Ronneberger2015}.
@@ -13,15 +13,15 @@ En este proyecto se aplica la arquitectura U-Net para solucionar el problema del
 
 \subsection{Pipeline}\label{apps1_pipeline}
 
-\cuadro{|c|c|c|}{Pipeline que siguen los datos de inicio a fin. GT significa \textit{groundtruth} y se refiere a la imagen ya segmentada. IM es la imagen de entrada.}{tab:prueba}{
+\cuadro{|c|c|c|}{Pipeline que siguen los datos de inicio a fin. GT significa \textit{groundtruth} y se refiere a la imagen ya segmentada. IM es la imagen de entrada. Lr es learning rate.}{tab:prueba}{
 Preprocesado & Procesado & Postprocesado \\ 
 \hline
 GT:Espaciado de 1 vóxel entre células  	& U-Net & Ninguno \\
 GT:Células etiqueta 1, fondo 0  		& Función de pérdida: & \\
-IMyGT:Troceo de imagen a 236x236x100 vx & -Entropía Cruzada con Pesos & \\
+IMyGT:Troceo a 236x236x100 vx & -Entropía Cruzada con Pesos & \\
 IMyGT:Data Augmentation: 				& -Peso alto en espaciado entre células & \\
 -Rotación 								& Optimizador ADAM: & \\
--Deformación suave 						& -Learning rate $10^{-5}$ $\beta_1:0.9$, $\beta_2:0.999$ & \\
+-Deformación suave 						& -Lr: $10^{-5}$, $\beta_1:0.9$, $\beta_2:0.999$ & \\
 -Incremento de intensidad 				& 150000 Iteraciones & \\
 }
 
@@ -36,7 +36,7 @@ Respecto al modelo entrenado, se ha usado como función de pérdida la entropía
 w(x):=w^{'}_{bal}+\lambda w_{sep}
 \end{equation}
 
-Donde $\lambda \epsilon R_{\geq}0$ controla la importancia de la separación de instancia. $w^{'}_{bal}$ y $w_{sep}$
+Donde $\lambda \epsilon R \geq 0$ controla la importancia de la separación de instancia. $w^{'}_{bal}$ y $w_{sep}$
 son calculados de la siguiente forma:
 
 \begin{equation}
@@ -71,9 +71,9 @@ Se hicieron varios experimentos, alcanzando siempre un $M_{IoU}>0.8$ para datos 
 
 \subsection{Software}\label{app1_software}
 
-Este algoritmo ha sido implementado como un plugin de FIJI \cite{Schindelin2012}, una herramienta opensource para procesamiento de imágenes. Este plugin viene con modelos preentrenados para la segmentación de células y está disponible como repositorio oficial de imageJ \textit{http://sites.imagej.net/Falk/plugins/}, con código fuente incluido.
+Este algoritmo fue implementado como un plugin de FIJI \cite{Schindelin2012}, una herramienta opensource para procesamiento de imágenes. Este plugin viene con modelos preentrenados para la segmentación de células y está disponible como repositorio oficial de imageJ \textit{http://sites.imagej.net/Falk/plugins/}, con código fuente incluido.
 
-El framework usado como backend es \textbf{caffe} \cite{Jia2014}, que será necesario instalar previamente. Los binarios de caffe así como modelos entrenados para segmentación 2D y 3D están disponibles en \textit{https://lmb.informatik.uni-freiburg.de/resources/opensource/unet}
+El framework usado como backend es \textbf{caffe} \cite{Jia2014}, que es necesario instalar previamente. Los binarios de caffe así como modelos entrenados para segmentación 2D y 3D están disponibles en \textit{https://lmb.informatik.uni-freiburg.de/resources/opensource/unet}
 
 \section{Segmentación 3D precisa y versátil de tejido vegetal a resolución celular. (2020)}\label{sec:app2}
 
@@ -89,17 +89,17 @@ Este proyecto está hecho con la idea de utilizar las últimas y mejores técnic
 \cuadro{|c|c|c|}{Pipeline que siguen los datos de inicio a fin. GT significa \textit{groundtruth} y se refiere a la imagen ya segmentada. IM es la imagen de entrada.}{tab:prueba}{
 Preprocesado & Procesado & Postprocesado \\ 
 \hline
-GT:Bordes con 2 vóxeles de anchura		& U-Net 								& Transformada de la distancia \\
-GT:Desenfoque Gaussiano			  	   	& Funciónes de pérdida probadas: 		& Detectado de centroides\\
+GT:Bordes con anchura de 2vx		& U-Net 								& Transformada de la distancia \\
+GT:Desenfoque Gaussiano			  	   	& Funciones de pérdida: 		& Detectado de centroides\\
 IM y GT:Data Augmentation 				& -Entropía Cruzada Binaria  			& Algoritmo watershed\\
 - Volteo Horizontal y Vertical			& -Pérdida Dice							& Grafo de adyacencia\\
 - Rotación en plano XY					& Optimizador ADAM:						& Particionamiento de grafo\\
 - Deformación elástica					& -Learning rate $10^{-5}$				& \\
 IM: Noise Augmentation		 			& -$\beta_1:0.9$, $\beta_2:0.999$		& \\
-IM,GT:Troceo de imagen a 170x170x80 vx	& 100000 iteraciones					& \\
+IM,GT:Troceo a 170x170x80 vx	& 100000 iteraciones					& \\
 }
 
-En el preprocesado, se parte de una imagen con etiquetado perfecto y se le aplica la función \textit{find\_ boundaries} de la librería scikit \cite{Pedregosa2011} \cite{Walt2014} obteniendo los bordes de las células con 2 vóxeles de anchura. A la imagen con los bordes se le aplica un desenfoque Gaussiano para reducir los componentes de alta frecuencia, lo que ayuda a prevenir el sobreajuste. Luego se aplica varias técnicas de \textit{data augmentation} en el espacio a la imagen de entrada y a la imagen de bordes. Tras esto se aplica \textit{noise augmentation} a la imagen de entrada. Por último se divide la imagen en trozos de 170x170x80 vx.
+En el preprocesado, se parte de una imagen con etiquetado perfecto y se le aplica la función \textit{find\_ boundaries} de la librería scikit \cite{Pedregosa2011} \cite{Walt2014} obteniendo los bordes de las células con 2 vóxeles de anchura. A la imagen con los bordes se le aplica un desenfoque Gaussiano (conocido filtro que emborrona la imagen) para reducir los componentes de alta frecuencia, lo que ayuda a prevenir el sobreajuste. Luego se aplica varias técnicas de \textit{data augmentation} en el espacio a la imagen de entrada y a la imagen de bordes. Tras esto se aplica \textit{noise augmentation} a la imagen de entrada. Por último se divide la imagen en trozos de 170x170x80 vx.
 
 En el procesado, se usa una arquitectura U-Net y se prueba con Entropía Cruzada Binaria y con Pérdida Dice, usando un optimizador ADAM en ambos casos.
 

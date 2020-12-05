@@ -1,10 +1,10 @@
 \chapter{Red Neuronal Artificial}\label{redneuronal}
 
-En este capítulo se hará un recorrido histórico haciendo énfasis en los avances del siglo XX en redes neuronales artificiales (ANNs). Después se definirá la neurona artificial y se distinguirán 3 tipos según su función de activación (visto en más detalle en la sección \ref{subsec:neurona_artificial}): perceptrón, sigmoide y unidad lineal rectificada (ReLU). Siendo la ReLu la función de activación más usada en redes neuronales artificiales \cite{Ramachandran2017} y en las soluciones de este proyecto. Por último se hablará sobre el entrenamiento de la ANN.
+En este capítulo se hará un recorrido histórico haciendo énfasis en los avances del siglo XX en redes neuronales artificiales (ANNs, de las siglas en inglés). Después se definirá la neurona artificial y se distinguirán 3 tipos según su función de activación (visto en más detalle en la sección \ref{subsec:neurona_artificial}): perceptrón, sigmoide y unidad lineal rectificada (ReLU), siendo la ReLu la función de activación más usada en redes neuronales artificiales \cite{Ramachandran2017} y en las soluciones de este proyecto. Por último se hablará sobre el entrenamiento de la ANN.
 
 \section{Introducción a Redes Neuronales Artificiales}\label{subsec:nn_intro}
 
-Desde la antigüedad la humanidad ha sentido interés en la posibilidad de emular la inteligencia de forma artificial. Con los avances en neurociencia hemos sido capaces de entender cómo funcionan las neuronas, la unidad básica en el funcionamiento de los cerebros. Siendo el cerebro un ejemplo funcional de un sistema inteligente, es natural  que haya interés en replicar su funcionamiento.\\
+Desde la antigüedad la humanidad ha sentido interés por la posibilidad de emular la inteligencia de forma artificial. Con los avances en neurociencia se ha podido entender cómo funcionan las neuronas, la unidad básica en el funcionamiento de los cerebros. Siendo el cerebro un ejemplo funcional de un sistema inteligente, es natural  que haya interés en replicar su funcionamiento.\\
 
 Un hito importante se produjo gracias al desarrollo de la teoría del aprendizaje biológico, introducida por Warren McCulloch y Walter Pitts en 1943 \cite{McCulloch1943}, popularizando lo que fue llamado como \emph{cibernética} \cite[p13]{Goodfellow2016}. Gracias a esto surgió el ADALINE (elemento lineal adaptativo) \cite{Widrow2015}, que es un caso concreto del algoritmo descenso por gradiente estocástico (\textbf{SGD}), algoritmo que con pequeñas modificaciones es usado en la actualidad en el proceso de aprendizaje\cite[p14]{Goodfellow2016}. Fue también gracias al estudio de McCulloch y Pitts que en 1958 Frank Rosenblatt introdujo por primera vez el \textbf{perceptrón}, un modelo general de neurona artificial \cite{Rosenblatt1958}, que fue perfeccionado por Minsky Y Papert en 1969 \cite{Minsky1969}.
 
@@ -46,7 +46,7 @@ Se puede simplificar la representación al asumir que siempre se usará $ \sum x
 
 \subsection{Sigmoide}\label{subsubsec:sigmoide}
 
-La función sigmoide como función de activación es una función no lineal usada principalmente en redes neuronales prealimentadas (feedforward neurals networks), que son las redes neuronales donde las conexiones entre neuronas no forman ciclos (más información en la sección \ref{subsec:neural_network}). Es una función real, acotada y diferenciable (a diferencia de la usada en el perceptrón). Su definición es la siguiente relación \cite{nwankpa2018activation}:
+La función sigmoide como función de activación es una función no lineal usada principalmente en redes neuronales prealimentadas (feedforward neural networks), que son las redes neuronales donde las conexiones entre neuronas no forman ciclos (más información en la sección \ref{subsec:neural_network}). Es una función real, acotada y diferenciable (a diferencia de la usada en el perceptrón). Su definición es la siguiente relación \cite{nwankpa2018activation}:
 
 \begin{equation}
  f(x) = \sigma (x) = \frac{1}{1+e^{-x}}
@@ -56,7 +56,7 @@ La función sigmoide como función de activación es una función no lineal usad
 
 \subsection{Unidad Lineal Rectificada (ReLU)}\label{subsubsec:relu}
 
-La unidad lineal rectificada (ReLU) fue propuesta como función de activación en 2010 por Nair y Hinton \cite{Nair2010} y desde entonces ha sido la más usada en aplicaciones de aprendizaje profundo (deep learning, DL). Si se compara con la función de activación Sigmoide, ofrece un mejor rendimiento y es más generalista \cite{nwankpa2018activation}.
+La unidad lineal rectificada (ReLU) fue propuesta como función de activación en 2010 por Nair y Hinton \cite{Nair2010} y desde entonces ha sido la más usada en aplicaciones de aprendizaje profundo (deep learning). Si se compara con la función de activación Sigmoide, ofrece un mejor rendimiento y es más generalista \cite{nwankpa2018activation}.
 
 \begin{equation}
  f(x) = max(0, x)=\left\{\begin{matrix}
@@ -67,7 +67,7 @@ La unidad lineal rectificada (ReLU) fue propuesta como función de activación e
 
 \newpage\section{Red Neuronal Artifical}\label{subsec:neural_network}
 
-Considerando la neurona artificial como una unidad de computación básica, según el conexionismo (que más tarde evolucionó en lo que hoy se conoce como \textit{deep learning}), se podría emular un comportamiento inteligente al conectar neuronas artificiales entre sí. La conexión entre las neuronas artificales se consigue concatenando las salidas de unas con la entradas de otras y obteniendo así una red neuronal artifical (ANN).
+Considerando la neurona artificial como una unidad de computación básica, según el conexionismo (que más tarde evolucionó en lo que hoy se conoce como deep learning), se podría emular un comportamiento inteligente al conectar neuronas artificiales entre sí. La conexión entre las neuronas artificales se consigue concatenando las salidas de unas con la entradas de otras y obteniendo así una red neuronal artifical (ANN).
 
 \figura{1}{img/neural_network}{Red Neuronal Artificial completamente conectada.}{fig:neurona_artificial}{}{Red Neuronal Artificial completamente conectada.}
 
@@ -80,9 +80,9 @@ En la figura \ref{fig:neurona_artificial} se ve una Red Neuronal Artifical compl
 
 \section{Descenso por Gradiente }\label{sec:gradient_descent}
 
-En cálculo de varias variables calcular el gradiente de una función en un punto ($\nabla f(x)$) dará como resultado un vector indicando la dirección en la que esa función tiene una mayor variación, siendo el módulo el ritmo de la variación. Con $\nabla f(x)$ (positivo) se obtiene un vector indicando la dirección y sentido donde $f(x)$ se acerca a un máximo local. De forma equivalente, $-\nabla f(x)$ (negativo) se obtiene un vector indicando la dirección y sentido donde $f(x)$ se acerca a un mínimo local.
+En cálculo de varias variables calcular el gradiente de una función en un punto ($\nabla f(x)$) dará como resultado un vector indicando la dirección en la que esa función tiene una mayor variación, siendo el módulo el ritmo de la variación. Con $\nabla f(x)$ se obtiene un vector indicando la dirección y sentido donde $f(x)$ se acerca a un máximo local. De forma equivalente, con $-\nabla f(x)$ se obtiene un vector indicando la dirección y sentido donde $f(x)$ se acerca a un mínimo local.
 
-Si la función $f$ calcula el error cometido en un procedimiento y es una función definida y diferenciable alrededor de un punto $a$, entonces $-\nabla f(a)$ calcula la dirección y sentido que, desde $a$, se debe tomar para conseguir el mayor decrecimiento. Calcular el mayor decrecimiento en un punto de una función que calcule un error cometido significará que el error disminuirá respecto al obtenido en ese punto, acercándose a un mínimo local. Este procedimiento está descrito por la ecuación \ref{eqn:gradient_descent}, dónde $\eta$ es un real positivo llamado factor de aprendizaje o \textbf{larning rate}.
+Si la función $f$ calcula el error cometido en un procedimiento y es una función definida y diferenciable alrededor de un punto $a$, entonces $-\nabla f(a)$ calcula la dirección y sentido que, desde $a$, se debe tomar para conseguir el mayor decrecimiento. Calcular el mayor decrecimiento en un punto de una función que calcule un error cometido significará que el error disminuirá respecto al obtenido en ese punto, acercándose a un mínimo local. Este procedimiento está descrito por la ecuación \ref{eqn:gradient_descent}, dónde $\eta$ es un real positivo llamado factor de aprendizaje o \textbf{learning rate}.
 
 \begin{equation}\label{eqn:gradient_descent}
 a_{n+1} = a_n - \eta \nabla f (a_n)
@@ -96,6 +96,6 @@ w_{ij} = w_{ij} - \eta \nabla f(a)
 \end{equation}
 Donde $w_{ij}$ es el peso desde el nodo $i$ al nodo $j$.
 
-No es extraño en deep learning encontrar una red con millones de pesos pero, para facilitar la visualización, se ha usado como ejemplo una ANN con 2 pesos ($\theta_0$ y $\theta_1$). En la figura \ref{fig:gradient_descent} se puede ver una ilustración de cómo en cada punto (marcado por una X negra) se calcula el gradiente de $J(\theta_0, \theta_1)$ y se actualizan los pesos, cambiando el valor de $J(\theta_0, \theta_1)$ hasta alcanzar un mínimo.
+No es extraño en deep learning encontrar una red con millones de pesos pero, para facilitar la visualización, se ha usado como ejemplo una ANN con 2 pesos ($\theta_0$ y $\theta_1$). En la figura \ref{fig:gradient_descent} (imagen obtenida de \cite{kdnuggets}) se puede ver una ilustración de cómo en cada punto (marcado por una X negra) se calcula el gradiente de $J(\theta_0, \theta_1)$ y se actualizan los pesos, cambiando el valor de $J(\theta_0, \theta_1)$ hasta alcanzar un mínimo.
 
 \figura{1}{img/gradient_descent}{Ilustración del algoritmo de descenso por gradiente. $\theta_0$ y $\theta_1$ son los pesos de la ANN y $J$ la función de pérdida. Se puede observar cómo se produce un "descenso" hacia un mínimo de la función.}{fig:gradient_descent}{}{Ilustración del algoritmo descenso por gradiente.}
