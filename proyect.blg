@@ -11,6 +11,8 @@ Warning--entry type for "missinglink2020" isn't style-file defined
 --line 397 of file pfcbib.bib
 Warning--entry type for "HDFGroup20002010" isn't style-file defined
 --line 518 of file pfcbib.bib
+Warning--entry type for "Deutsch1996" isn't style-file defined
+--line 699 of file pfcbib.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--`others' not consistent with 6th ed. of the APA Manual
-(There were 6 warnings)
+(There were 7 warnings)

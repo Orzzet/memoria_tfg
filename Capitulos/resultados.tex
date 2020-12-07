@@ -1,1 +1,53 @@
 \chapter{Resultados}\label{pruebas}
+
+En este capítulo se recapitulan los resultados obtenidos durante el desarrollo y se comparan con los obtenidos por el programa plant-seg (visto en la sección \ref{sec:app1}) con los mismos datos. Además, se ha entrenado el mejor modelo 200 epochs más (hasta un total de 300) para confirmar que con el sistema desarrollado se obtendrían mejores resultados si se contara con más recursos.
+
+En este proyecto se partía de la dificultad de utilizar soluciones actuales de deep learning para segmentación semántica de imágenes 3D sin disponer de la capacidad de procesamiento necesaria. Desde este punto se ha desarrollado un primer sistema como solución de bajo coste, que se ha ido mejorando con un proceso iterativo hasta llegar a una buena solución para imágenes de baja calidad.
+
+En la tabla \ref{tab:todas_metricas} se muestran las métricas de todos los sistemas discutidos en este capítulo. En las figuras \ref{fig:s04_visual} y \ref{fig:s5pls_visual} se muestra un ejemplo visual de la segmentación  predicha por cada sistema.
+
+Los sistemas son:
+\begin{itemize}
+\item \textbf{S0-100e} Sistema inicial, con arquitectura MiniUnet3D (descrita en la sección \ref{sec:choose_cnn_arch}) y función de pérdida entropía cruzada binaria. Entrenado durante 100 epochs.
+\item \textbf{S1-100e} Sistema anterior al cambiar la función de pérdida a pérdida Dice. Entrenado durante 100 epochs.
+\item \textbf{S2-100e} Sistema anterior al añadir data augmentation a los datos de entrada. Entrenado durante 100 epochs.
+\item \textbf{S3-100e} Sistema anterior al cambiar la arquitectura por UNet3D (descrita en la sección \ref{sec:unet}). Entrenado durante 100 epochs.
+\item \textbf{S4-100e} Sistema anterior al añadir normalización a los datos de entrada. Entrenado durante 100 epochs.
+\item \textbf{S5-100e} Sistema anterior al utilizar precisión mixta. Entrenado durante 100 epochs.
+\item \textbf{S5-300e} Sistema anterior entrenado durante 300 epochs.
+\item \textbf{SPlseg-1h} Sistema utilizado en plant-seg para el entrenamiento, descrito en el capítulo \ref{sec:app2}.
+\end{itemize}
+
+\cuadro{|c|c|c|c|c|}{Métricas de todos los sistemas, siendo IoU células la métrica más relevante. Considerando IoU$>0.7$ una buena segmentación.}{tab:todas_metricas}{
+Sist. & IoU fondo & IoU células & $wrongCells$ & Tiempo entr.\\
+\hline
+S0-100e & 0.9437 & 0.0018 & 97 & $\sim$20m\\
+\hline
+S1-100e & 0.9381 & 0.2582 & 38 & $\sim$20m\\
+\hline
+S2-100e & 0.9031 & 0.3165 & 8 & $\sim$20m\\
+\hline
+S3-100e & 0.8454 & 0.2085 & 1604 & $\sim$1h\\
+\hline
+S4-100e & 0.9811 & 0.7224 & 30 & $\sim$1h\\
+\hline
+S5-100e & 0.9821 & 0.7431 & 32 & $\sim$1h\\
+\hline
+S5-300e & 0.9837 & 0.7588 & 2 & $\sim$1h\\
+\hline
+SPlseg-1h & 0.9744 & 0.6233 & 108 & $\sim$1h\\
+}
+
+Para desarrollar este sistema primero se decidió una métrica que evaluase correctamente la segmentación obtenida. La métrica a utilizar es intersección sobre unión (IoU) y el valor objetivo a alcanzar $0.7$, ya que a partir de ese valor se considera que se ha obtenido un buen resultado en la segmentación \cite{Falk2019}.
+
+Tal y como se puede ver en el cuadro \ref{tab:todas_metricas}, se ha partido de un sistema inicial produciendo un resultado muy lejano al esperado, con IoU células de $0.0018$ (en adelante simplemente IoU) . Esto se debe a que para la función de pérdida (entropía cruzada binaria, sección \ref{cnn_bce}) las dos clases tienen la misma importancia, sin embargo las clases están desbalanceadas predominando el fondo, por lo que el modelo tiende a clasificar la mayor parte de la imagen como fondo. Esto puede verse visualmente en la figura \ref{fig:s04_visual}.
+
+La primera mejora (S1-100e) soluciona el desbalanceo de clase al usar la pérdida DICE (\ref{cnn_dice}), consiguiendo así IoU de $0.2582$. La segunda mejora (S2-100e) soluciona el problema del sobreajuste  al utilizar la técnica de data augmentation (capítulo \ref{data_augmentation}). Gracias a esto se consigue un IoU de $0.3165$. En la tercera mejora (S3-100e) se utiliza la arquitectura UNet3D completa. Aunque se consigue IoU de $0.2085$, menor que en la anterior mejora, se consigue por primera vez una delimitación precisa de las células, tal y como puede verse en la representación visual. En la cuarta mejora (S4-100e) se utiliza la normalización tipificada para hacer que la CNN tenga en cuenta las diferencias estructurales en vez de diferencias altas de intensidad. Gracias a esto se consigue por primera vez el valor objetivo de la métrica IoU, con IoU de $0.7224$. En la quinta y última mejora (S5-100e) se utiliza la precisión mixta para reducir la memoria necesaria. Se reduce la memoria de entrenamiento de $11525$GB a $6243$GB y además, gracias al escalado dinámico de la pérdida, se alcanza IoU mayor que en la mejora anterior, consiguiendo IoU de $0.7431$. El modelo conseguido con el sistema de la mejora quinta se considerará como el mejor modelo obtenido en este proyecto. 
+
+Se ha querido comparar este mejor modelo con uno entrenado por el sistema usado en plant-seg \cite{Wolny2020}. Se ha entrenado con el dataset a baja resolución usado en este proyecto durante una hora de entrenamiento, en la que se han completado 3 epochs. Se ha obtenido un IoU de $0.6233$ (cuadro \ref{tab:todas_metricas}) que, para sólo haber entrenado 3 epochs, se cerca de una buena segmentación. Aún así, teniendo ambos una hora de entrenamiento, el sistema diseñado específicamente para solucionar el problema actual obtiene mejores resultados. Recalcar que el sistema usado en plant-seg se ha usado con su configuración por defecto, una configuración personalizada probablemente mejore el resultado obtenido.
+
+Adicionalmente, se ha entrenado el mejor modelo obtenido hasta 300 epochs para comprobar que este no alcanza su mejor resultado con 100 epochs, obteniendo un IoU de $0.7588$ y fallando tan sólo en el conteo de 2 células.
+
+\figura{1}{img/pruebas/s04_visual}{Segmentación ejemplo sistemas s0-100e, s1-100e, s2-100e, s3-100e y s4-100e. Cada columna muestra una capa, siendo las capas 20, 25, 45 y 50 del eje Z.}{fig:s04_visual}{}{Segmentación ejemplo sistemas s0-100e, s1-100e, s2-100e, s3-100e y s4-100e.}
+
+\figura{1}{img/pruebas/s5pls_visual}{Segmentación ejemplo sistemas s4-100e, s5-100e, s5-300e y SPlseg-1h. Objetivo muestra la segmentación perfecta. Cada columna muestra una capa, siendo las capas 20, 25, 45 y 50 del eje Z.}{fig:s5pls_visual}{}{Segmentación ejemplo sistemas s4-100e, s5-100e, s5-300e y SPlseg-1h.}

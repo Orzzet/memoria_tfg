@@ -1,6 +1,6 @@
 \chapter{Esquema general}\label{requisitos}
 
-En este capítulo se describirá el flujo por el que pasan los datos suministrados hasta dar lugar a la segmentación objetivo, sin entrar en detalles sobre la las herramientas usadas en la implementación.
+En este capítulo se describirá el flujo por el que pasan los datos suministrados hasta dar lugar a la segmentación objetivo, sin entrar en detalles sobre las herramientas usadas en la implementación. Primero se desarrollará un sistema inicial que se mejorará de forma iterativa hasta llegar a un sistema final.
 
 \subsubsection{Sistema inicial}
 
@@ -10,18 +10,18 @@ En la figura \ref{fig:diseno-sistema-inicial} se muestra un esquema general sobr
 
 Los dos primeros recuadros (azules) muestran los datos de entrada y el preprocesado necesario para que puedan ser utilizados en el entrenamiento.
 
-La etapa de preprocesado no requerirá un uso intensivo de GPU, por lo que podrá realizarse en cualquier máquina. En este caso se usará la máquina local ya que la máquina en la nube es más costosa de utilizar.
+La etapa de preprocesado no requerirá un uso intensivo de GPU, por lo que podrá realizarse en cualquier máquina. En este caso se usará la máquina local ya que la máquina en la nube utilizada en este proyecto tiene un límite de espacio de 10GB, por lo que hacer operaciones de procesado de datos con los datos originales , que ocupan $\sim$9GB es inviable.
 
 En esta etapa se preparán los datos con 4 objetivos:
 \begin{enumerate}
 \item Reducir la resolución de la imagen de entrada, reduciendo así la memoria necesaria para almacenarla en GPU.
 \item Generar las imágenes etiquetadas correctamente para tenerlas como objetivo.
-\item Reducir el tamaño de los archivos resultantes, ya que estos serán usados en servicios cloud y tendrán que ser subidos y descargados con frecuencia.
+\item Reducir el tamaño de los archivos resultantes, ya que éstos serán usados en servicios cloud y tendrán que ser subidos y descargados con frecuencia.
 \end{enumerate}
 
-Tras esto, se generarán nuevos archivos hdf5 y se subirán a un disco duro virtual, al cual se accederá por un Notebook. Las imágenes de entrada podrán ser usadas como entrada en el modelo seleccionado, cuya salida será una segmentación de células con espaciado.
+Tras esto, se generarán nuevos archivos hdf5 (un tipo de archivo de dato diseñado para almacenar y organizar grandes cantidades de datos, \cite{Koziol2011}) y se subirán a un disco duro virtual, al cual se accederá por un Notebook. Las imágenes de entrada podrán ser usadas como entrada en el modelo seleccionado, cuya salida será una segmentación de células con espaciado.
 
-En el recuadro siguiente (naranja), se muestra el proceso que se lleva a cabo durante el entrenamiento de un modelo. Como ya se mencionó en el capítulo \ref{cloudcomputing} este proceso deberá realizarse con una GPU de alto rendimiento, por lo que en este proyecto se utilizará una máquina en la nube. Antes de comenzar este proceso los datos ya habrán sido cargados en un disco duro virtual. Se dividirá el dataset en $ 70\% $ entrenamiento, $ 15\% $ validación y $ 15\% $ test.
+En el recuadro siguiente (naranja), se muestra el proceso que se lleva a cabo durante el entrenamiento de un modelo. Como ya se mencionó en el capítulo \ref{cloudcomputing} este proceso deberá realizarse con una GPU de alto rendimiento, por lo que en este proyecto se utilizará una máquina en la nube. Antes de comenzar este proceso los datos ya habrán sido cargados en un disco duro virtual. Se dividirá el dataset en $ 70\% $ entrenamiento, $ 15\% $ validación y $ 15\% $ test. Se ha elegido un porcentaje bajo del conjunto de validación y test ya que las imágenes son similares entre sí, con sólo dos clases (fondo y célula), teniendo todas las células una forma similar. Con este razonamiento se va a suponer que si el modelo puede predecir correctamente la segmentación semántica de un pequeño conjunto de datos, podrá hacerlo para cualquier ejemplo similar a ese pequeño conjunto de datos.
 
 
 %Se utilizará un DataLoader, encargado de leer el dataset y realizar el preprocesado conveniente. Será importante normalizar los datos de entrada para que tengan un valor en rango $ [0, 1] $, esto se hará siempre. Adicionalmente, se probarán distintas técnicas como estandarizar el histograma, o \textit{data augmentation}. Al etiquetado objetivo no se le aplicará normalización ni estandarización, sólo se le aplicará \textit{data augmentation}. Al ser importante que la segmentación de la imagen etiquetada siga siendo correcta, al aplicar \textit{data augmentation} no se deformará la imagen.
@@ -31,7 +31,7 @@ En el recuadro siguiente (naranja), se muestra el proceso que se lleva a cabo du
 
 El valor dado por la función de pérdida con los datos de entrenamiento se usará en la \textit{backpropagation} para calcular los gradientes los cuales se usarán para optimizar los pesos con el optimizador Adam. El valor dado por la función de pérdida con los datos de validación será el que determine si el modelo ha mejorado de forma programática. Si el modelo no mejora al disminuir la pérdida significará que habrá que cambiar la función de pérdida.
 
-El último recuadro de la figura \ref{fig:diseno-sistema-inicial} (en verde) muestra el proceso de inferencia. Se utilizará como mejor modelo aquél que haya obtenido una menor pérdida de validación durante el entrenamiento. Por ejemplo, si se entrena durante 100 iteraciones y en la iteración 89 se obtuvo la menor pérdida de validación, se utilizará el modelo entrenado durante esta iteración y se ignorarán las iteraciones posteriores. Tras realizar el entrenamiento completo se usarán los datos de test para obtener predicciones y se analizarán con la intersección sobre unión (\textit{intersection over union} o \textit{IoU}, con apoyo de la representación visual del resultado.
+El último recuadro de la figura \ref{fig:diseno-sistema-inicial} (en verde) muestra el proceso de inferencia. Se utilizará como mejor modelo aquél que haya obtenido una menor pérdida de validación durante el entrenamiento. Por ejemplo, si se entrena durante 100 iteraciones y en la iteración 89 se obtuvo la menor pérdida de validación, se utilizará el modelo entrenado durante esta iteración y se ignorarán las iteraciones posteriores. Tras realizar el entrenamiento completo se usarán los datos de test para obtener predicciones y se analizarán con la intersección sobre unión (\textit{intersection over union} o \textit{IoU}), con apoyo de la representación visual del resultado.
 
 \subsubsection{Sistema final}
 \figura{1.1}{img/diseno-sistema-final}{Diseño del sistema inicial.}{fig:diseno-sistema-final}{}{Diseño Sistema Final.}
@@ -40,12 +40,12 @@ En la figura \ref{fig:diseno-sistema-final} se muestra el diseño final del sist
 
 Antes de utilizar la imagen original reescalada como entrada de la CNN, se han añadido dos pasos:
 \begin{enumerate}
-\item Normalización por unidad tipificada. Descrita en el capítulo \ref{znormalization}, este proceso es necesario reducir las diferencias de intensidad de los vóxeles y así facilitar el reconocimiento de patrones estructurales por la CNN. 
-\item Data augmentation. Descrito en el capítulo \ref{data_augmentation}, este proceso es necesario para aumentar el nº de ejemplos de entrenamiento y reducir el sobreajuste.
+\item Normalización por unidad tipificada. Descrita en el capítulo \ref{znormalization}, este proceso es necesario para reducir las diferencias de intensidad de los vóxeles y así facilitar el reconocimiento de patrones estructurales por la CNN. 
+\item Data augmentation. Descrito en el capítulo \ref{data_augmentation}, este proceso es necesario para aumentar el número de ejemplos de entrenamiento y reducir el sobreajuste.
 \end{enumerate}
 
-Además, se ha cambiado la arquitectura U-Net por una completa, como se verá en el capítulo \ref{full_unet}. La arquitectura del sistema inicial era temporal, pensada sólo para hacer iteraciones rápidas.
+Además, se ha cambiado la arquitectura del modelo y se ha utilizado la arquitectura UNet3D \cite{Falk2019}, como se verá en el capítulo \ref{full_unet}. La arquitectura del sistema inicial era una arquitectura UNet3D modificada para tener un menor número de capas y una menor profundidad en las capas. Se utilizó una arquitectura reducida para que el tiempo de entrenamiento fuese menor y así poder iterar y mejorar el sistema más rápidamente.
 
 También se ha cambiado la función de pérdida por la pérdida DICE, como se verá en el capítulo \ref{loss_function}. Utilizar una función de pérdida que represente correctamente el error del problema a tratar es algo esencial, de no ser así la pérdida obtenida durante el entrenamiento calculará un error carente de interés.
 
-Por último, se ha implementado la precisión mixta (capítulo \ref{apex}) para reducir la memoria y el tempo necesarios durante el entrenamiento e inferencia. Esto hará que en algunas operaciones se utilice un tipo de dato de 16 bits en vez de uno de 32 bits.
+Por último, se ha implementado la precisión mixta (capítulo \ref{apex}) para reducir la memoria y el tiempo necesarios durante el entrenamiento e inferencia. Esto hará que en algunas operaciones se utilice un tipo de dato de 16 bits en vez de uno de 32 bits.

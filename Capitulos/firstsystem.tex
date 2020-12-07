@@ -1,12 +1,14 @@
 \chapter{Sistema inicial}\label{initial_system}
 
+En este capítulo se va a describir el sistema inicial, introducido en el esquema general descrito anteriormente.
+
 \section{Lenguaje y framework}\label{sec:language_and_framework}
 
 \subsubsection{Lenguaje}\label{subsec:language}
 
 El sistema se implementará completamente con el lenguaje de programación Python 3.7.
 
-La elección del lenguaje Python es sencilla: los frameworks más utilizados de deep learning pueden ser usados en Python. Con una búsqueda rápida en GitHub bajo los términos "deep learning", "machine learning" y "neural network" se puede ver que los frameworks más populares pueden ser usados en Python.
+La elección del lenguaje Python es sencilla: los frameworks más utilizados de deep learning pueden ser usados en Python. Con una búsqueda rápida en GitHub bajo los términos ``deep learning'', ``machine learning''\phantom{1}y ``neural network''\phantom{1}se puede ver que los frameworks más populares pueden ser usados en Python.
 \begin{itemize}
 \item TensorFlow con 148k estrellas.
 \item Keras con 49.4k estrellas.
@@ -30,11 +32,13 @@ En el ecosistema de Python, la base matemática para cualquier framework que hag
 
 El framework utilizado será PyTorch 1.6 \cite{Paszke2019}.
 
-En capítulos anteriores se mencionó el uso de fastai. Desde un principio se pretendia usar fastai para la parte de deep learning, pero en fastai no hay modelos que tomen como dato de entrada imágenes 3D. El framework permite implementar arquitecturas personalizadas para los modelos, pero para ello hay que utilizar PyTorch, ya que fastai está construido por encima de PyTorch. A causa de esto se decide aprender a usar PyTorch con un curso de Udacity \cite[Deep Learning with PyTorch]{Serrano2020}.
+En capítulos anteriores se mencionó el uso de fastai. Desde un principio se pretendía usar fastai para la parte de deep learning, pero en fastai no hay modelos que tomen como dato de entrada imágenes 3D. El framework permite implementar arquitecturas personalizadas para los modelos, pero para ello hay que utilizar PyTorch, ya que fastai está construido por encima de PyTorch. A causa de esto se decide aprender a usar PyTorch con un curso de Udacity \cite[Deep Learning with PyTorch]{Serrano2020}.
 
 Una vez completado el curso, se decide seguir usando PyTorch en vez de fastai ya que al usar un software de más bajo nivel se tiene más control sobre las operaciones que se realizan.
 
-Aún así, todos los frameworks populares de Python son una buena elección, ya que todos tienen \textit{bindings} a lenguajes de bajo nivel compilados, pero con la facilidad de uso de Python. Aunque TensorFlow puede ser difícil de utilizar, cuenta con Keras, que es un framework desarrollado por encima que abstrae muchas operaciones. PyTorch, basado en Torch, también ofrece un uso fácil y buen rendimiento.
+Aún así, todos los frameworks populares de Python son una buena elección, ya que todos tienen \textit{bindings} a lenguajes de bajo nivel compilados, pero con la facilidad de uso de Python. Aunque TensorFlow puede ser difícil de utilizar, cuenta con Keras, que es un framework desarrollado por encima que abstrae muchas operaciones. PyTorch, basado en Torch \cite{Collobert2011}, también ofrece un uso fácil y buen rendimiento.
+
+Un término muy usado en los frameworks de machine learning es el de \textit{tensor}. Un tensor se puede generalizar como una array de números dispuestos en una cuadrícula de dimensiones variables \cite[p. 31]{Goodfellow2016}. Será esta estructura de datos la usada para almacenar los datos necesarios involucrados en los cálculos de algoritmos de deep learning.
 
 \section{Metas y m\'etricas}\label{sec:goals_and_metrics}
 
@@ -59,7 +63,7 @@ En ese mismo artículo se observa que si la tarea de etiquetado es realizada por
 
 Se ha implementado una arquitectura U-Net basada en la implementación de Ronneberger \cite{Ronneberger2015}. Se ha usado una implementación en PyTorch \cite{shiba242017} con la arquitectura mostrada en la figura \ref{fig:unetarch-half}. Se ha desarrollado una versión de la arquitectura UNet3D que se ha llamado MiniUNet3D, con menos capas. Esta versión se ha usado para comprobar que el primer sistema se ha implementado correctamente sin provocar errores en tiempo de ejecución.
 
-\figura{0.8}{img/Diseno-unetarch-half}{Arquitectura U-Net reducida. Arquitectura completa (vista en \ref{sec:unet} eliminando varias capas de convolución y una de pooling. Los modelos generados por esta arquitectura serán menos fiables, pero el entrenamiento será más rápido, por lo que es útil para implementar un primer sistema.}{fig:unetarch-half}{}{Arquitectura U-Net reducida.}
+\figura{0.8}{img/Diseno-unetarch-half}{Arquitectura U-Net reducida. Arquitectura completa (vista en \ref{sec:unet}) eliminando varias capas de convolución y una de pooling. Los modelos generados por esta arquitectura serán menos fiables, pero el entrenamiento será más rápido, por lo que es útil para implementar un primer sistema.}{fig:unetarch-half}{}{Arquitectura U-Net reducida.}
 
 \section{Tamaño de la imagen en disco}\label{sec:disk_problem}
 
@@ -67,7 +71,7 @@ Al estar trabajando con herramientas en la nube será recomendable reducir el ta
 
 Al principio no se tuvo en cuenta la solución al tamaño de la imagen en memoria (sección \ref{sec:size_problem}) en la que se reduce la resolución de las imágenes. Esto habría resuelto también el problema del tamaño en disco. Aún así, en esta sección se aplican técnicas para reducir aún más el tamaño en disco sin perder información.
 
-Todas las imágenes utilizan float de 8 bytes ($f8$) para almacenar los valores de cada vóxel. En el cuadro \ref{cuadro1:intensidad_min_max} se puede ver que la valor máximo de los vóxeles es $65535.0$, por lo que no es necesaria una precisión de 8 bytes ($[2^{-1023}, 2^{1023}]$) para los valores de esas imágenes, especialmente para el etiquetado, en el que se usa valores enteros entre $0$ y $100$.
+Todas las imágenes utilizan float de 8 bytes ($f8$) para almacenar los valores de cada vóxel. En el cuadro \ref{cuadro1:intensidad_min_max} se puede ver que el valor máximo de los vóxeles es $65535$, por lo que no es necesaria una precisión de 8 bytes ($[2^{-1023}, 2^{1023}]$) para los valores de esas imágenes, especialmente para el etiquetado, en el que se usa valores enteros entre $0$ y $100$.
 
 \cuadro{|r|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}{Valores mínimo y máximo de los píxeles de las imágenes de entrada.}{cuadro1:intensidad_min_max}{
 35.0 & 32.0 & 33.0 & 0.0 & 31.0 & 24.0 & 19.0 & 0.0 & 0.0 & 24.0 \\ 
@@ -79,21 +83,22 @@ Todas las imágenes utilizan float de 8 bytes ($f8$) para almacenar los valores 
 
 Si se hace que los valores de la imagen de entrada pasen de 8 bytes a 4 bytes, estaremos reduciendo su tamaño a la mitad. De forma similar si hacemos que la los valores de la imagen etiquetada pase de 8 bytes a 1 bytes, estaremos reduciendo su tamaño a una octava parte. Con 1 byte de precisión podremos almacenar hasta 256 valores distintos, suficiente ya que sólo tendremos 2 valores distintos: 0 para el fondo y 1 para la célula o los bordes. 
 
-Además se comprimirán las imágenes sin pérdida, aunque esto sólo reducirá el tamaño del archivo, el tamaño de los tensores almacenados en memoria será el mismo. Esta compresión será muy efectiva en las imágenes etiquetadas, ya que los elementos sólo tendrán 2 valores distintos. 
+Además se comprimirán las imágenes sin pérdida, aunque esto sólo reducirá el tamaño del archivo, el tamaño de la imagen cargada en memoria será el mismo. Esta compresión será muy efectiva en las imágenes etiquetadas, ya que los elementos sólo tendrán 2 valores distintos. 
 
-Después de hacer estos cambios se habrá reducido el tamaño del fichero pero no de los tensores cargados en memoria al leer esas imágenes. Esto es así por dos motivos:
+Después de hacer estos cambios se habrá reducido el tamaño del fichero pero no de las imágenes cargadas en memoria. Esto es así por dos motivos:
 \begin{enumerate}
-\item Los tensores al cargarlos en memoria estarán sin ningún tipo de compresión. Cada valor del tensor ocupará el espacio correspondiente a su tipo de dato.
+\item Las imágenes cargadas en memoria no tendrán ningún tipo de compresión. Cada valor del tensor ocupará el espacio correspondiente a su tipo de dato.
 \item Las operaciones implementadas en los frameworks de deep learning limitan el tipo de dato que pueden tener los tensores. Están implementados a muy bajo nivel para optimizar las operaciones, por lo que será necesario  convertir los tipos a unos que acepten, si no lo son ya.
 \end{enumerate}
 
-Para leer los ficheros originales y guardarlos con el mismo formato se ha usado la librería  \textbf{h5py} \cite{Collette2013}. Esta aporta una interfaz para trabajar con el formato de datos HDF5 \cite{HDFGroup20002010}, útil para usar en python ficheros generados en programas como MATLAB.
+Para leer los ficheros originales y guardarlos con el mismo formato se ha usado la librería  \textbf{h5py} \cite{Collette2013}. Ésta aporta una interfaz para trabajar con el formato de datos HDF5 \cite{HDFGroup20002010}, útil para usar en python ficheros generados en programas como MATLAB.
 
 El tratamiento de datos con esta librería es muy intuitivo ya que imita la sintaxis de NumPy. Ha sido usado para archivos .mat generados en MATLAB con los datos iniciales. Tras el preprocesado, se ha usado esta librería para generar un nuevo archivo con todas las imágenes en un nuevo archivo .mat.
 
 \begin{itemize}
-\item \textbf{Tipo de dato.} Tanto la imagen de entrada como la imagen etiquetada tienen el tipo de datos $f8$. Es posible pasar la imagen de entrada al tipo $f4$ y la imagen etiquetada al tipo $i1$ sin perder información. Esto va a reducir el tamaño en disco en más de la mitad. Por lo escribir las imágenes en el fichero se harán con los tipos $f4$ y $i1$.
-\item \textbf{Compresión.} Se ha optado por usar la compresión \textit{gzip}, que ofrece una buena compresión a una velocidad no muy alta. Tiene 10 niveles de compresión $[0,9]$. Se ha probado a comprimir con el nivel $9$ consiguiendo una buena compresión pero es excesivamente lento, al final se ha optado por usar una compresión de nivel $4$ que, aunque tiene $\sim 10\%$ más tamaño que con el nivel $9$, el tiempo de la compresión se reduce a más de la mitad y de todas formas el resultado ya es muy bueno.
+\item \textbf{Tipo de dato.} Tanto la imagen de entrada como la imagen etiquetada tienen el tipo de datos $f8$. Es posible pasar la imagen de entrada al tipo $f4$ (real de 4 bits) y la imagen etiquetada al tipo $i1$ (entero de 1 bit) sin perder información. Esto va a reducir el tamaño en disco en más de la mitad. Las imágenes en el nuevo fichero se guardarán con los tipos $f4$ y $i1$.
+
+\item \textbf{Compresión.} Se ha optado por usar la compresión \textit{gzip} \cite{Deutsch1996}, una compresión sin pérdida. Tiene 10 niveles de compresión $[0,9]$. Se ha probado a comprimir con el nivel $9$ consiguiendo una buena compresión pero es excesivamente lento, al final se ha optado por usar una compresión de nivel $4$ que, aunque tiene $\sim 10\%$ más tamaño que con el nivel $9$, el tiempo de la compresión se reduce a más de la mitad y de todas formas el resultado ya es muy bueno.
 \end{itemize}
 
 \section{Tamaño de la imagen en memoria}\label{sec:size_problem}
@@ -104,11 +109,11 @@ Sería ideal ser capaz de entrenar una CNN usando las imágenes provistas direct
 
 \subsubsection{Escalado hacia abajo}\label{subsubsec:downscale}
 
-Las imágenes originales ocupan $\sim 2GB$ en memoria, intentar usarlas en una U-Net sobrepasa en gran medida los 16GB de memoria disponibles en este proyecto. Se ha decidido reducir las dimensiones en $(1/8, 1/8, 1/4)$ de sus dimensiones $(X, Y, Z)$ originales, consiguiendo una reducción de $8*8*4=256$ de su tamaño original, se pasa de $\sim 2GB$ a $\sim 8MB$. Con un tamaño de $8MB$ es posible realizar todo el proceso de entrenamiento e inferencia aunque se pierda calidad en la imagen. Gracias a la característica de U-Net de aceptar imágenes de cualquier dimensión, si no se hace entrenamiento por batch no es necesario asegurarse de que todas las imágenes tengan las mismas dimensiones. Por experimentación, se ha comprobado que los factores de las dimensiones no deben de ser muy diferentes, ya que cambiaría el tamaño en $\mu m^3$ de cada vóxel, además de provocar una deformación elástica en los imágenes.
+Las imágenes originales ocupan $\sim 2GB$ en memoria, intentar usarlas en una U-Net sobrepasa en gran medida los 16GB de memoria disponibles en este proyecto. Se ha decidido reducir las dimensiones en $(1/8, 1/8, 1/4)$ de sus dimensiones $(X, Y, Z)$ originales, consiguiendo una reducción de $8*8*4=256$ de su tamaño original, se pasa de $\sim 2GB$ a $\sim 8MB$. Con un tamaño de $8MB$ es posible realizar todo el proceso de entrenamiento e inferencia aunque se pierda calidad en la imagen. Gracias a la característica de U-Net de aceptar imágenes de cualquier dimensión, si no se hace entrenamiento por batch no es necesario asegurarse de que todas las imágenes tengan las mismas dimensiones.
 
 \subsubsection{Escalado hacia arriba}\label{subsubsec:upscale}
 
-Después de escalar hacia abajo, si se quiere hacer entrenamiento por batch con la imagen completa es necesario que todas las imágenes tengan las mismas dimensiones. Para esto se comprueba las mayor dimensión de las imágenes después de escalar hacia abajo y se elige como objetivo $(X_{obj}, Y_{obj}, Z_{obj})$. Para cada imagen $(X, Y, Z)$ el procedimiento es crear una nueva matriz de ceros de tamaño $(X_{obj}, Y_{obj}, Z_{obj})$ y asignar a la imagen los valores $([0:X-1],[0:Y-1],[0:Z-1])$. De esta forma no se deforman las imágenes al hacer el escalado hacia arriba.
+Después de escalar hacia abajo, si se quiere hacer entrenamiento por batch con la imagen completa es necesario que todas las imágenes tengan las mismas dimensiones. Para esto se comprueba la mayor dimensión de las imágenes después de escalar hacia abajo y se elige como objetivo $(X_{obj}, Y_{obj}, Z_{obj})$. Para cada imagen $(X, Y, Z)$ el procedimiento es crear una añadir un padding de ceros de $X_{obj}-X$ a la derecha, de $Y_{obj}-Y$ hacia abajo y de $Z_{obj}-Z$ en profundidad. Al añadir padding en vez de interpolar no se deforman las imágenes.
 
 El formato de las imágenes inicialmente es $ (Z,X,Y) $, siendo para todas las imágenes $ X = Y = 1024 $ y $ Z\epsilon[216,368] $. Además de reducir la resolución de las imágenes, es importante que todas tengan la misma, de lo contrario no podrán ser usadas en operaciones batch. También es esencial que la imagen de entrada y la imagen etiquetada no se deformen demasiado.
 
@@ -124,9 +129,9 @@ Esta función hace interpolación con splines, polinomios de orden n definidos a
 
 El dataset disponible para este proyecto está compuesto por dos tipos distintos de imágenes. Uno es la imagen original y otro es una segmentación manual con el etiquetado perfecto. En el etiquetado perfecto cada célula está representada por un entero distinto sin espacio entre ellas, el fondo está representado por 0.
 
-Si se usara el etiquetado actual sería necesario una clasificación con una clase por cada célula, pero eso no tiene mucho sentido ya que el nº de células en una imagen puede variar y las células no tienen unas posiciones preestablecidas ni nada que las diferencien unas de otras (a priori, al menos). Que se sepa, todas las células tienen las mismas características por lo que deben tener la misma clase en una segmentación semántica. Tampoco se puede cambiar la etiqueta de todas las células a 1 (siendo 1 la clase célula) ya que las células están en contacto entre sí (no hay espacio entre células), lo que provocaría que los bordes originales de las células se perdieran.
+Si se usara el etiquetado actual sería necesario una clasificación con una clase por cada célula, pero eso no tiene mucho sentido ya que el número de células en una imagen puede variar y las células no tienen unas posiciones preestablecidas ni nada que las diferencien unas de otras (a priori, al menos). Que se sepa, todas las células tienen las mismas características por lo que deben tener la misma clase en una segmentación semántica. Tampoco se puede cambiar la etiqueta de todas las células a 1 (siendo 1 la clase célula) ya que las células están en contacto entre sí (no hay espacio entre células), lo que provocaría que los bordes originales de las células se perdieran.
 
-La solución que se probará primero será añadir un espaciado entre células, tal y como se hace en el pipeline del artículo descrito en la sección \ref{sec:app1} \cite{Falk2019}. Al existir un espaciado entre células, estas no estarían tocándose entre sí, por lo que todas podrían tener la misma etiqueta y contar como instancias distintas.
+La solución que se probará primero será añadir un espaciado entre células, tal y como se hace en el pipeline del artículo descrito en la sección \ref{sec:app1} \cite{Falk2019}. Al existir un espaciado entre células, éstas no estarían tocándose entre sí, por lo que todas podrían tener la misma etiqueta y contar como instancias distintas.
 
 Para añadir este espaciado entre células primero se encuentran los bordes de cada célula y después se substraen de la imagen original. Por último se cambian todas las etiquetas a 1.
 
@@ -136,8 +141,8 @@ Para hacer estas operaciones se ha utilizado la librería \textbf{scikit-image} 
 
 Para encontrar los bordes se ha usado la función \textit{segmentation.find\_boundaries()}. Esta función realiza operaciones morfológicas para encontrar los bordes de los objetos de una imagen con valores enteros o binarios. Se han tomado las siguientes decisiones:
 \begin{itemize}
-\item Conectividad. Hay N tipos de conectividad siendo N el nº de dimensiones de la imagen de entrada, en nuestro caso N=3. Con conectividad 1 los vóxeles compartiendo al menos una cara son considerados vecinos. Con conectividad 3 se amplía el rango de vecinos al hacer que cualquier vóxel compartiendo una esquina también son considerados vecinos. Si dos vóxeles vecinos tienen distinta etiqueta, son bordes. Se ha elegido conectividad 3 para priorizar el que no haya células en contacto en ninguna de las 3 dimensiones.
-\item Modo. Este modo define qué vóxeles son marcados como bordes. El modo escogido es \textit{outer}, que selecciona como bordes los vóxeles de fondo alrededor de los elementos. Si hay 2 elementos en contacto se marca su frontera como borde. Se ha escogido este modo ya que es el que retiene la mayor cantidad de volumen celular original.
+\item Conectividad. Hay N tipos de conectividad siendo N el número de dimensiones de la imagen de entrada, en este caso N=3. Con conectividad 1 los vóxeles compartiendo al menos una cara son considerados vecinos. Con conectividad 2 los vóxeles compartiendo al menos un lado también son considerados vecinos. Con conectividad 3 los vóxeles compartiendo al menos una esquina también son considerados vecinos. Si dos vóxeles vecinos tienen distinta etiqueta, son bordes. Se ha elegido conectividad 3 para priorizar el que no haya células en contacto en ninguna de las 3 dimensiones.
+\item Modo. Este modo define qué vóxeles son marcados como bordes de las componentes conexas. El modo escogido es \textit{outer}, que define como borde los vóxeles alrededor de las componentes conexas. Si hay 2 elementos en contacto se marca su frontera como borde. Se ha escogido este modo ya que es el que retiene la mayor cantidad de volumen celular original.
 \end{itemize}
 
 \subsubsection{Comprobar cantidad de células}\label{subsubsec:multi_count_cells}
@@ -146,7 +151,7 @@ También se ha usado la función (\textit{measure\_label()}) para comprobar que 
 
 \section{Carga de datos}\label{sec:carga_datos}
 
-Una vez todos los datos han sido preprocesados y almacenados en nuevos ficheros ya se pueden utilizar como fuente de datos para cargar las imágenes en tiempo de ejecución. En la carga de datos también se hace un tratamiento de imagen y será necesario que éste sea rápido, ya que se realizará cada vez que se acceda a una imagen durante el entrenamientos.
+Una vez todos los datos han sido preprocesados y almacenados en nuevos ficheros ya se pueden utilizar como fuente de datos para cargar las imágenes en tiempo de ejecución. En la carga de datos también se hace un tratamiento de imagen y será necesario que éste sea rápido, ya que se realizará cada vez que se acceda a una imagen durante el entrenamiento.
 
 Para la carga de datos se han usado las siguientes librerías:
 \begin{itemize}
@@ -160,7 +165,7 @@ Para la carga de datos se han usado las siguientes librerías:
 
 \section{Guardar modelo}\label{sec:store_model}
 
-En cada iteración se ha guardado en un fichero información sobre el estado actual del entrenamiento y del modelo, con esto se puede utilizar para inferencia, para continuar el entrenamiento o para comprobar métricas, la información guardada es:
+En cada iteración se ha guardado en un fichero información sobre el estado actual del entrenamiento y del modelo, con esto se puede utilizar para inferencia, para continuar el entrenamiento o para comprobar métricas. La información guardada es:
 
 \begin{itemize}
 \item \textbf{epochs:} Nº de epochs entrenados.
@@ -178,7 +183,7 @@ En cada iteración se ha guardado en un fichero información sobre el estado act
 
 Para comprobar los resultados se han utilizado 3 herramientas: la gráfica de la función de pérdida durante el entrenamiento, la métrica intersección sobre unión (IoU) y una representación visual de la segmentación.
 
-\cuadro{|c|c|c|}{Métricas sistema inicial. En la primera fila está cómo de bien se ha predicho el fondo. En la segunda fila está cómo de bien se han predicho las células.}{tab:metricas_inicial}{
+\cuadro{|c|c|c|}{Métricas sistema inicial. En la primera columna se muestra cómo de bien se ha predicho el fondo. En la cómo de bien se han predicho las células.}{tab:metricas_inicial}{
 IoU fondo & IoU células\\ 
 \hline
 0.9437 & 0.0018\\
@@ -188,6 +193,6 @@ IoU fondo & IoU células\\
 
 \figura{0.8}{img/pruebas/sistema_inicial_visual}{Ejemplo de segmentación del conjunto de test. Primera fila la imagen original, segunda fila segmentación objetiva, tercera fila segmentación predicha. Se muestra en cada columna Z=20, Z=25, Z=45, Z=50.}{fig:sistema_inicial_visual}{}{Segmentación de prueba de sistema inicial.}
 
-En las métricas de la tabla \ref{tab:metricas_inicial} se muestra que el fondo está muy bien etiquetado, sin embargo las células están muy mal etiquetadas. Esto se puede ver visualmente en la figura \ref{fig:sistema_inicial_visual}. 
+En las métricas del cuadro \ref{tab:metricas_inicial} se muestra que el fondo está muy bien etiquetado, sin embargo las células están muy mal etiquetadas. Esto se puede ver visualmente en la figura \ref{fig:sistema_inicial_visual}. 
 
-Sin embargo la gráfica de la función de pérdida (figura \ref{fig:sistema_inicial_perdidas} muestra que el modelo está acercándose a su objetivo correctamente. Este error se verá corregido en el capítulo siguiente, efectuando la primera mejora según la metodología vista en la sección \ref{sec:metodologia} 
+Sin embargo la gráfica de la función de pérdida (figura \ref{fig:sistema_inicial_perdidas}) muestra que el modelo está acercándose a su objetivo correctamente. Este error se verá corregido en el capítulo siguiente, efectuando la primera mejora según la metodología vista en la sección \ref{sec:metodologia} 

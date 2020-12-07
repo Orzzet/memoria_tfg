@@ -2,7 +2,7 @@
 
 Durante el entrenamiento se ha usado la herramienta gpustat \cite{wookayin} para medir la vRAM de la GPU utilizada. Desde el sistema inicial se han utilizado imágenes de baja calidad al reescalar la original a un tamaño de $(Z_L, 126, 126)$, donde $Z_L$ depende de cada imagen, y un batch de tamaño 1. Al entrenar se consumía $11525GB$ y al hacer inferencia $6063GB$. Se ha intentado utilizar imágenes de mayor calidad $(Z_M, 252, 252)$ pero no había suficiente memoria. También se había intentado utilizar un batch de tamaño 2 en el sistema inicial, pero la memoria también lo limitaba.
 
-El problema que se quiere resolver es el alto consumo de memoria. Si se reduce la memoria necesaria se podrían utilizar imágenes de mayor calidad, aumentando la cantidad de información que tienen las imágenes durante el entrenamiento. Además, usando imágenes de mayor calidad se reduciría el espaciado entre células ya que el espaciado entre dos células adyacentes seguiría teniendo el mismo nº de píxeles pero la imagen (y cada célula) sería mayor.
+El problema que se quiere resolver es el alto consumo de memoria. Si se reduce la memoria necesaria se podrían utilizar imágenes de mayor calidad, aumentando la cantidad de información que tienen las imágenes durante el entrenamiento. Además, usando imágenes de mayor calidad se reduciría el espaciado entre células ya que el espaciado entre dos células adyacentes seguiría teniendo el mismo número de píxeles pero la imagen (y cada célula) sería mayor.
 
 Si no fuera posible aumentar la calidad de imagen aún consiguiendo una reducción de memoria, se intentará aumentar el tamaño del batch para reducir el tiempo de entrenamiento.
 
@@ -25,15 +25,15 @@ En ambos casos se usa escalado dinámico de pérdida, que se usa como coeficient
 
 \section{Resultados}\label{sec:apex_resultados}
 
-A partir de este capítulo se utilizará otra herramienta para medir la mejora de un modelo y tener más información.
+En este capítulo se ha utilizado una herramienta más para medir la mejora de un modelo, comprobando si el número de células reconocidas en la predicción es correcto y cuantificándolo. Se añade esta métrica ya que en este punto la IoU varía muy poco y además en el análisis científico es relevante estudiar la vecindad de las células, por lo que será importante que el número de células sea el correcto.
 
-Por cada ejemplo del conjunto de test (2), se comparará el nº de componentes conexas de la segmentación predicha con el nº de componentes conexas que debería haber en la segmentación perfecta. Cada componente conexa es una célula, esto significa que si en la predicción hay menos componentes conexas habrá células en contacto que se interpretarán como una sola célula. La métrica utilizada será $wrongCells$:
+Por cada ejemplo del conjunto de test (2), se comparará el número de componentes conexas de la segmentación predicha con el número de componentes conexas que debería haber en la segmentación perfecta. Cada componente conexa es una célula, esto significa que si en la predicción hay menos componentes conexas habrá células en contacto que se interpretarán como una sola célula. La métrica utilizada será $wrongCells$:
 
 \begin{equation}
 wrongCells = \sum_{i=0}^{n-1} \lvert correctCount_i - predictionCount_i \rvert
 \end{equation}
 
-Dónde $i$ es el índice del ejemplo del conjunto de test y $n$ es el nº de ejemplos en el conjunto de test.
+Dónde $i$ es el índice del ejemplo del conjunto de test y $n$ es el número de ejemplos en el conjunto de test.
 
 Además se medirá el consumo de memoria y tiempo por epoch del entrenamiento.
 

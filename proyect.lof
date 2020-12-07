@@ -27,37 +27,39 @@
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura original U-Net.}}{29}{figure.caption.28}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Segmentación volumétrica.}}{32}{figure.caption.30}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Segmentación de tejido vegetal usando PlantSeg.}}{33}{figure.caption.32}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Interfaz gráfica del programa PlantSet.}}{34}{figure.caption.34}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Segmentación de tejido vegetal usando PlantSeg.}}{34}{figure.caption.32}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Interfaz gráfica del programa PlantSet.}}{35}{figure.caption.34}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Métricas CNN de prueba en local.}}{38}{figure.caption.36}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Métricas CNN de prueba en la nube.}}{39}{figure.caption.38}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Métricas CNN de prueba en local.}}{39}{figure.caption.36}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Métricas CNN de prueba en la nube.}}{40}{figure.caption.38}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Diseño Sistema inicial.}}{41}{figure.caption.40}%
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Diseño Sistema Final.}}{43}{figure.caption.42}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Diseño Sistema inicial.}}{42}{figure.caption.40}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Diseño Sistema Final.}}{44}{figure.caption.42}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Arquitectura U-Net reducida.}}{46}{figure.caption.46}%
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema inicial.}}{51}{figure.caption.54}%
-\contentsline {figure}{\numberline {10.3}{\ignorespaces Segmentación de prueba de sistema inicial.}}{51}{figure.caption.55}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Arquitectura U-Net reducida.}}{47}{figure.caption.46}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema inicial.}}{52}{figure.caption.54}%
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Segmentación de prueba de sistema inicial.}}{52}{figure.caption.55}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {11.1}{\ignorespaces Pérdida sistema con función de pérdida DICE.}}{53}{figure.caption.57}%
-\contentsline {figure}{\numberline {11.2}{\ignorespaces Ejemplo de segmentación sistema con función de pérdida DICE.}}{53}{figure.caption.58}%
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Pérdida sistema con función de pérdida DICE.}}{54}{figure.caption.57}%
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Ejemplo de segmentación sistema con función de pérdida DICE.}}{54}{figure.caption.58}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {12.1}{\ignorespaces Pérdida de entrenamiento sistema con pérdida DICE en 200 iteraciones.}}{54}{figure.caption.59}%
-\contentsline {figure}{\numberline {12.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema con data augmentation.}}{55}{figure.caption.61}%
-\contentsline {figure}{\numberline {12.3}{\ignorespaces Ejemplo de segmentación sistema de con data augmentation.}}{56}{figure.caption.62}%
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Pérdida de entrenamiento sistema con pérdida DICE en 200 iteraciones.}}{55}{figure.caption.59}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema con data augmentation.}}{56}{figure.caption.61}%
+\contentsline {figure}{\numberline {12.3}{\ignorespaces Ejemplo de segmentación sistema de con data augmentation.}}{57}{figure.caption.62}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {13.1}{\ignorespaces Arquitectura U-Net completa.}}{58}{figure.caption.63}%
-\contentsline {figure}{\numberline {13.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema con U-Net completa.}}{58}{figure.caption.65}%
-\contentsline {figure}{\numberline {13.3}{\ignorespaces Ejemplo de segmentación de sistema con U-Net completa.}}{59}{figure.caption.66}%
+\contentsline {figure}{\numberline {13.1}{\ignorespaces Arquitectura U-Net completa.}}{59}{figure.caption.63}%
+\contentsline {figure}{\numberline {13.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema con U-Net completa.}}{59}{figure.caption.65}%
+\contentsline {figure}{\numberline {13.3}{\ignorespaces Ejemplo de segmentación de sistema con U-Net completa.}}{60}{figure.caption.66}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {14.1}{\ignorespaces Histogramas de aplicar la normalización tipificada y el cambio a escala }}{61}{figure.caption.68}%
-\contentsline {figure}{\numberline {14.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema con normalización.}}{61}{figure.caption.70}%
-\contentsline {figure}{\numberline {14.3}{\ignorespaces Ejemplo de segmentación de sistema con normalización.}}{62}{figure.caption.71}%
+\contentsline {figure}{\numberline {14.1}{\ignorespaces Histogramas de aplicar la normalización tipificada y el cambio a escala }}{62}{figure.caption.68}%
+\contentsline {figure}{\numberline {14.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema con normalización.}}{62}{figure.caption.70}%
+\contentsline {figure}{\numberline {14.3}{\ignorespaces Ejemplo de segmentación de sistema con normalización.}}{63}{figure.caption.71}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {15.1}{\ignorespaces Pérdida de entrenamiento y validación de sistema con precisión mixta tipo O1.}}{65}{figure.caption.74}%
-\contentsline {figure}{\numberline {15.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema con precisión mixta tipo O2.}}{65}{figure.caption.76}%
+\contentsline {figure}{\numberline {15.1}{\ignorespaces Pérdida de entrenamiento y validación de sistema con precisión mixta tipo O1.}}{66}{figure.caption.74}%
+\contentsline {figure}{\numberline {15.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema con precisión mixta tipo O2.}}{66}{figure.caption.76}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {16.1}{\ignorespaces Segmentación ejemplo sistemas s0-100e, s1-100e, s2-100e, s3-100e y s4-100e.}}{72}{figure.caption.78}%
+\contentsline {figure}{\numberline {16.2}{\ignorespaces Segmentación ejemplo sistemas s4-100e, s5-100e, s5-300e y SPlseg-1h.}}{73}{figure.caption.79}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

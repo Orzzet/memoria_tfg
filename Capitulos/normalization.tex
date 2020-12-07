@@ -28,11 +28,9 @@ v_i^{'} = \frac{v_i - \mu}{\rho}
 
 Donde $v_i^{'}$ es el nuevo valor del vóxel, $v_i$ es el valor actual, $\mu$ es la media de los valores de la imagen y $\rho$ es la desviación estándar. \cite{znormalization}
 
-Para decidir qué técnica usar se van a comparar los histogramas.
-
 \figura{1}{img/pruebas/comparacion_normaliz}{Izquierda: Normalización tipificada. Derecha: Cambio a escala $[0,1]$.}{fig:comparacion_normaliz}{}{Histogramas de aplicar la normalización tipificada y el cambio a escala }
 
-En la figura \ref{fig:comparacion_normaliz} se muestran los dos histogramas. En el histograma del cambio a escala se puede ver cómo los vóxeles sólo tienen valores entre $0$ y $1$. Aún así se observa que la mayoría de los valores están en la zona de menor intensidad, lo que se soluciona con la normalización tipificada. Por lo tanto es esta última la que se implementará.
+Para decidir qué técnica usar se van a comparar los histogramas. En la figura \ref{fig:comparacion_normaliz} se muestran los dos histogramas. En el histograma del cambio a escala se puede ver cómo los vóxeles sólo tienen valores entre $0$ y $1$. Aún así se observa que la mayoría de los valores están en la zona de menor intensidad, lo que se soluciona con la normalización tipificada. Por lo tanto es esta última la que se implementará.
 
 Aunque las operaciones matemáticas son simples, se utilizará TorchIO \cite{PerezGarcia2020} para implementar la normalización tipificada, ya que facilita el uso de otras posibles operaciones a los datos sin modificar mucho el código. TorchIO es una librería que contiene herramientas para trabajar con datos 3D especializadas para imágenes médicas. Se ha utilizado la función \textit{transforms.ZNormalization()} en la imagen de entrada.
 

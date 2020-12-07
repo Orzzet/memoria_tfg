@@ -29,7 +29,7 @@ La segmentación semántica etiqueta cada vóxel con la clase correspondiente, n
 
 Para que la imagen ocupe menos memoria y el entrenamiento sea más rápido, se ha dividido la imagen en trozos de 236x236x100. 
 
-Se usa data augmentation (aumentación de datos) tanto en la imagen de entrada como en la imagen objetivo para mejorar el aprendizaje. Gracias a esto en este proyecto se sostiene que no son necesarias más de 10 imágenes anotadas para el correcto entrenamiento de un modelo.
+Se usa data augmentation (técnica usada para incrementar la cantidad de datos de entrenamiento al añadir copias ligeramente modificada de datos ya existente) tanto en la imagen de entrada como en la imagen objetivo para mejorar el aprendizaje. Gracias a esto en este proyecto se sostiene que no son necesarias más de 10 imágenes anotadas para el correcto entrenamiento de un modelo.
 
 Respecto al modelo entrenado, se ha usado como función de pérdida la entropía cruzada con pesos a nivel de vóxel. Esto quiere decir que cada vóxel en cada imágen va a tener un peso propio. El peso de cada vóxel viene dado por la siguiente fórmula:
 \begin{equation}
@@ -101,7 +101,7 @@ IM,GT:Troceo a 170x170x80 vx	& 100000 iteraciones					& \\
 
 En el preprocesado, se parte de una imagen con etiquetado perfecto y se le aplica la función \textit{find\_ boundaries} de la librería scikit \cite{Pedregosa2011} \cite{Walt2014} obteniendo los bordes de las células con 2 vóxeles de anchura. A la imagen con los bordes se le aplica un desenfoque Gaussiano (conocido filtro que emborrona la imagen) para reducir los componentes de alta frecuencia, lo que ayuda a prevenir el sobreajuste. Luego se aplica varias técnicas de \textit{data augmentation} en el espacio a la imagen de entrada y a la imagen de bordes. Tras esto se aplica \textit{noise augmentation} a la imagen de entrada. Por último se divide la imagen en trozos de 170x170x80 vx.
 
-En el procesado, se usa una arquitectura U-Net y se prueba con Entropía Cruzada Binaria y con Pérdida Dice, usando un optimizador ADAM en ambos casos.
+En el procesado, se usa una arquitectura U-Net y se prueba con Entropía Cruzada Binaria y con Pérdida Dice, usando un optimizador ADAM en ambos casos. El optimizador Ádam es similar al descenso por el gradiente con la diferencia de que se usa un learning rate distinto para cada peso de la red, siendo este learning rate variable a lo largo del entrenamiento\cite{Kingma2017}.
 
 En el postprocesado, se parte de la imagen con la probabilidad de que cada vóxel pertenezca al borde de la imagen, se aplica un umbral para binarizar la imagen, donde cualquier probabilidad $>0.4$ se considera borde. A la imagen binarizada se le aplica la transformada de la distancia, dando a cada vóxel de fondo un valor igual al vóxel de borde más cercano. A esta imagen se le aplica un suavizado gaussiano con $\sigma = 2.0$ y se calculan los mínimos locales para seleccionar las semillas. Estas semillas son usadas en el algoritmo watershed para obtener la segmentación final.
 

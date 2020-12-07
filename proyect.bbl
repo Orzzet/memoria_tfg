@@ -92,6 +92,33 @@ Collette, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Collobert%
+, Kavukcuoglu%
+\BCBL {}\ \BBA {} Farabet%
+}{%
+Collobert%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+Collobert2011}
+\APACinsertmetastar {%
+Collobert2011}%
+\begin{APACrefauthors}%
+Collobert, R.%
+, Kavukcuoglu, K.%
+\BCBL {}\ \BBA {} Farabet, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Torch7: A Matlab-like Environment for Machine Learning}
+  {Torch7: A matlab-like environment for machine learning}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {BigLearn, NIPS Workshop.} {Biglearn, nips workshop.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 \APACcitebtitle {Convolution}}{%
 \APACcitebtitle {Convolution}}{%
 {\protect \APACyear {2020}}%
@@ -152,6 +179,29 @@ Deng, J.%
   {{ImageNet: A Large-Scale Hierarchical Image Database}}.{\BBCQ}
 \newblock
 \BIn{} \APACrefbtitle {CVPR09.} {Cvpr09.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Deutsch%
+}{%
+Deutsch%
+}{%
+{\protect \APACyear {1996}}%
+}]{%
+Deutsch1996}
+\APACinsertmetastar {%
+Deutsch1996}%
+\begin{APACrefauthors}%
+Deutsch, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1996}{}{}.
+\newblock
+\APACrefbtitle {RFC1952: GZIP File Format Specification Version 4.3.} {Rfc1952:
+  Gzip file format specification version 4.3.}
+\newblock
+\APACaddressPublisher{USA}{RFC Editor}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -505,6 +555,60 @@ Jia, Y.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Kingma%
+\ \BBA {} Ba%
+}{%
+Kingma%
+\ \BBA {} Ba%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+Kingma2017}
+\APACinsertmetastar {%
+Kingma2017}%
+\begin{APACrefauthors}%
+Kingma, D\BPBI P.%
+\BCBT {}\ \BBA {} Ba, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\APACrefbtitle {Adam: A Method for Stochastic Optimization.} {Adam: A method
+  for stochastic optimization.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Koziol%
+}{%
+Koziol%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+Koziol2011}
+\APACinsertmetastar {%
+Koziol2011}%
+\begin{APACrefauthors}%
+Koziol, Q.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {HDF5} {Hdf5}.{\BBCQ}
+\newblock
+\BIn{} D.~Padua\ (\BED), \APACrefbtitle {Encyclopedia of Parallel Computing}
+  {Encyclopedia of parallel computing}\ (\BPGS\ 827--833).
+\newblock
+\APACaddressPublisher{Boston, MA}{Springer US}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1007/978-0-387-09766-4_44}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1007/978-0-387-09766-4_44} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Krizhevsky%
 , Sutskever%
 \BCBL {}\ \BBA {} Hinton%
@@ -689,7 +793,8 @@ missinglink.ai.%
 \newblock
 \APACrefYearMonthDay{2020}{}{}.
 \newblock
-\APACrefbtitle {{missinglink.ai}.} {{missinglink.ai}.}
+\APACrefbtitle {Convolutional Neural network tutorial.} {Convolutional neural
+  network tutorial.}
 \newblock
 \begin{APACrefURL}
   [{2020-09-03}]\url{https://missinglink.ai/guides/convolutional-neural-networks/convolutional-neural-network-tutorial-basic-advanced/}
@@ -1203,6 +1308,37 @@ shiba24.%
 \APAChowpublished {\url{https://github.com/shiba24/3d-unet}}.
 \newblock
 \APACaddressPublisher{}{GitHub}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Shorten%
+\ \BBA {} Khoshgoftaar%
+}{%
+Shorten%
+\ \BBA {} Khoshgoftaar%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+Shorten2019}
+\APACinsertmetastar {%
+Shorten2019}%
+\begin{APACrefauthors}%
+Shorten, C.%
+\BCBT {}\ \BBA {} Khoshgoftaar, T\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{Jul}{06}.
+\newblock
+{\BBOQ}\APACrefatitle {A survey on Image Data Augmentation for Deep Learning}
+  {A survey on image data augmentation for deep learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Big Data}{6}{1}{60}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1186/s40537-019-0197-0}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1186/s40537-019-0197-0} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

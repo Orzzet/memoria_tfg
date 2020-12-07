@@ -1,60 +1,14 @@
 \chapter{An\'alisis temporal y de costes}\label{anatemporal}
 
-\section{Análisis temporal} 
-\cuadro{|c|c|}{Cuadro resumen de la planificación.}{tab:prueba}{
-Fecha de inicio & 20/02/2020 \\ 
-\hline
-Fecha de fin prevista & 14/06/2020 \\
-\hline
-Fecha de fin real & 4/12/2020 \\
-\hline
-Horas de trabajo previstas & 300\\
-\hline
-Horas de trabajo real & \\
-}
+En este capítulo se van a analizar los tiempos empleados en distintas tareas, así como un coste aproximado del proyecto.
 
-\cuadro{|c|c|c|}{Cuadro resumen de los costes.}{tab:costes}{
-Concepto & Coste previsto & Coste real \\ 
-\hline
-Coste de personal & $5074.22$ & \\
-\hline
-Coste de servidores & $65.81$ & \\
-\hline
-Costes indirectos & $660.36$ & $1650.9$\\
-\hline
-Total & $5800.39$ &  \\
-}
+\section{Análisis temporal}
 
+En cuanto al tiempo invertido en el proyecto, se detalla en el cuadro \ref{tab:tiempos} las horas dedicadas a cada tarea y subtarea, utilizando para monitorizar el tiempo la herramienta \url{https://clockify.me/tracker}.
 
-\subsection{Costes directos}\label{sec:costesdirectos}
+La mayor parte del tiempo se ha dedicado a la investigación y la documentación. Cada cambio en el sistema necesitaba de 20 minutos a una hora para comprobar los resultados, esto provocó que antes de hacer cada cambio (o durante el entrenamiento) se investigara qué cambios hay que hacer y por qué debería funcionar. Probar todas las combinaciones de parámetros y algoritmos en el entrenamiento es inviable.
 
-\subsubsection{Costes de personal}\label{subsec:personal}
-
-En los costes de personal se ha incluido el salario de los trabajadores involucrados en el proyecto. 
-
-Tras investigar salarios actuales se ha concluido que un junior en el ámbito de inteligencia artificial (Ingeniero de Machine Learning, Ingeniero de Inteligencia Artificial, Ingeniero de Datos, Ingeniero de Big Data) puede cobrar $25000 $€$ $ brutos anuales. Según el BOE \cite{BOE} la empresa deberá pagar un $29.90\%$ ($23.60\%$ contigencias comunes + $5.50\%$ desempleo + $0.20\%$ FOGASA + $0.60\%$ formación profesional) del salario como coste a la Seguridad Social. Haciendo un total de $25000 $€$ * 1.299 = 32475 $€ anual.
-
-Suponiendo que el sueldo se cobra en 12 pagas y que la jornada laboral es de 160 horas, el coste por hora para la empresa sería: $32475 $€$ / (12 * 160) = 16.914$€.
-
-Al ser un proyecto de 300 horas, los costes de personal en total son $16.914 $€$ * 300 = 5074.22 $ €
-
-\subsubsection{Costes de servidores}\label{subsec:servidores}
-
-Al tratarse este proyecto de una aplicación de visión artificial con imágenes de alta definición y deep learning, el coste computacional ha sido muy alto. Es por ello que para el desarrollo de este sistema ha sido necesario el uso de una GPU con al menos 16GB de memoria (VRAM) para poder llegar a unos resultados mínimos. Al no disponer de ninguna máquina en físico que cumpla este requisito, se ha optado por alquilar servidores virtuales.
-
-La computación se ha realizado en una máquina con la GPU P5000, con un valor de mercado de $1890.63$€ \cite{amazonp5000} pudiéndose alquilar por $0.78$\$/hora \cite{gradientdocs}. Aunque tenga estos costes, se ha aprovechado que la web en la que se puede alquilar también ofrece una capa gratuita en la que se puede usar esa GPU de forma indefinida con algunas limitaciones. Aún así se ha hecho el cálculo sin tener esta capa gratuita.
-
-El servidor se ha usado aproximadamente durante 100 horas, usándose para desarrollar, entrenar y hacer inferencia. El coste sería de $0.78 * 100 = 78$\$, que en el momento de escribir esto equivale a $65.81$€.
-
-\subsection{Costes indirectos}\label{sec:costesindirectos}
-
-Se tomará como costes indirectos el uso de material informático en físico y costes varios.
-
-Se ha utilizado el ordenador portátil MSI GP62 7RE Leopard Pro con un valor actual de $905.59$€ \cite{pccomponentes}. Suponiendo que un portátil tiene una esperanza de vida de 5 años, cada mes que se use en el proyecto supondrá un coste de $905.59 / (12*5) = 15.09$€.
-
-Como costes varios se tomará la electricidad, el uso de periféricos, el coste de la oficina y otros. Debido a la incertidumbre al hacer este cálculo se supondrá un gasto de $150$€ al mes.
-
-Según el plan en el que se estimaban 4 meses, el coste sería de $4 * (15.09 + 150) = 660.36$€. En la realidad el proyecto ha tomado 10 meses, por lo que el coste real sería $10 * (15.09 + 150) = 1650.9$€.
+Otro detalle a tener en cuenta es que en el primer sistema se ha invertido mucho más tiempo que en los sistemas posteriores. Llegar a una primera solución ha sido lo más difícil del proyecto, siendo el proceso de iterar para mejorar el sistema ha sido sencillo en comparación. Respecto a las mejoras, se han añadido algunas subtareas que carecían de interés en el proyecto al no poder implementarse correctamente o descubrir, al investigar, que no iba a mejorar el sistema actual.
 
 \cuadro{|c|c|c|}{Tabla de tiempos}{tab:tiempos}{
 Tarea & Subtarea & Tiempo \\
@@ -75,7 +29,7 @@ Primer sistema				& Arquitectura MiniUnet3D				& 1h30m \\
 							& Métrica IoU							& 2h55m \\
 							& Preparar datos para batch				& 2h37m \\
 \hline
-Pruebas Plantseg			& 										& 5h45m \\
+Pruebas Plantseg			& 										& 9h45m \\
 \hline
 Mejoras					& Otras									& 4h22m \\
 							& Pérdida DICE							& 3h6m \\
@@ -90,9 +44,64 @@ Conversor a tif para fiji	& 										& 5h20m \\
 \hline
 Representación visual		& 										& 6h9m \\
 \hline
-Memoria						& 										& 108h12m \\
+Memoria						& 										& 114h12m \\
 \hline
 Preparar Proyecto			& 										& 7h39m \\
 \hline
-Total						&										& 304h46m\\
+Total						&										& 314h46m\\
 }
+
+\cuadro{|c|c|}{Cuadro resumen de la planificación.}{tab:prueba}{
+Fecha de inicio & 20/02/2020 \\ 
+\hline
+Fecha de fin prevista & 14/06/2020 \\
+\hline
+Fecha de fin real & 4/12/2020 \\
+\hline
+Horas de trabajo previstas & 300\\
+\hline
+Horas de trabajo real & 314\\
+}
+\pagebreak \section{Costes}\label{sec:costes}
+
+En cuanto a los costes del proyecto, se hará un cálculo aproximado del coste que podría haber tenido un proyecto como este. Para ello se tomará como referencia el valor de mercado actual de los salarios (costes de personal), los servidores y uso de material y gastos pasivos (costes indirectos).
+
+\cuadro{|c|c|c|}{Cuadro resumen de los costes.}{tab:costes}{
+Concepto & Coste previsto & Coste real \\ 
+\hline
+Coste de personal & $5074.22$ & $5340,60$\\
+\hline
+Coste de servidores & $65.81$ & $65.81$\\
+\hline
+Costes indirectos & $660.36$ & $1650.90$\\
+\hline
+Total & $5800.39$ & $7057.31$ \\
+}
+
+\subsubsection{Costes de personal}\label{subsec:personal}
+
+En los costes de personal se ha incluido el salario de los trabajadores involucrados en el proyecto. 
+
+Tras investigar salarios actuales se ha concluido que un junior en el ámbito de inteligencia artificial (Ingeniero de Machine Learning, Ingeniero de Inteligencia Artificial, Ingeniero de Datos, Ingeniero de Big Data) puede cobrar $25000 $€$ $ brutos anuales. Según el BOE \cite{BOE} la empresa deberá pagar un $29.90\%$ ($23.60\%$ contigencias comunes + $5.50\%$ desempleo + $0.20\%$ FOGASA + $0.60\%$ formación profesional) del salario como coste a la Seguridad Social. Haciendo un total de $25000 $€$ * 1.299 = 32475 $€ anual.
+
+Suponiendo que el sueldo se cobra en 12 pagas y que la jornada laboral es de 160 horas, el coste por hora para la empresa sería: $32475 $€$ / (12 * 160) = 16.914$€.
+
+Al ser un proyecto de 300 horas, los costes de personal en total son $16.914 $€$ * 300 = 5074.22 $ €
+
+\subsubsection{Costes de servidores}\label{subsec:servidores}
+
+Al tratarse este proyecto de una aplicación de visión artificial con imágenes de alta definición y deep learning, el coste computacional ha sido muy alto. Es por ello que para el desarrollo de este sistema ha sido necesario el uso de una GPU con al menos 16GB de memoria (VRAM) para poder llegar a unos resultados mínimos. Al no disponer de ninguna máquina en físico que cumpla este requisito, se ha optado por alquilar servidores virtuales.
+
+La computación se ha realizado en una máquina con la GPU P5000, con un valor de mercado de $1890.63$€ \cite{amazonp5000} pudiéndose alquilar por $0.78$\$/hora \cite{gradientdocs}. Aunque tenga estos costes, se ha aprovechado que la web en la que se puede alquilar también ofrece una capa gratuita en la que se puede usar esa GPU de forma indefinida con algunas limitaciones. Aún así se ha hecho el cálculo sin tener esta capa gratuita.
+
+El servidor se ha usado aproximadamente durante 100 horas, usándose para desarrollar, entrenar y hacer inferencia. El coste sería de $0.78 * 100 = 78$\$, que en el momento de escribir esto equivale a $65.81$€.
+
+\subsubsection{Costes indirectos}\label{sec:costesindirectos}
+
+Se tomará como costes indirectos el uso de material informático en físico y costes varios.
+
+Se ha utilizado el ordenador portátil MSI GP62 7RE Leopard Pro con un valor actual de $905.59$€ \cite{pccomponentes}. Suponiendo que un portátil tiene una esperanza de vida de 5 años, cada mes que se use en el proyecto supondrá un coste de $905.59 / (12*5) = 15.09$€.
+
+Como costes varios se tomará la electricidad, el uso de periféricos, el coste de la oficina y otros. Debido a la incertidumbre al hacer este cálculo se supondrá un gasto de $150$€ al mes.
+
+Según el plan en el que se estimaban 4 meses, el coste sería de $4 * (15.09 + 150) = 660.36$€. En la realidad el proyecto ha tomado 10 meses, por lo que el coste real sería $10 * (15.09 + 150) = 1650.9$€.

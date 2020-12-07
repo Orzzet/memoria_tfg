@@ -4,9 +4,11 @@ En la gráfica de la función de pérdida de los resultados anteriores se puede 
 
 En cada iteración del algoritmo de entrenamiento se comparan todos los ejemplos del conjunto de entrenamiento para obtener la pérdida de entrenamiento. A menos que haya un error grave esta pérdida debería bajar ya que el modelo es entrenado con ejemplos de este mismo conjunto de entrenamiento. Sin embargo no se utilizan ejemplos del conjunto de validación para el entrenamiento, sólo se utilizan para calcular la pérdida de validación en cada iteración.
 
-Si el modelo mejora en predecir el conjunto de entrenamiento pero empeora en predecir el conjunto de validación esto es un indicativo de que se está produciendo un sobreajuste. En la figura \ref{fig:sistema_2_dice_perdidas_200} se ha entrenado 100 iteraciones más (200 en total) el modelo anterior para comprobar si este sobreajuste se está produciendo realmente o era un fenómeno que ocurría durante un tramo pequeño. Claramente se puede ver que hay sobreajuste.
+Si el modelo mejora en predecir el conjunto de entrenamiento pero empeora en predecir el conjunto de validación esto es un indicativo de que se está produciendo un sobreajuste. Sobreajuste es cuando un modelo aprende de un conjunto de entrenamiento demasiado bien y reconoce patrones dentro de ese conjunto de entrenamiento particular en vez del problema general. En la figura \ref{fig:sistema_2_dice_perdidas_200} se ha entrenado 100 iteraciones más (200 en total) el modelo anterior para comprobar si realmente se está produciendo este sobreajuste o era un fenómeno que ocurría durante un tramo pequeño. Claramente se puede ver que hay sobreajuste.
 
 \figura{0.7}{img/pruebas/sistema_2_dice_perdidas_200}{Pérdida de entrenamiento en cada iteración. 200 iteraciones. Se puede ver claramente cómo se produce sobreajuste.}{fig:sistema_2_dice_perdidas_200}{}{Pérdida de entrenamiento sistema con pérdida DICE en 200 iteraciones.}
+
+Para solucionar esto existe la técnica del \textit{data augmentation}. Data augmentation es una técnica usada para incrementar la cantidad de datos de entrenamiento al añadir copias ligeramente modificada de datos ya existente, ayudando a reducir el sobreajuste \cite{Shorten2019}.
 
 PyTorch ofrece varias técnicas de data augmentation pero no están adaptadas para datos volumétricos, por lo que es necesario recurrir a librerías externas, como Kornia.
 

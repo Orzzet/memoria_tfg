@@ -1,10 +1,8 @@
 \chapter{Mejora 1: Función de pérdida Dice}\label{loss_function}
 
-En los resultados del capítulo anterior se mostró en cada iteración el algoritmo de aprendizaje hace el modelo se acerque más a su objetivo. Esto es lo que debe de ocurrir al entrenar un modelo, por lo que a priori todo está funcionando correctamente.
+En los resultados del capítulo anterior se mostró que en cada iteración el algoritmo de aprendizaje hace que el modelo se acerque más a su objetivo. Esto es lo que debe de ocurrir al entrenar un modelo, por lo que a priori todo está funcionando correctamente.
 
-Sin embargo, los resultados son muy malos, obteniéndose un $IoU=0.0018$, muy lejos del $0.7$ propuesto como meta.
-
-El motivo de que esta discrepancia ocurra es porque no se ha elegido una función de pérdida que represente correctamente el acercamiento a un objetivo útil para el problema actual.
+Sin embargo los resultados obtenidos, $IoU=0.0018$, quedan muy lejos del $0.7$ propuesto como meta. El motivo de que esta discrepancia ocurra es porque no se ha elegido una función de pérdida que represente correctamente el acercamiento a un objetivo útil para el problema actual.
 
 La pérdida actual se calcula con la entropía cruzada (sin pesos):
 

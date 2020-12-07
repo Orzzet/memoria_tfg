@@ -412,12 +412,13 @@
 }
 
 @Book{Cardoso2017,
-  author = {Cardoso, Manuel Jorge and Arbel, Tal and Carneiro, Gustavo and Syeda-Mahmood, Tanveer and Tavares, Joao and Moradi, Mehdi and Bradley, Andrew and Greenspan, Hayit and Papa, João and Madabhushi, Anant and Nascimento, Jacinto and Cardoso, Jaime and Belagiannis, Vasileios and Lu, Zhi},
-  title  = {Deep Learning in Medical Image Analysis and Multimodal Learning for Clinical Decision Support: Third International Workshop, DLMIA 2017, and 7th International Workshop, ML-CDS 2017, Held in Conjunction with MICCAI 2017, Québec City, QC, Canada, September 14, Proceedings},
-  year   = {2017},
-  isbn   = {978-3-319-67557-2},
-  month  = {01},
-  doi    = {10.1007/978-3-319-67558-9},
+  author   = {Cardoso, Manuel Jorge and Arbel, Tal and Carneiro, Gustavo and Syeda-Mahmood, Tanveer and Tavares, Joao and Moradi, Mehdi and Bradley, Andrew and Greenspan, Hayit and Papa, João and Madabhushi, Anant and Nascimento, Jacinto and Cardoso, Jaime and Belagiannis, Vasileios and Lu, Zhi},
+  title    = {Deep Learning in Medical Image Analysis and Multimodal Learning for Clinical Decision Support},
+  year     = {2017},
+  isbn     = {978-3-319-67557-2},
+  month    = {01},
+  abstract = {Third International Workshop, DLMIA 2017, and 7th International Workshop, ML-CDS 2017, Held in Conjunction with MICCAI 2017, Québec City, QC, Canada, September 14, Proceedings},
+  doi      = {10.1007/978-3-319-67558-9},
 }
 
 @Misc{Chen2014,
@@ -673,6 +674,62 @@
   title   = {Padding and Stride},
   journal = {Padding and Stride},
   url     = {http://d2l.ai/chapter_convolutional-neural-networks/padding-and-strides.html},
+}
+
+@InBook{Koziol2011,
+  author    = {Koziol, Quincey},
+  editor    = {Padua, David},
+  pages     = {827--833},
+  publisher = {Springer US},
+  title     = {HDF5},
+  year      = {2011},
+  address   = {Boston, MA},
+  isbn      = {978-0-387-09766-4},
+  booktitle = {Encyclopedia of Parallel Computing},
+  doi       = {10.1007/978-0-387-09766-4_44},
+  url       = {https://doi.org/10.1007/978-0-387-09766-4_44},
+}
+
+@InProceedings{Collobert2011,
+  author    = {R. Collobert and K. Kavukcuoglu and C. Farabet},
+  booktitle = {BigLearn, NIPS Workshop},
+  title     = {Torch7: A Matlab-like Environment for Machine Learning},
+  year      = {2011},
+}
+
+@Rfc{Deutsch1996,
+  abstract  = {This specification defines a lossless compressed data format that is   compatible with the widely used GZIP utility.  The format includes a   cyclic redundancy check value for detecting data corruption.  The   format presently uses the DEFLATE method of compression but can be   easily extended to use other compression methods.  The format can be   implemented readily in a manner not covered by patents.},
+  address   = {USA},
+  author    = {Deutsch, P.},
+  publisher = {RFC Editor},
+  title     = {RFC1952: GZIP File Format Specification Version 4.3},
+  year      = {1996},
+}
+﻿
+
+@Article{Shorten2019,
+  author   = {Shorten, Connor and Khoshgoftaar, Taghi M.},
+  journal  = {Journal of Big Data},
+  title    = {A survey on Image Data Augmentation for Deep Learning},
+  year     = {2019},
+  issn     = {2196-1115},
+  month    = {Jul},
+  number   = {1},
+  pages    = {60},
+  volume   = {6},
+  abstract = {Deep convolutional neural networks have performed remarkably well on many Computer Vision tasks. However, these networks are heavily reliant on big data to avoid overfitting. Overfitting refers to the phenomenon when a network learns a function with very high variance such as to perfectly model the training data. Unfortunately, many application domains do not have access to big data, such as medical image analysis. This survey focuses on Data Augmentation, a data-space solution to the problem of limited data. Data Augmentation encompasses a suite of techniques that enhance the size and quality of training datasets such that better Deep Learning models can be built using them. The image augmentation algorithms discussed in this survey include geometric transformations, color space augmentations, kernel filters, mixing images, random erasing, feature space augmentation, adversarial training, generative adversarial networks, neural style transfer, and meta-learning. The application of augmentation methods based on GANs are heavily covered in this survey. In addition to augmentation techniques, this paper will briefly discuss other characteristics of Data Augmentation such as test-time augmentation, resolution impact, final dataset size, and curriculum learning. This survey will present existing methods for Data Augmentation, promising developments, and meta-level decisions for implementing Data Augmentation. Readers will understand how Data Augmentation can improve the performance of their models and expand limited datasets to take advantage of the capabilities of big data.},
+  day      = {06},
+  doi      = {10.1186/s40537-019-0197-0},
+  url      = {https://doi.org/10.1186/s40537-019-0197-0},
+}
+
+@Misc{Kingma2017,
+  author        = {Diederik P. Kingma and Jimmy Ba},
+  title         = {Adam: A Method for Stochastic Optimization},
+  year          = {2017},
+  archiveprefix = {arXiv},
+  eprint        = {1412.6980},
+  primaryclass  = {cs.LG},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
