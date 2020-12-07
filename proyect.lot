@@ -32,7 +32,7 @@
 \contentsline {table}{\numberline {16.1}{\ignorespaces Métricas obtenidas al hacer una media de todo el conjunto de test para cada sistema, siendo IoU células la métrica más relevante. Se considera IoU$>0.7$ una buena segmentación.\relax }}{79}{table.caption.77}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {17.1}{\ignorespaces Tabla de tiempos\relax }}{83}{table.caption.80}%
-\contentsline {table}{\numberline {17.2}{\ignorespaces Cuadro resumen de la planificación.\relax }}{83}{table.caption.81}%
+\contentsline {table}{\numberline {17.2}{\ignorespaces Cuadro resumen de los tiempos.\relax }}{83}{table.caption.81}%
 \contentsline {table}{\numberline {17.3}{\ignorespaces Cuadro resumen de los costes.\relax }}{84}{table.caption.82}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

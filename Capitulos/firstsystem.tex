@@ -181,7 +181,7 @@ En cada iteración se ha guardado en un fichero información sobre el estado act
 
 \section{Resultados}\label{sec:initial_system_resultados}
 
-Para comprobar los resultados se han utilizado 3 herramientas: la gráfica de la función de pérdida durante el entrenamiento, la métrica intersección sobre unión (IoU) y una representación visual de la segmentación.
+Para comprobar los resultados se han utilizado 3 herramientas: la gráfica de la función de pérdida durante el entrenamiento, la métrica intersección sobre unión (IoU) y una representación visual de la segmentación. Cuando se hable de de IoU se estará hablando de IoU celular, ya que es la métrica que indica cómo de bien se han etiquetado las células, siendo esta métrica calculada  siempre como la media de IoU de cada imagen del conjunto de test (2 imágenes)
 
 \cuadro{|c|c|c|}{Métricas sistema inicial. En la primera columna se muestra cómo de bien se ha predicho el fondo. En la segunda columna, cómo de bien se han predicho las células.}{tab:metricas_inicial}{
 IoU fondo & IoU células\\ 
