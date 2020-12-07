@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  7 DEC 2020 13:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  7 DEC 2020 14:10
 entering extended mode
 **./proyect.tex
 (proyect.tex
@@ -661,9 +661,6 @@ LaTeX Warning: Label `tab:metricas_2' multiply defined.
 
 
 LaTeX Warning: Label `sec:apex_resultados' multiply defined.
-
-
-LaTeX Warning: Label `tab:prueba' multiply defined.
 
 
 LaTeX Warning: Label `pruebas' multiply defined.
@@ -1374,10 +1371,6 @@ Package pdftex.def Info: img/pruebas/s5pls_visual.png  used on input line 53.
 ) (Capitulos/analtemporal.tex [79] [80 <./img/pruebas/s04_visual.png>]
 [81 <./img/pruebas/s5pls_visual.png>]
 Cap\'{\i }tulo 17.
-
-LaTeX Warning: Reference `tab:resumen_tiempos' on page 82 undefined on input li
-ne 13.
-
 [82
 
 ] [83]) (Capitulos/manual.tex [84] [85]
@@ -1487,9 +1480,6 @@ Package rerunfilecheck Info: File `proyect.out' has not changed.
 (rerunfilecheck)             Checksum: 79C229747DEDAB679DF068B17DD9BC77;5178.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 125.
@@ -1497,7 +1487,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 125.
 Here is how much of TeX's memory you used:
  13629 strings out of 492483
  203832 string characters out of 3131035
- 319310 words of memory out of 3000000
+ 319480 words of memory out of 3000000
  17215 multiletter control sequences out of 15000+200000
  33877 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1518,9 +1508,9 @@ a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on proyect.pdf (103 pages, 5562684 bytes).
+Output written on proyect.pdf (103 pages, 5562771 bytes).
 PDF statistics:
- 1678 PDF objects out of 1728 (max. 8388607)
+ 1679 PDF objects out of 1728 (max. 8388607)
  367 named destinations out of 1000 (max. 500000)
  880 words of extra memory for PDF output out of 10000 (max. 10000000)
 
