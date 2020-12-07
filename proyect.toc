@@ -87,7 +87,11 @@
 \contentsline {subsubsection}{Costes de personal}{76}{subsubsection*.83}%
 \contentsline {subsubsection}{Costes de servidores}{76}{subsubsection*.84}%
 \contentsline {subsubsection}{Costes indirectos}{76}{subsubsection*.85}%
-\contentsline {chapter}{\numberline {18}Conclusiones}{78}{chapter.18}%
-\contentsline {chapter}{\numberline {19}Manual}{79}{chapter.19}%
-\contentsline {chapter}{Referencias}{80}{chapter*.86}%
+\contentsline {chapter}{\numberline {18}Manual}{78}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Instalación}{78}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Guía de uso}{78}{section.18.2}%
+\contentsline {subsubsection}{Consola de comandos}{78}{subsubsection*.86}%
+\contentsline {subsubsection}{Jupyter Notebook}{79}{subsubsection*.87}%
+\contentsline {chapter}{\numberline {19}Conclusiones}{80}{chapter.19}%
+\contentsline {chapter}{Referencias}{81}{chapter*.88}%
 \contentsfinish 

@@ -1,22 +1,92 @@
 \chapter{Manual}\label{manual}
 
-El proyecto está disponible en el siguiente enlace, donde hay instrucciones sobre su instalación \url{https://github.com/Orzzet/segmentacion_celular_unet3d}.
+El proyecto está disponible en el siguiente enlace \url{https://github.com/Orzzet/segmentacion_celular_unet3d}. \textbf{Sólo se ha probado en Linux}.
+
+\section{Instalación}
 
 Prerequisitos:
+
 \begin{itemize}
 \item CUDA \url{https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html}
-\item CUDNN \url{https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html}
 \item Python 3.5+ \url{https://www.python.org/downloads/}
-\item PyTorch \url{https://github.com/pytorch/pytorch}
-\item Jupyter Notebook \url{https://jupyter.readthedocs.io/en/latest/install.html} o un Software que pueda ejectura Notebooks
+\item (Opcional) Jupyter Notebook \url{https://jupyter.readthedocs.io/en/latest/install.html} o un Software que pueda ejectura Notebooks
 \end{itemize}
 
-Cómo usarlo:
-\begin{enumerate}
-\item Descargar el proyecto del repositorio y descomprimir en el lugar deseado.
-\item El notebook 0\_preprocesado trata las imágenes y las transforma en el formato correcto. En caso de tener imágenes en un formato distinto, hay que modificar este fichero.
-\item El notebook 1\_procesado es para hacer el entrenamiento.
-\item El notebook 2\_inferencia es para utilizar el modelo, bien para estadísticas o para comprobar el resultado.
-\end{enumerate}
 
+Instalación:
 
+\begin{verbatim}
+
+pip install torch torchvision
+git clone https://github.com/Orzzet/3d-cell-segmentation.git
+cd 3d-cell-segmentation
+pip install requirements.txt
+
+\end{verbatim}
+
+\section{Guía de uso}
+El proyecto puede utilizarse por consola de comandos o por Notebooks.
+
+\subsubsection{Consola de comandos}
+
+Para facilitar los parámetros de configuración se usa un archivo .yaml con la siguiente estructura:
+\begin{verbatim}
+# train o test
+job: "test" 
+# Cociente por el que se divide cada dimensión.
+dim_size_reduction: [1,1,1]
+# Nombre del dataset etiquetado dentro del archivo .h5
+target_mode: "target" 
+# True usa gpu, False usa cpu
+gpu: True
+# Nombre del modelo (sin extensión ni path)
+model_name: "prueba"
+# Path a la carpeta donde se guardan los modelos 
+models_folder: "./"
+# Arquitectura a usar. UNet3D o MiniUNet3D. 
+arch: "UNet3D"
+# True usa precisión mixta, False no. 
+AMP: True
+
+# Si job=train:
+train_path: "data/cells/0.25z 0.125x 0.125y/train/"
+valid_path: "data/cells/0.25z 0.125x 0.125y/valid/"
+loss_function: "dice"
+n_epochs: 100
+# Si job=test:
+test_path: "data/cells/0.25z 0.125x 0.125y/test/"
+
+\end{verbatim}
+
+Después de configurar este archivo, abrir un terminal, navegar hacia la raíz del proyecto y escribir:
+
+\begin{verbatim}
+python main.py "PATH/TO/YAML"
+\end{verbatim}
+
+Donde PATH/TO/YAML es el path hacia del archivo de configuración .yaml
+
+\subsubsection{Jupyter Notebook}
+
+Será necesario haber instalado el prerequisito opcional Jupyter Notebook. Tras esto ejecutar Jupyter Notebook y navegar hasta la carpeta raíz del proyect.
+
+Para entrenar un nuevo modelo usar el notebook 1\_Entrenamiento.ipynb. Hay que configurar los siguientes parámetros, siendo estos parámetros los mismos que los usados por consola de comandos:
+
+\begin{verbatim}
+DIM_SIZE_REDUCTION = (1,1,1)
+MODELS_FOLDER = "../models/"
+TARGET_MODE = 'target'
+model_name: "prueba"
+n_epochs = 300
+train_path = '../data/cells/0.25z 0.125x 0.125y/train/'
+valid_path = '../data/cells/0.25z 0.125x 0.125y/valid/'
+arch = "MiniUNet3D"
+loss_function = "dice"
+AMP = False
+\end{verbatim}
+
+Tras configurar estos parámetros, ejecutar todas las celdas. Si el nombre del modelo ya existe en el path de modelos indicado, se reanudará el entrenamiento por el último epoch entrenado.
+
+Para probar un modelo y hacer inferencia, usar el notebook 2\_Infe.ipynb. Para usar este notebook hay que configurar los mismos parámetros que en el entrenamiento, a excepción que en este notebook hay que indicar el path hacia el conjunto de test:
+
+\verb|test_path = '../data/cells/0.25z 0.125x 0.125y/test/'|

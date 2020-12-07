@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  7 DEC 2020 07:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  7 DEC 2020 08:22
 entering extended mode
 **./proyect.tex
 (proyect.tex
@@ -781,7 +781,7 @@ LaTeX Info: Redefining \BHBI on input line 139.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<img/us.jpg, id=307, 36.135pt x 36.135pt>
+<img/us.jpg, id=315, 36.135pt x 36.135pt>
 File: img/us.jpg Graphic file (type jpg)
 <use img/us.jpg>
 Package pdftex.def Info: img/us.jpg  used on input line 27.
@@ -881,27 +881,27 @@ l.1 \chapter
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 1.
-<img/tejidoepitelial.png, id=575, 1100.61188pt x 750.55406pt>
+<img/tejidoepitelial.png, id=585, 1100.61188pt x 750.55406pt>
 File: img/tejidoepitelial.png Graphic file (type png)
 <use img/tejidoepitelial.png>
 Package pdftex.def Info: img/tejidoepitelial.png  used on input line 9.
 (pdftex.def)             Requested size: 426.79135pt x 291.04283pt.
-<img/raw 04_1a Z=77.png, id=577, 1027.84pt x 1027.84pt>
+<img/raw 04_1a Z=77.png, id=587, 1027.84pt x 1027.84pt>
 File: img/raw 04_1a Z=77.png Graphic file (type png)
 <use img/raw 04_1a Z=77.png>
 Package pdftex.def Info: img/raw 04_1a Z=77.png  used on input line 15.
 (pdftex.def)             Requested size: 185.00322pt x 185.00322pt.
-<img/raw 04_1a Z=100.png, id=578, 1027.84pt x 1027.84pt>
+<img/raw 04_1a Z=100.png, id=588, 1027.84pt x 1027.84pt>
 File: img/raw 04_1a Z=100.png Graphic file (type png)
 <use img/raw 04_1a Z=100.png>
 Package pdftex.def Info: img/raw 04_1a Z=100.png  used on input line 17.
 (pdftex.def)             Requested size: 185.00322pt x 185.00322pt.
-<img/target 04_1a Z=77.png, id=579, 1027.84pt x 1027.84pt>
+<img/target 04_1a Z=77.png, id=589, 1027.84pt x 1027.84pt>
 File: img/target 04_1a Z=77.png Graphic file (type png)
 <use img/target 04_1a Z=77.png>
 Package pdftex.def Info: img/target 04_1a Z=77.png  used on input line 18.
 (pdftex.def)             Requested size: 185.00322pt x 185.00322pt.
-<img/target 04_1a Z=100.png, id=580, 1027.84pt x 1027.84pt>
+<img/target 04_1a Z=100.png, id=590, 1027.84pt x 1027.84pt>
 File: img/target 04_1a Z=100.png Graphic file (type png)
 <use img/target 04_1a Z=100.png>
 Package pdftex.def Info: img/target 04_1a Z=100.png  used on input line 19.
@@ -968,13 +968,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-<img/Rojas1996_p31_computing_unit.png, id=672, 441.90094pt x 123.46124pt>
+<img/Rojas1996_p31_computing_unit.png, id=682, 441.90094pt x 123.46124pt>
 File: img/Rojas1996_p31_computing_unit.png Graphic file (type png)
 <use img/Rojas1996_p31_computing_unit.png>
 Package pdftex.def Info: img/Rojas1996_p31_computing_unit.png  used on input li
 ne 27.
 (pdftex.def)             Requested size: 426.79135pt x 119.24483pt.
-<img/NeuronaArtificial.png, id=675, 437.83575pt x 101.78024pt>
+<img/NeuronaArtificial.png, id=685, 437.83575pt x 101.78024pt>
 File: img/NeuronaArtificial.png Graphic file (type png)
 <use img/NeuronaArtificial.png>
 Package pdftex.def Info: img/NeuronaArtificial.png  used on input line 39.
@@ -983,7 +983,7 @@ Package pdftex.def Info: img/NeuronaArtificial.png  used on input line 39.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
  [13 <./img/NeuronaArtificial.png>]
-<img/neural_network.png, id=701, 511.9125pt x 299.9205pt>
+<img/neural_network.png, id=711, 511.9125pt x 299.9205pt>
 File: img/neural_network.png Graphic file (type png)
 <use img/neural_network.png>
 Package pdftex.def Info: img/neural_network.png  used on input line 72.
@@ -993,7 +993,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
  ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ts1ptm.fd"
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [14 <./img/neural_network.png>]
-<img/gradient_descent.png, id=713, 1405.25pt x 537.00626pt>
+<img/gradient_descent.png, id=723, 1405.25pt x 537.00626pt>
 File: img/gradient_descent.png Graphic file (type png)
 <use img/gradient_descent.png>
 Package pdftex.def Info: img/gradient_descent.png  used on input line 101.
@@ -1005,12 +1005,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-<img/image_to_ANN.png, id=723, 1033.61156pt x 563.10374pt>
+<img/image_to_ANN.png, id=733, 1033.61156pt x 563.10374pt>
 File: img/image_to_ANN.png Graphic file (type png)
 <use img/image_to_ANN.png>
 Package pdftex.def Info: img/image_to_ANN.png  used on input line 7.
 (pdftex.def)             Requested size: 341.43437pt x 186.00525pt.
-<img/image_to_CNN_.png, id=726, 1040.38687pt x 303.38344pt>
+<img/image_to_CNN_.png, id=736, 1040.38687pt x 303.38344pt>
 File: img/image_to_CNN_.png Graphic file (type png)
 <use img/image_to_CNN_.png>
 Package pdftex.def Info: img/image_to_CNN_.png  used on input line 11.
@@ -1018,52 +1018,52 @@ Package pdftex.def Info: img/image_to_CNN_.png  used on input line 11.
 [16
 
 ] [17 <./img/image_to_ANN.png> <./img/image_to_CNN_.png>]
-<img/kernel.png, id=747, 327.2225pt x 130.4875pt>
+<img/kernel.png, id=757, 327.2225pt x 130.4875pt>
 File: img/kernel.png Graphic file (type png)
 <use img/kernel.png>
 Package pdftex.def Info: img/kernel.png  used on input line 27.
 (pdftex.def)             Requested size: 170.71393pt x 68.07489pt.
-<img/padding.png, id=752, 445.665pt x 188.705pt>
+<img/padding.png, id=762, 445.665pt x 188.705pt>
 File: img/padding.png Graphic file (type png)
 <use img/padding.png>
 Package pdftex.def Info: img/padding.png  used on input line 33.
 (pdftex.def)             Requested size: 213.39568pt x 90.35565pt.
-<img/paso.png, id=756, 389.455pt x 186.6975pt>
+<img/paso.png, id=766, 389.455pt x 186.6975pt>
 File: img/paso.png Graphic file (type png)
 <use img/paso.png>
 Package pdftex.def Info: img/paso.png  used on input line 37.
 (pdftex.def)             Requested size: 213.39568pt x 102.2965pt.
  [18 <./img/kernel.png> <./img/padding.png> <./img/paso.png>]
-<img/filter_og.png, id=771, 31.42174pt x 31.42174pt>
+<img/filter_og.png, id=781, 31.42174pt x 31.42174pt>
 File: img/filter_og.png Graphic file (type png)
 <use img/filter_og.png>
 Package pdftex.def Info: img/filter_og.png  used on input line 43.
 (pdftex.def)             Requested size: 62.84329pt x 62.84329pt.
-<img/filter_edge_kernel.png, id=772, 104.39pt x 55.20625pt>
+<img/filter_edge_kernel.png, id=782, 104.39pt x 55.20625pt>
 File: img/filter_edge_kernel.png Graphic file (type png)
 <use img/filter_edge_kernel.png>
 Package pdftex.def Info: img/filter_edge_kernel.png  used on input line 44.
 (pdftex.def)             Requested size: 104.38972pt x 55.2061pt.
-<img/filter_edge.png, id=773, 31.42174pt x 31.42174pt>
+<img/filter_edge.png, id=783, 31.42174pt x 31.42174pt>
 File: img/filter_edge.png Graphic file (type png)
 <use img/filter_edge.png>
 Package pdftex.def Info: img/filter_edge.png  used on input line 45.
 (pdftex.def)             Requested size: 62.84329pt x 62.84329pt.
-<img/simple-convnet.png, id=777, 1131.47719pt x 259.7203pt>
+<img/simple-convnet.png, id=787, 1131.47719pt x 259.7203pt>
 File: img/simple-convnet.png Graphic file (type png)
 <use img/simple-convnet.png>
 Package pdftex.def Info: img/simple-convnet.png  used on input line 56.
 (pdftex.def)             Requested size: 426.79135pt x 97.96555pt.
  [19 <./img/filter_og.png> <./img/filter_edge_kernel.png> <./img/filter_edge.pn
 g> <./img/simple-convnet.png>]
-<img/conv-example.png, id=789, 710.655pt x 630.85687pt>
+<img/conv-example.png, id=799, 710.655pt x 630.85687pt>
 File: img/conv-example.png Graphic file (type png)
 <use img/conv-example.png>
 Package pdftex.def Info: img/conv-example.png  used on input line 83.
 (pdftex.def)             Requested size: 341.43437pt x 303.10626pt.
 
 [20] [21 <./img/conv-example.png>]
-<img/maxpool.jpeg, id=800, 789.95125pt x 369.38pt>
+<img/maxpool.jpeg, id=810, 789.95125pt x 369.38pt>
 File: img/maxpool.jpeg Graphic file (type jpg)
 <use img/maxpool.jpeg>
 Package pdftex.def Info: img/maxpool.jpeg  used on input line 106.
@@ -1071,7 +1071,7 @@ Package pdftex.def Info: img/maxpool.jpeg  used on input line 106.
  [22 <./img/maxpool.jpeg>] [23])
 (Capitulos/archsegmsemantica.tex [24]
 Cap\'{\i }tulo 6.
-<img/sem-segm-example.png, id=844, 853.1875pt x 664.4825pt>
+<img/sem-segm-example.png, id=854, 853.1875pt x 664.4825pt>
 File: img/sem-segm-example.png Graphic file (type png)
 <use img/sem-segm-example.png>
 Package pdftex.def Info: img/sem-segm-example.png  used on input line 15.
@@ -1079,24 +1079,24 @@ Package pdftex.def Info: img/sem-segm-example.png  used on input line 15.
 [25
 
 ] [26 <./img/sem-segm-example.png>]
-<img/FCN.png, id=869, 845.40843pt x 359.84438pt>
+<img/FCN.png, id=879, 845.40843pt x 359.84438pt>
 File: img/FCN.png Graphic file (type png)
 <use img/FCN.png>
 Package pdftex.def Info: img/FCN.png  used on input line 23.
 (pdftex.def)             Requested size: 426.79135pt x 181.65683pt.
-<img/Deconvnet.png, id=875, 838.63312pt x 237.88875pt>
+<img/Deconvnet.png, id=885, 838.63312pt x 237.88875pt>
 File: img/Deconvnet.png Graphic file (type png)
 <use img/Deconvnet.png>
 Package pdftex.def Info: img/Deconvnet.png  used on input line 30.
 (pdftex.def)             Requested size: 426.79135pt x 121.06392pt.
  [27 <./img/FCN.png>]
-<img/unpooling-deconv.png, id=894, 701.62125pt x 487.8225pt>
+<img/unpooling-deconv.png, id=904, 701.62125pt x 487.8225pt>
 File: img/unpooling-deconv.png Graphic file (type png)
 <use img/unpooling-deconv.png>
 Package pdftex.def Info: img/unpooling-deconv.png  used on input line 42.
 (pdftex.def)             Requested size: 213.39568pt x 148.36508pt.
  [28 <./img/Deconvnet.png> <./img/unpooling-deconv.png>]
-<img/unet-og.png, id=906, 770.88pt x 519.44063pt>
+<img/unet-og.png, id=916, 770.88pt x 519.44063pt>
 File: img/unet-og.png Graphic file (type png)
 <use img/unet-og.png>
 Package pdftex.def Info: img/unet-og.png  used on input line 50.
@@ -1112,19 +1112,19 @@ Overfull \hbox (0.77586pt too wide) in paragraph at lines 26--26
 [30
 
 ]
-<img/unet-morf-example.png, id=923, 714.41907pt x 377.91188pt>
+<img/unet-morf-example.png, id=933, 714.41907pt x 377.91188pt>
 File: img/unet-morf-example.png Graphic file (type png)
 <use img/unet-morf-example.png>
 Package pdftex.def Info: img/unet-morf-example.png  used on input line 59.
 (pdftex.def)             Requested size: 426.79135pt x 225.7628pt.
  [31] [32 <./img/unet-morf-example.png>]
-<img/wolny-resultados.png, id=956, 654.19406pt x 256.70906pt>
+<img/wolny-resultados.png, id=966, 654.19406pt x 256.70906pt>
 File: img/wolny-resultados.png Graphic file (type png)
 <use img/wolny-resultados.png>
 Package pdftex.def Info: img/wolny-resultados.png  used on input line 118.
 (pdftex.def)             Requested size: 426.79135pt x 167.47388pt.
  [33]
-<img/plantseg-software.png, id=968, 1192.455pt x 582.67688pt>
+<img/plantseg-software.png, id=978, 1192.455pt x 582.67688pt>
 File: img/plantseg-software.png Graphic file (type png)
 <use img/plantseg-software.png>
 Package pdftex.def Info: img/plantseg-software.png  used on input line 151.
@@ -1145,7 +1145,7 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
 ("C:\Program Files\MiKTeX 2.9\tex/latex/psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<img/fastai_tuto_local.png, id=993, 398.48875pt x 340.27126pt>
+<img/fastai_tuto_local.png, id=1003, 398.48875pt x 340.27126pt>
 File: img/fastai_tuto_local.png Graphic file (type png)
 <use img/fastai_tuto_local.png>
 Package pdftex.def Info: img/fastai_tuto_local.png  used on input line 23.
@@ -1159,7 +1159,7 @@ io dis-mi-nuir la ima-gen ori-gi-nal de $\OT1/cmr/m/n/10.95 (720\OML/cmm/m/it/1
 0.95 ; \OT1/cmr/m/n/10.95 960)\OML/cmm/m/it/10.95 px$
  []
 
-<img/fastai_tuto_cloud.png, id=1006, 404.51125pt x 345.29pt>
+<img/fastai_tuto_cloud.png, id=1016, 404.51125pt x 345.29pt>
 File: img/fastai_tuto_cloud.png Graphic file (type png)
 <use img/fastai_tuto_cloud.png>
 Package pdftex.def Info: img/fastai_tuto_cloud.png  used on input line 43.
@@ -1167,7 +1167,7 @@ Package pdftex.def Info: img/fastai_tuto_cloud.png  used on input line 43.
 [39 <./img/fastai_tuto_local.png>]) (Capitulos/diseno.tex [40 <./img/fastai_tut
 o_cloud.png>]
 Cap\'{\i }tulo 9.
-<img/diseno-sistema-inicial.png, id=1018, 1398.22375pt x 1568.86125pt>
+<img/diseno-sistema-inicial.png, id=1028, 1398.22375pt x 1568.86125pt>
 File: img/diseno-sistema-inicial.png Graphic file (type png)
 <use img/diseno-sistema-inicial.png>
 Package pdftex.def Info: img/diseno-sistema-inicial.png  used on input line 7.
@@ -1180,7 +1180,7 @@ Overfull \hbox (42.68173pt too wide) in paragraph at lines 7--7
 [41
 
 ] [42 <./img/diseno-sistema-inicial.png>]
-<img/diseno-sistema-final.png, id=1040, 1398.22375pt x 1568.86125pt>
+<img/diseno-sistema-final.png, id=1050, 1398.22375pt x 1568.86125pt>
 File: img/diseno-sistema-final.png Graphic file (type png)
 <use img/diseno-sistema-final.png>
 Package pdftex.def Info: img/diseno-sistema-final.png  used on input line 37.
@@ -1195,7 +1195,7 @@ Cap\'{\i }tulo 10.
 [45
 
 ] [46]
-<img/Diseno-unetarch-half.png, id=1098, 692.5875pt x 666.99188pt>
+<img/Diseno-unetarch-half.png, id=1108, 692.5875pt x 666.99188pt>
 File: img/Diseno-unetarch-half.png Graphic file (type png)
 <use img/Diseno-unetarch-half.png>
 Package pdftex.def Info: img/Diseno-unetarch-half.png  used on input line 66.
@@ -1206,13 +1206,13 @@ Overfull \hbox (10.7582pt too wide) in paragraph at lines 82--82
  []
 
 [47 <./img/Diseno-unetarch-half.png>] [48] [49] [50]
-<img/pruebas/sistema_inicial_perdidas.png, id=1147, 580.41844pt x 417.05812pt>
+<img/pruebas/sistema_inicial_perdidas.png, id=1157, 580.41844pt x 417.05812pt>
 File: img/pruebas/sistema_inicial_perdidas.png Graphic file (type png)
 <use img/pruebas/sistema_inicial_perdidas.png>
 Package pdftex.def Info: img/pruebas/sistema_inicial_perdidas.png  used on inpu
 t line 192.
 (pdftex.def)             Requested size: 341.43437pt x 245.33669pt.
-<img/pruebas/sistema_inicial_visual.png, id=1148, 934.49126pt x 689.07437pt>
+<img/pruebas/sistema_inicial_visual.png, id=1158, 934.49126pt x 689.07437pt>
 File: img/pruebas/sistema_inicial_visual.png Graphic file (type png)
 <use img/pruebas/sistema_inicial_visual.png>
 Package pdftex.def Info: img/pruebas/sistema_inicial_visual.png  used on input 
@@ -1228,13 +1228,13 @@ Overfull \hbox (17.07915pt too wide) in paragraph at lines 198--1
 [51] [52 <./img/pruebas/sistema_inicial_perdidas.png> <./img/pruebas/sistema_in
 icial_visual.png>]
 Cap\'{\i }tulo 11.
-<img/pruebas/sistema_2_dice_perdidas.png, id=1165, 386.94562pt x 278.03876pt>
+<img/pruebas/sistema_2_dice_perdidas.png, id=1175, 386.94562pt x 278.03876pt>
 File: img/pruebas/sistema_2_dice_perdidas.png Graphic file (type png)
 <use img/pruebas/sistema_2_dice_perdidas.png>
 Package pdftex.def Info: img/pruebas/sistema_2_dice_perdidas.png  used on input
  line 29.
 (pdftex.def)             Requested size: 341.43437pt x 245.34093pt.
-<img/pruebas/sistema_2_dice_visual.png, id=1166, 934.49126pt x 689.07437pt>
+<img/pruebas/sistema_2_dice_visual.png, id=1176, 934.49126pt x 689.07437pt>
 File: img/pruebas/sistema_2_dice_visual.png Graphic file (type png)
 <use img/pruebas/sistema_2_dice_visual.png>
 Package pdftex.def Info: img/pruebas/sistema_2_dice_visual.png  used on input l
@@ -1245,7 +1245,7 @@ ine 31.
 ] [54 <./img/pruebas/sistema_2_dice_perdidas.png> <./img/pruebas/sistema_2_dice
 _visual.png>]
 Cap\'{\i }tulo 12.
-<img/pruebas/sistema_2_dice_perdidas_200.png, id=1180, 386.94562pt x 278.03876p
+<img/pruebas/sistema_2_dice_perdidas_200.png, id=1190, 386.94562pt x 278.03876p
 t>
 File: img/pruebas/sistema_2_dice_perdidas_200.png Graphic file (type png)
 <use img/pruebas/sistema_2_dice_perdidas_200.png>
@@ -1255,13 +1255,13 @@ nput line 9.
 [55
 
  <./img/pruebas/sistema_2_dice_perdidas_200.png>]
-<img/pruebas/sistema_3_augm_perdidas.png, id=1190, 386.94562pt x 278.03876pt>
+<img/pruebas/sistema_3_augm_perdidas.png, id=1200, 386.94562pt x 278.03876pt>
 File: img/pruebas/sistema_3_augm_perdidas.png Graphic file (type png)
 <use img/pruebas/sistema_3_augm_perdidas.png>
 Package pdftex.def Info: img/pruebas/sistema_3_augm_perdidas.png  used on input
  line 31.
 (pdftex.def)             Requested size: 341.43437pt x 245.34093pt.
-<img/pruebas/sistema_3_augm_visual.png, id=1191, 934.49126pt x 689.07437pt>
+<img/pruebas/sistema_3_augm_visual.png, id=1201, 934.49126pt x 689.07437pt>
 File: img/pruebas/sistema_3_augm_visual.png Graphic file (type png)
 <use img/pruebas/sistema_3_augm_visual.png>
 Package pdftex.def Info: img/pruebas/sistema_3_augm_visual.png  used on input l
@@ -1271,19 +1271,19 @@ ine 33.
 (Capitulos/addfullunet.tex [56 <./img/pruebas/sistema_3_augm_perdidas.png>]
 [57 <./img/pruebas/sistema_3_augm_visual.png>]
 Cap\'{\i }tulo 13.
-<img/Diseno-unetarch-full.png, id=1213, 718.18312pt x 414.04688pt>
+<img/Diseno-unetarch-full.png, id=1223, 718.18312pt x 414.04688pt>
 File: img/Diseno-unetarch-full.png Graphic file (type png)
 <use img/Diseno-unetarch-full.png>
 Package pdftex.def Info: img/Diseno-unetarch-full.png  used on input line 11.
 (pdftex.def)             Requested size: 426.79135pt x 246.06084pt.
-<img/pruebas/sistema_4_fullunet_perdidasbuena.png, id=1214, 387.4475pt x 278.03
+<img/pruebas/sistema_4_fullunet_perdidasbuena.png, id=1224, 387.4475pt x 278.03
 876pt>
 File: img/pruebas/sistema_4_fullunet_perdidasbuena.png Graphic file (type png)
 <use img/pruebas/sistema_4_fullunet_perdidasbuena.png>
 Package pdftex.def Info: img/pruebas/sistema_4_fullunet_perdidasbuena.png  used
  on input line 21.
 (pdftex.def)             Requested size: 341.43437pt x 245.02274pt.
-<img/pruebas/sistema_4_fullunet_visualbuena.png, id=1215, 934.49126pt x 689.074
+<img/pruebas/sistema_4_fullunet_visualbuena.png, id=1225, 934.49126pt x 689.074
 37pt>
 File: img/pruebas/sistema_4_fullunet_visualbuena.png Graphic file (type png)
 <use img/pruebas/sistema_4_fullunet_visualbuena.png>
@@ -1300,7 +1300,7 @@ Overfull \hbox (10.7582pt too wide) in paragraph at lines 13--13
  [][] 
  []
 
-<img/pruebas/comparacion_normaliz.png, id=1239, 1185.67969pt x 379.4175pt>
+<img/pruebas/comparacion_normaliz.png, id=1249, 1185.67969pt x 379.4175pt>
 File: img/pruebas/comparacion_normaliz.png Graphic file (type png)
 <use img/pruebas/comparacion_normaliz.png>
 Package pdftex.def Info: img/pruebas/comparacion_normaliz.png  used on input li
@@ -1309,14 +1309,14 @@ ne 31.
 [61
 
 ]
-<img/pruebas/sistema_5_normalizacion_perdidas.png, id=1250, 386.94562pt x 278.0
+<img/pruebas/sistema_5_normalizacion_perdidas.png, id=1260, 386.94562pt x 278.0
 3876pt>
 File: img/pruebas/sistema_5_normalizacion_perdidas.png Graphic file (type png)
 <use img/pruebas/sistema_5_normalizacion_perdidas.png>
 Package pdftex.def Info: img/pruebas/sistema_5_normalizacion_perdidas.png  used
  on input line 45.
 (pdftex.def)             Requested size: 341.43437pt x 245.34093pt.
-<img/pruebas/sistema_5_normalizacion_visual.png, id=1251, 934.49126pt x 689.074
+<img/pruebas/sistema_5_normalizacion_visual.png, id=1261, 934.49126pt x 689.074
 37pt>
 File: img/pruebas/sistema_5_normalizacion_visual.png Graphic file (type png)
 <use img/pruebas/sistema_5_normalizacion_visual.png>
@@ -1330,14 +1330,14 @@ Cap\'{\i }tulo 15.
 [64
 
 ]
-<img/pruebas/sistema_6_apexo12_perdidas.png, id=1279, 386.94562pt x 278.03876pt
+<img/pruebas/sistema_6_apexo12_perdidas.png, id=1289, 386.94562pt x 278.03876pt
 >
 File: img/pruebas/sistema_6_apexo12_perdidas.png Graphic file (type png)
 <use img/pruebas/sistema_6_apexo12_perdidas.png>
 Package pdftex.def Info: img/pruebas/sistema_6_apexo12_perdidas.png  used on in
 put line 55.
 (pdftex.def)             Requested size: 341.43437pt x 245.34093pt.
-<img/pruebas/sistema_6_apexo2_perdidas.png, id=1280, 386.94562pt x 278.03876pt>
+<img/pruebas/sistema_6_apexo2_perdidas.png, id=1290, 386.94562pt x 278.03876pt>
 
 File: img/pruebas/sistema_6_apexo2_perdidas.png Graphic file (type png)
 <use img/pruebas/sistema_6_apexo2_perdidas.png>
@@ -1352,12 +1352,12 @@ Cap\'{\i }tulo 16.
 [70
 
 ]
-<img/pruebas/s04_visual.png, id=1330, 469.755pt x 660.066pt>
+<img/pruebas/s04_visual.png, id=1340, 469.755pt x 660.066pt>
 File: img/pruebas/s04_visual.png Graphic file (type png)
 <use img/pruebas/s04_visual.png>
 Package pdftex.def Info: img/pruebas/s04_visual.png  used on input line 51.
 (pdftex.def)             Requested size: 426.79135pt x 599.6941pt.
-<img/pruebas/s5pls_visual.png, id=1331, 469.755pt x 660.066pt>
+<img/pruebas/s5pls_visual.png, id=1341, 469.755pt x 660.066pt>
 File: img/pruebas/s5pls_visual.png Graphic file (type png)
 <use img/pruebas/s5pls_visual.png>
 Package pdftex.def Info: img/pruebas/s5pls_visual.png  used on input line 53.
@@ -1367,25 +1367,25 @@ Package pdftex.def Info: img/pruebas/s5pls_visual.png  used on input line 53.
 Cap\'{\i }tulo 17.
 [74
 
-] [75]) (Capitulos/conclusion.tex [76] [77]
+] [75]) (Capitulos/manual.tex [76] [77]
 Cap\'{\i }tulo 18.
-) (Capitulos/manual.tex [78
 
-]
-Cap\'{\i }tulo 19.
+Overfull \hbox (52.85413pt too wide) in paragraph at lines 3--4
+[]\OT1/ptm/m/n/10.95 El pro-yec-to est[]a dis-po-ni-ble en el si-guien-te en-la
+-ce []$\OT1/pcr/m/n/10.95 https :// github [] .com / Orzzet / segmentacion []
+ []
 
-Overfull \hbox (20.87631pt too wide) in paragraph at lines 7--8
+
+Overfull \hbox (20.87631pt too wide) in paragraph at lines 10--11
 []\OT1/ptm/m/n/10.95 CUDA []$\OT1/pcr/m/n/10.95 https :// docs [] .nvidia [] .c
 om / cuda / cuda [] -installation [] -guide [] -linux /
  []
 
+[78
 
-Overfull \hbox (16.08008pt too wide) in paragraph at lines 8--9
-[]\OT1/ptm/m/n/10.95 CUDNN []$\OT1/pcr/m/n/10.95 https :// docs [] .nvidia [] .
-com / deeplearning / cudnn / install [] -guide /
- []
-
-) [79
+]) (Capitulos/conclusion.tex [79]
+Cap\'{\i }tulo 19.
+) [80
 
 ] (proyect.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 28--36
@@ -1424,7 +1424,7 @@ plearningbook [] .org /$[]   \OT1/ptm/m/n/10.95 ([]$\OT1/pcr/m/n/10.95 http ://
  www []
  []
 
-[80
+[81
 
 
 ]
@@ -1451,7 +1451,7 @@ Underfull \hbox (badness 1072) in paragraph at lines 982--1007
 /m/n/10.95 (pp.[] 8024--8035).  Cu-rran As-so-cia-tes,
  []
 
-[81] [82]
+[82] [83]
 Underfull \hbox (badness 1231) in paragraph at lines 1603--1618
 \OT1/ptm/m/n/10.95 ga-do de []$\OT1/pcr/m/n/10.95 https :// es [] .wikipedia []
  .org / w / index [] .php [] ?title = N % C3 % BAcleo []
@@ -1459,13 +1459,13 @@ Underfull \hbox (badness 1231) in paragraph at lines 1603--1618
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
- [83]
+ [84]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
  (proyect.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
 Package rerunfilecheck Info: File `proyect.out' has not changed.
-(rerunfilecheck)             Checksum: 9ED9B30C3EA904C79CFB7E2993D0D2CC;5052.
+(rerunfilecheck)             Checksum: 79C229747DEDAB679DF068B17DD9BC77;5178.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1473,10 +1473,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
  ) 
 Here is how much of TeX's memory you used:
- 13615 strings out of 492483
- 203676 string characters out of 3131035
- 320240 words of memory out of 3000000
- 17212 multiletter control sequences out of 15000+200000
+ 13618 strings out of 492483
+ 203741 string characters out of 3131035
+ 319240 words of memory out of 3000000
+ 17214 multiletter control sequences out of 15000+200000
  33877 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,12n,49p,1380b,653s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1496,9 +1496,9 @@ a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on proyect.pdf (91 pages, 5550887 bytes).
+Output written on proyect.pdf (92 pages, 5555447 bytes).
 PDF statistics:
- 1618 PDF objects out of 1728 (max. 8388607)
- 356 named destinations out of 1000 (max. 500000)
- 864 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1628 PDF objects out of 1728 (max. 8388607)
+ 357 named destinations out of 1000 (max. 500000)
+ 880 words of extra memory for PDF output out of 10000 (max. 10000000)
 
