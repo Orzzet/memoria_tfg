@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  7 DEC 2020 08:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  7 DEC 2020 08:26
 entering extended mode
 **./proyect.tex
 (proyect.tex
@@ -1381,6 +1381,18 @@ Overfull \hbox (20.87631pt too wide) in paragraph at lines 10--11
 om / cuda / cuda [] -installation [] -guide [] -linux /
  []
 
+
+Overfull \hbox (16.99164pt too wide) in paragraph at lines 32--33
+[]\OT1/ptm/m/n/10.95 Para fa-ci-li-tar los par[]ame-tros de con-fi-gu-ra-ci[]on
+ se usa un ar-chi-vo .yaml (co-mo el ar-chi-vo []$\OT1/pcr/m/n/10.95 https ://
+ []
+
+
+Overfull \hbox (2.08667pt too wide) in paragraph at lines 32--33
+\OT1/pcr/m/n/10.95 github [] .com / Orzzet / 3d [] -cell [] -segmentation / blo
+b / master / config [] .yaml$[]\OT1/ptm/m/n/10.95 ) con
+ []
+
 [78
 
 ]) (Capitulos/conclusion.tex [79]
@@ -1496,9 +1508,9 @@ a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on proyect.pdf (92 pages, 5555447 bytes).
+Output written on proyect.pdf (92 pages, 5555981 bytes).
 PDF statistics:
- 1628 PDF objects out of 1728 (max. 8388607)
+ 1630 PDF objects out of 1728 (max. 8388607)
  357 named destinations out of 1000 (max. 500000)
  880 words of extra memory for PDF output out of 10000 (max. 10000000)
 
