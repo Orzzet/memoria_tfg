@@ -1,0 +1,67 @@
+\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Formas geométricas prisma, tronco y escutoide}}{4}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Segmentación de dos capas de una glándula salivar de Drosophila}}{5}{figure.caption.9}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Neurona artificial genérica}}{12}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Neurona artificial con $ \DOTSB \sum@ \slimits@ x_i w_i $ como función de integración.}}{13}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Red Neuronal Artificial completamente conectada.}}{14}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Ilustración del algoritmo descenso por gradiente.}}{15}{figure.caption.13}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Imagen como entrada en una ANN.}}{18}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Imagen como entrada en una CNN.}}{18}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Resultado de aplicar un kernel a una imagen.}}{19}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Resultado de aplicar un kernel a una imagen con padding.}}{19}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Resultado de aplicar un kernel a una imagen con padding y pasos 2 y 3 para horizontal y vertical.}}{19}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Resultado de aplicar un filtro de reconocimiento de bordes a una imagen.}}{20}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Ejemplo de CNN en la que se clasifica una imagen con un barco.}}{20}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Ejemplo de capa de convolución.}}{22}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Ejemplo de pooling.}}{23}{figure.caption.23}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Ejemplo de segmentación semántica.}}{28}{figure.caption.24}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Arquitectura de FCN32, FCN16 y FCN8.}}{29}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Arquitectura Deconvnet.}}{30}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Figura que ilustra las operaciones unpooling y deconvolución.}}{30}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Arquitectura original U-Net.}}{31}{figure.caption.28}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Segmentación volumétrica.}}{35}{figure.caption.30}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Segmentación de tejido vegetal usando PlantSeg.}}{37}{figure.caption.32}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Interfaz gráfica del programa PlantSet.}}{38}{figure.caption.34}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Métricas CNN de prueba en local.}}{42}{figure.caption.36}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Métricas CNN de prueba en la nube.}}{43}{figure.caption.38}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Diseño Sistema inicial.}}{46}{figure.caption.40}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Diseño Sistema Final.}}{48}{figure.caption.42}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Arquitectura U-Net reducida.}}{51}{figure.caption.46}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema inicial.}}{56}{figure.caption.54}%
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Segmentación de prueba de sistema inicial.}}{56}{figure.caption.55}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Pérdida sistema con función de pérdida DICE.}}{58}{figure.caption.57}%
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Ejemplo de segmentación sistema con función de pérdida DICE.}}{58}{figure.caption.58}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Pérdida de entrenamiento sistema con pérdida DICE en 200 iteraciones.}}{59}{figure.caption.59}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema con data augmentation.}}{60}{figure.caption.61}%
+\contentsline {figure}{\numberline {12.3}{\ignorespaces Ejemplo de segmentación sistema de con data augmentation.}}{61}{figure.caption.62}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {13.1}{\ignorespaces Arquitectura U-Net completa.}}{64}{figure.caption.63}%
+\contentsline {figure}{\numberline {13.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema con U-Net completa.}}{64}{figure.caption.65}%
+\contentsline {figure}{\numberline {13.3}{\ignorespaces Ejemplo de segmentación de sistema con U-Net completa.}}{65}{figure.caption.66}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {14.1}{\ignorespaces Histogramas de aplicar la normalización tipificada y el cambio a escala }}{68}{figure.caption.68}%
+\contentsline {figure}{\numberline {14.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema con normalización.}}{68}{figure.caption.70}%
+\contentsline {figure}{\numberline {14.3}{\ignorespaces Ejemplo de segmentación de sistema con normalización.}}{69}{figure.caption.71}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {15.1}{\ignorespaces Pérdida de entrenamiento y validación de sistema con precisión mixta tipo O1.}}{73}{figure.caption.74}%
+\contentsline {figure}{\numberline {15.2}{\ignorespaces Pérdida de entrenamiento y validación de sistema con precisión mixta tipo O2.}}{73}{figure.caption.76}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {16.1}{\ignorespaces Segmentación ejemplo sistemas s0-100e, s1-100e, s2-100e, s3-100e y s4-100e.}}{79}{figure.caption.78}%
+\contentsline {figure}{\numberline {16.2}{\ignorespaces Segmentación ejemplo sistemas s4-100e, s5-100e, s5-300e y SPlseg-1h.}}{80}{figure.caption.79}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsfinish 
+\contentsfinish 

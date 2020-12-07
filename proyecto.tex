@@ -1,0 +1,127 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass{pclass}
+\usepackage[utf8]{inputenc} % para linux y mac 
+%\usepackage[latin1]{inputenc} % para windows
+
+%DIFERENTES TIPOS DE LETRA
+%\usepackage{palatino}
+
+\usepackage{times}
+\usepackage{subcaption}
+\usepackage{textcomp}
+
+\captionsetup{compatibility=false}
+
+\begin{document}
+\tipo{Grado}   % Grado o M\'aster
+\titulopro{Segmentación de células en imágenes 3D con técnicas de machine learning}
+\colaborador{Luis María Escudero Cuadrado\\Departamento de Biología Celular, Universidad de Sevilla}
+\tutor{María José Jiménez Rodríguez}
+\departamento{Matemática Aplicada I}
+%\autores{Nombre 1}{Nombre 2}  % Dos autores
+\autores{(ponente): Adrián López Carrillo}{{\ }}   % Un autor
+\dia{27 de Septiembre de 2020 (v.1.1)}
+\titulacion{Grado en Ingeniería Informática: Tecnologías Informáticas}
+
+\hacerportada
+	\input{tocdef}
+%\frontmapertter
+
+	 \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+    \input{resumen}
+%    \input{agradecimientos}
+
+		 \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+	\tableofcontents % Índice de contenidos
+ 	\listoftables % Índice de cuadros
+ 	\listoffigures % Índice de figuras
+% 	\lstlistoflistings %Índice de códigos
+
+ 	\mainmatter
+     \part{Introducci\'on}\label{introduccion}
+     \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+ 	 \input{Capitulos/nacimiento}
+     \input{Capitulos/objetivos}
+	 \input{Capitulos/planinicial} 
+%	 \part{Organizaci\'on del Proyecto}\label{organizacion}
+%	 
+%	 \newpage
+%	 \thispagestyle{empty} % empty
+%	 \mbox{}	 
+	 \part{Estudio previo}\label{estudioprevio}
+	 \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+	 \input{Capitulos/redneuronalartificial}
+	      \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+	 \input{Capitulos/redneuronalconvo}
+	      \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+	 \input{Capitulos/archsegmsemantica}
+	      \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+	 \input{Capitulos/aplicacionesrecientes}
+	 \part{Desarrollo}\label{desarrollo}
+	 \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+%	 \input{Capitulos/resumencapitulos}
+%    \input{Capitulos/datos}
+	 \input{Capitulos/cloudcomputing}
+	      \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+	 \input{Capitulos/diseno}
+	 \input{Capitulos/firstsystem}
+	 \input{Capitulos/lossfunctions}
+	 \input{Capitulos/dataaugmentation}
+	      \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+	 \input{Capitulos/addfullunet}
+	      \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+	 \input{Capitulos/normalization}
+	      \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+	 \input{Capitulos/apex}
+%	 \input{Capitulos/dtwatershed}
+%     \input{Capitulos/implementacion}
+%     \input{Capitulos/representacion3D}
+%     \input{Capitulos/alternativas}
+     \part{Cierre}\label{cierre}
+	 \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+     \input{Capitulos/resultados}
+     \input{Capitulos/analtemporal}
+     \input{Capitulos/manual}
+          \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+	 \input{Capitulos/conclusion}
+
+\backmatter
+	      \newpage
+	 \thispagestyle{empty} % empty
+	 \mbox{}
+% \input{Capitulos/apendices}
+
+\bibliographystyle{apacite}
+
+\bibliography{pfcbib}
+
+\end{document}

@@ -1,0 +1,78 @@
+\BOOKMARK [0][-]{section*.3}{\315ndice general}{}% 1
+\BOOKMARK [0][-]{section*.5}{\315ndice de cuadros}{}% 2
+\BOOKMARK [0][-]{section*.7}{\315ndice de figuras}{}% 3
+\BOOKMARK [-1][-]{part.1}{I Introducci\363n}{}% 4
+\BOOKMARK [0][-]{chapter.1}{Nacimiento del proyecto}{part.1}% 5
+\BOOKMARK [0][-]{chapter.2}{Objetivos}{part.1}% 6
+\BOOKMARK [0][-]{chapter.3}{Planteamiento inicial}{part.1}% 7
+\BOOKMARK [1][-]{section.3.1}{Plan inicial}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.2}{Nueva metodolog\355a}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.3}{Plan seguido}{chapter.3}% 10
+\BOOKMARK [-1][-]{part.2}{II Estudio previo}{}% 11
+\BOOKMARK [0][-]{chapter.4}{Red Neuronal Artificial}{part.2}% 12
+\BOOKMARK [1][-]{section.4.1}{Introducci\363n a Redes Neuronales Artificiales}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.2}{Neurona artifical}{chapter.4}% 14
+\BOOKMARK [2][-]{subsection.4.2.1}{Sigmoide}{section.4.2}% 15
+\BOOKMARK [2][-]{subsection.4.2.2}{Unidad Lineal Rectificada \(ReLU\)}{section.4.2}% 16
+\BOOKMARK [1][-]{section.4.3}{Red Neuronal Artifical}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.4}{Descenso por Gradiente }{chapter.4}% 18
+\BOOKMARK [0][-]{chapter.5}{Red Neuronal Convolucional}{part.2}% 19
+\BOOKMARK [1][-]{section.5.1}{Tipos de capas}{chapter.5}% 20
+\BOOKMARK [2][-]{subsection.5.1.1}{Capa convolucional}{section.5.1}% 21
+\BOOKMARK [2][-]{subsection.5.1.2}{Capa Pooling}{section.5.1}% 22
+\BOOKMARK [2][-]{subsection.5.1.3}{Capa ReLU}{section.5.1}% 23
+\BOOKMARK [2][-]{subsection.5.1.4}{Capa FC}{section.5.1}% 24
+\BOOKMARK [1][-]{section.5.2}{Funciones de P\351rdida}{chapter.5}% 25
+\BOOKMARK [2][-]{subsection.5.2.1}{Binary Cross-Entropy}{section.5.2}% 26
+\BOOKMARK [2][-]{subsection.5.2.2}{Weighted Binary Cross-Entropy}{section.5.2}% 27
+\BOOKMARK [2][-]{subsection.5.2.3}{Dice Loss}{section.5.2}% 28
+\BOOKMARK [0][-]{chapter.6}{Arquitecturas para segmentaci\363n sem\341ntica}{part.2}% 29
+\BOOKMARK [1][-]{section.6.1}{Fully Convolutional Network}{chapter.6}% 30
+\BOOKMARK [1][-]{section.6.2}{Deconvnet}{chapter.6}% 31
+\BOOKMARK [2][-]{subsection.6.2.1}{Unpooling}{section.6.2}% 32
+\BOOKMARK [2][-]{subsection.6.2.2}{Deconvoluci\363n}{section.6.2}% 33
+\BOOKMARK [1][-]{section.6.3}{U-Net}{chapter.6}% 34
+\BOOKMARK [0][-]{chapter.7}{Aplicaciones recientes}{part.2}% 35
+\BOOKMARK [1][-]{section.7.1}{U-Net para conteo, detecci\363n y morfometr\355a de c\351lulas. \(2019\)}{chapter.7}% 36
+\BOOKMARK [2][-]{subsection.7.1.1}{Proyecto}{section.7.1}% 37
+\BOOKMARK [2][-]{subsection.7.1.2}{Pipeline}{section.7.1}% 38
+\BOOKMARK [2][-]{subsection.7.1.3}{Resultados}{section.7.1}% 39
+\BOOKMARK [2][-]{subsection.7.1.4}{Software}{section.7.1}% 40
+\BOOKMARK [1][-]{section.7.2}{Segmentaci\363n 3D precisa y vers\341til de tejido vegetal a resoluci\363n celular. \(2020\)}{chapter.7}% 41
+\BOOKMARK [2][-]{subsection.7.2.1}{Proyecto}{section.7.2}% 42
+\BOOKMARK [2][-]{subsection.7.2.2}{Pipeline}{section.7.2}% 43
+\BOOKMARK [2][-]{subsection.7.2.3}{Resultados}{section.7.2}% 44
+\BOOKMARK [2][-]{subsection.7.2.4}{Software}{section.7.2}% 45
+\BOOKMARK [-1][-]{part.3}{III Desarrollo}{}% 46
+\BOOKMARK [0][-]{chapter.8}{Computaci\363n en la nube}{part.3}% 47
+\BOOKMARK [0][-]{chapter.9}{Esquema general}{part.3}% 48
+\BOOKMARK [0][-]{chapter.10}{Sistema inicial}{part.3}% 49
+\BOOKMARK [1][-]{section.10.1}{Lenguaje y framework}{chapter.10}% 50
+\BOOKMARK [1][-]{section.10.2}{Metas y m\351tricas}{chapter.10}% 51
+\BOOKMARK [1][-]{section.10.3}{Arquitectura CNN}{chapter.10}% 52
+\BOOKMARK [1][-]{section.10.4}{Tama\361o de la imagen en disco}{chapter.10}% 53
+\BOOKMARK [1][-]{section.10.5}{Tama\361o de la imagen en memoria}{chapter.10}% 54
+\BOOKMARK [1][-]{section.10.6}{Segmentaci\363n sem\341ntica multiinstancia con U-Net}{chapter.10}% 55
+\BOOKMARK [1][-]{section.10.7}{Carga de datos}{chapter.10}% 56
+\BOOKMARK [1][-]{section.10.8}{Guardar modelo}{chapter.10}% 57
+\BOOKMARK [1][-]{section.10.9}{Resultados}{chapter.10}% 58
+\BOOKMARK [0][-]{chapter.11}{Mejora 1: Funci\363n de p\351rdida Dice}{part.3}% 59
+\BOOKMARK [1][-]{section.11.1}{Resultados}{chapter.11}% 60
+\BOOKMARK [0][-]{chapter.12}{Mejora 2: Data augmentation}{part.3}% 61
+\BOOKMARK [1][-]{section.12.1}{Resultados}{chapter.12}% 62
+\BOOKMARK [0][-]{chapter.13}{Mejora 3: Arquitectura U-Net completa}{part.3}% 63
+\BOOKMARK [1][-]{section.13.1}{Resultados}{chapter.13}% 64
+\BOOKMARK [0][-]{chapter.14}{Mejora 4: Normalizaci\363n}{part.3}% 65
+\BOOKMARK [1][-]{section.14.1}{Resultados}{chapter.14}% 66
+\BOOKMARK [0][-]{chapter.15}{Mejora 5: Apex, precisi\363n mixta}{part.3}% 67
+\BOOKMARK [1][-]{section.15.1}{Resultados}{chapter.15}% 68
+\BOOKMARK [-1][-]{part.4}{IV Cierre}{}% 69
+\BOOKMARK [0][-]{chapter.16}{Resultados}{part.4}% 70
+\BOOKMARK [0][-]{chapter.17}{An\341lisis temporal y de costes}{part.4}% 71
+\BOOKMARK [1][-]{section.17.1}{An\341lisis temporal}{chapter.17}% 72
+\BOOKMARK [1][-]{section.17.2}{Costes}{chapter.17}% 73
+\BOOKMARK [0][-]{chapter.18}{Manual}{part.4}% 74
+\BOOKMARK [1][-]{section.18.1}{Instalaci\363n}{chapter.18}% 75
+\BOOKMARK [1][-]{section.18.2}{Gu\355a de uso}{chapter.18}% 76
+\BOOKMARK [0][-]{chapter.19}{Conclusiones}{part.4}% 77
+\BOOKMARK [0][-]{chapter*.88}{Referencias}{part.4}% 78
