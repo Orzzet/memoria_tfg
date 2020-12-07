@@ -58,13 +58,8 @@ Cardoso, M\BPBI J.%
 \APACrefYear{2017}.
 \newblock
 \APACrefbtitle {Deep Learning in Medical Image Analysis and Multimodal Learning
-  for Clinical Decision Support: Third International Workshop, DLMIA 2017, and
-  7th International Workshop, ML-CDS 2017, Held in Conjunction with MICCAI
-  2017, Québec City, QC, Canada, September 14, Proceedings} {Deep learning in
-  medical image analysis and multimodal learning for clinical decision support:
-  Third international workshop, dlmia 2017, and 7th international workshop,
-  ml-cds 2017, held in conjunction with miccai 2017, québec city, qc, canada,
-  september 14, proceedings}.
+  for Clinical Decision Support} {Deep learning in medical image analysis and
+  multimodal learning for clinical decision support}.
 \newblock
 \begin{APACrefDOI} \doi{10.1007/978-3-319-67558-9} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
