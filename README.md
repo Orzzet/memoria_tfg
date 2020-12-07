@@ -1,1 +1,1 @@
-Código del proyecto en [https://github.com/Orzzet/segmentacion_celular_unet3d](https://github.com/Orzzet/segmentacion_celular_unet3d)
+Código del proyecto en [https://github.com/Orzzet/3d-cell-segmentation](https://github.com/Orzzet/3d-cell-segmentation)
