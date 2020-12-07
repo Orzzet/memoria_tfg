@@ -39,18 +39,18 @@ Además se medirá el consumo de memoria y tiempo por epoch del entrenamiento.
 
 El cuadro \ref{tab:metricas_relevantes_normalizacion} muestra las nuevas métricas usadas en este capítulo para la mejora de normalización del capítulo \ref{znormalization}.
 
-\cuadro{|c|c|c|c|c|c|c|}{Métricas normalización.)}{tab:metricas_relevantes_normalizacion}{
+\cuadro{|c|c|c|c|c|c|c|}{Métricas normalización.}{tab:metricas_relevantes_normalizacion}{
 IoU fondo & IoU células & $wrongCells$ & Tiempo epoch & Mem. entre. & Mem. infe.\\
 \hline
 0.9811 & 0.7224 & 30 & $\sim$37s & 11525GB & 6063GB\\
-}
+}{Métricas normalización.}
 
 \cuadro{|c|c|c|c|c|c|c|c|}{Métricas precisión mixta O1. Se han hecho 2 pruebas con la misma configuración.}{tab:metricas_6o1}{
 Nº & IoU fondo & IoU células & $wrongCells$ & Tiempo epoch & Mem. entre. & Mem. infe.\\
 \hline
 1 & 0.9821 & 0.7431 & 32 & $\sim$37s & 6243GB & 6063GB\\
 2 & 0.9818 & 0.7396 & 29 & $\sim$37s & 6243GB & 6063GB\\
-}
+}{Métricas precisión mixta O1.}
 
 \figura{0.8}{img/pruebas/sistema_6_apexo12_perdidas}{Pérdida de entrenamiento. 100 iteraciones.}{fig:sistema_6_apexo12_perdidas}{}{Pérdida de entrenamiento y validación de sistema con precisión mixta tipo O1.}
 
@@ -60,7 +60,7 @@ Nº & IoU fondo & IoU células & $wrongCells$ & Tiempo epoch & Mem. entre. & Mem
 \hline
 1 & 0.9805 & 0.7539 & 11 & $\sim$37s & 6633GB & 6063GB\\
 2 & 0.9805 & 0.7263 & 74 & $\sim$37s & 6633GB & 6063GB\\
-}
+}{Métricas precisión mixta O2.}
 
 \figura{0.8}{img/pruebas/sistema_6_apexo2_perdidas}{Pérdida de entrenamiento. 100 iteraciones.}{fig:sistema_6_apexo2_perdidas}{}{Pérdida de entrenamiento y validación de sistema con precisión mixta tipo O2.}
 

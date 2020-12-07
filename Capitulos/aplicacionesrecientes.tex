@@ -23,7 +23,7 @@ IMyGT:Data Augmentation: 				& -Peso alto en espaciado entre células & \\
 -Rotación 								& Optimizador Adam: & \\
 -Deformación suave 						& -Lr: $10^{-5}$, $\beta_1:0.9$, $\beta_2:0.999$ & \\
 -Incremento de intensidad 				& 150000 Iteraciones & \\
-}
+}{Pipeline de los datos en el proyecto de segmentación semántica de Olaf Ronneberger}
 
 La segmentación semántica etiqueta cada vóxel con la clase correspondiente, no distingue entre distintas instancias de un mismo objeto si estos están en contacto. Para conseguir esta distinción entre células se ha aplicado un espaciado de un vóxel alrededor de cada célula en la imagen segmentada a mano. De esta forma se podrá comprobar la forma de todas las células y se podrán contabilizar.
 
@@ -97,7 +97,7 @@ IM y GT:Data Augmentation 				& -Entropía Cruzada Binaria  			& Algoritmo water
 - Deformación elástica					& -Learning rate $10^{-5}$				& \\
 IM: Noise Augmentation		 			& -$\beta_1:0.9$, $\beta_2:0.999$		& \\
 IM,GT:Troceo a 170x170x80 vx	& 100000 iteraciones					& \\
-}
+}{Pipeline de los datos en el proyecto PlantSeg.}
 
 En el preprocesado, se parte de una imagen con etiquetado perfecto y se le aplica la función \textit{find\_ boundaries} de la librería scikit \cite{Pedregosa2011} \cite{Walt2014} obteniendo los bordes de las células con 2 vóxeles de anchura. A la imagen con los bordes se le aplica un desenfoque Gaussiano (conocido filtro que emborrona la imagen) para reducir los componentes de alta frecuencia, lo que ayuda a prevenir el sobreajuste. Luego se aplica varias técnicas de \textit{data augmentation} en el espacio a la imagen de entrada y a la imagen de bordes. Tras esto se aplica \textit{noise augmentation} a la imagen de entrada. Por último se divide la imagen en trozos de 170x170x80 vx.
 
@@ -140,7 +140,7 @@ Función de pérdida 			& Precisión 		& Exhaustividad 	& Puntuación F1\\
 \hline
 Entropía Cruzada Binaria	& 0.806 $\pm$ 0.071	& 0.799 $\pm$ 0.028 & 0.800 $\pm$ 0.036 \\
 Pérdida Dice				& 0.744 $\pm$ 0.096 & 0.933 $\pm$ 0.017 & 0.824 $\pm$ 0.062	\\
-}
+}{Pruebas relevantes realizadas.}
 
 Como se ven en los resultados parece que la pérdida Dice es ligeramente superior aunque no por mucho.
 

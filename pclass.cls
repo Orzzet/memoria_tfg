@@ -259,7 +259,7 @@
 %3---> label para hacer referencia a la tabla insertada
 %4---> contenido de la tabla separando columnas con & y filas con \\
 
-\newcommand{\cuadro}[4]{
+\newcommand{\cuadro}[5]{
 		\begin{table}[hbtp]
 			\centering
 				\begin{tabular}{#1}
@@ -267,7 +267,7 @@
 						#4
 					\hline
 				\end{tabular}
-			\caption{#2}
+			\caption[#5]{#2}
 			\label{#3}
 		\end{table}
 }

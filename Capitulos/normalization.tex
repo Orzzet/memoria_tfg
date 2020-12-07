@@ -10,7 +10,7 @@ Tras estudiar la imagen original se ha llegado a la conclusión de que podría d
 \hline
 22.0 & 22.0 & 23.0 & 30.0 & 31.0 & 30.0 & 25.0 & 30.0 & 23.0 & 19.0 \\
 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 \\
-}
+}{Valores mínimo y máximo de los píxeles de las imágenes de entrada.}
 
 Para ignorar esta diferencia alta de intensidad y centrarnos en las diferencias estructurales se puede recurrir a la normalización. En concreto se probarán dos normalizaciones distintas: el cambio a escala $[0,1]$ y por distribución normal (puntuación tipificada).
 
@@ -40,7 +40,7 @@ Aunque las operaciones matemáticas son simples, se utilizará TorchIO \cite{Per
 IoU fondo & IoU células\\ 
 \hline
 0.9811 & 0.7224\\
-}
+}{Métricas normalización.}
 
 \figura{0.8}{img/pruebas/sistema_5_normalizacion_perdidas}{Pérdida de entrenamiento. 100 iteraciones.}{fig:sistema_5_normalizacion_perdidas}{}{Pérdida de entrenamiento y validación de sistema con normalización.}
 

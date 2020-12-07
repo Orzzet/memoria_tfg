@@ -18,7 +18,7 @@ Los sistemas son:
 \item \textbf{SPlseg-1h} Sistema utilizado en plant-seg para el entrenamiento, descrito en el capítulo \ref{sec:app2}.
 \end{itemize}
 
-\cuadro{|c|c|c|c|c|}{Métricas obtenidas al hacer una media de todo el conjunto de test para cada sistema, siendo IoU células la métrica más relevante. Se considera IoU$>0.7$ una buena segmentación.}{tab:todas_metricas}{
+\cuadro{|c|c|c|c|c|}{Métricas obtenidas al hacer una media del conjunto de test con cada sistema, siendo IoU células la métrica más relevante. Se considera IoU$>0.7$ una buena segmentación.}{tab:todas_metricas}{
 Sist. & IoU fondo & IoU células & $wrongCells$ & Tiempo entr.\\
 \hline
 S0-100e & 0.9437 & 0.0018 & 97 & $\sim$20m\\
@@ -36,7 +36,7 @@ S5-100e & 0.9821 & 0.7431 & 32 & $\sim$1h\\
 S5-300e & 0.9837 & 0.7588 & 2 & $\sim$1h\\
 \hline
 SPlseg-1h & 0.9744 & 0.6233 & 108 & $\sim$1h\\
-}
+}{Métricas de todos los sistemas.}
 
 Para desarrollar este sistema primero se decidió una métrica que evaluase correctamente la segmentación obtenida. La métrica a utilizar es intersección sobre unión media (mIoU) y el valor objetivo a alcanzar (para las células) es $0.7$, ya que a partir de ese valor se considera que se ha obtenido un buen resultado en la segmentación \cite{Falk2019}.
 

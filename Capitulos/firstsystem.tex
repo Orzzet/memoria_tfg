@@ -46,7 +46,7 @@ Un término muy usado en los frameworks de machine learning es el de \textit{ten
 Métrica & Buen resultado & Resultado ideal \\
 \hline
 IoU & $\geq 0.7$ & $\geq 0.9$ \\
-}
+}{Cuadro de métricas y metas}
 
 Una buena métrica para la segmetación semántica es la utilizada en el artículo descrito en la sección \ref{sec:app1} \cite{Falk2019}, donde se usa la métrica intersección sobre unión (IoU) para comprobar los resultados.
 
@@ -79,7 +79,7 @@ Todas las imágenes utilizan float de 8 bytes ($f8$) para almacenar los valores 
 \hline
 22.0 & 22.0 & 23.0 & 30.0 & 31.0 & 30.0 & 25.0 & 30.0 & 23.0 & 19.0 \\
 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 & 4095.0 \\
-}
+}{Valores mínimo y máximo de los píxeles de las imágenes de entrada.}
 
 Si se hace que los valores de la imagen de entrada pasen de 8 bytes a 4 bytes, estaremos reduciendo su tamaño a la mitad. De forma similar si hacemos que la los valores de la imagen etiquetada pase de 8 bytes a 1 bytes, estaremos reduciendo su tamaño a una octava parte. Con 1 byte de precisión podremos almacenar hasta 256 valores distintos, suficiente ya que sólo tendremos 2 valores distintos: 0 para el fondo y 1 para la célula o los bordes. 
 
@@ -187,7 +187,7 @@ Para comprobar los resultados se han utilizado 3 herramientas: la gráfica de la
 IoU fondo & IoU células\\ 
 \hline
 0.9437 & 0.0018\\
-}
+}{Métricas sistema inicial.}
 
 \figura{0.8}{img/pruebas/sistema_inicial_perdidas}{Pérdida de entrenamiento en cada iteración. 100 iteraciones. Se mide la pérdida media del conjunto de entrenamiento y el conjunto de validación.}{fig:sistema_inicial_perdidas}{}{Pérdida de entrenamiento y validación de sistema inicial.}
 
