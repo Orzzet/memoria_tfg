@@ -34,7 +34,7 @@ El proyecto puede utilizarse por consola de comandos o por Notebooks.
 
 Para facilitar los parámetros de configuración se usa un archivo .yaml (como el archivo \url{https://github.com/Orzzet/3d-cell-segmentation/blob/master/config.yaml}) con la siguiente estructura:
 \begin{verbatim}
-# train o test
+# train, test o predict
 job: "test" 
 # Cociente por el que se divide cada dimensión.
 dim_size_reduction: [1,1,1]
@@ -56,9 +56,13 @@ train_path: "data/cells/0.25z 0.125x 0.125y/train/"
 valid_path: "data/cells/0.25z 0.125x 0.125y/valid/"
 loss_function: "dice"
 n_epochs: 100
+
 # Si job=test:
 test_path: "data/cells/0.25z 0.125x 0.125y/test/"
 
+# Si job=predict:
+input_path: "data/cells/0.25z 0.125x 0.125y/test/"
+output_path: "data/cells/0.25z 0.125x 0.125y/test/prediction"
 \end{verbatim}
 
 Después de configurar este archivo, abrir un terminal, navegar hacia la raíz del proyecto y escribir:
@@ -90,6 +94,8 @@ AMP = False
 
 Tras configurar estos parámetros, ejecutar todas las celdas. Si el nombre del modelo ya existe en el path de modelos indicado, se reanudará el entrenamiento por el último epoch entrenado.
 
-Para probar un modelo y hacer inferencia, usar el notebook 2\_Infe.ipynb. Para usar este notebook hay que configurar los mismos parámetros que en el entrenamiento, a excepción que en este notebook hay que indicar el path hacia el conjunto de test:
+Para calcular métricas de un modelo, usar el notebook 2\_Test.ipynb. Para usar este notebook hay que configurar los mismos parámetros que en el entrenamiento, a excepción que en este notebook hay que indicar el path hacia el conjunto de test:\\
 
-\verb|test_path = '../data/cells/0.25z 0.125x 0.125y/test/'|
+\verb|test_path = '../data/cells/0.25z 0.125x 0.125y/test/'|\\
+
+Para predecir una segmentación, usar el notebook 3\_Infe.ipynb. Hay que indicar el directorio donde se encuentran las imágenes originales y el directorio donde guardar los etiquetados obtenidos. La predicción se guardará en un archivo con formato .h5, dentro de este archivo se guardará en ``prediction''. Además se mostrarán 4 capas de la segmentación obtenida de cada imagen de entrada.
