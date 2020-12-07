@@ -2,7 +2,7 @@
 
 \section{Plan inicial}\label{sec:planinicial}
 
-El primer enfoque para abordar este proyecto fue utilizar herramientas actuales de machine learning para la segmentación semántica de las imágenes provistas y, a partir de los resultados obtenidos, investigar cómo mejorar la segmentación. Sin embargo esto no fue posible debido a la alta resolución de las imágenes provistas y al limitado acceso a hardware de alto rendimiento. Por ello se ideó un plan inicial en el que se construía una herramienta que tuviese menor requisito de hardware. La mayor limitación era por la VRAM necesaria, por lo que se pensó en utilizar Apache Spark \cite{apachespark} para aprovechar HDD y RAM.
+El primer enfoque para abordar este proyecto fue utilizar herramientas actuales de machine learning para la segmentación semántica de las imágenes provistas y, a partir de los resultados obtenidos, investigar cómo mejorar la segmentación. Sin embargo esto no fue posible debido a la alta resolución de las imágenes y al limitado acceso a hardware de alto rendimiento. Por ello se ideó un plan inicial en el que se construía una herramienta que tuviese menor coste computacional. La mayor limitación era por la VRAM necesaria, por lo que se pensó en utilizar Apache Spark \cite{apachespark} para aprovechar HDD y RAM.
 
 En este primer plan se dividieron las tareas en fases, siendo la fase 0 realmente un proceso de iniciación, necesaria para planificar el resto de las fases.
 
@@ -18,8 +18,7 @@ En este primer plan se dividieron las tareas en fases, siendo la fase 0 realment
 
 \section{Nueva metodología}\label{sec:metodologia}
 
-Gracias a la investigación inicial realizada en la \textbf{Fase 0} se pudo definir el resto de fases del plan inicial, aunque no se tuvieron en cuenta varios factores que se empezaron a ver en la \textbf{Fase 1} y \textbf{Fase 2}. Esto provocó que se tuviese que realizar un ajuste en el plan inicial. 
-Lo que no se tuvo en cuenta fue:
+Al seguir las fases del plan inicial se llegó a un punto en el que costaba mucho avanzar a causa de no usar una metodología adecuada para el desarrollo de sistemas de machine learning. Esto provocó que se tuviese que realizar un ajuste en el plan inicial. Fueron varios puntos los que no se tuvieron en cuenta al idear el plan inicial:
 
 \begin{itemize}
 \item Las fases 2, 3 y 4 deben ser fases iterativas. Cada vez que se obtengan resultados hay que estudiarlos y hacer cambios para mejorar los resultados.

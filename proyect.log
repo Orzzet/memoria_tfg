@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  7 DEC 2020 08:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.26)  7 DEC 2020 08:39
 entering extended mode
 **./proyect.tex
 (proyect.tex
@@ -943,7 +943,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.26 \item N
+l.25 \item N
             o se tiene en cuenta el rendimiento de los algoritmos utilizados...
 [7
 
@@ -1508,7 +1508,7 @@ a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on proyect.pdf (92 pages, 5555981 bytes).
+Output written on proyect.pdf (92 pages, 5555972 bytes).
 PDF statistics:
  1630 PDF objects out of 1728 (max. 8388607)
  357 named destinations out of 1000 (max. 500000)
